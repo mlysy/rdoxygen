@@ -101,8 +101,10 @@ doxy_edit <- function (
   options = c()
   ) {
   doxyfile <- readLines(pathToDoxyfile)
-  for (i in 1:length(options)) {
-    doxyfile <- replace_tag(doxyfile, names(options)[i], options[i])
+  if (length(options) != 0) {
+    for (i in 1:length(options)) {
+      doxyfile <- replace_tag(doxyfile, names(options)[i], options[i])
+    }
   }
   cat(doxyfile, file = pathToDoxyfile, sep = "\n")
   return(TRUE)
