@@ -2,7 +2,7 @@
 % Please edit documentation in R/doxygen_tools.R
 \name{doxy}
 \alias{doxy}
-\title{devtools document function when using doxygen}
+\title{Calls doxygen for an R package}
 \usage{
 doxy(doxygen = file.exists("src"), roxygen = FALSE)
 }
@@ -18,8 +18,8 @@ Default: FALSE}
 The value returned by devtools::document()
 }
 \description{
-Overwrites devtools::document() to include the treatment of
-doxygen documentation in src/
+Triggers doxygen documentation for the code in src/. Triggers also 
+the setup (with \code{doxy_init()}) before the first run.
 }
 \examples{
 \dontrun{
