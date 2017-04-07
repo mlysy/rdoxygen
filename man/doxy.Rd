@@ -4,21 +4,26 @@
 \alias{doxy}
 \title{devtools document function when using doxygen}
 \usage{
-doxy(doxygen = file.exists("src"))
+doxy(doxygen = file.exists("src"), roxygen = FALSE)
 }
 \arguments{
 \item{doxygen}{A boolean: should doxygen be ran on documents in src?
-the default is TRUE if a src folder exist and FALSE if not}
+Default: TRUE if a src folder exist and FALSE if not}
+
+\item{roxygen}{A boolean: should devtools::document() be ran after the 
+creation of the doxygen documentation?
+Default: FALSE}
 }
 \value{
 The value returned by devtools::document()
 }
 \description{
 Overwrites devtools::document() to include the treatment of
-   doxygen documentation in src/
+doxygen documentation in src/
 }
 \examples{
 \dontrun{
-doxy()
+  doxy()
 }
+
 }
