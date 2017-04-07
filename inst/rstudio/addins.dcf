@@ -1,0 +1,4 @@
+Name: doxygenforsource
+Description: creates doxygen documentation for source code
+Binding: doxy
+Interactive: false
