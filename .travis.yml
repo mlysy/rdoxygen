@@ -9,7 +9,7 @@ matrix:
   include:
     - os: linux
       dist: trusty
-			sudo: false
+      sudo: false
       env: R_CODECOV=true
 
 warnings_are_errors: true
