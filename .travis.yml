@@ -1,0 +1,18 @@
+# R for travis: see documentation at https://docs.travis-ci.com/user/languages/r
+
+language: R
+cache: packages
+r_packages:
+  - covr
+
+matrix:
+  include:
+    - os: linux
+      dist: trusty
+			sudo: false
+      env: R_CODECOV=true
+
+warnings_are_errors: true
+
+after_success:
+  - Rscript -e 'library(covr); codecov()'

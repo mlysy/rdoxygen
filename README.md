@@ -5,7 +5,7 @@
 rdoxygen
 -------
 
-R Package for the automatic creation of [doxygen](http://www.doxygen.org) documentation for source code in R packages. 
+R package for the automatic creation of [doxygen](http://www.doxygen.org) documentation for source code in R packages. 
 
 It's based on [cmbarbus](http://stackoverflow.com/users/1174052/cmbarbu) answer to this [stackoverflow question](http://stackoverflow.com/questions/20713521/using-roxygen2-and-doxygen-on-the-same-package). 
 
