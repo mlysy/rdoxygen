@@ -16,3 +16,5 @@ Imports:
     devtools (>= 1.12.0)
 Suggests: 
     testthat
+SystemRequirements: 
+    doxygen
