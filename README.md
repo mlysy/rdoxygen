@@ -19,9 +19,26 @@ rdoxygen is currently not on [CRAN](http://cran.r-project.org/), but you can use
     library(devtools)
     install_github('nevrome/rdoxygen')
 
-:exclamation: You also need a working installation of the system programm [doxygen](http://www.stack.nl/~dimitri/doxygen/download.html). 
+:exclamation: You also need a working installation of the system program [doxygen](http://www.stack.nl/~dimitri/doxygen/download.html). 
 
-The package provides a [RStudio Addin](https://rstudio.github.io/rstudioaddins/) named **rdoxygenize** that binds to the function `doxy()`. `doxy()` can therefore be called with a keyboard shortcut (I personally use <kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+<kbd>-</kbd>). This makes the user exerience comparable to [roxygen2](https://github.com/yihui/roxygen2) documentation via `devtools::document()` (usually <kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+<kbd>D</kbd>). 
+Usage
+-----
+
+To setup and afterwards update your doxygen documentation, you can simply run 
+
+```{r}
+doxy()
+```
+
+in your package root directory. `doxy()` calls `doxy_init()` if there's no Doxyfile (doxygen configuration file) yet. Otherwise it just updates the documentation. 
+
+The package provides a [RStudio Addin](https://rstudio.github.io/rstudioaddins/) named **rdoxygenize** that binds to the function `doxy()`. `doxy()` can therefore be called with a keyboard shortcut (I personally use <kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+<kbd>-</kbd>). This makes the user experience comparable to [roxygen2](https://github.com/yihui/roxygen2) documentation via `devtools::document()` (usually <kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+<kbd>D</kbd>). 
+
+`doxy_edit()` allows to change settings in the Doxyfile. For example to also include private elements, you can call
+
+```{r}
+doxy_edit(options = c("EXTRACT_PRIVATE" = "YES"))
+```
 
 Licence
 -------
