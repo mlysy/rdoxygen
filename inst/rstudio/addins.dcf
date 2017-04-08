@@ -1,4 +1,4 @@
-Name: doxygenforsource
+Name: rdoxygenize
 Description: creates doxygen documentation for source code
 Binding: doxy
 Interactive: false
