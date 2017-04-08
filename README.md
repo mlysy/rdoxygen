@@ -3,7 +3,7 @@
 [![license](https://img.shields.io/badge/license-GPL%202-B50B82.svg)](https://www.r-project.org/Licenses/GPL-2)
 
 rdoxygen
--------
+--------
 
 R package for the automatic creation of [doxygen](http://www.doxygen.org) documentation for source code in R packages. 
 
