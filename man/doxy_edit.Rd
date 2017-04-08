@@ -7,15 +7,13 @@
 doxy_edit(pathToDoxyfile = "./inst/doxygen/Doxyfile", options = c())
 }
 \arguments{
-\item{pathToDoxyfile}{relative path to the Doxyfile
+\item{pathToDoxyfile}{A string with the relative path to the Doxyfile.
 Default: "./inst/doxygen/Doxyfile"}
 
-\item{options}{named vector with new settings. 
+\item{options}{A named vector with new settings. The names represent
+the tags.
 A list of options can be found here:
 \url{https://www.stack.nl/~dimitri/doxygen/manual/config.html}}
-}
-\value{
-TRUE
 }
 \description{
 Changes options in doxygen config files.

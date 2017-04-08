@@ -2,7 +2,7 @@
 % Please edit documentation in R/doxygen_tools.R
 \name{replace_tag}
 \alias{replace_tag}
-\title{Replace a value for a given tag on file in memory}
+\title{Updates and adds doxygen options in a line string vector}
 \usage{
 replace_tag(fileStrings, tag, newVal)
 }
@@ -10,15 +10,15 @@ replace_tag(fileStrings, tag, newVal)
 \item{fileStrings}{A vector with each string containing a line of the 
 file}
 
-\item{tag}{The tag to be searched for}
+\item{tag}{A string with the tag to be searched for}
 
-\item{newVal}{The new value for the tag}
+\item{newVal}{A string with the new value for the tag}
 }
 \value{
 The vector of strings with the new value
 }
 \description{
-Scan the lines and change the value for the named tag if one line has 
-this tag, add a line at the end if no line has this tag and return a 
-warning if several lines matching the tag.
+Scans the lines and changes the value for the named tag if one line has 
+this tag, adds a line at the end if no line has this tag and returns a 
+warning if several lines match the tag.
 }

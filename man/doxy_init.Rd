@@ -7,18 +7,15 @@
 doxy_init(rootFolder = ".")
 }
 \arguments{
-\item{rootFolder}{The root path of the R package}
-}
-\value{
-TRUE
+\item{rootFolder}{A string with the path to the root directory of the R
+package. Default: "."}
 }
 \description{
-Makes a configuration file in inst/doxygen and set a few options:
+Makes a configuration file in inst/doxygen/ and sets a few options:
     \itemize{
        \item{EXTRACT_ALL = YES}
        \item{INPUT = src/}
        \item{OUTPUT_DIRECTORY = inst/doxygen/}
-       \item{EXTRACT_PRIVATE = YES}
     }
 }
 \examples{
