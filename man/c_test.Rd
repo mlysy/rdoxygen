@@ -2,10 +2,10 @@
 % Please edit documentation in R/foo.R
 \name{c_test}
 \alias{c_test}
-\title{foo}
+\title{c_test}
 \usage{
 c_test(x)
 }
 \description{
-foo
+c_test
 }
