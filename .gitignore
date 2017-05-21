@@ -32,3 +32,8 @@ vignettes/*.pdf
 *.utf8.md
 *.knit.md
 .Rproj.user
+
+# bytecode
+src/*.o
+src/*.so
+src/*.dll
