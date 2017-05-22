@@ -11,7 +11,7 @@ doxy_edit(pathToDoxyfile = "./inst/doxygen/Doxyfile", options = c())
 Default: "./inst/doxygen/Doxyfile"}
 
 \item{options}{A named vector with new settings. The names represent
-the tags.
+the tags
 A list of options can be found here:
 \url{https://www.stack.nl/~dimitri/doxygen/manual/config.html}}
 }
