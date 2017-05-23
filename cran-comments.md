@@ -20,16 +20,25 @@ This is a first submission.
 
 ## R CMD check results in my test environments
 
-There were no ERRORs or WARNINGs, but one NOTE:
+There were no real ERRORs, WARNINGs or NOTEs. Two minor things:
 
-checking CRAN incoming feasibility ... NOTE
+* checking CRAN incoming feasibility ... NOTE
 
-Possibly mis-spelled words in DESCRIPTION:
-  Doxygen (2:15)
-  RStudio (9:14)
-  addin (9:22)
-  doxygen (8:21)
-  doxygenize (9:56)
+> Possibly mis-spelled words in DESCRIPTION:  
+> Doxygen (2:15)  
+> RStudio (9:14)  
+> addin (9:22)  
+> doxygen (8:21)  
+> doxygenize (9:56)  
+
+* checking top-level files ... WARNING
+
+> Conversion of 'README.md' failed:  
+> pandoc.exe: Could not fetch  
+> https://img.shields.io/codecov/c/github/nevrome/rdoxygen/master.svg  
+> TlsExceptionHostPort (HandshakeFailed Error_EOF) "img.shields.io" 443  
+
+This one should only be temporary: img.shields.io is currently (2017-05-23) down.
 
 ## Comments
 
