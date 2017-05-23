@@ -13,13 +13,13 @@ It's based on [cmbarbus](http://stackoverflow.com/users/1174052/cmbarbu) answer 
 Installation
 ------------
 
-rdoxygen is currently not on [CRAN](http://cran.r-project.org/), but you can use [devtools](http://cran.r-project.org/web/packages/devtools/index.html) to install the development version. To do so:
+:exclamation: To use rdoxygen you need a working installation of the system program [doxygen](http://www.stack.nl/~dimitri/doxygen/download.html). 
+
+You can install the development version of rdoxygen with [devtools](http://cran.r-project.org/web/packages/devtools/index.html) via
 
     if(!require('devtools')) install.packages('devtools')
     library(devtools)
     install_github('nevrome/rdoxygen')
-
-:exclamation: You also need a working installation of the system program [doxygen](http://www.stack.nl/~dimitri/doxygen/download.html). 
 
 Usage
 -----
