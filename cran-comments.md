@@ -20,7 +20,16 @@ This is a first submission.
 
 ## R CMD check results in my test environments
 
-There were no ERRORs, WARNINGs or NOTEs. 
+There were no ERRORs or WARNINGs, but one NOTE:
+
+checking CRAN incoming feasibility ... NOTE
+
+Possibly mis-spelled words in DESCRIPTION:
+  Doxygen (2:15)
+  RStudio (9:14)
+  addin (9:22)
+  doxygen (8:21)
+  doxygenize (9:56)
 
 ## Comments
 
