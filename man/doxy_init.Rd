@@ -11,7 +11,7 @@ doxy_init(rootFolder = ".")
 package. Default: "."}
 }
 \description{
-Makes a configuration file in inst/doxygen/ and sets a few options:
+Creates a configuration file in inst/doxygen/ and sets a few options:
     \itemize{
        \item{EXTRACT_ALL = YES}
        \item{INPUT = src/}

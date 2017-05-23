@@ -40,7 +40,7 @@ replace_tag <- function (fileStrings, tag, newVal) {
 
 #' Prepares the R package structure for use with doxygen
 #' 
-#' Makes a configuration file in inst/doxygen/ and sets a few options:
+#' Creates a configuration file in inst/doxygen/ and sets a few options:
 #'     \itemize{
 #'        \item{EXTRACT_ALL = YES}
 #'        \item{INPUT = src/}
@@ -102,7 +102,7 @@ doxy_init <- function (rootFolder = ".") {
 #' @param pathToDoxyfile A string with the relative path to the Doxyfile.
 #'                       Default: "./inst/doxygen/Doxyfile"
 #' @param options A named vector with new settings. The names represent
-#'                the tags
+#'                the tags.  
 #'                A list of options can be found here:
 #'                \url{https://www.stack.nl/~dimitri/doxygen/manual/config.html}    
 #'    
