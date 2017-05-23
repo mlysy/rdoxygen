@@ -61,6 +61,10 @@ replace_tag <- function (fileStrings, tag, newVal) {
 #' @export
 doxy_init <- function (rootFolder = ".") {
   
+  if(!check_for_doxygen()){
+    stop("doxygen is not in the system path! Is it correctly installed?")
+  }
+  
   doxyFileName <- "Doxyfile"
   
   # move to root directory
@@ -156,6 +160,10 @@ doxy <- function(
   pathToDoxyfile = "./inst/doxygen/Doxyfile"
   ) {
   
+  if(!check_for_doxygen()){
+    stop("doxygen is not in the system path! Is it correctly installed?")
+  }
+  
   # doxygen
   if (doxygen) {
     doxyFileName <- pathToDoxyfile
@@ -170,4 +178,14 @@ doxy <- function(
     devtools::document()
   }
   
+}
+
+#' check for doxygen
+#'
+#' helper function to check if doxygen is in the system path
+#' 
+#' @return TRUE
+#'
+check_for_doxygen <- function(){
+  return(nchar(Sys.which("doxygen")) > 0)
 }
