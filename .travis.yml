@@ -2,17 +2,26 @@
 
 language: R
 cache: packages
-r_packages:
-  - covr
 
 matrix:
   include:
     - os: linux
       dist: trusty
-      sudo: false
+      sudo: required
       env: R_CODECOV=true
+      r_check_args: '--use-valgrind'
+    - os: osx
+      osx_image: xcode8.2
+
+addons:
+  apt:
+    packages:
+    - valgrind
 
 warnings_are_errors: true
+
+r_packages:
+  - covr
 
 after_success:
   - Rscript -e 'library(covr); codecov()'
