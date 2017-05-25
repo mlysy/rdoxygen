@@ -1,3 +1,7 @@
+[![Travis-CI Build Status](https://travis-ci.org/nevrome/rdoxygen.svg?branch=master)](https://travis-ci.org/nevrome/rdoxygen) [![Coverage Status](https://img.shields.io/codecov/c/github/nevrome/rdoxygen/master.svg)](https://codecov.io/github/nevrome/rdoxygen?branch=master)
+[![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/rdoxygen)](http://cran.r-project.org/package=rdoxygen)
+[![license](https://img.shields.io/badge/license-GPL%202-B50B82.svg)](https://www.r-project.org/Licenses/GPL-2)
+
 rdoxygen
 --------
 
@@ -11,11 +15,11 @@ Installation
 
 :exclamation: To use rdoxygen you need a working installation of the system program [doxygen](http://www.stack.nl/~dimitri/doxygen/download.html). 
 
-You can install the development version of rdoxygen with [devtools](https://CRAN.R-project.org/package=devtools) via
+You can install from CRAN or get the latest development version with [devtools](https://CRAN.R-project.org/package=devtools) via
 
-    if(!require('devtools')) install.packages('devtools')
-    library(devtools)
-    install_github('nevrome/rdoxygen')
+```{r}
+devtools::install_github("nevrome/rdoxygen")
+```
 
 Usage
 -----

@@ -1,6 +1,6 @@
 Package: rdoxygen
 Title: Create Doxygen Documentation for Source Code
-Version: 1.0.0
+Version: 1.0.0.9000
 Authors@R: c(
   person("Clemens", "Schmid", email = "clemens@nevrome.de", role = c("cre", "cph", "aut"))
   )
