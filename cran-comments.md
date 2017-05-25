@@ -1,6 +1,6 @@
-## Submission
+## Resubmission
 
-This is a first submission. 
+I removed the img.shields.io badges in the README.md that caused a problem in the first submission. 
 
 ## Test environments
 
@@ -20,7 +20,7 @@ This is a first submission.
 
 ## R CMD check results in my test environments
 
-There were no real ERRORs, WARNINGs or NOTEs. Two minor things:
+There were no real ERRORs, WARNINGs or NOTEs. One minor thing:
 
 * checking CRAN incoming feasibility ... NOTE
 
@@ -30,15 +30,6 @@ There were no real ERRORs, WARNINGs or NOTEs. Two minor things:
 > addin (9:22)  
 > doxygen (8:21)  
 > doxygenize (9:56)  
-
-* checking top-level files ... WARNING
-
-> Conversion of 'README.md' failed:  
-> pandoc.exe: Could not fetch  
-> https://img.shields.io/codecov/c/github/nevrome/rdoxygen/master.svg  
-> TlsExceptionHostPort (HandshakeFailed Error_EOF) "img.shields.io" 443  
-
-This one should only be temporary: img.shields.io is currently (2017-05-23) down.
 
 ## Comments
 
