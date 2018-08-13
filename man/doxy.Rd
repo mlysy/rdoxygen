@@ -11,7 +11,7 @@ doxy(doxygen = file.exists("src"), roxygen = FALSE,
 \item{doxygen}{A boolean: should doxygen be ran on documents in src/?
 Default: TRUE if a src folder exist and FALSE if not}
 
-\item{roxygen}{A boolean: should devtools::document() be ran after the 
+\item{roxygen}{A boolean: should devtools::document() be ran after the
 creation of the doxygen documentation?
 Default: FALSE}
 
@@ -22,7 +22,7 @@ Default: "./inst/doxygen/Doxyfile"}
 NULL or the value returned by devtools::document()
 }
 \description{
-Triggers doxygen documentation for the code in src/. Triggers also 
+Triggers doxygen documentation for the code in src/. Triggers also
 the setup (with \code{doxy_init()}) at the first run.
 }
 \examples{

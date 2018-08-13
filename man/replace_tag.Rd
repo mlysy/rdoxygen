@@ -7,7 +7,7 @@
 replace_tag(fileStrings, tag, newVal)
 }
 \arguments{
-\item{fileStrings}{A vector with each string containing a line of the 
+\item{fileStrings}{A vector with each string containing a line of the
 file}
 
 \item{tag}{A string with the tag to be searched for}
@@ -18,7 +18,7 @@ file}
 The vector of strings with the new value
 }
 \description{
-Scans the lines and changes the value for the named tag if one line has 
-this tag, adds a line at the end if no line has this tag and returns a 
+Scans the lines and changes the value for the named tag if one line has
+this tag, adds a line at the end if no line has this tag and returns a
 warning if several lines match the tag.
 }

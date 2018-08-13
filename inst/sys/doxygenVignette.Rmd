@@ -1,0 +1,11 @@
+---
+pagetitle: "Doxygen Vignette"
+output:
+  rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Doxygen Vignette}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+<meta http-equiv="refresh" content="0; URL=@doxy::Redirect@">
