@@ -178,6 +178,12 @@ doxy <- function(
 
   # roxygen
   if (roxygen) {
+    if (!requireNamespace("devtools",
+                          versionCheck = list(op = ">=", version = "1.12.0"),
+                          quietly = TRUE)) {
+        stop("Package 'devtools' must be installed for option 'roxygen = TRUE' to work.",
+         call. = FALSE)
+    }
     devtools::document()
   }
 
