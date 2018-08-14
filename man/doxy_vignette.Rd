@@ -4,14 +4,14 @@
 \alias{doxy_vignette}
 \title{Creates a doxygen vignette}
 \usage{
-doxy_vignette(rootFolder = ".", pathToIndex = "doxygen/html",
+doxy_vignette(rootFolder = ".", pathToIndex = "doc/doxygen/html",
   vignetteName = "doxygenVignette.Rmd", overwrite = FALSE)
 }
 \arguments{
 \item{rootFolder}{A string with the path to the root directory of the R
 package. Default: "."}
 
-\item{pathToIndex}{A string with the path relative to \code{rootFolder/inst} of the \code{index.html} file of the doxygen documentation.  Default: \code{doxygen/html}, but see Note.}
+\item{pathToIndex}{A string with the path relative to \code{rootFolder/inst} of the \code{index.html} file of the doxygen documentation.  Default: \code{doc/doxygen/html}, see Note.}
 
 \item{vignetteName}{A string giving the name of the \code{.Rmd} vignette file wrapping the documentation, as well as the name to retrieve the documentation using \code{vignette()}.  Default: \code{"doxygenVignette.Rmd"}}
 

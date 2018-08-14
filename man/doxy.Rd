@@ -5,7 +5,7 @@
 \title{Calls doxygen for an R package}
 \usage{
 doxy(doxygen = file.exists("src"), roxygen = FALSE,
-  pathToDoxyfile = "./inst/doxygen/Doxyfile")
+  pathToDoxyfile = "./inst/doc/doxygen/Doxyfile")
 }
 \arguments{
 \item{doxygen}{A boolean: should doxygen be ran on documents in src/?
@@ -16,7 +16,7 @@ creation of the doxygen documentation?
 Default: FALSE}
 
 \item{pathToDoxyfile}{A string with the relative path to the Doxyfile.
-Default: "./inst/doxygen/Doxyfile"}
+Default: "./inst/doc/doxygen/Doxyfile"}
 }
 \value{
 NULL or the value returned by devtools::document()

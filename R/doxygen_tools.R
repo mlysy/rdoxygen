@@ -40,15 +40,17 @@ replace_tag <- function (fileStrings, tag, newVal) {
 
 #' Prepares the R package structure for use with doxygen
 #'
-#' Creates a configuration file in inst/doxygen/ and sets a few options:
+#' Creates a configuration file and sets a few options:
 #'     \itemize{
 #'        \item{EXTRACT_ALL = YES}
 #'        \item{INPUT = src/}
-#'        \item{OUTPUT_DIRECTORY = inst/doxygen/}
+#'        \item{OUTPUT_DIRECTORY = inst/doc/doxygen/}
 #'     }
 #'
 #' @param rootFolder A string with the path to the root directory of the R
 #'                   package. Default: "."
+#' @param doxyFolder A string with the path to the directory, where doxygen 
+#'                   should store its output. Default: "inst/doc/doxygen"
 #'
 #' @return NULL
 #'
@@ -59,7 +61,7 @@ replace_tag <- function (fileStrings, tag, newVal) {
 #' }
 #'
 #' @export
-doxy_init <- function (rootFolder = ".") {
+doxy_init <- function (rootFolder = ".", doxyFolder = "inst/doc/doxygen") {
 
   if(!check_for_doxygen()){
     stop("doxygen is not in the system path! Is it correctly installed?")
@@ -81,18 +83,17 @@ doxy_init <- function (rootFolder = ".") {
   }
 
   # prepare the doxygen folder
-  doxDir <- "inst/doxygen"
-  if (!file.exists(doxDir)) {
-    dir.create(doxDir, recursive = TRUE)
+  if (!file.exists(doxyFolder)) {
+    dir.create(doxyFolder, recursive = TRUE)
   }
-  setwd(doxDir)
+  setwd(doxyFolder)
 
   # prepare the doxygen configuration file with the initial settings
   system(paste0("doxygen -g ", doxyFileName))
   doxyfile <- readLines("Doxyfile")
   doxyfile <- replace_tag(doxyfile, "EXTRACT_ALL",      "YES")
   doxyfile <- replace_tag(doxyfile, "INPUT",            "src/")
-  doxyfile <- replace_tag(doxyfile, "OUTPUT_DIRECTORY", "inst/doxygen/")
+  doxyfile <- replace_tag(doxyfile, "OUTPUT_DIRECTORY", doxyFolder)
   cat(doxyfile, file = doxyFileName, sep = "\n")
 
   return(NULL)
@@ -103,7 +104,7 @@ doxy_init <- function (rootFolder = ".") {
 #' Changes options in doxygen config files.
 #'
 #' @param pathToDoxyfile A string with the relative path to the Doxyfile.
-#'                       Default: "./inst/doxygen/Doxyfile"
+#'                       Default: "./inst/doc/doxygen/Doxyfile"
 #' @param options A named vector with new settings. The names represent
 #'                the tags.
 #'                A list of options can be found here:
@@ -119,7 +120,7 @@ doxy_init <- function (rootFolder = ".") {
 #'
 #' @export
 doxy_edit <- function (
-  pathToDoxyfile = "./inst/doxygen/Doxyfile",
+  pathToDoxyfile = "./inst/doc/doxygen/Doxyfile",
   options = c()
   ) {
 
@@ -147,7 +148,7 @@ doxy_edit <- function (
 #'                creation of the doxygen documentation?
 #'                Default: FALSE
 #' @param pathToDoxyfile A string with the relative path to the Doxyfile.
-#'                       Default: "./inst/doxygen/Doxyfile"
+#'                       Default: "./inst/doc/doxygen/Doxyfile"
 #'
 #' @return NULL or the value returned by devtools::document()
 #'
@@ -160,7 +161,7 @@ doxy_edit <- function (
 doxy <- function(
   doxygen = file.exists("src"),
   roxygen = FALSE,
-  pathToDoxyfile = "./inst/doxygen/Doxyfile"
+  pathToDoxyfile = "./inst/doc/doxygen/Doxyfile"
   ) {
 
   if(!check_for_doxygen()){
