@@ -10,6 +10,7 @@
 #' @param newVal A string with the new value for the tag
 #'
 #' @return The vector of strings with the new value
+#' @keywords internal
 #'
 replace_tag <- function (fileStrings, tag, newVal) {
 
@@ -194,6 +195,7 @@ doxy <- function(
 #' helper function to check if doxygen is in the system path
 #'
 #' @return TRUE
+#' @keywords internal
 #'
 check_for_doxygen <- function(){
   return(nchar(Sys.which("doxygen")) > 0)

@@ -22,3 +22,4 @@ Scans the lines and changes the value for the named tag if one line has
 this tag, adds a line at the end if no line has this tag and returns a
 warning if several lines match the tag.
 }
+\keyword{internal}

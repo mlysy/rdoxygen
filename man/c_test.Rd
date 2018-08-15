@@ -13,7 +13,7 @@ c_test(x)
 a numeric vector x^2
 }
 \description{
-A mask function to test if the dummy C code in src/bar.c 
+A mask function to test if the dummy C code in src/bar.c
 works.
 }
 \details{
@@ -24,6 +24,7 @@ works.
 \dontrun{
   x <- rnorm(10)
   c_test(x)
-}  
+}
 
 }
+\keyword{internal}

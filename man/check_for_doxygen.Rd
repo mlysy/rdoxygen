@@ -12,3 +12,4 @@ TRUE
 \description{
 helper function to check if doxygen is in the system path
 }
+\keyword{internal}
