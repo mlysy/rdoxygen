@@ -5,7 +5,7 @@ setwd("../../")
 
 # check doxyfile
 check_doxyfile <- function(){
-  doxyfile <- readLines("./inst/doxygen/Doxyfile")
+  doxyfile <- readLines("./inst/doc/doxygen/Doxyfile")
   doxyfile <- sapply(
     doxyfile, 
     function(x){gsub("(?<=[\\s])\\s*|^\\s+|\\s+$", "", x, perl=TRUE)}
@@ -16,7 +16,7 @@ check_doxyfile <- function(){
 
 # check css
 check_css <- function(){
-  css <- readLines("./inst/doxygen/html/doxygen.css")
+  css <- readLines("./inst/doc/doxygen/html/doxygen.css")
   css <- sapply(
     css, 
     function(x){gsub("(?<=[\\s])\\s*|^\\s+|\\s+$", "", x, perl=TRUE)}
@@ -29,14 +29,14 @@ check_css <- function(){
 doxy_init()
 
 test_that("after the run of doxy_init() there's a doxyfile in inst/doxygen", {
-  expect_true(file.exists("./inst/doxygen/Doxyfile"))
+  expect_true(file.exists("./inst/doc/doxygen/Doxyfile"))
 })
 
 # doxy: create doxygen documentation
 doxy()
 
 test_that("after the run of doxy() there's a html documentation in inst/doxygen/html", {
-  expect_true(file.exists("./inst/doxygen/html/index.html"))
+  expect_true(file.exists("./inst/doc/doxygen/html/index.html"))
 })
 
 # doxy_edit: edit doxyfile

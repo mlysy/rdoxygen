@@ -4,18 +4,21 @@
 \alias{doxy_init}
 \title{Prepares the R package structure for use with doxygen}
 \usage{
-doxy_init(rootFolder = ".")
+doxy_init(rootFolder = ".", doxyFolder = "inst/doc/doxygen")
 }
 \arguments{
 \item{rootFolder}{A string with the path to the root directory of the R
 package. Default: "."}
+
+\item{doxyFolder}{A string with the path to the directory, where doxygen 
+should store its output. Default: "inst/doc/doxygen"}
 }
 \description{
-Creates a configuration file in inst/doxygen/ and sets a few options:
+Creates a configuration file and sets a few options:
     \itemize{
        \item{EXTRACT_ALL = YES}
        \item{INPUT = src/}
-       \item{OUTPUT_DIRECTORY = inst/doxygen/}
+       \item{OUTPUT_DIRECTORY = inst/doc/doxygen/}
     }
 }
 \examples{

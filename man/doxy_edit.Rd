@@ -4,11 +4,12 @@
 \alias{doxy_edit}
 \title{Edits an existing Doxyfile}
 \usage{
-doxy_edit(pathToDoxyfile = "./inst/doxygen/Doxyfile", options = c())
+doxy_edit(pathToDoxyfile = "./inst/doc/doxygen/Doxyfile",
+  options = c())
 }
 \arguments{
 \item{pathToDoxyfile}{A string with the relative path to the Doxyfile.
-Default: "./inst/doxygen/Doxyfile"}
+Default: "./inst/doc/doxygen/Doxyfile"}
 
 \item{options}{A named vector with new settings. The names represent
 the tags.

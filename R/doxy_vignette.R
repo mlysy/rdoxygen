@@ -4,7 +4,7 @@
 #'
 #' @param rootFolder A string with the path to the root directory of the R
 #'                   package. Default: "."
-#' @param pathToIndex A string with the path relative to \code{rootFolder/inst} of the \code{index.html} file of the doxygen documentation.  Default: \code{doxygen/html}, but see Note.
+#' @param pathToIndex A string with the path relative to \code{rootFolder/inst} of the \code{index.html} file of the doxygen documentation.  Default: \code{doc/doxygen/html}, see Note.
 #' @param vignetteName A string giving the name of the \code{.Rmd} vignette file wrapping the documentation, as well as the name to retrieve the documentation using \code{vignette()}.  Default: \code{"doxygenVignette.Rmd"}
 #' @param overwrite A boolean for whether to overwrite the file \code{rootFolder/vignettes/vignetteName.Rmd} if found.  Otherwise returns an error.  Default: \code{FALSE}
 #'
@@ -16,7 +16,7 @@
 #'
 #' @export
 doxy_vignette <- function(rootFolder = ".",
-                          pathToIndex = "doxygen/html",
+                          pathToIndex = "doc/doxygen/html",
                           vignetteName = "doxygenVignette.Rmd",
                           overwrite = FALSE) {
   # move to root directory
