@@ -41,17 +41,15 @@ replace_tag <- function (fileStrings, tag, newVal) {
 
 #' Prepares the R package structure for use with doxygen
 #'
-#' Creates a configuration file and sets a few options:
+#' Creates a Doxygen configuration file and sets a few options:
 #'     \itemize{
 #'        \item{EXTRACT_ALL = YES}
 #'        \item{INPUT = src/}
 #'        \item{OUTPUT_DIRECTORY = inst/doc/doxygen/}
 #'     }
 #'
-#' @param rootFolder A string with the path to the root directory of the R
-#'                   package. Default: "."
-#' @param doxyFolder A string with the path to the directory, where doxygen 
-#'                   should store its output. Default: "inst/doc/doxygen"
+#' @template param-pkgFolder
+#' @template param-pathToDoxyfile
 #'
 #' @return NULL
 #'
@@ -62,7 +60,8 @@ replace_tag <- function (fileStrings, tag, newVal) {
 #' }
 #'
 #' @export
-doxy_init <- function (rootFolder = ".", doxyFolder = "inst/doc/doxygen") {
+doxy_init <- function (pkgFolder = ".",
+                       pathToDoxyfile = "inst/doc/doxygen/Doxyfile") {
 
   if(!check_for_doxygen()){
     stop("doxygen is not in the system path! Is it correctly installed?")
