@@ -43,15 +43,16 @@ replace_tag <- function (fileStrings, tag, newVal) {
 #'
 #' Creates a Doxygen configuration file and sets a few options:
 #'     \itemize{
-#'        \item{EXTRACT_ALL = YES}
-#'        \item{INPUT = src/}
-#'        \item{OUTPUT_DIRECTORY = inst/doc/doxygen/}
+#'        \item{\code{INPUT = src/ inst/include}}
+#'        \item{\code{OUTPUT_DIRECTORY = inst/doc/doxygen/}}
+#'        \item{\code{GENERATE_LATEX = NO}}
+#'        \item{\code{PROJECT_NAME = name_of_R_package}}
 #'     }
 #'
 #' @template param-pkgFolder
 #' @template param-pathToDoxyfile
 #'
-#' @return NULL
+#' @return \code{NULL}.
 #'
 #' @examples
 #'
@@ -67,50 +68,42 @@ doxy_init <- function (pkgFolder = ".",
     stop("doxygen is not in the system path! Is it correctly installed?")
   }
 
-
-  doxyFileName <- "Doxyfile"
-
-  # move to root directory
+  # move to root directory (error if root not found)
+  rootFolder <- find_root(pkgFolder)
   initFolder <- getwd()
   on.exit(setwd(initFolder)) # resets to this even after error
-  rootFolder <- normalizePath(rootFolder, winslash="/")
   setwd(rootFolder)
 
-  # check if DESCRIPTION file is present
-  ## rootFileYes <- length(grep("DESCRIPTION", dir())) > 0
-  if(length(grep("DESCRIPTION", dir())) == 0) {
-    stop("rootFolder is not the root directory of a package.")
-  }
+  # prepare the Doxygen folder
+  doxyFolder <- dirname(pathToDoxyfile)
+  dir_create(doxyFolder)
 
-  # prepare the doxygen folder
-  if (!file.exists(doxyFolder)) {
-    dir.create(doxyFolder, recursive = TRUE)
-  }
-  setwd(doxyFolder)
-
-  # prepare the doxygen configuration file with the initial settings
-  system(paste0("doxygen -g ", doxyFileName))
-  doxyfile <- readLines("Doxyfile")
-  doxyfile <- replace_tag(doxyfile, "EXTRACT_ALL",      "YES")
-  doxyfile <- replace_tag(doxyfile, "INPUT",            "src/")
+  # create the doxygen configuration file with the default settings
+  system(paste0("doxygen -g ", pathToDoxyfile))
+  doxyfile <- readLines(pathToDoxyfile)
+  ## doxyfile <- replace_tag(doxyfile, "EXTRACT_ALL",      "YES")
+  doxyfile <- replace_tag(doxyfile, "INPUT", "src/ inst/include")
   doxyfile <- replace_tag(doxyfile, "OUTPUT_DIRECTORY", doxyFolder)
-  cat(doxyfile, file = doxyFileName, sep = "\n")
+  doxyfile <- replace_tag(doxyfile, "GENERATE_LATEX", "NO")
+  ## doxyfile <- replace_tag(doxyfile, "USE_MATHJAX", "YES")
+  doxyfile <- replace_tag(doxyfile, "PROJECT_NAME", pkg_name(rootFolder))
+  cat(doxyfile, file = pathToDoxyfile, sep = "\n")
 
-  return(NULL)
+  return(invisible(NULL))
 }
 
 #' Edits an existing Doxyfile
 #'
 #' Changes options in doxygen config files.
 #'
-#' @param pathToDoxyfile A string with the relative path to the Doxyfile.
-#'                       Default: "./inst/doc/doxygen/Doxyfile"
+#' @template param-pkgFolder
+#' @template param-pathToDoxyfile
 #' @param options A named vector with new settings. The names represent
 #'                the tags.
 #'                A list of options can be found here:
 #'                \url{https://www.stack.nl/~dimitri/doxygen/manual/config.html}
 #'
-#' @return NULL
+#' @return \code{NULL}
 #'
 #' @examples
 #'
@@ -119,11 +112,12 @@ doxy_init <- function (pkgFolder = ".",
 #' }
 #'
 #' @export
-doxy_edit <- function (
-  pathToDoxyfile = "./inst/doc/doxygen/Doxyfile",
-  options = c()
-  ) {
+doxy_edit <- function (options = c(),
+                       pkgFolder = ".",
+                       pathToDoxyfile = "inst/doc/doxygen/Doxyfile") {
 
+  rootFolder <- find_root(pkgFolder)
+  pathToDoxyfile <- file.path(rootFolder, pathToDoxyfile)
   doxyfile <- readLines(pathToDoxyfile)
 
   # loop to apply replace_tag() for every element of the vector
@@ -134,7 +128,7 @@ doxy_edit <- function (
   }
   cat(doxyfile, file = pathToDoxyfile, sep = "\n")
 
-  return(NULL)
+  return(invisible(NULL))
 }
 
 #' Calls doxygen for an R package
