@@ -1,9 +1,11 @@
 ---
-pagetitle: "Doxygen Vignette"
+pagetitle: "@doxy::Index@"
 output:
   rmarkdown::html_vignette
+params:
+  doxygenVignette: true
 vignette: >
-  %\VignetteIndexEntry{Doxygen Vignette}
+  %\VignetteIndexEntry{@doxy::Index@}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---

@@ -79,7 +79,8 @@ doxy_init <- function (pkgFolder = ".",
   dir_create(doxyFolder)
 
   # create the doxygen configuration file with the default settings
-  system(paste0("doxygen -g ", pathToDoxyfile))
+  system2(command = "doxygen", args = c("-g", pathToDoxyfile))
+  ## system(paste0("doxygen -g ", pathToDoxyfile))
   doxyfile <- readLines(pathToDoxyfile)
   ## doxyfile <- replace_tag(doxyfile, "EXTRACT_ALL",      "YES")
   doxyfile <- replace_tag(doxyfile, "INPUT", "src/ inst/include")
@@ -131,20 +132,14 @@ doxy_edit <- function (options = c(),
   return(invisible(NULL))
 }
 
-#' Calls doxygen for an R package
+#' Calls doxygen for an \R package
 #'
-#' Triggers doxygen documentation for the code in src/. Triggers also
-#' the setup (with \code{doxy_init()}) at the first run.
+#' Creates doxygen documentation based on the given \code{Doxyfile} configuration.  Creates this file with default values (using \code{doxy_init()}) if it doesn't exist.
 #'
-#' @param doxygen A boolean: should doxygen be ran on documents in src/?
-#'                Default: TRUE if a src folder exist and FALSE if not
-#' @param roxygen A boolean: should devtools::document() be ran after the
-#'                creation of the doxygen documentation?
-#'                Default: FALSE
-#' @param pathToDoxyfile A string with the relative path to the Doxyfile.
-#'                       Default: "./inst/doc/doxygen/Doxyfile"
+#' @template param-pkgFolder
+#' @template param-pathToDoxyfile
 #'
-#' @return NULL or the value returned by devtools::document()
+#' @return \code{NULL}
 #'
 #' @examples
 #' \dontrun{
@@ -152,36 +147,32 @@ doxy_edit <- function (options = c(),
 #' }
 #'
 #' @export
-doxy <- function(
-  doxygen = file.exists("src"),
-  roxygen = FALSE,
-  pathToDoxyfile = "./inst/doc/doxygen/Doxyfile"
-  ) {
+doxy <- function(pkgFolder = ".",
+                 pathToDoxyfile = "inst/doc/doxygen/Doxyfile") {
 
   if(!check_for_doxygen()){
     stop("doxygen is not in the system path! Is it correctly installed?")
   }
 
-  # doxygen
-  if (doxygen) {
-    doxyFileName <- pathToDoxyfile
-    if (!file.exists(doxyFileName)) {
-      doxy_init()
+  # run all commands from root folder
+  rootFolder <- find_root(pkgFolder)
+  initFolder <- getwd()
+  on.exit(setwd(initFolder)) # resets to this even after error
+  setwd(rootFolder)
+
+  # run doxy_init if Doxyfile doesn't exist
+  if(file.exists(pathToDoxyfile)) {
+    if(file.info(pathToDoxyfile)$isdir) {
+      stop("'", pathToDoxyfile, "' is a directory.  doxygen not run.")
     }
-    system(paste("doxygen", doxyFileName))
+  } else {
+    doxy_init(rootFolder, pathToDoxyfile)
   }
 
-  # roxygen
-  if (roxygen) {
-    if (!requireNamespace("devtools",
-                          versionCheck = list(op = ">=", version = "1.12.0"),
-                          quietly = TRUE)) {
-        stop("Package 'devtools' must be installed for option 'roxygen = TRUE' to work.",
-         call. = FALSE)
-    }
-    devtools::document()
-  }
+  # run doxygen on Doxyfile
+  system2(command = "doxygen", args = pathToDoxyfile)
 
+  return(invisible(NULL))
 }
 
 #' check for doxygen

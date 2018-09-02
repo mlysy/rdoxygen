@@ -2,28 +2,20 @@
 % Please edit documentation in R/doxygen_tools.R
 \name{doxy}
 \alias{doxy}
-\title{Calls doxygen for an R package}
+\title{Calls doxygen for an \R package}
 \usage{
-doxy(doxygen = file.exists("src"), roxygen = FALSE,
-  pathToDoxyfile = "./inst/doc/doxygen/Doxyfile")
+doxy(pkgFolder = ".", pathToDoxyfile = "inst/doc/doxygen/Doxyfile")
 }
 \arguments{
-\item{doxygen}{A boolean: should doxygen be ran on documents in src/?
-Default: TRUE if a src folder exist and FALSE if not}
+\item{pkgFolder}{A string with the path to any subfolder of the \R package root directory.  Default: \code{"."}.}
 
-\item{roxygen}{A boolean: should devtools::document() be ran after the
-creation of the doxygen documentation?
-Default: FALSE}
-
-\item{pathToDoxyfile}{A string with the relative path to the Doxyfile.
-Default: "./inst/doc/doxygen/Doxyfile"}
+\item{doxyfile}{A string with the path to the \code{Doxyfile} relative to the package root folder indicated by \code{pkg}.  Default: \code{"inst/doc/doxygen/Doxyfile"}.}
 }
 \value{
-NULL or the value returned by devtools::document()
+\code{NULL}
 }
 \description{
-Triggers doxygen documentation for the code in src/. Triggers also
-the setup (with \code{doxy_init()}) at the first run.
+Creates doxygen documentation based on the given \code{Doxyfile} configuration.  Creates this file with default values (using \code{doxy_init()}) if it doesn't exist.
 }
 \examples{
 \dontrun{

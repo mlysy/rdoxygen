@@ -27,3 +27,4 @@ pkg_name <- function(rootFolder) {
   desc::desc_get_field("Package",
                        file = file.path(rootFolder, "DESCRIPTION"))
 }
+
