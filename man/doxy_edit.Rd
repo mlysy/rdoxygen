@@ -15,7 +15,7 @@ A list of options can be found here:
 
 \item{pkgFolder}{A string with the path to any subfolder of the \R package root directory.  Default: \code{"."}.}
 
-\item{doxyfile}{A string with the path to the \code{Doxyfile} relative to the package root folder indicated by \code{pkg}.  Default: \code{"inst/doc/doxygen/Doxyfile"}.}
+\item{pathToDoxyfile}{A string with the path to the \code{Doxyfile} relative to the package root folder indicated by \code{pkg}.  Default: \code{"inst/doc/doxygen/Doxyfile"}.}
 }
 \value{
 \code{NULL}
