@@ -2,7 +2,7 @@
 
 # returns the absolute path to the package root folder
 find_root <- function(pkgFolder = ".") {
-  rprojroot::find_root(criterion = rprojroot::has_file("Description"),
+  rprojroot::find_root(criterion = rprojroot::has_file("DESCRIPTION"),
                        path = pkgFolder)
 }
 
