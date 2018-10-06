@@ -18,7 +18,7 @@ doxy <- function(
   options = c(),
   vignette = FALSE,
   name = "DoxygenVignette.Rmd", 
-  index 
+  index = "doc/doxygen/html"
 ) {
   
   if(!check_for_doxygen()){
@@ -56,8 +56,8 @@ doxy <- function(
     if (!file.exists(file.path("vignettes", name))) {
       doxy_vignette(
         pkg,
-        index,
-        name
+        name,
+        index
       )
     }
   }
@@ -190,12 +190,11 @@ doxy_vignette <- function(
   # move to root directory
   initFolder <- getwd()
   on.exit(setwd(initFolder)) # resets to this even after error
-  pkg <- normalizePath(pkg, winslash="/")
+  pkg <- normalizePath(pkg, winslash = "/")
   setwd(pkg)
   if(length(grep("DESCRIPTION", dir())) == 0) {
     stop("pkg is not the root directory of a package.")
   }
-  
   
   # path of doxygen index file relative to inst/doc
   indexFile <- file.path("..", index, "index.html")
@@ -204,33 +203,40 @@ doxy_vignette <- function(
   if(tolower(tools::file_ext(name)) != "rmd") {
     name <- paste0(name, ".Rmd")
   }
-  ## if(tools::file_ext(name) == "Rmd") {
-  ##   vignetteFile <- name
-  ##   name <- tools::file_path_sans_ext(vignetteFile)
-  ## } else {
-  ##   vignetteFile <- paste0(name, ".Rmd")
-  ## }
+  
+  # create directory vignettes if it doesn't exist
+  if (!dir.exists(file.path(pkg, "vignettes"))) {
+    dir.create(file.path(pkg, "vignettes"))
+  }
+  
+  # copy vignette template from rdoxygen to vignettes folder in new project 
+  vignette_path <- file.path(pkg, "vignettes", name)
+  suppressWarnings({
+    pass <- file.copy(
+      from = system.file(
+        "sys", 
+        "doxygenVignette.Rmd",
+        package = "rdoxygen"
+      ),
+      to = vignette_path,
+      overwrite = overwrite, 
+      recursive = TRUE
+    )
+  })
   
   # check if file name already exists
-  name <- file.path("vignettes", name)
-  suppressWarnings({
-    pass <- file.copy(from = system.file("sys", "doxygenVignette.Rmd",
-                                         package = "rdoxygen"),
-                      to = file.path(pkg, name),
-                      overwrite = overwrite, recursive = TRUE)
-  }
-  )
   if(!pass) {
-    stop("Vignette file '", file.path("vignettes", basename(name)),
-         "' already exists.  Not overwritten.")
+    stop("Vignette file '", vignette_path, "' already exists. Not overwritten.")
   }
   
   # modify template vignette to link to Doxygen doc
-  vignetteLines <- readLines(name)
-  vignetteLines <- gsub(pattern = "@doxy::Redirect@",
-                        replacement = indexFile,
-                        x = vignetteLines)
-  cat(vignetteLines, sep = "\n", file = name)
+  vignetteLines <- readLines(vignette_path)
+  vignetteLines <- gsub(
+    pattern = "@doxy::Redirect@",
+    replacement = indexFile,
+    x = vignetteLines
+  )
+  cat(vignetteLines, sep = "\n", file = vignette_path)
   
   invisible(NULL)
 }

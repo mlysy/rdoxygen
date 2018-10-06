@@ -6,7 +6,7 @@
 \usage{
 doxy(pkg = ".", doxyfile = "inst/doc/doxygen/Doxyfile",
   options = c(), vignette = FALSE, name = "DoxygenVignette.Rmd",
-  index)
+  index = "doc/doxygen/html")
 }
 \arguments{
 \item{pkg}{A string with the path to any subfolder of the \R package root directory.  Default: \code{"."}.}
