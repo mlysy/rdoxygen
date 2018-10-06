@@ -9,13 +9,6 @@
 #'
 #' @return a numeric vector x^2
 #'
-#' @examples
-#'
-#' \dontrun{
-#'   x <- rnorm(10)
-#'   c_test(x)
-#' }
-#'
 #' @keywords internal
 #'
 c_test <- function(x) {

@@ -17,6 +17,7 @@ addons:
   apt:
     packages:
     - valgrind
+    - doxygen
 
 warnings_are_errors: true
 
