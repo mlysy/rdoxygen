@@ -34,35 +34,35 @@
 ## Arguments to Exported Functions
 
 ```r
-# edit Doxyfile tags
-doxy_edit <- function(
+# do all steps below and trigger doxygen rendering
+doxy <- function(
   pkg = ".", # same as devtools::{document/load_all/install} argument, i.e., any subfolder of package root
   doxyfile = "inst/doc/doxygen/Doxyfile", # path to doxyfile relative to package root
-  options # named vector of key-value pairs to edit Doxyfile tags
+  options, # passed to doxy_edit
+  vignette = TRUE # add vignette: doxy_vignette is triggered
+  vignetteName = "DoxygenVignette.Rmd", # passed to doxy_vignette
+  indexEntry # passed to doxy_vignette
 )
 
-# add Doxyfile in package
+# add Doxyfile in package if it does not exist
 doxy_init <- function(
-  pkg = ".", # any subfolder of package root
-  doxyfile = "inst/doc/doxygen/Doxyfile", # path to doxyfile relative to package root
+  pkg = ".",
+  doxyfile = "inst/doc/doxygen/Doxyfile"
+)
+
+# edit Doxyfile tags if doxyfile exists
+doxy_edit <- function(
+  pkg = ".", 
+  doxyfile = "inst/doc/doxygen/Doxyfile", 
+  options # named vector of key-value pairs to edit Doxyfile tags
 )
 
 # wrap Doxygen documentation in R vignette
 doxy_vignette <- function(
-  pkg = ".", # any subfolder of package root
-  doxyfile = "inst/doc/doxygen/Doxyfile", # path to doxyfile relative to package root
+  pkg = ".",
+  doxyfile = "inst/doc/doxygen/Doxyfile", 
   vignetteName = "DoxygenVignette.Rmd", # name of Doxygen vignette
   indexEntry # name of vignette Index Entry. defaults to "C++ library documentation for package PackageName"
-)
-
-# do all steps above simultaneously
-doxy <- function(
-  pkg = ".", # any subfolder of package root
-  doxyfile = "inst/doc/doxygen/Doxyfile", # path to doxyfile relative to package root
-  options, # passed to doxy_edit
-  vignette = TRUE # add vignette
-  vignetteName = "DoxygenVignette.Rmd", # passed to doxy_vignette
-  indexEntry # passed to doxy_vignette
 )
 ```
 
