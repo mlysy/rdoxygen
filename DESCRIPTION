@@ -22,6 +22,8 @@ Imports:
     desc
 Suggests: 
     devtools,
-    testthat
+    testthat,
+    knitr
 SystemRequirements: 
     doxygen
+VignetteBuilder: knitr
