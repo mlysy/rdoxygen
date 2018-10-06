@@ -19,12 +19,4 @@ works.
 \details{
 \code{c_test(x)} = x^2.
 }
-\examples{
-
-\dontrun{
-  x <- rnorm(10)
-  c_test(x)
-}
-
-}
 \keyword{internal}
