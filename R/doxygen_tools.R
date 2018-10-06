@@ -31,6 +31,7 @@ doxy <- function(
   on.exit(setwd(initFolder)) # resets to this even after error
   setwd(rootFolder)
   
+  first_run <- FALSE
   # run doxy_init if Doxyfile doesn't exist
   if(file.exists(doxyfile)) {
     if(file.info(doxyfile)$isdir) {
@@ -38,6 +39,7 @@ doxy <- function(
     }
   } else {
     doxy_init(rootFolder, doxyfile)
+    first_run <- TRUE
   }
   
   # run doxy_edit if there are options given
@@ -62,6 +64,16 @@ doxy <- function(
   
   # run doxygen on Doxyfile
   system2(command = "doxygen", args = doxyfile)
+  
+  if(first_run) {
+    message("\nYou may like to add some lines to your .gitignore file to track the Doxyfile with git:\n")
+    message("# unignores inst/doc")
+    message("!inst/doc")
+    message("# ignore everything inside inst/doc but not inst/doc itself")
+    message("inst/doc/*") 
+    message("# unignore Doxyfile")
+    message("!inst/doc/doxygen/Doxyfile")
+  }
   
   return(invisible(NULL))
 }
