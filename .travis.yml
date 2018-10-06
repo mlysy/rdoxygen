@@ -10,8 +10,6 @@ matrix:
       sudo: required
       env: R_CODECOV=true
       r_check_args: '--use-valgrind'
-    - os: osx
-      osx_image: xcode8.2
 
 addons:
   apt:
