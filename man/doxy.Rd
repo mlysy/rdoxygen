@@ -4,22 +4,26 @@
 \alias{doxy}
 \title{Calls doxygen for an \R package}
 \usage{
-doxy(pkg = ".", doxyfile = "inst/doc/doxygen/Doxyfile")
+doxy(pkg = ".", doxyfile = "inst/doc/doxygen/Doxyfile",
+  options = c(), vignette = FALSE, name = "DoxygenVignette.Rmd",
+  index)
 }
 \arguments{
 \item{pkg}{A string with the path to any subfolder of the \R package root directory.  Default: \code{"."}.}
 
 \item{doxyfile}{A string with the path to the \code{Doxyfile} relative to the package root folder indicated by \code{pkg}.  Default: \code{"inst/doc/doxygen/Doxyfile"}.}
+
+\item{options}{A named vector with new settings. The names represent the tags. A list of options can be found here: \url{https://www.stack.nl/~dimitri/doxygen/manual/config.html}.}
+
+\item{vignette}{A boolean. Should a vignette be added with \code{doxy_vignette}? Default: FALSE. If FALSE, then the parameters \code{name} and \code{index} are meaningless.}
+
+\item{name}{A string giving the name of the \code{.Rmd} vignette file wrapping the documentation, as well as the name to retrieve the documentation using \code{vignette()}. Default: \code{"doxygenVignette.Rmd"}.}
+
+\item{index}{A string with the path relative to \code{pkg/inst} of the \code{index.html} file of the doxygen documentation. Default: \code{doc/doxygen/html}.}
 }
 \value{
 \code{NULL}
 }
 \description{
 Creates doxygen documentation based on the given \code{Doxyfile} configuration.  Creates this file with default values (using \code{doxy_init()}) if it doesn't exist.
-}
-\examples{
-\dontrun{
-  doxy()
-}
-
 }

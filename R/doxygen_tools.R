@@ -4,18 +4,21 @@
 #'
 #' @template param-pkg
 #' @template param-doxyfile
+#' @template param-options
+#' @param vignette A boolean. Should a vignette be added with \code{doxy_vignette}? Default: FALSE. If FALSE, then the parameters \code{name} and \code{index} are meaningless.
+#' @template param-name
+#' @template param-index
 #'
 #' @return \code{NULL}
 #'
-#' @examples
-#' \dontrun{
-#'   doxy()
-#' }
-#'
 #' @export
 doxy <- function(
-  pkg = ".",
-  doxyfile = "inst/doc/doxygen/Doxyfile"
+  pkg = ".", 
+  doxyfile = "inst/doc/doxygen/Doxyfile",
+  options = c(),
+  vignette = FALSE,
+  name = "DoxygenVignette.Rmd", 
+  index 
 ) {
   
   if(!check_for_doxygen()){
@@ -31,10 +34,30 @@ doxy <- function(
   # run doxy_init if Doxyfile doesn't exist
   if(file.exists(doxyfile)) {
     if(file.info(doxyfile)$isdir) {
-      stop("'", doxyfile, "' is a directory.  doxygen not run.")
+      stop("'", doxyfile, "' is a directory. doxygen not run.")
     }
   } else {
     doxy_init(rootFolder, doxyfile)
+  }
+  
+  # run doxy_edit if there are options given
+  if(length(options) > 0) {
+    doxy_edit(
+      pkg,
+      doxyfile,
+      options
+    )
+  } 
+  
+  # run doxy_vignette if vignette = TRUE and vignette file does not yet exist
+  if (vignette) {
+    if (!file.exists(file.path("vignettes", name))) {
+      doxy_vignette(
+        pkg,
+        index,
+        name
+      )
+    }
   }
   
   # run doxygen on Doxyfile
@@ -103,18 +126,9 @@ doxy_init <- function (
 #'
 #' @template param-pkg
 #' @template param-doxyfile
-#' @param options A named vector with new settings. The names represent
-#'                the tags.
-#'                A list of options can be found here:
-#'                \url{https://www.stack.nl/~dimitri/doxygen/manual/config.html}
+#' @template param-options
 #'
 #' @return \code{NULL}
-#'
-#' @examples
-#'
-#' \dontrun{
-#' doxy_edit(options = c("EXTRACT_PRIVATE" = "YES"))
-#' }
 #'
 #' @export
 doxy_edit <- function (
@@ -143,9 +157,9 @@ doxy_edit <- function (
 #' Creates an R Markdown wrapper for the doxygen documentation so that it can be viewed from within R with a call to \code{vignette()}.
 #'
 #' @template param-pkg
-#' @param index A string with the path relative to \code{pkg/inst} of the \code{index.html} file of the doxygen documentation.  Default: \code{doc/doxygen/html}, see Note.
-#' @param name A string giving the name of the \code{.Rmd} vignette file wrapping the documentation, as well as the name to retrieve the documentation using \code{vignette()}.  Default: \code{"doxygenVignette.Rmd"}
-#' @param overwrite A boolean for whether to overwrite the file \code{pkg/vignettes/name.Rmd} if found.  Otherwise returns an error.  Default: \code{FALSE}
+#' @template param-name
+#' @template param-index
+#' @param overwrite A boolean for whether to overwrite the file \code{pkg/vignettes/name.Rmd} if found.  Otherwise returns an error.  Default: \code{TRUE}
 #'
 #' @return \code{NULL}
 #'
@@ -156,8 +170,8 @@ doxy_edit <- function (
 #' @export
 doxy_vignette <- function(
   pkg = ".",
-  index = "doc/doxygen/html",
   name = "doxygenVignette.Rmd",
+  index = "doc/doxygen/html",
   overwrite = FALSE
 ) {
   

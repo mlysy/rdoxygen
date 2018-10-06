@@ -12,21 +12,11 @@ doxy_edit(pkg = ".", doxyfile = "inst/doc/doxygen/Doxyfile",
 
 \item{doxyfile}{A string with the path to the \code{Doxyfile} relative to the package root folder indicated by \code{pkg}.  Default: \code{"inst/doc/doxygen/Doxyfile"}.}
 
-\item{options}{A named vector with new settings. The names represent
-the tags.
-A list of options can be found here:
-\url{https://www.stack.nl/~dimitri/doxygen/manual/config.html}}
+\item{options}{A named vector with new settings. The names represent the tags. A list of options can be found here: \url{https://www.stack.nl/~dimitri/doxygen/manual/config.html}.}
 }
 \value{
 \code{NULL}
 }
 \description{
 Changes options in doxygen config files.
-}
-\examples{
-
-\dontrun{
-doxy_edit(options = c("EXTRACT_PRIVATE" = "YES"))
-}
-
 }

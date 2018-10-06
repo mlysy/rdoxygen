@@ -4,17 +4,17 @@
 \alias{doxy_vignette}
 \title{Creates a doxygen vignette}
 \usage{
-doxy_vignette(pkg = ".", index = "doc/doxygen/html",
-  name = "doxygenVignette.Rmd", overwrite = FALSE)
+doxy_vignette(pkg = ".", name = "doxygenVignette.Rmd",
+  index = "doc/doxygen/html", overwrite = FALSE)
 }
 \arguments{
 \item{pkg}{A string with the path to any subfolder of the \R package root directory.  Default: \code{"."}.}
 
-\item{index}{A string with the path relative to \code{pkg/inst} of the \code{index.html} file of the doxygen documentation.  Default: \code{doc/doxygen/html}, see Note.}
+\item{name}{A string giving the name of the \code{.Rmd} vignette file wrapping the documentation, as well as the name to retrieve the documentation using \code{vignette()}. Default: \code{"doxygenVignette.Rmd"}.}
 
-\item{name}{A string giving the name of the \code{.Rmd} vignette file wrapping the documentation, as well as the name to retrieve the documentation using \code{vignette()}.  Default: \code{"doxygenVignette.Rmd"}}
+\item{index}{A string with the path relative to \code{pkg/inst} of the \code{index.html} file of the doxygen documentation. Default: \code{doc/doxygen/html}.}
 
-\item{overwrite}{A boolean for whether to overwrite the file \code{pkg/vignettes/name.Rmd} if found.  Otherwise returns an error.  Default: \code{FALSE}}
+\item{overwrite}{A boolean for whether to overwrite the file \code{pkg/vignettes/name.Rmd} if found.  Otherwise returns an error.  Default: \code{TRUE}}
 }
 \value{
 \code{NULL}

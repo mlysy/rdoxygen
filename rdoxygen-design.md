@@ -39,9 +39,9 @@ doxy <- function(
   pkg = ".", # same as devtools::{document/load_all/install} argument, i.e., any subfolder of package root
   doxyfile = "inst/doc/doxygen/Doxyfile", # path to doxyfile relative to package root
   options, # passed to doxy_edit
-  vignette = TRUE # add vignette: doxy_vignette is triggered
-  vignetteName = "DoxygenVignette.Rmd", # passed to doxy_vignette
-  indexEntry # passed to doxy_vignette
+  vignette = FALSE # add vignette: if TRUE then doxy_vignette is triggered
+  name = "DoxygenVignette.Rmd", # passed to doxy_vignette
+  index # passed to doxy_vignette
 )
 
 # add Doxyfile in package if it does not exist
@@ -60,9 +60,9 @@ doxy_edit <- function(
 # wrap Doxygen documentation in R vignette
 doxy_vignette <- function(
   pkg = ".",
-  doxyfile = "inst/doc/doxygen/Doxyfile", 
-  vignetteName = "DoxygenVignette.Rmd", # name of Doxygen vignette
-  indexEntry # name of vignette Index Entry. defaults to "C++ library documentation for package PackageName"
+  name = "DoxygenVignette.Rmd", # name of Doxygen vignette
+  index # name of vignette Index Entry. defaults to "C++ library documentation for package PackageName"
+  overwrite = FALSE # should an existing vignette file be overwritten
 )
 ```
 
