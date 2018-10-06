@@ -2,13 +2,9 @@
 
 ## Design Considerations
 
-- *Features.*  
-
-    * **rdoxygen** allows R package developers to add [Doxygen](http://www.stack.nl/~dimitri/doxygen/index.html) documentation to their package for C++ source code (typically found in `src` or `inst/include`).  
+- *Features.* **rdoxygen** allows R package developers to add [Doxygen](http://www.stack.nl/~dimitri/doxygen/index.html) documentation to their package for C++ source code (typically found in `src` or `inst/include`). Optionally, this documentation can be accessed by users of the package via R [vignettes](http://r-pkgs.had.co.nz/vignettes.html).
     
-    * Optionally, this documentation can be accessed by users of the package via R [vignettes](http://r-pkgs.had.co.nz/vignettes.html).
-    
-- *Simplicity.*  A typical **rdoxygen** workflow -- heavily influenced by the design of [**devtools**](https://github.com/r-lib/devtools) -- might proceed as follows. Assuming that the package's C/C++/etc. code has been marked up for Doxygen processing, and the R working directory is *any subfolder* of the package root:
+- *Simplicity.* A typical **rdoxygen** workflow -- heavily influenced by the design of [**devtools**](https://github.com/r-lib/devtools) -- might proceed as follows. Assuming that the package's C/C++/etc. code has been marked up for Doxygen processing, and the R working directory is *any subfolder* of the package root:
 
     ```r
     # create default Doxyfile, process it with Doxygen, optionally wrap in R vignette
@@ -27,10 +23,10 @@
 
 - *Dependencies.* Since **rdoxygen** is used for package development, it tries as much as possible to avoid adding unnecessary dependencies to the user's package (i.e., if I want to use **rdoxygen** to add Doxygen documentation to my package, ideally that shouldn't force my package users to install **rdoxygen** itself). Nevertheless helpful packages for achieving the above are:
 
-    * [**rprojroot**](https://cran.r-project.org/web/packages/rprojroot/index.html), which allows you to find the root of a package directory from any of its subfolders.
+    * [**rprojroot**](https://CRAN.R-project.org/package=rprojroot), which allows you to find the root of a package directory from any of its subfolders.
     
-    * [**desc**](https://cran.r-project.org/web/packages/desc/index.html), which allows you to easily edit the package `DESCRIPTION` file (e.g., for adding libraries required to process package vignettes).
-
+    * [**desc**](https://CRAN.R-project.org/package=desc), which allows you to easily edit the package `DESCRIPTION` file (e.g., for adding libraries required to process package vignettes).
+    
 ## Arguments to Exported Functions
 
 ```r
@@ -70,7 +66,7 @@ doxy_vignette <- function(
 
 * *Doxygen documentation.* Installed R vignettes can only display HTML files stored in a subfolder of `inst/doc` (as documented [here](https://github.com/nevrome/rdoxygen/issues/2#issuecomment-412536748)). Therefore, the suggested location for Doxygen documentation is `inst/doc/doxygen`.
 
-* *Doxyfile.* As a package developer, I feel like whatever is required to create the package exactly as it should be installed on disk should be part of the package itself. In this sense, the `Doxyfile` needed to format the Doxygen documentation exactly as I want it should be part of the package as well. An obvious location for this file is `inst/doc/doxygen`.  However, `inst/doc` is typically `.gitignore`d (e.g., by `devtools::use_vignette()` and `usethis::use_vignettes()`).  So we'd have to manually exclude `inst/doc/doxygen/Doxyfile`, via appending an existing `.gitignore` with something like [this](https://stackoverflow.com/questions/5533050/gitignore-exclude-folder-but-include-specific-subfolder):
+* *Doxyfile.* As a package developer, I feel like whatever is required to create the package exactly as it should be installed on disk should be part of the package itself. In this sense, the `Doxyfile` needed to format the Doxygen documentation exactly as I want it should be part of the package as well. An obvious location for this file is `inst/doc/doxygen`. However, `inst/doc` is typically `.gitignore`d (e.g., by `devtools::use_vignette()` and `usethis::use_vignettes()`). So we'd have to manually exclude `inst/doc/doxygen/Doxyfile`, via appending an existing `.gitignore` with something like [this](https://stackoverflow.com/questions/5533050/gitignore-exclude-folder-but-include-specific-subfolder):
     
     ```
     # paste the following to the bottom of existing .gitignore
@@ -90,13 +86,12 @@ INPUT = src/ # works fine
 INPUT = ../src/ # does not work
 ```
 
-Thus, **rdoxygen** runs Doxygen *from the package root folder*.  That being said, here are the default Tags rdoxygen sets in the Doxyfile:
+Thus, **rdoxygen** runs Doxygen *from the package root folder*. That being said, here are the default tags rdoxygen sets in the Doxyfile:
 
 ```bash
 INPUT = src/ inst/include/ # the two locations in which you expect to find C++ code
 OUTPUT_DIRECTORY = inst/doc/doxygen
 PROJECT_NAME = "C++ Library Documentation for Package PackageName"
-GENERATE_LATEX = NO # probably not needed in most cases?
 ```
 
 Also note that another useful option might be `USE_MATHJAX = YES`, which makes formulas look much nicer than when this option is set to `NO`.
