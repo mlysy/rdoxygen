@@ -42,7 +42,7 @@ test_that("after the run of doxy() there's a html documentation in inst/doxygen/
 test_that("doxy_edit edits the Doxyfile successfully", {
   skip_on_cran()
   start <- check_doxyfile(doxyPath)
-  doxy_edit(pkgFolder = pkgRoot,
+  doxy_edit(pkg = pkgRoot,
             options = c("HTML_COLORSTYLE_HUE" = "120"))
   stop <- check_doxyfile(doxyPath)
   expect_false(start)

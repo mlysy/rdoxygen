@@ -4,13 +4,12 @@
 \alias{doxy_init}
 \title{Prepares the R package structure for use with doxygen}
 \usage{
-doxy_init(pkgFolder = ".",
-  pathToDoxyfile = "inst/doc/doxygen/Doxyfile")
+doxy_init(pkg = ".", doxyfile = "inst/doc/doxygen/Doxyfile")
 }
 \arguments{
-\item{pkgFolder}{A string with the path to any subfolder of the \R package root directory.  Default: \code{"."}.}
+\item{pkg}{A string with the path to any subfolder of the \R package root directory.  Default: \code{"."}.}
 
-\item{pathToDoxyfile}{A string with the path to the \code{Doxyfile} relative to the package root folder indicated by \code{pkg}.  Default: \code{"inst/doc/doxygen/Doxyfile"}.}
+\item{doxyfile}{A string with the path to the \code{Doxyfile} relative to the package root folder indicated by \code{pkg}.  Default: \code{"inst/doc/doxygen/Doxyfile"}.}
 }
 \value{
 \code{NULL}.

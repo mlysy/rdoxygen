@@ -45,7 +45,6 @@ doxy_edit <- function(
 doxy_init <- function(
   pkg = ".", # any subfolder of package root
   doxyfile = "inst/doc/doxygen/Doxyfile", # path to doxyfile relative to package root
-  options # passed to doxy_edit
 )
 
 # wrap Doxygen documentation in R vignette

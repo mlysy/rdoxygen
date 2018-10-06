@@ -4,18 +4,17 @@
 \alias{doxy_vignette}
 \title{Creates a doxygen vignette}
 \usage{
-doxy_vignette(rootFolder = ".", pathToIndex = "doc/doxygen/html",
-  vignetteName = "doxygenVignette.Rmd", overwrite = FALSE)
+doxy_vignette(pkg = ".", index = "doc/doxygen/html",
+  name = "doxygenVignette.Rmd", overwrite = FALSE)
 }
 \arguments{
-\item{rootFolder}{A string with the path to the root directory of the R
-package. Default: "."}
+\item{pkg}{A string with the path to any subfolder of the \R package root directory.  Default: \code{"."}.}
 
-\item{pathToIndex}{A string with the path relative to \code{rootFolder/inst} of the \code{index.html} file of the doxygen documentation.  Default: \code{doc/doxygen/html}, see Note.}
+\item{index}{A string with the path relative to \code{pkg/inst} of the \code{index.html} file of the doxygen documentation.  Default: \code{doc/doxygen/html}, see Note.}
 
-\item{vignetteName}{A string giving the name of the \code{.Rmd} vignette file wrapping the documentation, as well as the name to retrieve the documentation using \code{vignette()}.  Default: \code{"doxygenVignette.Rmd"}}
+\item{name}{A string giving the name of the \code{.Rmd} vignette file wrapping the documentation, as well as the name to retrieve the documentation using \code{vignette()}.  Default: \code{"doxygenVignette.Rmd"}}
 
-\item{overwrite}{A boolean for whether to overwrite the file \code{rootFolder/vignettes/vignetteName.Rmd} if found.  Otherwise returns an error.  Default: \code{FALSE}}
+\item{overwrite}{A boolean for whether to overwrite the file \code{pkg/vignettes/name.Rmd} if found.  Otherwise returns an error.  Default: \code{FALSE}}
 }
 \value{
 \code{NULL}
@@ -24,8 +23,8 @@ package. Default: "."}
 Creates an R Markdown wrapper for the doxygen documentation so that it can be viewed from within R with a call to \code{vignette()}.
 }
 \details{
-This function creates the file \code{vignettes/vignetteName.Rmd} in the package root folder, containing the necessary meta-data for viewing the Doxygen HTML documentation from within R with a call to \code{vignette()}.  When the vignette is built (e.g., with \code{R CMD build} or \code{devtools::build_vignettes()}), a file \code{inst/doc/vignetteName.html} is created, and it is this file which is opened by the call to \code{vignette("vignetteName")} after the package is installed.  The contents of \code{inst/doc/vignetteName.html} are simply a "redirect" to the Doxygen index file, \code{pathToIndex/index.html}.
+This function creates the file \code{vignettes/name.Rmd} in the package root folder, containing the necessary meta-data for viewing the Doxygen HTML documentation from within R with a call to \code{vignette()}.  When the vignette is built (e.g., with \code{R CMD build} or \code{devtools::build_vignettes()}), a file \code{inst/doc/name.html} is created, and it is this file which is opened by the call to \code{vignette("name")} after the package is installed.  The contents of \code{inst/doc/name.html} are simply a "redirect" to the Doxygen index file, \code{index/index.html}.
 }
 \note{
-The call to \code{vignette()} will *only* open HTML files stored in the \code{doc} subfolder of an installed package.  Therefore the Doxygen documentation referred to by \code{pathToIndex} must be stored in a subfolder of \code{inst/doc} for the call to \code{vignette()} post-installation to work.
+The call to \code{vignette()} will *only* open HTML files stored in the \code{doc} subfolder of an installed package.  Therefore the Doxygen documentation referred to by \code{index} must be stored in a subfolder of \code{inst/doc} for the call to \code{vignette()} post-installation to work.
 }
