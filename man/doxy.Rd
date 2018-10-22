@@ -5,8 +5,7 @@
 \title{Calls doxygen for an \R package}
 \usage{
 doxy(pkg = ".", doxyfile = "inst/doc/doxygen/Doxyfile",
-  options = c(), vignette = FALSE, name = "DoxygenVignette.Rmd",
-  index = "doc/doxygen/html")
+  options = c(), vignette = FALSE)
 }
 \arguments{
 \item{pkg}{A string with the path to any subfolder of the \R package root directory.  Default: \code{"."}.}
@@ -15,15 +14,27 @@ doxy(pkg = ".", doxyfile = "inst/doc/doxygen/Doxyfile",
 
 \item{options}{A named vector with new settings. The names represent the tags. A list of options can be found here: \url{https://www.stack.nl/~dimitri/doxygen/manual/config.html}.}
 
-\item{vignette}{A boolean. Should a vignette be added with \code{doxy_vignette}? Default: FALSE. If FALSE, then the parameters \code{name} and \code{index} are meaningless.}
-
-\item{name}{A string giving the name of the \code{.Rmd} vignette file wrapping the documentation, as well as the name to retrieve the documentation using \code{vignette()}. Default: \code{"doxygenVignette.Rmd"}.}
-
-\item{index}{A string with the path relative to \code{pkg/inst} of the \code{index.html} file of the doxygen documentation. Default: \code{doc/doxygen/html}.}
+\item{vignette}{A boolean. Should a vignette be added with \code{doxy_vignette}? Default: \code{FALSE}.}
 }
 \value{
 \code{NULL}
 }
 \description{
-Creates doxygen documentation based on the given \code{Doxyfile} configuration.  Creates this file with default values (using \code{doxy_init()}) if it doesn't exist.
+Creates doxygen documentation and optionally wraps it as an \R vignette.
+}
+\details{
+This function will first create a \code{Doxyfile} with \code{\link{doxy_init}} if it doesn't yet exist.  Next, it runs \code{Doxygen} on the \code{Doxyfile}, and if \code{vignette = TRUE}, creates a vignette allowing the Doxygen documentation to be viewed from within \R with a call to \code{vignette()}.  The Doxygen vignette is created with default options.  To modify these options, see \code{\link{doxy_vignette}}.
+
+For git users: by default the Doxygen documentation is stored in \code{inst/doc/doxygen}, but this folder is often added to \code{.gitignore} (e.g., by \code{devtools::use_vignettes}).  To unignore some or all of the Doxygen documentation, you may wish to add the following lines to the package \code{.gitignore}:
+\preformatted{
+# ignore inst/doc, but allow its contents to be selectively unignored
+!inst/doc
+inst/doc/*
+
+# unignore just the Doxyfile (need Doxygen to recompile the docs)
+!inst/doc/doxygen/Doxyfile
+
+# unignore all the Doxygen documentation
+!inst/doc/doxygen
+}
 }

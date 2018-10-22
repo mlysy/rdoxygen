@@ -1,37 +1,37 @@
 #' Calls doxygen for an \R package
 #'
-#' Creates doxygen documentation based on the given \code{Doxyfile} configuration.  Creates this file with default values (using \code{doxy_init()}) if it doesn't exist.
+#' Creates doxygen documentation and optionally wraps it as an \R vignette.
 #'
 #' @template param-pkg
 #' @template param-doxyfile
 #' @template param-options
-#' @param vignette A boolean. Should a vignette be added with \code{doxy_vignette}? Default: FALSE. If FALSE, then the parameters \code{name} and \code{index} are meaningless.
-#' @template param-name
-#' @template param-index
+#' @param vignette A boolean. Should a vignette be added with \code{doxy_vignette}? Default: \code{FALSE}.
 #'
 #' @return \code{NULL}
 #'
+#' @details This function will first create a \code{Doxyfile} with \code{\link{doxy_init}} if it doesn't yet exist.  Next, it runs \code{Doxygen} on the \code{Doxyfile}, and if \code{vignette = TRUE}, creates a vignette allowing the Doxygen documentation to be viewed from within \R with a call to \code{vignette()}.  The Doxygen vignette is created with default options.  To modify these options, see \code{\link{doxy_vignette}}.
+#'
+#' @template details-gitignore
+#'
 #' @export
 doxy <- function(
-  pkg = ".", 
+  pkg = ".",
   doxyfile = "inst/doc/doxygen/Doxyfile",
   options = c(),
-  vignette = FALSE,
-  name = "DoxygenVignette.Rmd", 
-  index = "doc/doxygen/html"
+  vignette = FALSE
 ) {
-  
+
   if(!check_for_doxygen()){
     stop("doxygen is not in the system path! Is it correctly installed?")
   }
-  
+
   # run all commands from root folder
   rootFolder <- find_root(pkg)
   initFolder <- getwd()
   on.exit(setwd(initFolder)) # resets to this even after error
   setwd(rootFolder)
-  
-  first_run <- FALSE
+
+  ## first_run <- FALSE
   # run doxy_init if Doxyfile doesn't exist
   if(file.exists(doxyfile)) {
     if(file.info(doxyfile)$isdir) {
@@ -39,9 +39,9 @@ doxy <- function(
     }
   } else {
     doxy_init(rootFolder, doxyfile)
-    first_run <- TRUE
+    ## first_run <- TRUE
   }
-  
+
   # run doxy_edit if there are options given
   if(length(options) > 0) {
     doxy_edit(
@@ -49,32 +49,28 @@ doxy <- function(
       doxyfile,
       options
     )
-  } 
-  
+  }
+
   # run doxy_vignette if vignette = TRUE and vignette file does not yet exist
   if (vignette) {
     if (!file.exists(file.path("vignettes", name))) {
-      doxy_vignette(
-        pkg,
-        name,
-        index
-      )
+      doxy_vignette(pkg = pkg)
     }
   }
-  
+
   # run doxygen on Doxyfile
   system2(command = "doxygen", args = doxyfile)
-  
-  if(first_run) {
-    message("\nYou may like to add some lines to your .gitignore file to track the Doxyfile with git:\n")
-    message("# unignores inst/doc")
-    message("!inst/doc")
-    message("# ignore everything inside inst/doc but not inst/doc itself")
-    message("inst/doc/*") 
-    message("# unignore Doxyfile")
-    message("!inst/doc/doxygen/Doxyfile")
-  }
-  
+
+  ## if(first_run) {
+  ##   message("\nYou may like to add some lines to your .gitignore file to track the Doxyfile with git:\n")
+  ##   message("# unignores inst/doc")
+  ##   message("!inst/doc")
+  ##   message("# ignore everything inside inst/doc but not inst/doc itself")
+  ##   message("inst/doc/*")
+  ##   message("# unignore Doxyfile")
+  ##   message("!inst/doc/doxygen/Doxyfile")
+  ## }
+
   return(invisible(NULL))
 }
 
@@ -92,6 +88,8 @@ doxy <- function(
 #' @template param-doxyfile
 #'
 #' @return \code{NULL}.
+#'
+#' @template details-gitignore
 #'
 #' @examples
 #'
@@ -166,77 +164,66 @@ doxy_edit <- function (
 
 #' Creates a doxygen vignette
 #'
-#' Creates an R Markdown wrapper for the doxygen documentation so that it can be viewed from within R with a call to \code{vignette()}.
+#' Creates an \R Markdown wrapper for the doxygen documentation, so that it can be viewed from within \R with a call to \code{vignette()}.
 #'
 #' @template param-pkg
-#' @template param-name
-#' @template param-index
-#' @param overwrite A boolean for whether to overwrite the file \code{pkg/vignettes/name.Rmd} if found.  Otherwise returns an error.  Default: \code{TRUE}
+#' @param index A string with the path relative to \code{inst/doc} of the doxygen \code{index.html} file. Default: \code{doxygen/html} (see \strong{Note}).
+#' @param viname A string giving the name of the \code{.Rmd} vignette file wrapping the documentation, as well as the name by which to retrieve the documentation using \code{vignette()}.  Default: \code{"pkgName-Doxygen.Rmd"}.
+#' @param vientry A character string specifying the vignette Index Entry to use.  Default: "pkgName C++ library documentation".
 #'
 #' @return \code{NULL}
 #'
-#' @details This function creates the file \code{vignettes/name.Rmd} in the package root folder, containing the necessary meta-data for viewing the Doxygen HTML documentation from within R with a call to \code{vignette()}.  When the vignette is built (e.g., with \code{R CMD build} or \code{devtools::build_vignettes()}), a file \code{inst/doc/name.html} is created, and it is this file which is opened by the call to \code{vignette("name")} after the package is installed.  The contents of \code{inst/doc/name.html} are simply a "redirect" to the Doxygen index file, \code{index/index.html}.
+#' @details This function creates the file \code{vignettes/viname.Rmd} in the package root folder, containing the necessary meta-data for viewing the Doxygen HTML documentation from within \R with a call to \code{vignette()}.  When the vignette is built (e.g., with \code{R CMD build} or \code{devtools::build_vignettes()}), a file \code{inst/doc/viname.html} is created, and it is this file which is opened by the call to \code{vignette("viname")} after the package is installed.  The contents of \code{inst/doc/viname.html} are simply a "redirect" to the Doxygen index file, \code{inst/doc/pathToIndex/index.html}.
 #'
-#' @note The call to \code{vignette()} will *only* open HTML files stored in the \code{doc} subfolder of an installed package.  Therefore the Doxygen documentation referred to by \code{index} must be stored in a subfolder of \code{inst/doc} for the call to \code{vignette()} post-installation to work.
+#' @template details-gitignore
+#'
+#' @note The call to \code{vignette()} will *only* open HTML files stored in the \code{doc} subfolder of an installed package.  Therefore the Doxygen documentation referred to by \code{pathToIndex} must be stored in a subfolder of \code{inst/doc} for the call to \code{vignette()} post-installation to work.
 #'
 #' @export
-doxy_vignette <- function(
-  pkg = ".",
-  name = "doxygenVignette.Rmd",
-  index = "doc/doxygen/html",
-  overwrite = FALSE
-) {
-  
-  # move to root directory
+doxy_vignette <- function(pkg = ".",
+                          index = "doxygen/html",
+                          viname, vientry) {
+  # run all commands from root folder
+  rootFolder <- find_root(pkg)
   initFolder <- getwd()
   on.exit(setwd(initFolder)) # resets to this even after error
-  pkg <- normalizePath(pkg, winslash = "/")
-  setwd(pkg)
-  if(length(grep("DESCRIPTION", dir())) == 0) {
-    stop("pkg is not the root directory of a package.")
+  setwd(rootFolder)
+
+  # set custom vignette elements
+
+  # vignette name
+  pkgName <- pkg_name(rootFolder)
+  if(missing(viname)) viname <- paste0(pkgName, "-Doxygen.Rmd")
+  if(tolower(tools::file_ext(viname)) != "rmd") {
+    viname <- paste0(viname, ".Rmd")
   }
-  
-  # path of doxygen index file relative to inst/doc
-  indexFile <- file.path("..", index, "index.html")
-  
-  # vignette name and file name
-  if(tolower(tools::file_ext(name)) != "rmd") {
-    name <- paste0(name, ".Rmd")
+  # index entry
+  if(missing(vientry)) {
+    vientry <- paste0(pkgName, " C++ library documentation")
   }
-  
-  # create directory vignettes if it doesn't exist
-  if (!dir.exists(file.path(pkg, "vignettes"))) {
-    dir.create(file.path(pkg, "vignettes"))
-  }
-  
-  # copy vignette template from rdoxygen to vignettes folder in new project 
-  vignette_path <- file.path(pkg, "vignettes", name)
-  suppressWarnings({
-    pass <- file.copy(
-      from = system.file(
-        "sys", 
-        "doxygenVignette.Rmd",
-        package = "rdoxygen"
-      ),
-      to = vignette_path,
-      overwrite = overwrite, 
-      recursive = TRUE
-    )
-  })
-  
-  # check if file name already exists
-  if(!pass) {
-    stop("Vignette file '", vignette_path, "' already exists. Not overwritten.")
-  }
-  
-  # modify template vignette to link to Doxygen doc
-  vignetteLines <- readLines(vignette_path)
-  vignetteLines <- gsub(
-    pattern = "@doxy::Redirect@",
-    replacement = indexFile,
-    x = vignetteLines
-  )
-  cat(vignetteLines, sep = "\n", file = vignette_path)
-  
+  # relative path from inst/doc/ to index.html
+  indexFile <- rel_path(baseFile = file.path(rootFolder, "inst", "doc",
+                                             viname),
+                        relFile = file.path(rootFolder, "inst", "doc",
+                                            index, "index.html"))
+
+
+  # create vignette folder if it doesn't exist
+  dir_create(file.path(rootFolder, "vignettes"))
+
+  # copy template doxyVignette to vignettes folder
+  vignetteFile <- file.path(rootFolder, "vignettes", viname)
+  add_vignette(vignetteFile)
+
+  # modify vignette template
+  vignetteLines <- readLines(vignetteFile)
+  vignetteLines <- gsub(pattern = "@doxy::Redirect@",
+                        replacement = indexFile,
+                        x = vignetteLines)
+  vignetteLines <- gsub(pattern = "@doxy::Index@",
+                        replacement = vientry,
+                        x = vignetteLines)
+  cat(vignetteLines, sep = "\n", file = vignetteFile)
+
   invisible(NULL)
 }
