@@ -19,7 +19,8 @@ RoxygenNote: 6.1.0
 Imports: 
     tools,
     rprojroot,
-    desc
+    desc,
+    yaml
 Suggests: 
     devtools,
     testthat,

@@ -15,11 +15,11 @@
 #' @keywords internal
 #'
 replace_tag <- function (fileStrings, tag, newVal) {
-  
+
   # get and count lines with the tag
   iLine  <- grep(paste0("^", tag, "\\>"), fileStrings)
   nLines <- length(iLine)
-  
+
   if (nLines == 0){
     # if tag is not present, add it with its value at the bottom
     line <- paste0(tag, "\t= ", newVal)
@@ -37,7 +37,7 @@ replace_tag <- function (fileStrings, tag, newVal) {
     }
   }
   fileStrings[iLine] <- line
-  
+
   return(fileStrings)
 }
 
@@ -78,4 +78,53 @@ pkg_name <- function(rootFolder) {
 #'
 check_for_doxygen <- function(){
   return(nchar(Sys.which("doxygen")) > 0)
+}
+
+# get path of one file relative to another
+# note: doesn't work if either inputs are folders, not files
+# as files needn't have extensions, can't distinguish the two by
+# name only, i.e., should use normalizePath(mustWork = TRUE, ...)
+rel_path <- function(relFile, baseFile) {
+  # split files by directory
+  rpaths <- normalizePath(relFile, winslash = "/",
+                          mustWork = FALSE)
+  rpaths <- strsplit(rpaths, "/")[[1]]
+  bpaths <- normalizePath(baseFile, winslash = "/",
+                          mustWork = FALSE)
+  bpaths <- strsplit(bpaths, "/")[[1]]
+  # find common root
+  rlen <- length(rpaths)
+  blen <- length(bpaths)
+  nmin <- min(rlen, blen)
+  nroot <- which.min(rpaths[1:nmin] == bpaths[1:nmin])
+  # construct relative path
+  do.call(file.path,
+          c(as.list(rep("..", blen-nroot)), as.list(rpaths[nroot:rlen])))
+}
+
+# adds vignette to vignettes folder
+# throws and error if an existing vignette has the given name
+# and wasn't created by rdoxygen,
+add_vignette <- function(vignetteFile) {
+  vignetteName <- basename(vignetteFile)
+  vignetteTemplate <- system.file("sys", "doxygenVignette.Rmd",
+                                  package = "rdoxygen")
+  # check if vignette exists
+  has_vignette <- file.exists(vignetteFile)
+  if(has_vignette) {
+    # if it exists, check if it was created with rdoxygen
+    yamlDoxygen <- read_yaml(vignetteFile)
+    yamlDoxygen <- vignetteYaml$params$doxygenVignette
+    has_vignette <- is.null(yamlDoxygen) ||
+      (is.logical(yamlDoxygen) && !yamlDoxygen)
+  }
+  if(has_vignette) {
+    stop("Existing vignette '", basename(vignetteFile),
+         "' not created by rdoxygen.  Not overwritten.")
+  } else {
+    file.copy(from = system.file("sys", "doxygenVignette.Rmd",
+                                 package = "rdoxygen"),
+              to = vignetteFile, overwrite = TRUE)
+  }
+  invisible(NULL)
 }
