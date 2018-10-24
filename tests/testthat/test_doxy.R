@@ -18,7 +18,7 @@ package.skeleton(name = pkgName,
 srcPath <- file.path(pkgRoot, "src")
 dir.create(srcPath, recursive = TRUE)
 file.copy(from = system.file("sys", "foo.cpp", package = "rdoxygen"),
-          to = file.path(pkgRoot, "foo.cpp"))
+          to = file.path(srcPath, "foo.cpp"))
 # path to doxygen
 doxyPath <- file.path(pkgRoot, "inst", "doc", "doxygen")
 
