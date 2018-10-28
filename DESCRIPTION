@@ -24,7 +24,8 @@ Imports:
 Suggests: 
     devtools,
     testthat,
-    knitr
+    knitr,
+    rmarkdown
 SystemRequirements: 
     doxygen
 VignetteBuilder: knitr
