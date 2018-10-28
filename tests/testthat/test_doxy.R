@@ -20,7 +20,7 @@ dir.create(srcPath, recursive = TRUE)
 file.copy(from = system.file("sys", "foo.cpp", package = "rdoxygen"),
           to = file.path(srcPath, "foo.cpp"))
 # path to doxygen
-doxyPath <- file.path(pkgRoot, "inst", "doc", "doxygen")
+doxyPath <- file.path(pkgRoot, "inst", "doxygen")
 
 #--- tests ---------------------------------------------------------------------
 
