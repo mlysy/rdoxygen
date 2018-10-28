@@ -40,3 +40,9 @@ src/*.dll
 
 # rendered doxygen documentation
 inst/doxygen/*
+inst/doc/doxygen/*
+
+# test vignettes
+vignettes/*
+
+
