@@ -18,12 +18,10 @@
 #' is created with default options.  To modify these options, see 
 #' \code{\link{doxy_vignette}}.
 #'
-#' @template details-gitignore
-#'
 #' @export
 doxy <- function(
   pkg = ".",
-  doxyfile = "inst/doc/doxygen/Doxyfile",
+  doxyfile = "inst/doxygen/Doxyfile",
   options = c(),
   vignette = FALSE
 ) {
@@ -74,7 +72,7 @@ doxy <- function(
 #' Creates a Doxygen configuration file and sets a few options:
 #'     \itemize{
 #'        \item{\code{INPUT = src/ inst/include}}
-#'        \item{\code{OUTPUT_DIRECTORY = inst/doc/doxygen/}}
+#'        \item{\code{OUTPUT_DIRECTORY = inst/doxygen/}}
 #'        \item{\code{GENERATE_LATEX = NO}}
 #'        \item{\code{PROJECT_NAME = name_of_R_package}}
 #'     }
@@ -83,8 +81,6 @@ doxy <- function(
 #' @template param-doxyfile
 #'
 #' @return \code{NULL}.
-#'
-#' @template details-gitignore
 #'
 #' @examples
 #'
@@ -95,7 +91,7 @@ doxy <- function(
 #' @export
 doxy_init <- function (
   pkg = ".",
-  doxyfile = "inst/doc/doxygen/Doxyfile"
+  doxyfile = "inst/doxygen/Doxyfile"
 ) {
 
   if(!check_for_doxygen()){
@@ -138,7 +134,7 @@ doxy_init <- function (
 #' @export
 doxy_edit <- function (
   pkg = ".",
-  doxyfile = "inst/doc/doxygen/Doxyfile",
+  doxyfile = "inst/doxygen/Doxyfile",
   options = c()
 ) {
 
@@ -181,8 +177,6 @@ doxy_edit <- function (
 #' by the call to \code{vignette("viname")} after the package is installed. 
 #' The contents of \code{inst/doc/viname.html} are simply a "redirect" to the Doxygen 
 #' index file, \code{inst/doc/pathToIndex/index.html}.
-#'
-#' @template details-gitignore
 #'
 #' @note The call to \code{vignette()} will *only* open HTML files stored in the 
 #' \code{doc} subfolder of an installed package.  Therefore the Doxygen documentation 

@@ -4,15 +4,19 @@
 \alias{doxy}
 \title{Calls doxygen for an \R package}
 \usage{
-doxy(pkg = ".", doxyfile = "inst/doc/doxygen/Doxyfile",
-  options = c(), vignette = FALSE)
+doxy(pkg = ".", doxyfile = "inst/doxygen/Doxyfile", options = c(),
+  vignette = FALSE)
 }
 \arguments{
-\item{pkg}{A string with the path to any subfolder of the \R package root directory.  Default: \code{"."}.}
+\item{pkg}{A string with the path to any subfolder of the \R package root 
+directory. Default: \code{"."}.}
 
-\item{doxyfile}{A string with the path to the \code{Doxyfile} relative to the package root folder indicated by \code{pkg}.  Default: \code{"inst/doc/doxygen/Doxyfile"}.}
+\item{doxyfile}{A string with the path to the \code{Doxyfile} relative 
+to the package root folder indicated by \code{pkg}.  
+Default: \code{"inst/doxygen/Doxyfile"}.}
 
-\item{options}{A named vector with new settings. The names represent the tags. A list of options can be found here: \url{https://www.stack.nl/~dimitri/doxygen/manual/config.html}.}
+\item{options}{A named vector with new settings. The names represent the tags. 
+A list of options can be found here: \url{https://www.stack.nl/~dimitri/doxygen/manual/config.html}.}
 
 \item{vignette}{A boolean. Should a vignette be added with \code{doxy_vignette}? 
 Default: \code{FALSE}.}
@@ -31,17 +35,4 @@ creates a vignette allowing the Doxygen documentation to be viewed
 from within \R with a call to \code{vignette()}.  The Doxygen vignette 
 is created with default options.  To modify these options, see 
 \code{\link{doxy_vignette}}.
-
-For git users: by default the Doxygen documentation is stored in \code{inst/doc/doxygen}, but this folder is often added to \code{.gitignore} (e.g., by \code{devtools::use_vignettes}).  To unignore some or all of the Doxygen documentation, you may wish to add the following lines to the package \code{.gitignore}:
-\preformatted{
-# ignore inst/doc, but allow its contents to be selectively unignored
-!inst/doc
-inst/doc/*
-
-# unignore just the Doxyfile (need Doxygen to recompile the docs)
-!inst/doc/doxygen/Doxyfile
-
-# unignore all the Doxygen documentation
-!inst/doc/doxygen
-}
 }

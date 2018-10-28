@@ -4,12 +4,15 @@
 \alias{doxy_init}
 \title{Prepares the R package structure for use with doxygen}
 \usage{
-doxy_init(pkg = ".", doxyfile = "inst/doc/doxygen/Doxyfile")
+doxy_init(pkg = ".", doxyfile = "inst/doxygen/Doxyfile")
 }
 \arguments{
-\item{pkg}{A string with the path to any subfolder of the \R package root directory.  Default: \code{"."}.}
+\item{pkg}{A string with the path to any subfolder of the \R package root 
+directory. Default: \code{"."}.}
 
-\item{doxyfile}{A string with the path to the \code{Doxyfile} relative to the package root folder indicated by \code{pkg}.  Default: \code{"inst/doc/doxygen/Doxyfile"}.}
+\item{doxyfile}{A string with the path to the \code{Doxyfile} relative 
+to the package root folder indicated by \code{pkg}.  
+Default: \code{"inst/doxygen/Doxyfile"}.}
 }
 \value{
 \code{NULL}.
@@ -18,24 +21,10 @@ doxy_init(pkg = ".", doxyfile = "inst/doc/doxygen/Doxyfile")
 Creates a Doxygen configuration file and sets a few options:
     \itemize{
        \item{\code{INPUT = src/ inst/include}}
-       \item{\code{OUTPUT_DIRECTORY = inst/doc/doxygen/}}
+       \item{\code{OUTPUT_DIRECTORY = inst/doxygen/}}
        \item{\code{GENERATE_LATEX = NO}}
        \item{\code{PROJECT_NAME = name_of_R_package}}
     }
-}
-\details{
-For git users: by default the Doxygen documentation is stored in \code{inst/doc/doxygen}, but this folder is often added to \code{.gitignore} (e.g., by \code{devtools::use_vignettes}).  To unignore some or all of the Doxygen documentation, you may wish to add the following lines to the package \code{.gitignore}:
-\preformatted{
-# ignore inst/doc, but allow its contents to be selectively unignored
-!inst/doc
-inst/doc/*
-
-# unignore just the Doxyfile (need Doxygen to recompile the docs)
-!inst/doc/doxygen/Doxyfile
-
-# unignore all the Doxygen documentation
-!inst/doc/doxygen
-}
 }
 \examples{
 
