@@ -5,11 +5,18 @@
 #' @template param-pkg
 #' @template param-doxyfile
 #' @template param-options
-#' @param vignette A boolean. Should a vignette be added with \code{doxy_vignette}? Default: \code{FALSE}.
+#' @param vignette A boolean. Should a vignette be added with \code{doxy_vignette}? 
+#' Default: \code{FALSE}.
 #'
 #' @return \code{NULL}
 #'
-#' @details This function will first create a \code{Doxyfile} with \code{\link{doxy_init}} if it doesn't yet exist.  Next, it runs \code{Doxygen} on the \code{Doxyfile}, and if \code{vignette = TRUE}, creates a vignette allowing the Doxygen documentation to be viewed from within \R with a call to \code{vignette()}.  The Doxygen vignette is created with default options.  To modify these options, see \code{\link{doxy_vignette}}.
+#' @details This function will first create a \code{Doxyfile} with 
+#' \code{\link{doxy_init}} if it doesn't yet exist.  Next, it runs 
+#' \code{Doxygen} on the \code{Doxyfile}, and if \code{vignette = TRUE}, 
+#' creates a vignette allowing the Doxygen documentation to be viewed 
+#' from within \R with a call to \code{vignette()}.  The Doxygen vignette 
+#' is created with default options.  To modify these options, see 
+#' \code{\link{doxy_vignette}}.
 #'
 #' @template details-gitignore
 #'
@@ -58,16 +65,6 @@ doxy <- function(
 
   # run doxygen on Doxyfile
   system2(command = "doxygen", args = doxyfile)
-
-  ## if(first_run) {
-  ##   message("\nYou may like to add some lines to your .gitignore file to track the Doxyfile with git:\n")
-  ##   message("# unignores inst/doc")
-  ##   message("!inst/doc")
-  ##   message("# ignore everything inside inst/doc but not inst/doc itself")
-  ##   message("inst/doc/*")
-  ##   message("# unignore Doxyfile")
-  ##   message("!inst/doc/doxygen/Doxyfile")
-  ## }
 
   return(invisible(NULL))
 }
@@ -162,25 +159,42 @@ doxy_edit <- function (
 
 #' Creates a doxygen vignette
 #'
-#' Creates an \R Markdown wrapper for the doxygen documentation, so that it can be viewed from within \R with a call to \code{vignette()}.
+#' Creates an \R Markdown wrapper for the doxygen documentation, so that it 
+#' can be viewed from within \R with a call to \code{vignette()}.
 #'
 #' @template param-pkg
-#' @param index A string with the path relative to \code{inst/doc} of the doxygen \code{index.html} file. Default: \code{doxygen/html} (see \strong{Note}).
-#' @param viname A string giving the name of the \code{.Rmd} vignette file wrapping the documentation, as well as the name by which to retrieve the documentation using \code{vignette()}.  Default: \code{"pkgName-Doxygen.Rmd"}.
-#' @param vientry A character string specifying the vignette Index Entry to use.  Default: "pkgName C++ library documentation".
+#' @param index A string with the path relative to \code{inst/doc} of the 
+#' doxygen \code{index.html} file. Default: \code{doxygen/html} (see \strong{Note}).
+#' @param viname A string giving the name of the \code{.Rmd} vignette file 
+#' wrapping the documentation, as well as the name by which to retrieve the 
+#' documentation using \code{vignette()}.  Default: \code{"pkgName-Doxygen.Rmd"}.
+#' @param vientry A character string specifying the vignette Index Entry to use.  
+#' Default: "pkgName C++ library documentation".
 #'
 #' @return \code{NULL}
 #'
-#' @details This function creates the file \code{vignettes/viname.Rmd} in the package root folder, containing the necessary meta-data for viewing the Doxygen HTML documentation from within \R with a call to \code{vignette()}.  When the vignette is built (e.g., with \code{R CMD build} or \code{devtools::build_vignettes()}), a file \code{inst/doc/viname.html} is created, and it is this file which is opened by the call to \code{vignette("viname")} after the package is installed.  The contents of \code{inst/doc/viname.html} are simply a "redirect" to the Doxygen index file, \code{inst/doc/pathToIndex/index.html}.
+#' @details This function creates the file \code{vignettes/viname.Rmd} in the package 
+#' root folder, containing the necessary meta-data for viewing the Doxygen HTML 
+#' documentation from within \R with a call to \code{vignette()}.  When the vignette 
+#' is built (e.g., with \code{R CMD build} or \code{devtools::build_vignettes()}), 
+#' a file \code{inst/doc/viname.html} is created, and it is this file which is opened 
+#' by the call to \code{vignette("viname")} after the package is installed. 
+#' The contents of \code{inst/doc/viname.html} are simply a "redirect" to the Doxygen 
+#' index file, \code{inst/doc/pathToIndex/index.html}.
 #'
 #' @template details-gitignore
 #'
-#' @note The call to \code{vignette()} will *only* open HTML files stored in the \code{doc} subfolder of an installed package.  Therefore the Doxygen documentation referred to by \code{pathToIndex} must be stored in a subfolder of \code{inst/doc} for the call to \code{vignette()} post-installation to work.
+#' @note The call to \code{vignette()} will *only* open HTML files stored in the 
+#' \code{doc} subfolder of an installed package.  Therefore the Doxygen documentation 
+#' referred to by \code{pathToIndex} must be stored in a subfolder of \code{inst/doc} 
+#' for the call to \code{vignette()} post-installation to work.
 #'
 #' @export
-doxy_vignette <- function(pkg = ".",
-                          index = "doxygen/html",
-                          viname, vientry) {
+doxy_vignette <- function(
+  pkg = ".",
+  index = "doxygen/html",
+  viname, vientry
+) {
   # run all commands from root folder
   rootFolder <- find_root(pkg)
   initFolder <- getwd()

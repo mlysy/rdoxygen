@@ -9,20 +9,32 @@ doxy_vignette(pkg = ".", index = "doxygen/html", viname, vientry)
 \arguments{
 \item{pkg}{A string with the path to any subfolder of the \R package root directory.  Default: \code{"."}.}
 
-\item{index}{A string with the path relative to \code{inst/doc} of the doxygen \code{index.html} file. Default: \code{doxygen/html} (see \strong{Note}).}
+\item{index}{A string with the path relative to \code{inst/doc} of the 
+doxygen \code{index.html} file. Default: \code{doxygen/html} (see \strong{Note}).}
 
-\item{viname}{A string giving the name of the \code{.Rmd} vignette file wrapping the documentation, as well as the name by which to retrieve the documentation using \code{vignette()}.  Default: \code{"pkgName-Doxygen.Rmd"}.}
+\item{viname}{A string giving the name of the \code{.Rmd} vignette file 
+wrapping the documentation, as well as the name by which to retrieve the 
+documentation using \code{vignette()}.  Default: \code{"pkgName-Doxygen.Rmd"}.}
 
-\item{vientry}{A character string specifying the vignette Index Entry to use.  Default: "pkgName C++ library documentation".}
+\item{vientry}{A character string specifying the vignette Index Entry to use.
+Default: "pkgName C++ library documentation".}
 }
 \value{
 \code{NULL}
 }
 \description{
-Creates an \R Markdown wrapper for the doxygen documentation, so that it can be viewed from within \R with a call to \code{vignette()}.
+Creates an \R Markdown wrapper for the doxygen documentation, so that it 
+can be viewed from within \R with a call to \code{vignette()}.
 }
 \details{
-This function creates the file \code{vignettes/viname.Rmd} in the package root folder, containing the necessary meta-data for viewing the Doxygen HTML documentation from within \R with a call to \code{vignette()}.  When the vignette is built (e.g., with \code{R CMD build} or \code{devtools::build_vignettes()}), a file \code{inst/doc/viname.html} is created, and it is this file which is opened by the call to \code{vignette("viname")} after the package is installed.  The contents of \code{inst/doc/viname.html} are simply a "redirect" to the Doxygen index file, \code{inst/doc/pathToIndex/index.html}.
+This function creates the file \code{vignettes/viname.Rmd} in the package 
+root folder, containing the necessary meta-data for viewing the Doxygen HTML 
+documentation from within \R with a call to \code{vignette()}.  When the vignette 
+is built (e.g., with \code{R CMD build} or \code{devtools::build_vignettes()}), 
+a file \code{inst/doc/viname.html} is created, and it is this file which is opened 
+by the call to \code{vignette("viname")} after the package is installed. 
+The contents of \code{inst/doc/viname.html} are simply a "redirect" to the Doxygen 
+index file, \code{inst/doc/pathToIndex/index.html}.
 
 For git users: by default the Doxygen documentation is stored in \code{inst/doc/doxygen}, but this folder is often added to \code{.gitignore} (e.g., by \code{devtools::use_vignettes}).  To unignore some or all of the Doxygen documentation, you may wish to add the following lines to the package \code{.gitignore}:
 \preformatted{
@@ -38,5 +50,8 @@ inst/doc/*
 }
 }
 \note{
-The call to \code{vignette()} will *only* open HTML files stored in the \code{doc} subfolder of an installed package.  Therefore the Doxygen documentation referred to by \code{pathToIndex} must be stored in a subfolder of \code{inst/doc} for the call to \code{vignette()} post-installation to work.
+The call to \code{vignette()} will *only* open HTML files stored in the 
+\code{doc} subfolder of an installed package.  Therefore the Doxygen documentation 
+referred to by \code{pathToIndex} must be stored in a subfolder of \code{inst/doc} 
+for the call to \code{vignette()} post-installation to work.
 }
