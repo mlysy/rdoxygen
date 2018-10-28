@@ -3,3 +3,5 @@
 ^\.travis\.yml$
 ^cran-comments\.md$
 ^News\.md$
+^man-roxygen$
+^rdoxygen-design\.md$

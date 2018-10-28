@@ -1,23 +1,30 @@
 Package: rdoxygen
 Title: Create Doxygen Documentation for Source Code
-Version: 1.0.0.9000
+Version: 2.0.0
 Authors@R: c(
-  person("Clemens", "Schmid", email = "clemens@nevrome.de", role = c("cre", "cph", "aut"))
+  person("Clemens", "Schmid", email = "clemens@nevrome.de", role = c("cre", "cph", "aut")),
+  person("Martin", "Lysy", email = "mlysy@uwaterloo.ca", role = c("aut"))
   )
 Maintainer: Clemens Schmid <clemens@nevrome.de>
 Description: Create doxygen documentation for source code in R packages. 
   Includes a RStudio Addin, that allows to trigger the doxygenize process.
-Date: 2017-05-23
-Depends: R (>= 3.3.3)
+Date: 2018-10-01
+Depends: R (>= 3.3)
 License: GPL-2 | file LICENSE
 Encoding: UTF-8
 LazyData: true
 URL: https://github.com/nevrome/rdoxygen
 BugReports: https://github.com/nevrome/rdoxygen/issues
-RoxygenNote: 6.0.1
+RoxygenNote: 6.1.0
 Imports: 
-    devtools (>= 1.12.0)
+    tools,
+    rprojroot,
+    desc,
+    yaml
 Suggests: 
-    testthat
+    devtools,
+    testthat,
+    knitr
 SystemRequirements: 
     doxygen
+VignetteBuilder: knitr

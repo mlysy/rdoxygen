@@ -4,24 +4,19 @@
 \alias{doxy_edit}
 \title{Edits an existing Doxyfile}
 \usage{
-doxy_edit(pathToDoxyfile = "./inst/doxygen/Doxyfile", options = c())
+doxy_edit(pkg = ".", doxyfile = "inst/doc/doxygen/Doxyfile",
+  options = c())
 }
 \arguments{
-\item{pathToDoxyfile}{A string with the relative path to the Doxyfile.
-Default: "./inst/doxygen/Doxyfile"}
+\item{pkg}{A string with the path to any subfolder of the \R package root directory.  Default: \code{"."}.}
 
-\item{options}{A named vector with new settings. The names represent
-the tags.  
-A list of options can be found here:
-\url{https://www.stack.nl/~dimitri/doxygen/manual/config.html}}
+\item{doxyfile}{A string with the path to the \code{Doxyfile} relative to the package root folder indicated by \code{pkg}.  Default: \code{"inst/doc/doxygen/Doxyfile"}.}
+
+\item{options}{A named vector with new settings. The names represent the tags. A list of options can be found here: \url{https://www.stack.nl/~dimitri/doxygen/manual/config.html}.}
+}
+\value{
+\code{NULL}
 }
 \description{
 Changes options in doxygen config files.
-}
-\examples{
-
-\dontrun{
-doxy_edit(options = c("EXTRACT_PRIVATE" = "YES"))
-}
-
 }

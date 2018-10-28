@@ -1,0 +1,13 @@
+---
+pagetitle: "@doxy::Index@"
+output:
+  rmarkdown::html_vignette
+params:
+  doxygenVignette: true
+vignette: >
+  %\VignetteIndexEntry{@doxy::Index@}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+<meta http-equiv="refresh" content="0; URL=@doxy::Redirect@">
