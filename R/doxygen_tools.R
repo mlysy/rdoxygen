@@ -51,11 +51,9 @@ doxy <- function(
     )
   }
 
-  # run doxy_vignette if vignette = TRUE and vignette file does not yet exist
+  # run doxy_vignette if vignette = TRUE
   if (vignette) {
-    if (!file.exists(file.path("vignettes", name))) {
-      doxy_vignette(pkg = pkg)
-    }
+    doxy_vignette(pkg = pkg)
   }
 
   # run doxygen on Doxyfile
