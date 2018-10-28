@@ -19,6 +19,7 @@ RoxygenNote: 6.1.0
 Imports: 
     tools,
     rprojroot,
+    Rcpp,
     desc,
     yaml
 Suggests: 
@@ -29,3 +30,4 @@ Suggests:
 SystemRequirements: 
     doxygen
 VignetteBuilder: knitr
+LinkingTo: Rcpp

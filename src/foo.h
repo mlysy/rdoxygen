@@ -1,21 +1,23 @@
+/*! \mainpage rdoxygen example index page
+ *
+ * rdoxygen test page
+ * 
+ * A test function is documented here: \link foo.h \endlink
+ */
 
 #ifndef FOOREGISTER_FOO_H
 #define FOOREGISTER_FOO_H
 
-#include <R.h>
-#include <Rinternals.h>
+#include <Rcpp.h>
 
-void bar(double *x, int *nin);
+/**
+ * @file
+ *
+ * Example function: doxygen documentation
+ *
+ * This is the roxygen documentation of an example function.
+ */
+double docu_test_function(double a, double b);
 
-void qux(int *nin, double *sin, double *tin, double *x);
-
-SEXP baz(SEXP x);
-
-SEXP quux(SEXP nin, SEXP sin, SEXP tin);
-
-void F77_SUB(foo)(double *x, int *nin);
-
-void F77_SUB(quf)(int *nin, double *sin, double *tin, double *x);
-
-#endif /* FOOREGISTER_FOO_H */
+#endif //FOOREGISTER_FOO_H
 
