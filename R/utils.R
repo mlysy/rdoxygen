@@ -65,7 +65,7 @@ dir_create <- function(dirName) {
 
 # return output of usethis functions silently
 silent_out <- function(expr) {
-  tmp <- capture.output(expr)
+  tmp <- utils::capture.output(expr)
   invisible(NULL)
 }
 

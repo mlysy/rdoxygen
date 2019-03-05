@@ -17,6 +17,7 @@ BugReports: https://github.com/nevrome/rdoxygen/issues
 RoxygenNote: 6.1.1
 Imports: 
     tools,
+    utils,
     rprojroot,
     desc,
     yaml,
