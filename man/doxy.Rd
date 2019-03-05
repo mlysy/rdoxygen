@@ -24,17 +24,4 @@ Creates doxygen documentation and optionally wraps it as an \R vignette.
 }
 \details{
 This function will first create a \code{Doxyfile} with \code{\link{doxy_init}} if it doesn't yet exist.  Next, it runs \code{Doxygen} on the \code{Doxyfile}, and if \code{vignette = TRUE}, creates a vignette allowing the Doxygen documentation to be viewed from within \R with a call to \code{vignette()}.  The Doxygen vignette is created with default options.  To modify these options, see \code{\link{doxy_vignette}}.
-
-For git users: by default the Doxygen documentation is stored in \code{inst/doc/doxygen}, but this folder is often added to \code{.gitignore} (e.g., by \code{devtools::use_vignettes}).  To unignore some or all of the Doxygen documentation, you may wish to add the following lines to the package \code{.gitignore}:
-\preformatted{
-# ignore inst/doc, but allow its contents to be selectively unignored
-!inst/doc
-inst/doc/*
-
-# unignore just the Doxyfile (need Doxygen to recompile the docs)
-!inst/doc/doxygen/Doxyfile
-
-# unignore all the Doxygen documentation
-!inst/doc/doxygen
-}
 }

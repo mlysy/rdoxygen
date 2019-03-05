@@ -18,7 +18,7 @@ doxy_init(pkg = ".", doxyfile = "inst/doxygen/Doxyfile")
 Creates a Doxygen configuration file and sets a few options:
     \itemize{
        \item{\code{INPUT = src/ inst/include}}
-       \item{\code{OUTPUT_DIRECTORY = inst/doc/doxygen/}}
+       \item{\code{OUTPUT_DIRECTORY = inst/doxygen/}}
        \item{\code{GENERATE_LATEX = NO}}
        \item{\code{HIDE_UNDOC_MEMBERS = YES}}
        \item{\code{USE_MATHJAX = YES}}
@@ -26,18 +26,7 @@ Creates a Doxygen configuration file and sets a few options:
     }
 }
 \details{
-For git users: by default the Doxygen documentation is stored in \code{inst/doc/doxygen}, but this folder is often added to \code{.gitignore} (e.g., by \code{devtools::use_vignettes}).  To unignore some or all of the Doxygen documentation, you may wish to add the following lines to the package \code{.gitignore}:
-\preformatted{
-# ignore inst/doc, but allow its contents to be selectively unignored
-!inst/doc
-inst/doc/*
-
-# unignore just the Doxyfile (need Doxygen to recompile the docs)
-!inst/doc/doxygen/Doxyfile
-
-# unignore all the Doxygen documentation
-!inst/doc/doxygen
-}
+While the package developer is free to change the \code{OUTPUT_DIRECTORY} to wherever they like, the default value above is suggested for compatibility with the \pkg{devtools} package authoring workflow.  See \code{\link{doxy_vignette}} for details.
 }
 \examples{
 

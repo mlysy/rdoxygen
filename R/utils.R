@@ -144,8 +144,7 @@ add_Makefile <- function() {
   has_makefile <- file.exists(makeDest) &&
     (readLines(makeDest, n = 1) != readLines(makeSource, n = 1))
   if(has_makefile) {
-    message("Existing Makefile '", makeDest,
-            "' not created by rdoxygen.  Not overwritten.")
+    message("Existing 'vignettes/Makefile' not created by rdoxygen.  Not overwritten.\nPlease see ?doxy_vignette for instructions to edit manually.")
   } else {
     file.copy(from = makeSource,
               to = makeDest, overwrite = TRUE)
