@@ -16,7 +16,7 @@
 #' @export
 doxy <- function(
   pkg = ".",
-  doxyfile = "inst/doc/doxygen/Doxyfile",
+  doxyfile = "inst/doxygen/Doxyfile",
   options = c(),
   vignette = FALSE
 ) {
@@ -53,9 +53,9 @@ doxy <- function(
 
   # run doxy_vignette if vignette = TRUE and vignette file does not yet exist
   if (vignette) {
-    if (!file.exists(file.path("vignettes", name))) {
+    ## if (!file.exists(file.path("vignettes", name))) {
       doxy_vignette(pkg = pkg)
-    }
+    ## }
   }
 
   # run doxygen on Doxyfile
@@ -81,6 +81,8 @@ doxy <- function(
 #'        \item{\code{INPUT = src/ inst/include}}
 #'        \item{\code{OUTPUT_DIRECTORY = inst/doc/doxygen/}}
 #'        \item{\code{GENERATE_LATEX = NO}}
+#'        \item{\code{HIDE_UNDOC_MEMBERS = YES}}
+#'        \item{\code{USE_MATHJAX = YES}}
 #'        \item{\code{PROJECT_NAME = name_of_R_package}}
 #'     }
 #'
@@ -100,7 +102,7 @@ doxy <- function(
 #' @export
 doxy_init <- function (
   pkg = ".",
-  doxyfile = "inst/doc/doxygen/Doxyfile"
+  doxyfile = "inst/doxygen/Doxyfile"
 ) {
 
   if(!check_for_doxygen()){
@@ -123,6 +125,8 @@ doxy_init <- function (
   doxyfile_lines <- readLines(doxyfile)
   doxyfile_lines <- replace_tag(doxyfile_lines, "INPUT", "src/ inst/include")
   doxyfile_lines <- replace_tag(doxyfile_lines, "OUTPUT_DIRECTORY", doxyFolder)
+  doxyfile_lines <- replace_tag(doxyfile_lines, "HIDE_UNDOC_MEMBERS", "YES")
+  doxyfile_lines <- replace_tag(doxyfile_lines, "USE_MATHJAX", "YES")
   doxyfile_lines <- replace_tag(doxyfile_lines, "GENERATE_LATEX", "NO")
   doxyfile_lines <- replace_tag(doxyfile_lines, "PROJECT_NAME", pkg_name(rootFolder))
   cat(doxyfile_lines, file = doxyfile, sep = "\n")
@@ -143,7 +147,7 @@ doxy_init <- function (
 #' @export
 doxy_edit <- function (
   pkg = ".",
-  doxyfile = "inst/doc/doxygen/Doxyfile",
+  doxyfile = "inst/doxygen/Doxyfile",
   options = c()
 ) {
 
@@ -209,7 +213,8 @@ doxy_vignette <- function(pkg = ".",
 
 
   # create vignette folder if it doesn't exist
-  dir_create(file.path(rootFolder, "vignettes"))
+  ## dir_create(file.path(rootFolder, "vignettes"))
+  silent_out(usethis::use_directory("vignettes", ignore = FALSE))
 
   # copy template doxyVignette to vignettes folder
   vignetteFile <- file.path(rootFolder, "vignettes", viname)
@@ -224,6 +229,22 @@ doxy_vignette <- function(pkg = ".",
                         replacement = vientry,
                         x = vignetteLines)
   cat(vignetteLines, sep = "\n", file = vignetteFile)
+
+
+  # devtools compatibility
+  add_Makefile() # add vignettes/Makefile
+  # ignore vignette source in package tarball
+  silent_out({
+    usethis::use_build_ignore(file.path("vignettes", "Makefile"))
+    usethis::use_build_ignore(file.path("inst", "doxygen"))
+  })
+
+  # create vignette dependencies
+  silent_out({
+    desc::desc_set_dep("knitr", "Suggests")
+    desc::desc_set_dep("rmarkdown", "Suggests")
+    desc::desc_set("VignetteBuilder", "knitr")
+  })
 
   invisible(NULL)
 }

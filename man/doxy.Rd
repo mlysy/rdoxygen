@@ -4,8 +4,8 @@
 \alias{doxy}
 \title{Calls doxygen for an \R package}
 \usage{
-doxy(pkg = ".", doxyfile = "inst/doc/doxygen/Doxyfile",
-  options = c(), vignette = FALSE)
+doxy(pkg = ".", doxyfile = "inst/doxygen/Doxyfile", options = c(),
+  vignette = FALSE)
 }
 \arguments{
 \item{pkg}{A string with the path to any subfolder of the \R package root directory.  Default: \code{"."}.}

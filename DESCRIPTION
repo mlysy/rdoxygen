@@ -1,6 +1,6 @@
 Package: rdoxygen
 Title: Create Doxygen Documentation for Source Code
-Version: 2.0.0
+Version: 2.0.0.9000
 Authors@R: c(
   person("Clemens", "Schmid", email = "clemens@nevrome.de", role = c("cre", "cph", "aut")),
   person("Martin", "Lysy", email = "mlysy@uwaterloo.ca", role = c("aut"))
@@ -15,16 +15,14 @@ Encoding: UTF-8
 LazyData: true
 URL: https://github.com/nevrome/rdoxygen
 BugReports: https://github.com/nevrome/rdoxygen/issues
-RoxygenNote: 6.1.0
+RoxygenNote: 6.1.1
 Imports: 
     tools,
     rprojroot,
     desc,
-    yaml
+    yaml,
+    usethis
 Suggests: 
-    devtools,
-    testthat,
-    knitr
+    testthat
 SystemRequirements: 
     doxygen
-VignetteBuilder: knitr

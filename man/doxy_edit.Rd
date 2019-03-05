@@ -4,7 +4,7 @@
 \alias{doxy_edit}
 \title{Edits an existing Doxyfile}
 \usage{
-doxy_edit(pkg = ".", doxyfile = "inst/doc/doxygen/Doxyfile",
+doxy_edit(pkg = ".", doxyfile = "inst/doxygen/Doxyfile",
   options = c())
 }
 \arguments{

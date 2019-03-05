@@ -4,7 +4,7 @@
 \alias{doxy_init}
 \title{Prepares the R package structure for use with doxygen}
 \usage{
-doxy_init(pkg = ".", doxyfile = "inst/doc/doxygen/Doxyfile")
+doxy_init(pkg = ".", doxyfile = "inst/doxygen/Doxyfile")
 }
 \arguments{
 \item{pkg}{A string with the path to any subfolder of the \R package root directory.  Default: \code{"."}.}
@@ -20,6 +20,8 @@ Creates a Doxygen configuration file and sets a few options:
        \item{\code{INPUT = src/ inst/include}}
        \item{\code{OUTPUT_DIRECTORY = inst/doc/doxygen/}}
        \item{\code{GENERATE_LATEX = NO}}
+       \item{\code{HIDE_UNDOC_MEMBERS = YES}}
+       \item{\code{USE_MATHJAX = YES}}
        \item{\code{PROJECT_NAME = name_of_R_package}}
     }
 }
