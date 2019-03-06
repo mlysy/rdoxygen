@@ -8,8 +8,6 @@ R package for the automatic creation of [doxygen](http://www.doxygen.org) docume
 
 For installation and quickstart instructions please see the following vignette: [**rdoxygen: Documentation of C++ source code in R**](https://github.com/nevrome/rdoxygen/blob/master/vignettes/rdoxygen-quicktut.Rmd)
 
-### Licence
-
 The code in this repository is based on [Corentin M. Barbus](http://spatcontrol.net/SpatialControl/about/) answer to this [stackoverflow question](http://stackoverflow.com/questions/20713521/using-roxygen2-and-doxygen-on-the-same-package). [Clemens Schmid](https://nevrome.de/) transformed
 it into an R package. [Martin Lysy](https://uwaterloo.ca/statistics-and-actuarial-science/people-profiles/martin-lysy) made significant contributions to the implementation and functionality.
 
