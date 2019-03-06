@@ -6,8 +6,8 @@ Authors@R: c(
   person("Martin", "Lysy", email = "mlysy@uwaterloo.ca", role = c("aut"))
   )
 Maintainer: Clemens Schmid <clemens@nevrome.de>
-Description: Create doxygen documentation for source code in R packages. 
-  Includes a RStudio Addin, that allows to trigger the doxygenize process.
+Description: Create 'doxygen' documentation for source code in R packages, and optionally 
+  make it accessible as a R vignette.  Includes a 'RStudio' Addin to easily trigger the doxygenize process.
 Date: 2018-10-01
 Depends: R (>= 3.3)
 License: GPL-2 | file LICENSE
@@ -15,19 +15,19 @@ Encoding: UTF-8
 LazyData: true
 URL: https://github.com/nevrome/rdoxygen
 BugReports: https://github.com/nevrome/rdoxygen/issues
-RoxygenNote: 6.1.0
+RoxygenNote: 6.1.1
 Imports: 
     tools,
+    utils,
     rprojroot,
-    Rcpp,
     desc,
-    yaml
+    yaml,
+    usethis
 Suggests: 
-    devtools,
     testthat,
     knitr,
     rmarkdown
 SystemRequirements: 
     doxygen
-VignetteBuilder: knitr
-LinkingTo: Rcpp
+VignetteBuilder: 
+    knitr

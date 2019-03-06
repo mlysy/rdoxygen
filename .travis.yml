@@ -3,18 +3,9 @@
 language: R
 cache: packages
 
-matrix:
-  include:
-    - os: linux
-      dist: trusty
-      sudo: required
-      env: R_CODECOV=true
-      r_check_args: '--use-valgrind'
-
 addons:
   apt:
     packages:
-    - valgrind
     - doxygen
 
 warnings_are_errors: true

@@ -10,13 +10,11 @@
 #'
 #' @return \code{NULL}
 #'
-#' @details This function will first create a \code{Doxyfile} with 
-#' \code{\link{doxy_init}} if it doesn't yet exist.  Next, it runs 
-#' \code{Doxygen} on the \code{Doxyfile}, and if \code{vignette = TRUE}, 
-#' creates a vignette allowing the Doxygen documentation to be viewed 
-#' from within \R with a call to \code{vignette()}.  The Doxygen vignette 
-#' is created with default options.  To modify these options, see 
-#' \code{\link{doxy_vignette}}.
+#' @details This function will first create a \code{Doxyfile} with \code{\link{doxy_init}} 
+#' if it doesn't yet exist. Next, it runs \code{Doxygen} on the \code{Doxyfile}, and if 
+#' \code{vignette = TRUE}, creates a vignette allowing the Doxygen documentation to be viewed 
+#' from within \R with a call to \code{vignette()}. The Doxygen vignette is created with 
+#' default options. To modify these options, see \code{\link{doxy_vignette}}.
 #'
 #' @export
 doxy <- function(
@@ -58,7 +56,9 @@ doxy <- function(
 
   # run doxy_vignette if vignette = TRUE
   if (vignette) {
-    doxy_vignette(pkg = pkg)
+    ## if (!file.exists(file.path("vignettes", name))) {
+      doxy_vignette(pkg = pkg)
+    ## }
   }
 
   # run doxygen on Doxyfile
@@ -74,11 +74,17 @@ doxy <- function(
 #'        \item{\code{INPUT = src/ inst/include}}
 #'        \item{\code{OUTPUT_DIRECTORY = inst/doxygen/}}
 #'        \item{\code{GENERATE_LATEX = NO}}
+#'        \item{\code{HIDE_UNDOC_MEMBERS = YES}}
+#'        \item{\code{USE_MATHJAX = YES}}
 #'        \item{\code{PROJECT_NAME = name_of_R_package}}
 #'     }
 #'
 #' @template param-pkg
 #' @template param-doxyfile
+#'
+#' @details While the package developer is free to change the \code{OUTPUT_DIRECTORY} 
+#' to wherever they like, the default value above is suggested for compatibility with the 
+#' \pkg{devtools} package authoring workflow. See \code{\link{doxy_vignette}} for details.
 #'
 #' @return \code{NULL}.
 #'
@@ -114,6 +120,8 @@ doxy_init <- function (
   doxyfile_lines <- readLines(doxyfile)
   doxyfile_lines <- replace_tag(doxyfile_lines, "INPUT", "src/ inst/include")
   doxyfile_lines <- replace_tag(doxyfile_lines, "OUTPUT_DIRECTORY", doxyFolder)
+  doxyfile_lines <- replace_tag(doxyfile_lines, "HIDE_UNDOC_MEMBERS", "YES")
+  doxyfile_lines <- replace_tag(doxyfile_lines, "USE_MATHJAX", "YES")
   doxyfile_lines <- replace_tag(doxyfile_lines, "GENERATE_LATEX", "NO")
   doxyfile_lines <- replace_tag(doxyfile_lines, "PROJECT_NAME", pkg_name(rootFolder))
   cat(doxyfile_lines, file = doxyfile, sep = "\n")
@@ -159,36 +167,39 @@ doxy_edit <- function (
 #' can be viewed from within \R with a call to \code{vignette()}.
 #'
 #' @template param-pkg
-#' @param index A string with the path relative to \code{inst/doc} of the 
-#' doxygen \code{index.html} file. Default: \code{doxygen/html} (see \strong{Note}).
-#' @param viname A string giving the name of the \code{.Rmd} vignette file 
-#' wrapping the documentation, as well as the name by which to retrieve the 
-#' documentation using \code{vignette()}.  Default: \code{"pkgName-Doxygen.Rmd"}.
-#' @param vientry A character string specifying the vignette Index Entry to use.  
+#' @param index A string with the path relative to \code{inst/doxygen} of the doxygen 
+#' \code{index.html} file. Default: \code{html} (see \strong{Note}).
+#' @param viname A string giving the name of the \code{.Rmd} vignette file wrapping the 
+#' documentation, as well as the name by which to retrieve the documentation using 
+#' \code{vignette()}.  Default: \code{"pkgName-Doxygen.Rmd"}.
+#' @param vientry A character string specifying the vignette Index Entry to use.
 #' Default: "pkgName C++ library documentation".
 #'
 #' @return \code{NULL}
 #'
 #' @details This function creates the file \code{vignettes/viname.Rmd} in the package 
-#' root folder, containing the necessary meta-data for viewing the Doxygen HTML 
-#' documentation from within \R with a call to \code{vignette()}.  When the vignette 
-#' is built (e.g., with \code{R CMD build} or \code{devtools::build_vignettes()}), 
-#' a file \code{inst/doc/viname.html} is created, and it is this file which is opened 
-#' by the call to \code{vignette("viname")} after the package is installed. 
-#' The contents of \code{inst/doc/viname.html} are simply a "redirect" to the Doxygen 
-#' index file, \code{inst/doc/pathToIndex/index.html}.
+#' root folder, containing the necessary meta-data for viewing the Doxygen HTML documentation 
+#' from within \R with a call to \code{vignette()}.
 #'
-#' @note The call to \code{vignette()} will *only* open HTML files stored in the 
-#' \code{doc} subfolder of an installed package.  Therefore the Doxygen documentation 
-#' referred to by \code{pathToIndex} must be stored in a subfolder of \code{inst/doc} 
-#' for the call to \code{vignette()} post-installation to work.
+#' @note The call to \code{vignette()} will *only* open HTML files stored in the \code{doc} 
+#' subfolder of an installed package. Therefore, a natural location for the doxygen documentation 
+#' (doxydoc) is in \code{inst/doc/doxygen}. However, the latest version of \pkg{devtools} 
+#' incontrovertibly deletes \code{inst/doc} during the build/install process. Due to the 
+#' ubiquitous usage of \pkg{devtools} among \R package developers, the doxydoc is stored here 
+#' in \code{inst/doxygen}, and during the build process, moved (or technically, copied and 
+#' source added to \code{.Rbuildignore}) via a \code{vignettes/Makefile}.  Packages with their 
+#' own such \code{Makefile} will not have it overwritten, and developers may view the default 
+#' \code{Makefile} provided by \pkg{rdoxygen} with the call
+#' \preformatted{
+#' cat(readLines(system.file("sys", "Makefile",
+#'                           package = "rdoxygen")), sep = "\n")
+#' }
 #'
 #' @export
-doxy_vignette <- function(
-  pkg = ".",
-  index = "doxygen/html",
-  viname, vientry
-) {
+doxy_vignette <- function(pkg = ".",
+                          index = "html",
+                          viname, vientry) {
+  
   # run all commands from root folder
   rootFolder <- find_root(pkg)
   initFolder <- getwd()
@@ -207,15 +218,16 @@ doxy_vignette <- function(
   if(missing(vientry)) {
     vientry <- paste0(pkgName, " C++ library documentation")
   }
-  # relative path from inst/doc/ to index.html
-  indexFile <- rel_path(baseFile = file.path(rootFolder, "inst", "doc",
+  # relative path from inst/doxygen to index.html
+  indexFile <- rel_path(baseFile = file.path(rootFolder, "inst", "doxygen",
                                              viname),
-                        relFile = file.path(rootFolder, "inst", "doc",
+                        relFile = file.path(rootFolder, "inst", "doxygen",
                                             index, "index.html"))
 
 
   # create vignette folder if it doesn't exist
-  dir_create(file.path(rootFolder, "vignettes"))
+  ## dir_create(file.path(rootFolder, "vignettes"))
+  silent_out(usethis::use_directory("vignettes", ignore = FALSE))
 
   # copy template doxyVignette to vignettes folder
   vignetteFile <- file.path(rootFolder, "vignettes", viname)
@@ -230,6 +242,22 @@ doxy_vignette <- function(
                         replacement = vientry,
                         x = vignetteLines)
   cat(vignetteLines, sep = "\n", file = vignetteFile)
+
+
+  # devtools compatibility
+  add_Makefile() # add vignettes/Makefile
+  # ignore vignette source in package tarball
+  silent_out({
+    usethis::use_build_ignore(file.path("vignettes", "Makefile"))
+    usethis::use_build_ignore(file.path("inst", "doxygen"))
+  })
+
+  # create vignette dependencies
+  silent_out({
+    desc::desc_set_dep("knitr", "Suggests")
+    desc::desc_set_dep("rmarkdown", "Suggests")
+    desc::desc_set("VignetteBuilder", "knitr")
+  })
 
   invisible(NULL)
 }

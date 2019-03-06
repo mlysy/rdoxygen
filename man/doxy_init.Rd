@@ -23,8 +23,15 @@ Creates a Doxygen configuration file and sets a few options:
        \item{\code{INPUT = src/ inst/include}}
        \item{\code{OUTPUT_DIRECTORY = inst/doxygen/}}
        \item{\code{GENERATE_LATEX = NO}}
+       \item{\code{HIDE_UNDOC_MEMBERS = YES}}
+       \item{\code{USE_MATHJAX = YES}}
        \item{\code{PROJECT_NAME = name_of_R_package}}
     }
+}
+\details{
+While the package developer is free to change the \code{OUTPUT_DIRECTORY} 
+to wherever they like, the default value above is suggested for compatibility with the 
+\pkg{devtools} package authoring workflow. See \code{\link{doxy_vignette}} for details.
 }
 \examples{
 
