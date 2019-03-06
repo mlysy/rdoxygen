@@ -28,15 +28,9 @@ Default: \code{FALSE}.}
 Creates doxygen documentation and optionally wraps it as an \R vignette.
 }
 \details{
-<<<<<<< HEAD
-This function will first create a \code{Doxyfile} with 
-\code{\link{doxy_init}} if it doesn't yet exist.  Next, it runs 
-\code{Doxygen} on the \code{Doxyfile}, and if \code{vignette = TRUE}, 
-creates a vignette allowing the Doxygen documentation to be viewed 
-from within \R with a call to \code{vignette()}.  The Doxygen vignette 
-is created with default options.  To modify these options, see 
-\code{\link{doxy_vignette}}.
-=======
-This function will first create a \code{Doxyfile} with \code{\link{doxy_init}} if it doesn't yet exist.  Next, it runs \code{Doxygen} on the \code{Doxyfile}, and if \code{vignette = TRUE}, creates a vignette allowing the Doxygen documentation to be viewed from within \R with a call to \code{vignette()}.  The Doxygen vignette is created with default options.  To modify these options, see \code{\link{doxy_vignette}}.
->>>>>>> 90c921e4e5633f5958714269255d575e9a09ebfb
+This function will first create a \code{Doxyfile} with \code{\link{doxy_init}} 
+if it doesn't yet exist. Next, it runs \code{Doxygen} on the \code{Doxyfile}, and if 
+\code{vignette = TRUE}, creates a vignette allowing the Doxygen documentation to be viewed 
+from within \R with a call to \code{vignette()}. The Doxygen vignette is created with 
+default options. To modify these options, see \code{\link{doxy_vignette}}.
 }

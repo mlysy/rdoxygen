@@ -28,12 +28,11 @@ Creates a Doxygen configuration file and sets a few options:
        \item{\code{PROJECT_NAME = name_of_R_package}}
     }
 }
-<<<<<<< HEAD
-=======
 \details{
-While the package developer is free to change the \code{OUTPUT_DIRECTORY} to wherever they like, the default value above is suggested for compatibility with the \pkg{devtools} package authoring workflow.  See \code{\link{doxy_vignette}} for details.
+While the package developer is free to change the \code{OUTPUT_DIRECTORY} 
+to wherever they like, the default value above is suggested for compatibility with the 
+\pkg{devtools} package authoring workflow. See \code{\link{doxy_vignette}} for details.
 }
->>>>>>> 90c921e4e5633f5958714269255d575e9a09ebfb
 \examples{
 
 \dontrun{

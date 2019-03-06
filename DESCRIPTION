@@ -6,7 +6,8 @@ Authors@R: c(
   person("Martin", "Lysy", email = "mlysy@uwaterloo.ca", role = c("aut"))
   )
 Maintainer: Clemens Schmid <clemens@nevrome.de>
-Description: Create 'doxygen' documentation for source code in R packages, and optionally make it accessible as a R vignette.  Includes a 'RStudio' Addin to easily trigger the doxygenize process.
+Description: Create 'doxygen' documentation for source code in R packages, and optionally 
+  make it accessible as a R vignette.  Includes a 'RStudio' Addin to easily trigger the doxygenize process.
 Date: 2018-10-01
 Depends: R (>= 3.3)
 License: GPL-2 | file LICENSE
@@ -19,7 +20,6 @@ Imports:
     tools,
     utils,
     rprojroot,
-    Rcpp,
     desc,
     yaml,
     usethis
@@ -29,5 +29,5 @@ Suggests:
     rmarkdown
 SystemRequirements: 
     doxygen
-VignetteBuilder: knitr
-LinkingTo: Rcpp
+VignetteBuilder: 
+    knitr

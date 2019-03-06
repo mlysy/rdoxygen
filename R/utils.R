@@ -120,18 +120,11 @@ add_vignette <- function(vignetteFile) {
   has_vignette <- file.exists(vignetteFile)
   if(has_vignette) {
     # if it exists, check if it was created with rdoxygen
-<<<<<<< HEAD
-    vignetteYaml <- yaml::read_yaml(vignetteFile)
-    yamlDoxygen <- vignetteYaml$params$doxygenVignette
-    has_vignette <- is.null(yamlDoxygen) ||
-      (is.logical(yamlDoxygen) && !yamlDoxygen)
-=======
     yamlDoxygen <- yaml::read_yaml(vignetteFile)
     yamlDoxygen <- yamlDoxygen$params$doxygenVignette
     has_vignette <- !isTRUE(yamlDoxygen)
     ## has_vignette <- is.null(yamlDoxygen) ||
     ##   (is.logical(yamlDoxygen) && !yamlDoxygen)
->>>>>>> 90c921e4e5633f5958714269255d575e9a09ebfb
   }
   if(has_vignette) {
     stop("Existing vignette '", basename(vignetteFile),
