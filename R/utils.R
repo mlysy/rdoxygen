@@ -63,6 +63,12 @@ dir_create <- function(dirName) {
   invisible(NULL)
 }
 
+# return output of usethis functions silently
+silent_out <- function(expr) {
+  tmp <- utils::capture.output(expr)
+  invisible(NULL)
+}
+
 # get name of package from its root folder
 pkg_name <- function(rootFolder) {
   desc::desc_get_field("Package",
@@ -104,19 +110,28 @@ rel_path <- function(relFile, baseFile) {
 
 # adds vignette to vignettes folder
 # throws and error if an existing vignette has the given name
-# and wasn't created by rdoxygen,
+# and wasn't created by rdoxygen.
+# also adds Makefile and modifies .Rbuildignore
 add_vignette <- function(vignetteFile) {
   vignetteName <- basename(vignetteFile)
-  vignetteTemplate <- system.file("sys", "doxygenVignette.Rmd",
-                                  package = "rdoxygen")
+  ## vignetteTemplate <- system.file("sys", "doxygenVignette.Rmd",
+  ##                                 package = "rdoxygen")
   # check if vignette exists
   has_vignette <- file.exists(vignetteFile)
   if(has_vignette) {
     # if it exists, check if it was created with rdoxygen
+<<<<<<< HEAD
     vignetteYaml <- yaml::read_yaml(vignetteFile)
     yamlDoxygen <- vignetteYaml$params$doxygenVignette
     has_vignette <- is.null(yamlDoxygen) ||
       (is.logical(yamlDoxygen) && !yamlDoxygen)
+=======
+    yamlDoxygen <- yaml::read_yaml(vignetteFile)
+    yamlDoxygen <- yamlDoxygen$params$doxygenVignette
+    has_vignette <- !isTRUE(yamlDoxygen)
+    ## has_vignette <- is.null(yamlDoxygen) ||
+    ##   (is.logical(yamlDoxygen) && !yamlDoxygen)
+>>>>>>> 90c921e4e5633f5958714269255d575e9a09ebfb
   }
   if(has_vignette) {
     stop("Existing vignette '", basename(vignetteFile),
@@ -128,3 +143,19 @@ add_vignette <- function(vignetteFile) {
   }
   invisible(NULL)
 }
+
+# add Makefile
+add_Makefile <- function() {
+  makeSource <- system.file("sys", "Makefile", package = "rdoxygen")
+  makeDest <- file.path("vignettes", "Makefile")
+  has_makefile <- file.exists(makeDest) &&
+    (readLines(makeDest, n = 1) != readLines(makeSource, n = 1))
+  if(has_makefile) {
+    message("Existing 'vignettes/Makefile' not created by rdoxygen.  Not overwritten.\nPlease see ?doxy_vignette for instructions to edit manually.")
+  } else {
+    file.copy(from = makeSource,
+              to = makeDest, overwrite = TRUE)
+  }
+  invisible(NULL)
+}
+

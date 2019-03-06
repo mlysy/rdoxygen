@@ -5,5 +5,8 @@ export(doxy)
 export(doxy_edit)
 export(doxy_init)
 export(doxy_vignette)
+<<<<<<< HEAD
 importFrom(Rcpp,sourceCpp)
 useDynLib(rdoxygen)
+=======
+>>>>>>> 90c921e4e5633f5958714269255d575e9a09ebfb

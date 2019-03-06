@@ -1,0 +1,86 @@
+---
+title: "rdoxygen: Documentation of C++ source code in R"
+author: "Martin Lysy and Clemens Schmid"
+date: "`r Sys.Date()`"
+output: 
+  rmarkdown::html_vignette:
+    toc: true
+    toc_depth: 3
+vignette: >
+  %\VignetteIndexEntry{Documentation of C++ source code in R}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+cran_link <- function(pkg, nm) {
+  if(missing(nm)) nm <- pkg
+  paste0("[", nm, "](https://CRAN.R-project.org/package=", pkg, ")")
+}
+```
+
+## Motivation
+
+A fundamental requirement of contributed R packages is that they contain complete, standardized documentation of all exported functions.  Not only is this a courtesy to package users, but also of great value to package developers to effectively organize, update, and collaborate on their code.  While the bare-bones method of creating R documentation is somewhat cumbersome, the task is immensely simplified by the processing of comment markup enabled by `r cran_link("roxygen2")`.
+
+Unfortunately, documentation is not required of package C++ code -- to the detriment, in our opinion, of clarity and efficiency of such code in many R packages.  Thus, the purpose of `r cran_link("rdoxygen")` is to provide a few simple tools for R package developers to generate documentation for their C++ code.  At the C++ level, rdoxygen uses [doxygen](http://www.doxygen.org), a powerful and flexible C++ code parser to convert roxygen-style comments into HTML documentation.  At the R level, rdoxygen provides a simple interface to the doxygen engine, and the option of accessing its generated documentation through the mechanism of [R vignettes](http://r-pkgs.had.co.nz/vignettes.html).
+
+
+## Walkthrough
+
+### Installation
+
+To use rdoxygen you need to first install doxygen, for which detailed instructions are provided [here](http://www.doxygen.nl/manual/install.html).  Next, install rdoxygen either from `r cran_link("rdoxygen", "CRAN")`, or obtain the latest development version from [Github](https://github.com/nevrome/rdoxygen) with [devtools](https://CRAN.R-project.org/package=devtools)`::install_github()`.
+
+### Doxygen Markup
+
+The following is a C++ code snippet taken from [Rcpp Modules](https://cran.r-project.org/web/packages/Rcpp/vignettes/Rcpp-modules.pdf), with added doxygen-style comments to be parsed into source code documentation.  For simplicity only a few doxygen features are illustrated here; the complete set is extensively documented on the [doxygen website](http://www.doxygen.nl/manual/index.html).
+<a id="doxygen_example"></a>
+```{r, echo = FALSE, results = "asis"}
+cat("```cpp", readLines("rdoxygenExample.cpp")[12:41], "```", sep = "\n")
+```
+
+### Processing with rdoxygen
+
+Suppose that the [code snippet](#doxygen_example) above is in a file called `rdoxygenExample.cpp`.  Then a typically doxygen processing work flow is as follows:
+
+1.  Create a default `Doxyfile` containing a list of options to render the documentation in `rdoxygenExample.cpp`.
+2.  Edit the `Doxyfile` to customize rendering options as desired.  The relevant settings are extensively documented on the [doxygen website](http://www.doxygen.nl/manual/config.html) and within the default `Doxyfile` itself.
+3.  Run doxygen on the `Doxyfile` to create the documentation HTML.
+
+The rdoxygen package provides several convenience files to do all of this from within an R session during the package development process.  That is, suppose `rdoxygenExample.cpp` is located in the `src` folder of the R package DoxygenExample.  From an R session with working directory anywhere within the folder structure of DoxygenExample, the package developer can parse the doxygen documentation (doxydoc) with the following R code:
+```{r, eval = FALSE}
+require(rdoxygen)
+
+# create doxydoc with default options, wrap it as an R vignette
+doxy(vignette = TRUE)
+
+# --- separate the steps above ---
+
+# 1. Create just the Doxyfile for the package documentation.
+#    In particular, this looks for any doxygen markup in
+#    the src and inst/include subdirectories.
+doxy_init()
+
+# 2. Optionally, edit the package Doxyfile
+doxy_edit(options = c(SHOW_INCLUDE_FILES = "NO"))
+
+# 3. Create the doxygen HTML documentation
+doxy(vignette = FALSE)
+
+# 4. Wrap the HTML documentation into an R vignette
+doxy_vignette()
+```
+The HTML output of these calls can be viewed [here](./doxygen/html/index.html).
+
+The package also provides an [RStudio Addin](https://rstudio.github.io/rstudioaddins/) named `rdoxygenize` that binds to the first command `doxy(vignette = TRUE)`, which can then be called with a keyboard shortcut (e.g. <kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+<kbd>R</kbd>). This makes the process of creating the doxydoc comparable to that of creating roxygen2 documentation via the usual RStudio command sequence  <kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+<kbd>D</kbd>. 
+
+
+## Compatibility with devtools
+
+As documented [here](https://github.com/nevrome/rdoxygen/issues/2#issuecomment-412536748), the call to `vignette()` will *only* open HTML files stored in the `doc` subfolder of an installed package.  Therefore, a natural location for the doxydoc is in `inst/doc/doxygen`.  However, the latest version of `devtools` incontrovertibly deletes `inst/doc` during the build/install process (as documented [here](https://github.com/r-lib/pkgbuild/issues/58)).  Due to the ubiquitous usage of devtools among R package developers, the doxydoc instead is stored in `inst/doxygen`, and during the build process, moved to `inst/doc` via a `vignettes/Makefile`.  Packages with their own such `Makefile` will not have it overwritten, and developers may view the default `Makefile` provided by rdoxygen with the call
+
+```{r, eval = FALSE}
+cat(readLines(system.file("sys", "Makefile",
+                           package = "rdoxygen")), sep = "\n")
+```
