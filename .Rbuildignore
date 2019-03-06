@@ -1,3 +1,4 @@
+^vignette_draft\.Rmd$
 ^inst/doxygen$
 ^vignettes/Makefile$
 ^Meta$

@@ -1,0 +1,235 @@
+---
+title: Doxygen Documentation of Source Code in R with rdoxygen
+author: Martin Lysy and Clemens Schmid
+license: GPL (>= 2)
+tags: doxygen
+summary: rdoxygen is an R package that simplifies rendering doxygen documentation for source code in R packages.
+layout: post
+src: 2018-10-20-doxygen-documentation-in-R-packages.md
+---
+
+[rdoxygen](https://CRAN.R-project.org/package=rdoxygen) is an R package for the creation of [doxygen](http://www.doxygen.org) documentation for source code (C/C++/Fortran/Java/etc.) in R packages (typically found in `src` or `inst/include`). It allows to trigger the rendering process automatically and effortlessly. Optionally, the doxygen output can be accessed by users of the package via R [vignettes](http://r-pkgs.had.co.nz/vignettes.html).
+
+It's initially based on [Corentin M. Barbu's](https://github.com/cbarbu) answer to this [stackoverflow question](http://stackoverflow.com/questions/20713521/using-roxygen2-and-doxygen-on-the-same-package), was packaged by [Clemens Schmid](https://github.com/nevrome) and improved by [Martin Lysy](https://github.com/mlysy).
+
+This post introduces rdoxygen v2.0.
+
+## Quickstart
+
+To use rdoxygen you need a working installation of the system program [doxygen](http://www.stack.nl/~dimitri/doxygen/download.html). You can either [install it from source](http://www.stack.nl/~dimitri/doxygen/manual/install.html) or rely on the package management system of your OS to get it. 
+
+The R package rdoxygen can be installed from [CRAN](https://CRAN.R-project.org/package=rdoxygen) or -- the latest development version -- from [Github](https://github.com/nevrome/rdoxygen) with [devtools](https://CRAN.R-project.org/package=devtools) via
+
+```{r eval=FALSE}
+devtools::install_github("nevrome/rdoxygen")
+```
+
+To use roxygen to setup and afterwards update your doxygen documentation, you can simply run 
+
+```{r eval=FALSE}
+roxygen::doxy()
+```
+
+in your package directory. `doxy()` calls `doxy_init()` if there's no Doxyfile (doxygen configuration file) yet. Otherwise it just updates the documentation. 
+
+The package provides a [RStudio Addin](https://rstudio.github.io/rstudioaddins/) named rdoxygenize that binds to the function `doxy()`. `doxy()` can therefore be called with a keyboard shortcut (e.g. <kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+<kbd>-</kbd>). This makes the user experience comparable to [roxygen2](https://github.com/yihui/roxygen2) documentation via `devtools::document()` (usually <kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+<kbd>D</kbd>). 
+
+## A simple example
+
+The rdoxygen package serves by itself as an example for its application. You can browse the code on [Github](https://github.com/nevrome/rdoxygen). For the application and preparation of rdoxygen we're going to look at the package's `DESCRIPTION` file and the directories `src`, `inst` and `vignettes`. 
+
+In our example we have a single C++ function `docu_test_function()` that's made accessible to R with Rcpp. In the `src` directory of our package we find a header file `foo.h`, the respective implementation in `bar.cpp` and the automatically created `RcppExports.cpp`. 
+
+```bash
+|-- src
+|   |-- bar.cpp
+|   |-- foo.h
+|   |-- RcppExports.cpp
+```
+
+In `foo.h` the `docu_test_function()` gets declared:
+
+```{r, engine = 'Rcpp', eval = FALSE}
+#ifndef FOOREGISTER_FOO_H
+#define FOOREGISTER_FOO_H
+
+#include <Rcpp.h>
+
+double docu_test_function(double a, double b);
+
+#endif //FOOREGISTER_FOO_H
+```
+
+The implementation belongs in `bar.cpp`:
+
+```{r, engine = 'Rcpp', eval = FALSE}
+#include "foo.h"
+
+// [[Rcpp::export]]
+double docu_test_function(double a, double b) {
+  double c = a + b;
+  return c;
+}
+```
+
+It's possible to document C++ functions that are exposed to R with [roxygen2](https://github.com/yihui/roxygen2). To do so, we could modify the `.cpp` file and add the relevant roxygen2 tags as described in Section 2.6 of the [Rcpp Attributes vignette](https://cran.r-project.org/web/packages/Rcpp/vignettes/Rcpp-attributes.pdf).
+
+```{r, engine = 'Rcpp', eval = FALSE}
+#include "foo.h"
+
+//' Example function: roxygen2 documentation
+//' 
+//' This is the roxygen2 documentation of an example function.
+//' 
+//' @param a A double 
+//' @param b A double 
+//' 
+//' @return A double a + b
+//' 
+//' @export 
+//' 
+// [[Rcpp::export]]
+double docu_test_function(double a, double b) {
+  double c = a + b;
+  return c;
+}
+```
+
+Now for the idea behind rdoxygen: If we want to add doxygen documentation for this function, we can modify the `.h` file and add doxygen [comment blocks](https://www.stack.nl/~dimitri/doxygen/manual/docblocks.html):
+
+```{r, engine = 'Rcpp', eval = FALSE}
+#ifndef FOOREGISTER_FOO_H
+#define FOOREGISTER_FOO_H
+
+#include <Rcpp.h>
+
+/**
+ * \file
+ *
+ * Example function: doxygen documentation
+ *
+ * This is the doxygen documentation of an example function.
+ */
+double docu_test_function(double a, double b);
+
+#endif //FOOREGISTER_FOO_H
+```
+
+`docu_test_function()` behaves documentation wise as a global function. Therefore we have to add the `\file` tag in the documentation. This is more straight forward for classes and class methods. That's where doxygen truly shines. 
+
+If you want to add some general information at the doxygen startpage you can add it with the `\mainpage` tag anywhere in your header files: 
+
+```{r, engine = 'Rcpp', eval = FALSE}
+/*! \mainpage rdoxygen example index page
+ *
+ * rdoxygen test page
+ * 
+ * A test function is documented here: \link foo.h \endlink
+ */
+```
+
+Now that we have some doxygen documentation we can set up doxygen for our R package. To do this we can rely on the the main function of rdoxygen: `doxy()`. It requires doxygen to be installed (see *Quickstart*) and to be included in the system path variable. `doxy()` will first create a Doxyfile at `inst/doc/doxygen/Doxyfile` with `doxy_init()` if it doesn't yet exist. Next, it runs doxygen on the Doxyfile and creates a directory `inst/doc/html` where you can watch the result by opening the index.hml file with a browser. If vignette = TRUE, it creates a vignette allowing the Doxygen documentation to be viewed from within R with a call to `vignette()`. More about this in the next section.
+
+Whenever you edit the documentation or the Doxyfile you can and should rerun `doxy()` to update the documentation. To simplify this, rdoxygen provides the [RStudio Addin](https://rstudio.github.io/rstudioaddins/) *rdoxygenize*. `doxy()` can therefore be called with a keyboard shortcut.
+
+## Access doxygen documentation in a vignette
+
+TODO
+
+## Background information
+
+### Design Considerations
+
+rdoxygen was
+
+- *Simplicity.* A typical **rdoxygen** workflow -- heavily influenced by the design of [**devtools**](https://github.com/r-lib/devtools) -- might proceed as follows. Assuming that the package's C/C++/etc. code has been marked up for Doxygen processing, and the R working directory is *any subfolder* of the package root:
+
+```{r, eval = FALSE}
+# create default Doxyfile, process it with Doxygen, optionally wrap in R vignette
+doxy(vignette = TRUE)
+
+# separate steps above
+doxy_init() # create default Doxyfile
+doxy(vignette = FALSE) # process
+doxy_vignette() # wrap in R vignette
+
+# can also edit an existing Doxyfile
+doxy_edit(options = c(AUTOLINK_SUPPORT = "NO"))
+```
+
+- *Stability.* The output of **rdoxygen** should function as expected with minimal additional intervention from the user. If using option `vignette = TRUE`, the package should get automatically configured to process [**rmarkdown**](https://rmarkdown.rstudio.com/) vignettes.
+
+- *Dependencies.* Since **rdoxygen** is used for package development, it tries as much as possible to avoid adding unnecessary dependencies to the user's package (i.e., if I want to use **rdoxygen** to add Doxygen documentation to my package, ideally that shouldn't force my package users to install **rdoxygen** itself). Nevertheless helpful packages for achieving the above are:
+
+    * [**rprojroot**](https://CRAN.R-project.org/package=rprojroot), which allows you to find the root of a package directory from any of its subfolders.
+    
+    * [**desc**](https://CRAN.R-project.org/package=desc), which allows you to easily edit the package `DESCRIPTION` file (e.g., for adding libraries required to process package vignettes).
+    
+### Arguments to Exported Functions
+
+```{r, eval = FALSE}
+# do all steps below and trigger doxygen rendering
+doxy <- function(
+  pkg = ".", # same as devtools::{document/load_all/install} argument, i.e., any subfolder of package root
+  doxyfile = "inst/doc/doxygen/Doxyfile", # path to doxyfile relative to package root
+  options, # passed to doxy_edit
+  vignette = FALSE # add vignette: if TRUE then doxy_vignette is triggered
+  name = "DoxygenVignette.Rmd", # passed to doxy_vignette
+  index # passed to doxy_vignette
+)
+
+# add Doxyfile in package if it does not exist
+doxy_init <- function(
+  pkg = ".",
+  doxyfile = "inst/doc/doxygen/Doxyfile"
+)
+
+# edit Doxyfile tags if doxyfile exists
+doxy_edit <- function(
+  pkg = ".", 
+  doxyfile = "inst/doc/doxygen/Doxyfile", 
+  options # named vector of key-value pairs to edit Doxyfile tags
+)
+
+# wrap Doxygen documentation in R vignette
+doxy_vignette <- function(
+  pkg = ".",
+  name = "DoxygenVignette.Rmd", # name of Doxygen vignette
+  index # name of vignette Index Entry. defaults to "C++ library documentation for package PackageName"
+  overwrite = FALSE # should an existing vignette file be overwritten
+)
+```
+
+### Default File Locations
+
+* *Doxygen documentation.* Installed R vignettes can only display HTML files stored in a subfolder of `inst/doc` (as documented [here](https://github.com/nevrome/rdoxygen/issues/2#issuecomment-412536748)). Therefore, the suggested location for Doxygen documentation is `inst/doc/doxygen`.
+
+* *Doxyfile.* As a package developer, I feel like whatever is required to create the package exactly as it should be installed on disk should be part of the package itself. In this sense, the `Doxyfile` needed to format the Doxygen documentation exactly as I want it should be part of the package as well. An obvious location for this file is `inst/doc/doxygen`. However, `inst/doc` is typically `.gitignore`d (e.g., by `devtools::use_vignette()` and `usethis::use_vignettes()`). So we'd have to manually exclude `inst/doc/doxygen/Doxyfile`, via appending an existing `.gitignore` with something like [this](https://stackoverflow.com/questions/5533050/gitignore-exclude-folder-but-include-specific-subfolder):
+    
+```
+# paste the following to the bottom of existing .gitignore
+
+!inst/doc # unignores inst/doc
+inst/doc/* # ignore everything inside inst/doc but not inst/doc itself
+!inst/doc/doxygen/Doxyfile # unignore Doxyfile
+```
+   
+### Default Doxyfile Tags
+
+First, it should be noted that the `INPUT` tag cannot handle relative directories outside of where it's run, i.e.:
+
+```
+# in Doxyfile
+INPUT = src/ # works fine
+INPUT = ../src/ # does not work
+```
+
+Thus, **rdoxygen** runs Doxygen *from the package root folder*. That being said, here are the default tags rdoxygen sets in the Doxyfile:
+
+```
+INPUT = src/ inst/include/ # the two locations in which you expect to find C++ code
+OUTPUT_DIRECTORY = inst/doc/doxygen
+PROJECT_NAME = "C++ Library Documentation for Package PackageName"
+```
+
+Also note that another useful option might be `USE_MATHJAX = YES`, which makes formulas look much nicer than when this option is set to `NO`.
