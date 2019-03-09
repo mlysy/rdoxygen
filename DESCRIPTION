@@ -8,9 +8,9 @@ Authors@R: c(
 Maintainer: Clemens Schmid <clemens@nevrome.de>
 Description: Create 'doxygen' documentation for source code in R packages, and optionally 
   make it accessible as a R vignette.  Includes a 'RStudio' Addin to easily trigger the doxygenize process.
-Date: 2018-10-01
+Date: 2019-03-09
 Depends: R (>= 3.3)
-License: GPL-2 | file LICENSE
+License: GPL (>=2)
 Encoding: UTF-8
 LazyData: true
 URL: https://github.com/nevrome/rdoxygen
