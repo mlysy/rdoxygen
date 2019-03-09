@@ -10,7 +10,7 @@ DOXY_DEST = ../inst/doc/doxygen
 all: doxy
 
 # copies doxydoc to inst/doc/doxygen
-doxy: | $(DOXY_DEST)
+doxy: $(DOXY_DEST)
 	cp -a $(DOXY_SRC)/. $(DOXY_DEST);
 
 # create inst/doc/doxygen
