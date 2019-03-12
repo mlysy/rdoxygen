@@ -5,7 +5,7 @@
 \title{Calls doxygen for an \R package}
 \usage{
 doxy(pkg = ".", doxyfile = "inst/doxygen/Doxyfile", options = c(),
-  vignette = FALSE)
+  vignette = FALSE, verbose = TRUE)
 }
 \arguments{
 \item{pkg}{A string with the path to any subfolder of the \R package root 
@@ -15,11 +15,14 @@ directory. Default: \code{"."}.}
 to the package root folder indicated by \code{pkg}.  
 Default: \code{"inst/doxygen/Doxyfile"}.}
 
-\item{options}{A named vector with new settings. The names represent the tags. 
-A list of options can be found here: \url{https://www.stack.nl/~dimitri/doxygen/manual/config.html}.}
+\item{options}{A named vector with new settings. The names represent the tags.
+A list of options can be found here: \url{http://www.doxygen.nl/manual/config.html}.}
 
-\item{vignette}{A boolean. Should a vignette be added with \code{doxy_vignette}? 
+\item{vignette}{A boolean. Should a vignette be added with \code{doxy_vignette}?
 Default: \code{FALSE}.}
+
+\item{verbose}{Logical.  If \code{FALSE}, suppresses \code{Doxygen} output.
+Default: \code{TRUE}.}
 }
 \value{
 \code{NULL}
@@ -28,9 +31,9 @@ Default: \code{FALSE}.}
 Creates doxygen documentation and optionally wraps it as an \R vignette.
 }
 \details{
-This function will first create a \code{Doxyfile} with \code{\link{doxy_init}} 
-if it doesn't yet exist. Next, it runs \code{Doxygen} on the \code{Doxyfile}, and if 
-\code{vignette = TRUE}, creates a vignette allowing the Doxygen documentation to be viewed 
-from within \R with a call to \code{vignette()}. The Doxygen vignette is created with 
+This function will first create a \code{Doxyfile} with \code{\link{doxy_init}}
+if it doesn't yet exist. Next, it runs \code{Doxygen} on the \code{Doxyfile}, and if
+\code{vignette = TRUE}, creates a vignette allowing the Doxygen documentation to be viewed
+from within \R with a call to \code{vignette()}. The Doxygen vignette is created with
 default options. To modify these options, see \code{\link{doxy_vignette}}.
 }

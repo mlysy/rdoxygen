@@ -10,11 +10,11 @@ doxy_vignette(pkg = ".", index = "html", viname, vientry)
 \item{pkg}{A string with the path to any subfolder of the \R package root 
 directory. Default: \code{"."}.}
 
-\item{index}{A string with the path relative to \code{inst/doxygen} of the doxygen 
+\item{index}{A string with the path relative to \code{inst/doxygen} of the doxygen
 \code{index.html} file. Default: \code{html} (see \strong{Note}).}
 
-\item{viname}{A string giving the name of the \code{.Rmd} vignette file wrapping the 
-documentation, as well as the name by which to retrieve the documentation using 
+\item{viname}{A string giving the name of the \code{.Rmd} vignette file wrapping the
+documentation, as well as the name by which to retrieve the documentation using
 \code{vignette()}.  Default: \code{"pkgName-Doxygen.Rmd"}.}
 
 \item{vientry}{A character string specifying the vignette Index Entry to use.
@@ -24,23 +24,23 @@ Default: "pkgName C++ library documentation".}
 \code{NULL}
 }
 \description{
-Creates an \R Markdown wrapper for the doxygen documentation, so that it 
+Creates an \R Markdown wrapper for the doxygen documentation, so that it
 can be viewed from within \R with a call to \code{vignette()}.
 }
 \details{
-This function creates the file \code{vignettes/viname.Rmd} in the package 
-root folder, containing the necessary meta-data for viewing the Doxygen HTML documentation 
+This function creates the file \code{vignettes/viname.Rmd} in the package
+root folder, containing the necessary meta-data for viewing the Doxygen HTML documentation
 from within \R with a call to \code{vignette()}.
 }
 \note{
-The call to \code{vignette()} will *only* open HTML files stored in the \code{doc} 
-subfolder of an installed package. Therefore, a natural location for the doxygen documentation 
-(doxydoc) is in \code{inst/doc/doxygen}. However, the latest version of \pkg{devtools} 
-incontrovertibly deletes \code{inst/doc} during the build/install process. Due to the 
-ubiquitous usage of \pkg{devtools} among \R package developers, the doxydoc is stored here 
-in \code{inst/doxygen}, and during the build process, moved (or technically, copied and 
-source added to \code{.Rbuildignore}) via a \code{vignettes/Makefile}.  Packages with their 
-own such \code{Makefile} will not have it overwritten, and developers may view the default 
+The call to \code{vignette()} will *only* open HTML files stored in the \code{doc}
+subfolder of an installed package. Therefore, a natural location for the doxygen documentation
+(doxydoc) is in \code{inst/doc/doxygen}. However, the latest version of \pkg{devtools}
+incontrovertibly deletes \code{inst/doc} during the build/install process. Due to the
+ubiquitous usage of \pkg{devtools} among \R package developers, the doxydoc is stored here
+in \code{inst/doxygen}, and during the build process, moved (or technically, copied and
+source added to \code{.Rbuildignore}) via a \code{vignettes/Makefile}.  Packages with their
+own such \code{Makefile} will not have it overwritten, and developers may view the default
 \code{Makefile} provided by \pkg{rdoxygen} with the call
 \preformatted{
 cat(readLines(system.file("sys", "Makefile",
