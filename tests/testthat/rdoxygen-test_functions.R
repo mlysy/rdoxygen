@@ -21,7 +21,7 @@ check_css <- function(doxyPath){
 }
 
 # normalize path
-norm_path <- function(path) {
-  path <- normalizePath(path, winslash = "/", mustWork = FALSE)
+norm_path <- function(...) {
+  path <- file.path(..., fsep = "/")
   gsub("/+", "/", path)
 }

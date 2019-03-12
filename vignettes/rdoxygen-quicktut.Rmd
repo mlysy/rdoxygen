@@ -34,7 +34,7 @@ To use rdoxygen you need to first install doxygen, for which detailed instructio
 
 ### Doxygen Markup
 
-The following is a C++ code snippet taken from [Rcpp Modules](https://cran.r-project.org/web/packages/Rcpp/vignettes/Rcpp-modules.pdf), with added doxygen-style comments to be parsed into source code documentation.  For simplicity only a few doxygen features are illustrated here; the complete set is extensively documented on the [doxygen website](http://www.doxygen.nl/manual/index.html).
+The following is a C++ code snippet taken from [Rcpp Modules](https://CRAN.R-project.org/package=Rcpp/vignettes/Rcpp-modules.pdf), with added doxygen-style comments to be parsed into source code documentation.  For simplicity only a few doxygen features are illustrated here; the complete set is extensively documented on the [doxygen website](http://www.doxygen.nl/manual/index.html).
 <a id="doxygen_example"></a>
 ```{r, echo = FALSE, results = "asis"}
 cat("```cpp", readLines("rdoxygenExample.cpp")[12:41], "```", sep = "\n")

@@ -1,5 +1,5 @@
 [![Travis-CI Build Status](https://travis-ci.org/nevrome/rdoxygen.svg?branch=master)](https://travis-ci.org/nevrome/rdoxygen) [![Coverage Status](https://img.shields.io/codecov/c/github/nevrome/rdoxygen/master.svg)](https://codecov.io/github/nevrome/rdoxygen?branch=master)
-[![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/rdoxygen)](http://cran.r-project.org/package=rdoxygen)
+[![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/rdoxygen)](https://cran.r-project.org/package=rdoxygen)
 [![license](https://img.shields.io/badge/license-GPL%202-B50B82.svg)](https://www.r-project.org/Licenses/GPL-2)
 
 # rdoxygen

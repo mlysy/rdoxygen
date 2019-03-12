@@ -105,7 +105,7 @@ rel_path <- function(relFile, baseFile) {
   nroot <- which.min(rpaths[1:nmin] == bpaths[1:nmin])
   # construct relative path
   do.call(file.path,
-          c(as.list(rep("..", blen-nroot)), as.list(rpaths[nroot:rlen])))
+          c(as.list(rep("..", blen-nroot)), as.list(rpaths[nroot:rlen]), fsep = "/"))
 }
 
 # adds vignette to vignettes folder
@@ -152,8 +152,8 @@ add_Makefile <- function() {
   invisible(NULL)
 }
 
-# normalize path: convert to "/" and remove multiple "/"
-norm_path <- function(path) {
-  path <- normalizePath(path, winslash = "/", mustWork = FALSE)
-  gsub("/+", "/", path)
-}
+## # normalize path: convert to "/" and remove multiple "/"
+## norm_path <- function(path) {
+##   path <- normalizePath(path, winslash = "/", mustWork = FALSE)
+##   gsub("/+", "/", path)
+## }

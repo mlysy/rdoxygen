@@ -229,7 +229,7 @@ doxy_vignette <- function(pkg = ".",
                                              viname),
                         relFile = file.path(rootFolder, "inst", "doxygen",
                                             index, "index.html"))
-  indexFile <- norm_path(file.path("doxygen", indexFile))
+  indexFile <- file.path("doxygen", indexFile)
 
 
   # create vignette folder if it doesn't exist

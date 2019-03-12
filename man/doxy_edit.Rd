@@ -15,8 +15,8 @@ directory. Default: \code{"."}.}
 to the package root folder indicated by \code{pkg}.  
 Default: \code{"inst/doxygen/Doxyfile"}.}
 
-\item{options}{A named vector with new settings. The names represent the tags. 
-A list of options can be found here: \url{https://www.stack.nl/~dimitri/doxygen/manual/config.html}.}
+\item{options}{A named vector with new settings. The names represent the tags.
+A list of options can be found here: \url{http://www.doxygen.nl/manual/config.html}.}
 }
 \value{
 \code{NULL}

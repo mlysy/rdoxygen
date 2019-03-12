@@ -2,10 +2,9 @@ Package: rdoxygen
 Title: Create Doxygen Documentation for Source Code
 Version: 2.0.0
 Authors@R: c(
-  person("Clemens", "Schmid", email = "clemens@nevrome.de", role = c("cre", "cph", "aut")),
+  person("Clemens", "Schmid", email = "clemens@nevrome.de", role = c("cph", "aut", "cre")),
   person("Martin", "Lysy", email = "mlysy@uwaterloo.ca", role = c("aut"))
   )
-Maintainer: Clemens Schmid <clemens@nevrome.de>
 Description: Create 'doxygen' documentation for source code in R packages, and optionally 
   make it accessible as a R vignette.  Includes a 'RStudio' Addin to easily trigger the doxygenize process.
 Date: 2019-03-09
@@ -26,7 +25,8 @@ Imports:
 Suggests: 
     testthat,
     knitr,
-    rmarkdown
+    rmarkdown,
+    pkgbuild
 SystemRequirements: 
     doxygen
 VignetteBuilder: knitr

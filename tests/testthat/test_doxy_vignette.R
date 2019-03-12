@@ -25,8 +25,8 @@ unlink(file.path(pkgRoot, "man"), recursive = TRUE, force = TRUE)
 doxyPath <- file.path(pkgRoot, "inst", "doxygen") # path to doxygen
 # arbitrary path to index file.  must be a subfolder of inst/doxygen
 indexPath <- list("",
-                  tempfile("folder_", tmpdir = ""),
-                  tempfile("folder_", tmpdir = ""))
+                  basename(tempfile("folder_", tmpdir = "")),
+                  basename(tempfile("folder_", tmpdir = "")))[1:sample(1:3,1)]
 indexPath <- norm_path(do.call(file.path, indexPath))
 dir.create(file.path(doxyPath, indexPath), recursive = TRUE)
 file.copy(from = "index.html",
@@ -34,10 +34,8 @@ file.copy(from = "index.html",
 
 #--- tests ---------------------------------------------------------------------
 
-doxyName <- tempfile("Doxygen_", tmpdir = "", fileext = ".Rmd")
-doxyName <- gsub("/", "", doxyName)
-doxyEntry <- tempfile("IndexEntry_", tmpdir = "")
-doxyEntry <- gsub("/", "", doxyEntry)
+doxyName <- basename(tempfile("Doxygen_", fileext = ".Rmd"))
+doxyEntry <- basename(tempfile("IndexEntry_"))
 
 test_that("doxy_vignette creates Rmd and Makefile", {
   doxy_vignette(pkg = pkgRoot, index = indexPath,
@@ -89,24 +87,32 @@ test_that("existing Makefile does not get overwritten", {
 })
 
 test_that("vignette has correct path in html redirect", {
-  redirLine <- norm_path(file.path("doxygen", indexPath, "index.html"))
+  redirLine <- norm_path("doxygen", indexPath, "index.html")
   redirLine <- paste0('<meta http-equiv="refresh" content="0; URL=',
                       redirLine, '">')
+  ## cat("\n\n\nhtml redirect:\n\n\n")
+  ## cat(redirLine, sep = "\n")
+  ## cat(readLines(file.path(pkgRoot, "vignettes", doxyName)), sep = "\n")
   expect_true(redirLine %in%
               readLines(file.path(pkgRoot, "vignettes", doxyName)))
 })
 
 test_that("vignette has correct index entry", {
+  ## cat("\n\n\nindex entry:\n\n\n")
+  ## cat(paste0("  %\\VignetteIndexEntry{", doxyEntry, "}"), sep = "\n")
+  ## cat(readLines(file.path(pkgRoot, "vignettes", doxyName)), sep = "\n")
   expect_true(paste0("  %\\VignetteIndexEntry{", doxyEntry, "}") %in%
               readLines(file.path(pkgRoot, "vignettes", doxyName)))
 })
 
 test_that("Makefile puts doxydoc into inst/doc", {
   tarFile <- file.path(destPath, paste0(pkgName, "_1.0.tar.gz"))
-  indexFile <- file.path(pkgName, "inst", "doc", "doxygen",
+  indexFile <- norm_path(pkgName, "inst", "doc", "doxygen",
                          indexPath, "index.html")
-  indexFile <- norm_path(indexFile)
   pkgbuild::build(path = pkgRoot)
+  ## cat("\n\n\nMakefile:\n\n\n")
+  ## cat(indexFile, sep = "\n")
+  ## cat(norm_path(untar(tarfile = tarFile, list = TRUE)), sep = "\n")
   expect_true(indexFile %in% norm_path(untar(tarfile = tarFile, list = TRUE)))
   file.remove(tarFile)
 })
