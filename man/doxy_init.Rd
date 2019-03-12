@@ -4,7 +4,8 @@
 \alias{doxy_init}
 \title{Prepares the R package structure for use with doxygen}
 \usage{
-doxy_init(pkg = ".", doxyfile = "inst/doxygen/Doxyfile")
+doxy_init(pkg = ".", doxyfile = "inst/doxygen/Doxyfile",
+  verbose = TRUE)
 }
 \arguments{
 \item{pkg}{A string with the path to any subfolder of the \R package root 
@@ -13,6 +14,9 @@ directory. Default: \code{"."}.}
 \item{doxyfile}{A string with the path to the \code{Doxyfile} relative 
 to the package root folder indicated by \code{pkg}.  
 Default: \code{"inst/doxygen/Doxyfile"}.}
+
+\item{verbose}{Logical.  If \code{FALSE}, suppresses \code{Doxygen} output.
+Default: \code{TRUE}.}
 }
 \value{
 \code{NULL}.
@@ -29,8 +33,8 @@ Creates a Doxygen configuration file and sets a few options:
     }
 }
 \details{
-While the package developer is free to change the \code{OUTPUT_DIRECTORY} 
-to wherever they like, the default value above is suggested for compatibility with the 
+While the package developer is free to change the \code{OUTPUT_DIRECTORY}
+to wherever they like, the default value above is suggested for compatibility with the
 \pkg{devtools} package authoring workflow. See \code{\link{doxy_vignette}} for details.
 }
 \examples{
