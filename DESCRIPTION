@@ -29,5 +29,4 @@ Suggests:
     rmarkdown
 SystemRequirements: 
     doxygen
-VignetteBuilder: 
-    knitr
+VignetteBuilder: knitr

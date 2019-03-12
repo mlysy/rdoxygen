@@ -19,3 +19,9 @@ check_css <- function(doxyPath){
   res <- length(grep("color: #357B35;", css)) >= 1
   return(res)
 }
+
+# normalize path
+norm_path <- function(path) {
+  path <- normalizePath(path, winslash = "/", mustWork = FALSE)
+  gsub("/+", "/", path)
+}

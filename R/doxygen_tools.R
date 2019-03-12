@@ -234,7 +234,11 @@ doxy_vignette <- function(pkg = ".",
 
   # create vignette folder if it doesn't exist
   ## dir_create(file.path(rootFolder, "vignettes"))
-  silent_out(usethis::use_directory("vignettes", ignore = FALSE))
+
+  silent_out({
+    usethis::proj_set(path = rootFolder)
+    usethis::use_directory("vignettes", ignore = FALSE)
+  })
 
   # copy template doxyVignette to vignettes folder
   vignetteFile <- file.path(rootFolder, "vignettes", viname)

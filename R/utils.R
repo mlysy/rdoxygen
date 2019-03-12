@@ -152,3 +152,8 @@ add_Makefile <- function() {
   invisible(NULL)
 }
 
+# normalize path: convert to "/" and remove multiple "/"
+norm_path <- function(path) {
+  path <- normalizePath(path, winslash = "/", mustWork = FALSE)
+  gsub("/+", "/", path)
+}

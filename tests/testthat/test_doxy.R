@@ -13,11 +13,13 @@ dir.create(destPath, recursive = TRUE)
 teardown(unlink(destPath, recursive = TRUE))
 package.skeleton(name = pkgName,
                  path = destPath,
-                 code_files = system.file("sys", "foo.R", package = "rdoxygen"))
+                 ## code_files = system.file("sys", "foo.R", package = "rdoxygen"))
+                 code_files = "foo.R")
 # add source code to run doxygen on
 srcPath <- file.path(pkgRoot, "src")
 dir.create(srcPath, recursive = TRUE)
-file.copy(from = system.file("sys", "foo.cpp", package = "rdoxygen"),
+file.copy(from = "foo.cpp",
+          ## from = system.file("sys", "foo.cpp", package = "rdoxygen"),
           to = file.path(srcPath, "foo.cpp"))
 # path to doxygen
 doxyPath <- file.path(pkgRoot, "inst", "doxygen")
@@ -27,14 +29,14 @@ doxyPath <- file.path(pkgRoot, "inst", "doxygen")
 # doxy_init: setup
 test_that("after the run of doxy_init() there's a doxyfile in inst/doxygen", {
   skip_on_cran()
-  doxy_init(file.path(pkgRoot, "man"))
+  doxy_init(file.path(pkgRoot, "man"), verbose = FALSE)
   expect_true(file.exists(file.path(doxyPath, "Doxyfile")))
 })
 
 # doxy: create doxygen documentation
 test_that("after the run of doxy() there's a html documentation in inst/doxygen/html", {
   skip_on_cran()
-  doxy(file.path(pkgRoot, "inst"))
+  doxy(file.path(pkgRoot, "inst"), verbose = FALSE)
   expect_true(file.exists(file.path(doxyPath, "html", "index.html")))
 })
 
@@ -53,7 +55,7 @@ test_that("doxy_edit edits the Doxyfile successfully", {
 test_that("running doxy() again incorporates the changes of doxy_edit()", {
   skip_on_cran()
   start2 <- check_css(doxyPath)
-  doxy(pkgRoot)
+  doxy(pkgRoot, verbose = FALSE)
   stop2 <- check_css(doxyPath)
   expect_false(start2)
   expect_true(stop2)
