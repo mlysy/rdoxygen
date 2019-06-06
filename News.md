@@ -7,7 +7,7 @@ rdoxygen 2.0.0
 
 * added a nice vignette and shortened the README
 
-* new unit test setup
+* new, better unit test setup
 
 * changend license to GPL >= 2 from GPL = 2
 
