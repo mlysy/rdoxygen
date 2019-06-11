@@ -2,7 +2,7 @@
 [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/rdoxygen)](https://cran.r-project.org/package=rdoxygen)
 [![license](https://img.shields.io/badge/license-GPL%202-B50B82.svg)](https://www.r-project.org/Licenses/GPL-2)
 
-# rdoxygen: Create Doxygen Documentation for Source Code
+# rdoxygen: Create doxygen documentation for R package C++ code
 
 *[Clemens Schmid](https://nevrome.de/), Martin Lysy*
 
