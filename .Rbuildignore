@@ -1,4 +1,3 @@
-^vignette_draft\.Rmd$
 ^inst/doxygen$
 ^vignettes/Makefile$
 ^Meta$
@@ -9,5 +8,5 @@
 ^cran-comments\.md$
 ^News\.md$
 ^man-roxygen$
-^rdoxygen-design\.md$
+^vignettes/old$
 ^LICENSE$

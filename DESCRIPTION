@@ -12,8 +12,8 @@ Depends: R (>= 3.3)
 License: GPL (>=2)
 Encoding: UTF-8
 LazyData: true
-URL: https://github.com/nevrome/rdoxygen
-BugReports: https://github.com/nevrome/rdoxygen/issues
+URL: https://github.com/mlysy/rdoxygen
+BugReports: https://github.com/mlysy/rdoxygen/issues
 RoxygenNote: 6.1.1
 Imports: 
     tools,
