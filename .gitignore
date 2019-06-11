@@ -32,4 +32,5 @@ src/*.o
 src/*.so
 src/*.dll
 # rendered doxygen documentation
-inst/doxygen/html
+# inst/doxygen/html
+README_old.md

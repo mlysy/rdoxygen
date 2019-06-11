@@ -10,3 +10,4 @@
 ^man-roxygen$
 ^vignettes/old$
 ^LICENSE$
+^README_old\.md$

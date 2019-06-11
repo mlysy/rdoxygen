@@ -6,7 +6,7 @@ Authors@R: c(
   person("Martin", "Lysy", email = "mlysy@uwaterloo.ca", role = c("aut"))
   )
 Description: Create 'doxygen' documentation for source code in R packages, and optionally 
-  make it accessible as a R vignette.  Includes a 'RStudio' Addin to easily trigger the doxygenize process.
+  make it accessible as an R vignette.  Includes a 'RStudio' Addin to easily trigger the doxygenize process.
 Date: 2019-06-06
 Depends: R (>= 3.3)
 License: GPL (>=2)
