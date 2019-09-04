@@ -1,0 +1,1757 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_rcpp_exports_8cpp" kind="file" language="C++">
+    <compoundname>RcppExports.cpp</compoundname>
+    <includes local="no">RcppEigen.h</includes>
+    <includes local="no">Rcpp.h</includes>
+    <incdepgraph>
+      <node id="102">
+        <label>src/RcppExports.cpp</label>
+        <link refid="_rcpp_exports_8cpp"/>
+        <childnode refid="103" relation="include">
+        </childnode>
+        <childnode refid="104" relation="include">
+        </childnode>
+      </node>
+      <node id="104">
+        <label>Rcpp.h</label>
+      </node>
+      <node id="103">
+        <label>RcppEigen.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="_rcpp_exports_8cpp_1acc66047eee9f1e8112081542de22411c" prot="public" static="yes" mutable="no">
+        <type>const R_CallMethodDef</type>
+        <definition>const R_CallMethodDef CallEntries[]</definition>
+        <argsstring>[]</argsstring>
+        <name>CallEntries</name>
+        <initializer>= {
+    {&quot;_mniw_CrossProdVXX&quot;, (DL_FUNC) &amp;_mniw_CrossProdVXX, 5},
+    {&quot;_mniw_CrossProdVXY&quot;, (DL_FUNC) &amp;_mniw_CrossProdVXY, 7},
+    {&quot;_mniw_HierUneqVModelGibbs&quot;, (DL_FUNC) &amp;_mniw_HierUneqVModelGibbs, 16},
+    {&quot;_mniw_GenerateMatrixNIW&quot;, (DL_FUNC) &amp;_mniw_GenerateMatrixNIW, 6},
+    {&quot;_mniw_LogDensityMatrixNormal&quot;, (DL_FUNC) &amp;_mniw_LogDensityMatrixNormal, 4},
+    {&quot;_mniw_GenerateMatrixNormal&quot;, (DL_FUNC) &amp;_mniw_GenerateMatrixNormal, 4},
+    {&quot;_mniw_LogDensityMatrixT&quot;, (DL_FUNC) &amp;_mniw_LogDensityMatrixT, 5},
+    {&quot;_mniw_GenerateMatrixT&quot;, (DL_FUNC) &amp;_mniw_GenerateMatrixT, 6},
+    {&quot;_mniw_LogDensityMultivariateNormal&quot;, (DL_FUNC) &amp;_mniw_LogDensityMultivariateNormal, 3},
+    {&quot;_mniw_GenerateMultivariateNormal&quot;, (DL_FUNC) &amp;_mniw_GenerateMultivariateNormal, 3},
+    {&quot;_mniw_GenerateRandomEffectsNormal&quot;, (DL_FUNC) &amp;_mniw_GenerateRandomEffectsNormal, 5},
+    {&quot;_mniw_LogDensityWishart&quot;, (DL_FUNC) &amp;_mniw_LogDensityWishart, 4},
+    {&quot;_mniw_GenerateWishart&quot;, (DL_FUNC) &amp;_mniw_GenerateWishart, 4},
+    {NULL, NULL, 0}
+}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/RcppExports.cpp" line="212" column="1" bodyfile="src/RcppExports.cpp" bodystart="212" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_rcpp_exports_8cpp_1a4dd7126b08c2e89e73e8862a46b38761" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Eigen::MatrixXd</type>
+        <definition>Eigen::MatrixXd CrossProdVXX</definition>
+        <argsstring>(Eigen::MatrixXd X, Eigen::MatrixXd V, int p, int q, bool inverse)</argsstring>
+        <name>CrossProdVXX</name>
+        <param>
+          <type>Eigen::MatrixXd</type>
+          <declname>X</declname>
+        </param>
+        <param>
+          <type>Eigen::MatrixXd</type>
+          <declname>V</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>q</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>inverse</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Matrix-weighted self inner-product.</para><para>Calculate inner products of the form <computeroutput>t(X) V X</computeroutput> or <computeroutput>t(X) V^{-1} X</computeroutput>. Both <computeroutput>X</computeroutput> and <computeroutput>V</computeroutput> can be vectorized, i.e., of size <computeroutput>N</computeroutput> or <computeroutput>1</computeroutput>, referred to here as <computeroutput>n</computeroutput>.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">X</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Matrix of size <computeroutput>p x qn</computeroutput>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">V</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Matrix of size <computeroutput>p x pn</computeroutput>, where each <computeroutput>p x p</computeroutput> block is symmetric positive-definite. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Integer specifying the dimension of <computeroutput>V</computeroutput>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">q</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Integer specifying the column dimension of <computeroutput>X</computeroutput>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">inverse</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Boolean; whether to use <computeroutput>V</computeroutput> or <computeroutput>V^{-1}</computeroutput> for the matrix wweight.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Matrix of size <computeroutput>q x qn</computeroutput>, where each block of size <computeroutput>q x q</computeroutput> is an inner product. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/RcppExports.cpp" line="10" column="1" bodyfile="src/CrossProductExports.cpp" bodystart="30" bodyend="65"/>
+      </memberdef>
+      <memberdef kind="function" id="_rcpp_exports_8cpp_1a5fb25549300338ef8d88023c8f40f55e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>RcppExport SEXP</type>
+        <definition>RcppExport SEXP _mniw_CrossProdVXX</definition>
+        <argsstring>(SEXP XSEXP, SEXP VSEXP, SEXP pSEXP, SEXP qSEXP, SEXP inverseSEXP)</argsstring>
+        <name>_mniw_CrossProdVXX</name>
+        <param>
+          <type>SEXP</type>
+          <declname>XSEXP</declname>
+        </param>
+        <param>
+          <type>SEXP</type>
+          <declname>VSEXP</declname>
+        </param>
+        <param>
+          <type>SEXP</type>
+          <declname>pSEXP</declname>
+        </param>
+        <param>
+          <type>SEXP</type>
+          <declname>qSEXP</declname>
+        </param>
+        <param>
+          <type>SEXP</type>
+          <declname>inverseSEXP</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/RcppExports.cpp" line="11" column="1" bodyfile="src/RcppExports.cpp" bodystart="11" bodyend="23"/>
+      </memberdef>
+      <memberdef kind="function" id="_rcpp_exports_8cpp_1a454576ebfaf502f304de7e9dddc24a58" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Eigen::MatrixXd</type>
+        <definition>Eigen::MatrixXd CrossProdVXY</definition>
+        <argsstring>(Eigen::MatrixXd X, Eigen::MatrixXd Y, Eigen::MatrixXd V, int p, int q, int r, bool inverse)</argsstring>
+        <name>CrossProdVXY</name>
+        <param>
+          <type>Eigen::MatrixXd</type>
+          <declname>X</declname>
+        </param>
+        <param>
+          <type>Eigen::MatrixXd</type>
+          <declname>Y</declname>
+        </param>
+        <param>
+          <type>Eigen::MatrixXd</type>
+          <declname>V</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>q</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>r</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>inverse</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Matrix-weighted inner-product.</para><para>Calculate inner products of the form <computeroutput>t(X) V Y</computeroutput> or <computeroutput>t(X) V^{-1} Y</computeroutput>. Each of <computeroutput>X</computeroutput>, <computeroutput>V</computeroutput>, and <computeroutput>Y</computeroutput> can be vectorized, i.e., of size <computeroutput>N</computeroutput> or <computeroutput>1</computeroutput>, referred to here as <computeroutput>n</computeroutput>.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">X</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Matrix of size <computeroutput>p x qn</computeroutput>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">Y</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Matrix of size <computeroutput>p x rn</computeroutput>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">V</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Matrix of size <computeroutput>p x pn</computeroutput>, where each <computeroutput>p x p</computeroutput> block is symmetric positive-definite. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Integer specifying the dimension of <computeroutput>V</computeroutput>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">q</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Integer specifying the column dimension of <computeroutput>X</computeroutput>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">r</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Integer specifying the column dimension of <computeroutput>Y</computeroutput>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">inverse</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Boolean; whether to use <computeroutput>V</computeroutput> or <computeroutput>V^{-1}</computeroutput> for the matrix wweight.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Matrix of size <computeroutput>q x rn</computeroutput>, where each block of size <computeroutput>q x r</computeroutput> is an inner product. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/RcppExports.cpp" line="25" column="1" bodyfile="src/CrossProductExports.cpp" bodystart="81" bodyend="149"/>
+      </memberdef>
+      <memberdef kind="function" id="_rcpp_exports_8cpp_1ae1e299f629d3ed9c096750758420e7da" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>RcppExport SEXP</type>
+        <definition>RcppExport SEXP _mniw_CrossProdVXY</definition>
+        <argsstring>(SEXP XSEXP, SEXP YSEXP, SEXP VSEXP, SEXP pSEXP, SEXP qSEXP, SEXP rSEXP, SEXP inverseSEXP)</argsstring>
+        <name>_mniw_CrossProdVXY</name>
+        <param>
+          <type>SEXP</type>
+          <declname>XSEXP</declname>
+        </param>
+        <param>
+          <type>SEXP</type>
+          <declname>YSEXP</declname>
+        </param>
+        <param>
+          <type>SEXP</type>
+          <declname>VSEXP</declname>
+        </param>
+        <param>
+          <type>SEXP</type>
+          <declname>pSEXP</declname>
+        </param>
+        <param>
+          <type>SEXP</type>
+          <declname>qSEXP</declname>
+        </param>
+        <param>
+          <type>SEXP</type>
+          <declname>rSEXP</declname>
+        </param>
+        <param>
+          <type>SEXP</type>
+          <declname>inverseSEXP</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/RcppExports.cpp" line="26" column="1" bodyfile="src/RcppExports.cpp" bodystart="26" bodyend="40"/>
+      </memberdef>
+      <memberdef kind="function" id="_rcpp_exports_8cpp_1ae439a9f482ad9a0902a4fe6c2a5001ae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>List</type>
+        <definition>List HierUneqVModelGibbs</definition>
+        <argsstring>(int nSamples, int nBurn, Eigen::MatrixXd Y, Eigen::MatrixXd X, Eigen::MatrixXd V, Eigen::MatrixXd Lambda, Eigen::MatrixXd Omega, Eigen::MatrixXd Psi, double nu, Eigen::MatrixXd Beta0, Eigen::MatrixXd iSigma0, Eigen::MatrixXd Mu0, bool updateBetaSigma, bool updateMu, bool storeBetaSigma, bool storeMu)</argsstring>
+        <name>HierUneqVModelGibbs</name>
+        <param>
+          <type>int</type>
+          <declname>nSamples</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>nBurn</declname>
+        </param>
+        <param>
+          <type>Eigen::MatrixXd</type>
+          <declname>Y</declname>
+        </param>
+        <param>
+          <type>Eigen::MatrixXd</type>
+          <declname>X</declname>
+        </param>
+        <param>
+          <type>Eigen::MatrixXd</type>
+          <declname>V</declname>
+        </param>
+        <param>
+          <type>Eigen::MatrixXd</type>
+          <declname>Lambda</declname>
+        </param>
+        <param>
+          <type>Eigen::MatrixXd</type>
+          <declname>Omega</declname>
+        </param>
+        <param>
+          <type>Eigen::MatrixXd</type>
+          <declname>Psi</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>nu</declname>
+        </param>
+        <param>
+          <type>Eigen::MatrixXd</type>
+          <declname>Beta0</declname>
+        </param>
+        <param>
+          <type>Eigen::MatrixXd</type>
+          <declname>iSigma0</declname>
+        </param>
+        <param>
+          <type>Eigen::MatrixXd</type>
+          <declname>Mu0</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>updateBetaSigma</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>updateMu</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>storeBetaSigma</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>storeMu</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Bayesian inference for the Hierarchical Normal Unequal-Variance model.</para><para>Generate <computeroutput>nSamples</computeroutput> draws from a Gibbs sampler on the posterior random-effect and hyperparameter distribution of the Hierarchical Normal Unequal-Variance model.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">nSamples</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Integer number of posterior draws to return. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">nBurn</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Integer number of samples to initially discard as burn-in. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">Y</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Response matrix of size <computeroutput>N x q</computeroutput>, each row is an observation. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">X</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Covariate matrix of size <computeroutput>N x q</computeroutput>, each row is an observation. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">V</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Matrix of size <computeroutput>q x (Nq)</computeroutput> containing the variance of each response about its mean. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">Lambda</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Prior mean matrix of size <computeroutput>p x q</computeroutput>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">Omega</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Prior row-wise precision matrix of size <computeroutput>p x p</computeroutput>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">Psi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Prior column-wise scale matrix of size <computeroutput>q x q</computeroutput>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">nu</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Prior shape parameter. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">Beta0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Initial random-effects coefficient matrix of size <computeroutput>p x q</computeroutput>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">iSigma0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Initial random-effects precision matrix of size <computeroutput>q x q</computeroutput>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">Mu0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Initial random-effects matrix of size <computeroutput>N x q</computeroutput>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">updateBetaSigma</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Boolean; whether or not to update the random-effects mean and variance matrices <computeroutput>Beta</computeroutput> and <computeroutput>Sigma</computeroutput>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">updateMu</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Boolean; whether or not to update the random-effects <computeroutput>Mu</computeroutput>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">storeBetaSigma</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Boolean; whether or not to return <computeroutput>Beta</computeroutput> and <computeroutput>Sigma</computeroutput>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">storeMu</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Boolean; whether or not to return <computeroutput>Mu</computeroutput>.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><computeroutput>Rcpp::List</computeroutput> with elements <computeroutput>Beta</computeroutput>, <computeroutput>Sigma</computeroutput>, and <computeroutput>Mu</computeroutput>, being matrices of size <computeroutput>p x (q*nSamples)</computeroutput>, <computeroutput>q x (q*nSamples)</computeroutput> and <computeroutput>q x (N*nSamples)</computeroutput>. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/RcppExports.cpp" line="42" column="1" bodyfile="src/HierarchicalExports.cpp" bodystart="37" bodyend="89"/>
+      </memberdef>
+      <memberdef kind="function" id="_rcpp_exports_8cpp_1af831107a9e8b805f005a4ea21204f5af" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>RcppExport SEXP</type>
+        <definition>RcppExport SEXP _mniw_HierUneqVModelGibbs</definition>
+        <argsstring>(SEXP nSamplesSEXP, SEXP nBurnSEXP, SEXP YSEXP, SEXP XSEXP, SEXP VSEXP, SEXP LambdaSEXP, SEXP OmegaSEXP, SEXP PsiSEXP, SEXP nuSEXP, SEXP Beta0SEXP, SEXP iSigma0SEXP, SEXP Mu0SEXP, SEXP updateBetaSigmaSEXP, SEXP updateMuSEXP, SEXP storeBetaSigmaSEXP, SEXP storeMuSEXP)</argsstring>
+        <name>_mniw_HierUneqVModelGibbs</name>
+        <param>
+          <type>SEXP</type>
+          <declname>nSamplesSEXP</declname>
+        </param>
+        <param>
+          <type>SEXP</type>
+          <declname>nBurnSEXP</declname>
+        </param>
+        <param>
+          <type>SEXP</type>
+          <declname>YSEXP</declname>
+        </param>
+        <param>
+          <type>SEXP</type>
+          <declname>XSEXP</declname>
+        </param>
+        <param>
+          <type>SEXP</type>
+          <declname>VSEXP</declname>
+        </param>
+        <param>
+          <type>SEXP</type>
+          <declname>LambdaSEXP</declname>
+        </param>
+        <param>
+          <type>SEXP</type>
+          <declname>OmegaSEXP</declname>
+        </param>
+        <param>
+          <type>SEXP</type>
+          <declname>PsiSEXP</declname>
+        </param>
+        <param>
+          <type>SEXP</type>
+          <declname>nuSEXP</declname>
+        </param>
+        <param>
+          <type>SEXP</type>
+          <declname>Beta0SEXP</declname>
+        </param>
+        <param>
+          <type>SEXP</type>
+          <declname>iSigma0SEXP</declname>
+        </param>
+        <param>
+          <type>SEXP</type>
+          <declname>Mu0SEXP</declname>
+        </param>
+        <param>
+          <type>SEXP</type>
+          <declname>updateBetaSigmaSEXP</declname>
+        </param>
+        <param>
+          <type>SEXP</type>
+          <declname>updateMuSEXP</declname>
+        </param>
+        <param>
+          <type>SEXP</type>
+          <declname>storeBetaSigmaSEXP</declname>
+        </param>
+        <param>
+          <type>SEXP</type>
+          <declname>storeMuSEXP</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/RcppExports.cpp" line="43" column="1" bodyfile="src/RcppExports.cpp" bodystart="43" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="function" id="_rcpp_exports_8cpp_1acddb177c0c325999d7c33464e0a97500" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>List</type>
+        <definition>List GenerateMatrixNIW</definition>
+        <argsstring>(int N, Eigen::MatrixXd Lambda, Eigen::MatrixXd Sigma, Eigen::MatrixXd Psi, Eigen::VectorXd nu, bool inverse)</argsstring>
+        <name>GenerateMatrixNIW</name>
+        <param>
+          <type>int</type>
+          <declname>N</declname>
+        </param>
+        <param>
+          <type>Eigen::MatrixXd</type>
+          <declname>Lambda</declname>
+        </param>
+        <param>
+          <type>Eigen::MatrixXd</type>
+          <declname>Sigma</declname>
+        </param>
+        <param>
+          <type>Eigen::MatrixXd</type>
+          <declname>Psi</declname>
+        </param>
+        <param>
+          <type>Eigen::VectorXd</type>
+          <declname>nu</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>inverse</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Generate a random sample from the Matrix-Normal Inverse-Wishart distribution.</para><para>Generate <computeroutput>N</computeroutput> independent draws from a <computeroutput>p x q</computeroutput>/<computeroutput>q x q</computeroutput> dimensional Matrix-Normal Inverse-Wishart distribution. Each argument can be vectorized, meaning that it can have length either <computeroutput>N</computeroutput> or <computeroutput>1</computeroutput>, denoted here as <computeroutput>n</computeroutput>.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">N</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Integer number of random draws </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">Lambda</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Matrix of <computeroutput>p x nq</computeroutput> mean matrices. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">Sigma</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Matrix of <computeroutput>p x np</computeroutput> row-wise variance or precision matrices. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">Psi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Matrix of <computeroutput>q x nq</computeroutput> scale matrices. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">nu</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Vector of <computeroutput>n</computeroutput> degrees-of-freedom parameters. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">inverse</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Boolean; <computeroutput>true/false</computeroutput> indicates that <computeroutput>Sigma</computeroutput> is on the precision/variance scale. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>List with elements <computeroutput>X</computeroutput> and <computeroutput>V</computeroutput>, consisting of matrices of size <computeroutput>p x Nq</computeroutput> and <computeroutput>q x Nq</computeroutput> random draws respectively. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/RcppExports.cpp" line="68" column="1" bodyfile="src/MatrixNIWExports.cpp" bodystart="30" bodyend="98"/>
+      </memberdef>
+      <memberdef kind="function" id="_rcpp_exports_8cpp_1a567d7e254ca695b6ad681a3d1f6b3f78" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>RcppExport SEXP</type>
+        <definition>RcppExport SEXP _mniw_GenerateMatrixNIW</definition>
+        <argsstring>(SEXP NSEXP, SEXP LambdaSEXP, SEXP SigmaSEXP, SEXP PsiSEXP, SEXP nuSEXP, SEXP inverseSEXP)</argsstring>
+        <name>_mniw_GenerateMatrixNIW</name>
+        <param>
+          <type>SEXP</type>
+          <declname>NSEXP</declname>
+        </param>
+        <param>
+          <type>SEXP</type>
+          <declname>LambdaSEXP</declname>
+        </param>
+        <param>
+          <type>SEXP</type>
+          <declname>SigmaSEXP</declname>
+        </param>
+        <param>
+          <type>SEXP</type>
+          <declname>PsiSEXP</declname>
+        </param>
+        <param>
+          <type>SEXP</type>
+          <declname>nuSEXP</declname>
+        </param>
+        <param>
+          <type>SEXP</type>
+          <declname>inverseSEXP</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/RcppExports.cpp" line="69" column="1" bodyfile="src/RcppExports.cpp" bodystart="69" bodyend="82"/>
+      </memberdef>
+      <memberdef kind="function" id="_rcpp_exports_8cpp_1a6eb5d3d7e02fb26f9e9483d7c83dc1e7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Eigen::VectorXd</type>
+        <definition>Eigen::VectorXd LogDensityMatrixNormal</definition>
+        <argsstring>(Eigen::MatrixXd X, Eigen::MatrixXd Lambda, Eigen::MatrixXd SigmaR, Eigen::MatrixXd SigmaC)</argsstring>
+        <name>LogDensityMatrixNormal</name>
+        <param>
+          <type>Eigen::MatrixXd</type>
+          <declname>X</declname>
+        </param>
+        <param>
+          <type>Eigen::MatrixXd</type>
+          <declname>Lambda</declname>
+        </param>
+        <param>
+          <type>Eigen::MatrixXd</type>
+          <declname>SigmaR</declname>
+        </param>
+        <param>
+          <type>Eigen::MatrixXd</type>
+          <declname>SigmaC</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Log-density of the Matrix-Normal distribution.</para><para>Evaluate the log-density of <computeroutput>N</computeroutput> observations of a <computeroutput>p x q</computeroutput> dimensional Matrix-Normal distribution. Each argument can be vectorized, meaning that it can have length either <computeroutput>N</computeroutput> or <computeroutput>1</computeroutput>, denoted here as <computeroutput>n</computeroutput>.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">X</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Matrix of <computeroutput>p x nq</computeroutput> random matrix observations. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">Lambda</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Matrix of <computeroutput>p x nq</computeroutput> mean matrices. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">SigmaR</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Matrix of <computeroutput>p x np</computeroutput> row-wise variance matrices. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">SigmaC</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Matrix of <computeroutput>q x nq</computeroutput> column-wise variance matrices.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Vector of <computeroutput>N</computeroutput> log-density evaluations. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/RcppExports.cpp" line="84" column="1" bodyfile="src/MatrixNormalExports.cpp" bodystart="23" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="function" id="_rcpp_exports_8cpp_1a33d1cc615f93e79beffbbeee4e1a6f35" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>RcppExport SEXP</type>
+        <definition>RcppExport SEXP _mniw_LogDensityMatrixNormal</definition>
+        <argsstring>(SEXP XSEXP, SEXP LambdaSEXP, SEXP SigmaRSEXP, SEXP SigmaCSEXP)</argsstring>
+        <name>_mniw_LogDensityMatrixNormal</name>
+        <param>
+          <type>SEXP</type>
+          <declname>XSEXP</declname>
+        </param>
+        <param>
+          <type>SEXP</type>
+          <declname>LambdaSEXP</declname>
+        </param>
+        <param>
+          <type>SEXP</type>
+          <declname>SigmaRSEXP</declname>
+        </param>
+        <param>
+          <type>SEXP</type>
+          <declname>SigmaCSEXP</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/RcppExports.cpp" line="85" column="1" bodyfile="src/RcppExports.cpp" bodystart="85" bodyend="96"/>
+      </memberdef>
+      <memberdef kind="function" id="_rcpp_exports_8cpp_1a331c1e50142019aa6077d1bc266d21b2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Eigen::MatrixXd</type>
+        <definition>Eigen::MatrixXd GenerateMatrixNormal</definition>
+        <argsstring>(int N, Eigen::MatrixXd Lambda, Eigen::MatrixXd SigmaR, Eigen::MatrixXd SigmaC)</argsstring>
+        <name>GenerateMatrixNormal</name>
+        <param>
+          <type>int</type>
+          <declname>N</declname>
+        </param>
+        <param>
+          <type>Eigen::MatrixXd</type>
+          <declname>Lambda</declname>
+        </param>
+        <param>
+          <type>Eigen::MatrixXd</type>
+          <declname>SigmaR</declname>
+        </param>
+        <param>
+          <type>Eigen::MatrixXd</type>
+          <declname>SigmaC</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Generate a random sample from the Matrix-Normal distribution.</para><para>Generate <computeroutput>N</computeroutput> independent draws from a <computeroutput>p x q</computeroutput> dimensional Matrix-Normal distribution. Each argument can be vectorized, meaning that it can have length either <computeroutput>N</computeroutput> or <computeroutput>1</computeroutput>, denoted here as <computeroutput>n</computeroutput>.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">N</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Integer number of random draws </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">Lambda</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Matrix of <computeroutput>p x nq</computeroutput> mean matrices. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">SigmaR</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Matrix of <computeroutput>p x np</computeroutput> row-wise variance matrices. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">SigmaC</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Matrix of <computeroutput>q x nq</computeroutput> column-wise variance matrices. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Matrix of <computeroutput>p x Nq</computeroutput> random draws. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/RcppExports.cpp" line="98" column="1" bodyfile="src/MatrixNormalExports.cpp" bodystart="78" bodyend="117"/>
+      </memberdef>
+      <memberdef kind="function" id="_rcpp_exports_8cpp_1a61027523c727de03b114ec2ddb05c666" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>RcppExport SEXP</type>
+        <definition>RcppExport SEXP _mniw_GenerateMatrixNormal</definition>
+        <argsstring>(SEXP NSEXP, SEXP LambdaSEXP, SEXP SigmaRSEXP, SEXP SigmaCSEXP)</argsstring>
+        <name>_mniw_GenerateMatrixNormal</name>
+        <param>
+          <type>SEXP</type>
+          <declname>NSEXP</declname>
+        </param>
+        <param>
+          <type>SEXP</type>
+          <declname>LambdaSEXP</declname>
+        </param>
+        <param>
+          <type>SEXP</type>
+          <declname>SigmaRSEXP</declname>
+        </param>
+        <param>
+          <type>SEXP</type>
+          <declname>SigmaCSEXP</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/RcppExports.cpp" line="99" column="1" bodyfile="src/RcppExports.cpp" bodystart="99" bodyend="110"/>
+      </memberdef>
+      <memberdef kind="function" id="_rcpp_exports_8cpp_1a105f96f9f0516fe3e1a4164385aee76b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Eigen::VectorXd</type>
+        <definition>Eigen::VectorXd LogDensityMatrixT</definition>
+        <argsstring>(Eigen::MatrixXd X, Eigen::MatrixXd Lambda, Eigen::MatrixXd SigmaR, Eigen::MatrixXd SigmaC, Eigen::VectorXd nu)</argsstring>
+        <name>LogDensityMatrixT</name>
+        <param>
+          <type>Eigen::MatrixXd</type>
+          <declname>X</declname>
+        </param>
+        <param>
+          <type>Eigen::MatrixXd</type>
+          <declname>Lambda</declname>
+        </param>
+        <param>
+          <type>Eigen::MatrixXd</type>
+          <declname>SigmaR</declname>
+        </param>
+        <param>
+          <type>Eigen::MatrixXd</type>
+          <declname>SigmaC</declname>
+        </param>
+        <param>
+          <type>Eigen::VectorXd</type>
+          <declname>nu</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Log-density of the Matrix-T distribution.</para><para>Evaluate the log-density of <computeroutput>N</computeroutput> observations of a <computeroutput>p x q</computeroutput> dimensional Matrix-T distribution. Each argument can be vectorized, meaning that it can have length either <computeroutput>N</computeroutput> or <computeroutput>1</computeroutput>, denoted here as <computeroutput>n</computeroutput>.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">X</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Matrix of <computeroutput>p x nq</computeroutput> random matrix observations. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">Lambda</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Matrix of <computeroutput>p x nq</computeroutput> mean matrices. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">SigmaR</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Matrix of <computeroutput>p x np</computeroutput> row-wise variance matrices. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">SigmaC</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Matrix of <computeroutput>q x nq</computeroutput> column-wise variance matrices. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">nu</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Vector of <computeroutput>n</computeroutput> degrees-of-freedom parameters.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Vector of <computeroutput>N</computeroutput> log-density evaluations. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/RcppExports.cpp" line="112" column="1" bodyfile="src/MatrixTExports.cpp" bodystart="23" bodyend="78"/>
+      </memberdef>
+      <memberdef kind="function" id="_rcpp_exports_8cpp_1ad765ef7bfec1e13b0ed2261dbd1f0f69" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>RcppExport SEXP</type>
+        <definition>RcppExport SEXP _mniw_LogDensityMatrixT</definition>
+        <argsstring>(SEXP XSEXP, SEXP LambdaSEXP, SEXP SigmaRSEXP, SEXP SigmaCSEXP, SEXP nuSEXP)</argsstring>
+        <name>_mniw_LogDensityMatrixT</name>
+        <param>
+          <type>SEXP</type>
+          <declname>XSEXP</declname>
+        </param>
+        <param>
+          <type>SEXP</type>
+          <declname>LambdaSEXP</declname>
+        </param>
+        <param>
+          <type>SEXP</type>
+          <declname>SigmaRSEXP</declname>
+        </param>
+        <param>
+          <type>SEXP</type>
+          <declname>SigmaCSEXP</declname>
+        </param>
+        <param>
+          <type>SEXP</type>
+          <declname>nuSEXP</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/RcppExports.cpp" line="113" column="1" bodyfile="src/RcppExports.cpp" bodystart="113" bodyend="125"/>
+      </memberdef>
+      <memberdef kind="function" id="_rcpp_exports_8cpp_1a395c84ecb4d66665edc447e57a7524a7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Eigen::MatrixXd</type>
+        <definition>Eigen::MatrixXd GenerateMatrixT</definition>
+        <argsstring>(int N, Eigen::MatrixXd Lambda, Eigen::MatrixXd SigmaR, Eigen::MatrixXd SigmaC, Eigen::VectorXd nu, bool inverse)</argsstring>
+        <name>GenerateMatrixT</name>
+        <param>
+          <type>int</type>
+          <declname>N</declname>
+        </param>
+        <param>
+          <type>Eigen::MatrixXd</type>
+          <declname>Lambda</declname>
+        </param>
+        <param>
+          <type>Eigen::MatrixXd</type>
+          <declname>SigmaR</declname>
+        </param>
+        <param>
+          <type>Eigen::MatrixXd</type>
+          <declname>SigmaC</declname>
+        </param>
+        <param>
+          <type>Eigen::VectorXd</type>
+          <declname>nu</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>inverse</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Generate a random sample from the Matrix-T distribution.</para><para>Generate <computeroutput>N</computeroutput> independent draws from a <computeroutput>p x q</computeroutput> dimensional Matrix-T distribution. Each argument can be vectorized, meaning that it can have length either <computeroutput>N</computeroutput> or <computeroutput>1</computeroutput>, denoted here as <computeroutput>n</computeroutput>.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">N</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Integer number of random draws </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">Lambda</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Matrix of <computeroutput>p x nq</computeroutput> mean matrices. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">SigmaR</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Matrix of <computeroutput>p x np</computeroutput> row-wise variance or precision matrices. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">SigmaC</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Matrix of <computeroutput>q x nq</computeroutput> column-wise variance matrices. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">nu</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Vector of <computeroutput>n</computeroutput> degrees-of-freedom parameters. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">inverse</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Boolean; <computeroutput>true/false</computeroutput> indicates that <computeroutput>SigmaR</computeroutput> is on the precision/variance scale. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Matrix of <computeroutput>p x Nq</computeroutput> random draws. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/RcppExports.cpp" line="127" column="1" bodyfile="src/MatrixTExports.cpp" bodystart="92" bodyend="153"/>
+      </memberdef>
+      <memberdef kind="function" id="_rcpp_exports_8cpp_1a79e99d36e3fd7aabc98d21d8a39544b9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>RcppExport SEXP</type>
+        <definition>RcppExport SEXP _mniw_GenerateMatrixT</definition>
+        <argsstring>(SEXP NSEXP, SEXP LambdaSEXP, SEXP SigmaRSEXP, SEXP SigmaCSEXP, SEXP nuSEXP, SEXP inverseSEXP)</argsstring>
+        <name>_mniw_GenerateMatrixT</name>
+        <param>
+          <type>SEXP</type>
+          <declname>NSEXP</declname>
+        </param>
+        <param>
+          <type>SEXP</type>
+          <declname>LambdaSEXP</declname>
+        </param>
+        <param>
+          <type>SEXP</type>
+          <declname>SigmaRSEXP</declname>
+        </param>
+        <param>
+          <type>SEXP</type>
+          <declname>SigmaCSEXP</declname>
+        </param>
+        <param>
+          <type>SEXP</type>
+          <declname>nuSEXP</declname>
+        </param>
+        <param>
+          <type>SEXP</type>
+          <declname>inverseSEXP</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/RcppExports.cpp" line="128" column="1" bodyfile="src/RcppExports.cpp" bodystart="128" bodyend="141"/>
+      </memberdef>
+      <memberdef kind="function" id="_rcpp_exports_8cpp_1a6b16b5e5b49de180b9d6ed0dcccc1d8b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Eigen::VectorXd</type>
+        <definition>Eigen::VectorXd LogDensityMultivariateNormal</definition>
+        <argsstring>(Eigen::MatrixXd X, Eigen::MatrixXd mu, Eigen::MatrixXd V)</argsstring>
+        <name>LogDensityMultivariateNormal</name>
+        <param>
+          <type>Eigen::MatrixXd</type>
+          <declname>X</declname>
+        </param>
+        <param>
+          <type>Eigen::MatrixXd</type>
+          <declname>mu</declname>
+        </param>
+        <param>
+          <type>Eigen::MatrixXd</type>
+          <declname>V</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Log-density of the Multivariate Normal distribution.</para><para>Evaluate the log-density of <computeroutput>N</computeroutput> observations of a <computeroutput>q</computeroutput> dimensional Multivariate Normal distribution. Each argument can be vectorized, meaning that it can have length either <computeroutput>N</computeroutput> or <computeroutput>1</computeroutput>, denoted here as <computeroutput>n</computeroutput>.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">X</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Matrix of <computeroutput>q x n</computeroutput> random variable observations. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">mu</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Matrix of <computeroutput>q x n</computeroutput> mean vectors. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">V</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Matrix of <computeroutput>q x nq</computeroutput> variance matrices.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Vector of <computeroutput>N</computeroutput> log-density evaluations. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/RcppExports.cpp" line="143" column="1" bodyfile="src/MultiNormalExports.cpp" bodystart="25" bodyend="54"/>
+      </memberdef>
+      <memberdef kind="function" id="_rcpp_exports_8cpp_1ab2bac95d412925bba1e1bf250c84559b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>RcppExport SEXP</type>
+        <definition>RcppExport SEXP _mniw_LogDensityMultivariateNormal</definition>
+        <argsstring>(SEXP XSEXP, SEXP muSEXP, SEXP VSEXP)</argsstring>
+        <name>_mniw_LogDensityMultivariateNormal</name>
+        <param>
+          <type>SEXP</type>
+          <declname>XSEXP</declname>
+        </param>
+        <param>
+          <type>SEXP</type>
+          <declname>muSEXP</declname>
+        </param>
+        <param>
+          <type>SEXP</type>
+          <declname>VSEXP</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/RcppExports.cpp" line="144" column="1" bodyfile="src/RcppExports.cpp" bodystart="144" bodyend="154"/>
+      </memberdef>
+      <memberdef kind="function" id="_rcpp_exports_8cpp_1ace157a74f1802e86bd0ed888e7481f77" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Eigen::MatrixXd</type>
+        <definition>Eigen::MatrixXd GenerateMultivariateNormal</definition>
+        <argsstring>(int N, Eigen::MatrixXd mu, Eigen::MatrixXd Sigma)</argsstring>
+        <name>GenerateMultivariateNormal</name>
+        <param>
+          <type>int</type>
+          <declname>N</declname>
+        </param>
+        <param>
+          <type>Eigen::MatrixXd</type>
+          <declname>mu</declname>
+        </param>
+        <param>
+          <type>Eigen::MatrixXd</type>
+          <declname>Sigma</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Generate a random sample from the Multivariate Normal distribution.</para><para>Generate <computeroutput>N</computeroutput> independent draws from a <computeroutput>q</computeroutput> dimensional Multivariate Normal distribution. Each argument can be vectorized, meaning that it can have length either <computeroutput>N</computeroutput> or <computeroutput>1</computeroutput>, denoted here as <computeroutput>n</computeroutput>.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">N</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Integer number of random draws. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">mu</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Matrix of size <computeroutput>q x n</computeroutput> of mean vectors. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">Sigma</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Matrix of size <computeroutput>q x nq</computeroutput> of variance matrices.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Matrix of size <computeroutput>q x N</computeroutput> of random draws. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/RcppExports.cpp" line="156" column="1" bodyfile="src/MultiNormalExports.cpp" bodystart="66" bodyend="104"/>
+      </memberdef>
+      <memberdef kind="function" id="_rcpp_exports_8cpp_1ab18f541ae6f48df13b1a932dd2379196" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>RcppExport SEXP</type>
+        <definition>RcppExport SEXP _mniw_GenerateMultivariateNormal</definition>
+        <argsstring>(SEXP NSEXP, SEXP muSEXP, SEXP SigmaSEXP)</argsstring>
+        <name>_mniw_GenerateMultivariateNormal</name>
+        <param>
+          <type>SEXP</type>
+          <declname>NSEXP</declname>
+        </param>
+        <param>
+          <type>SEXP</type>
+          <declname>muSEXP</declname>
+        </param>
+        <param>
+          <type>SEXP</type>
+          <declname>SigmaSEXP</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/RcppExports.cpp" line="157" column="1" bodyfile="src/RcppExports.cpp" bodystart="157" bodyend="167"/>
+      </memberdef>
+      <memberdef kind="function" id="_rcpp_exports_8cpp_1a252ad62145f8488524f7c5b4cc90679c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Eigen::MatrixXd</type>
+        <definition>Eigen::MatrixXd GenerateRandomEffectsNormal</definition>
+        <argsstring>(int N, Eigen::MatrixXd x, Eigen::MatrixXd V, Eigen::MatrixXd lambda, Eigen::MatrixXd Sigma)</argsstring>
+        <name>GenerateRandomEffectsNormal</name>
+        <param>
+          <type>int</type>
+          <declname>N</declname>
+        </param>
+        <param>
+          <type>Eigen::MatrixXd</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>Eigen::MatrixXd</type>
+          <declname>V</declname>
+        </param>
+        <param>
+          <type>Eigen::MatrixXd</type>
+          <declname>lambda</declname>
+        </param>
+        <param>
+          <type>Eigen::MatrixXd</type>
+          <declname>Sigma</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Generate a random sample from the Random-Effects Normal distribution.</para><para>Generate <computeroutput>N</computeroutput> independent draws from <formula id="2">$p(\boldsymbol{\mu} \mid \boldsymbol{x})$</formula>, where <formula id="3">\[ \begin{aligned} \boldsymbol{\mu} &amp; \sim \mathcal N(\boldsymbol{\lambda}, \boldsymbol{\Sigma}) \\ \boldsymbol{x} \mid \boldsymbol{\mu} &amp; \sim \mathcal N(\boldsymbol{\mu}, \boldsymbol{V}). \end{aligned} \]</formula> Each argument can be vectorized, meaning that it can have length either <computeroutput>N</computeroutput> or <computeroutput>1</computeroutput>, denoted here as <computeroutput>n</computeroutput>.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">N</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Integer number of random draws. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Matrix of size <computeroutput>q x n</computeroutput> of observations. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">V</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Matrix of size <computeroutput>q x nq</computeroutput> of observation variances. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">lambda</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Matrix of size <computeroutput>q x n</computeroutput> of prior means. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">Sigma</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Matrix of size <computeroutput>q x nq</computeroutput> of prior variances.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Matrix of size <computeroutput>q x Nq</computeroutput> of random draws of observation means <computeroutput>mu</computeroutput>. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/RcppExports.cpp" line="169" column="1" bodyfile="src/RandomEffectsExports.cpp" bodystart="33" bodyend="90"/>
+      </memberdef>
+      <memberdef kind="function" id="_rcpp_exports_8cpp_1a8c97a88581f24f0e27bf3cf90cfbd498" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>RcppExport SEXP</type>
+        <definition>RcppExport SEXP _mniw_GenerateRandomEffectsNormal</definition>
+        <argsstring>(SEXP NSEXP, SEXP xSEXP, SEXP VSEXP, SEXP lambdaSEXP, SEXP SigmaSEXP)</argsstring>
+        <name>_mniw_GenerateRandomEffectsNormal</name>
+        <param>
+          <type>SEXP</type>
+          <declname>NSEXP</declname>
+        </param>
+        <param>
+          <type>SEXP</type>
+          <declname>xSEXP</declname>
+        </param>
+        <param>
+          <type>SEXP</type>
+          <declname>VSEXP</declname>
+        </param>
+        <param>
+          <type>SEXP</type>
+          <declname>lambdaSEXP</declname>
+        </param>
+        <param>
+          <type>SEXP</type>
+          <declname>SigmaSEXP</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/RcppExports.cpp" line="170" column="1" bodyfile="src/RcppExports.cpp" bodystart="170" bodyend="182"/>
+      </memberdef>
+      <memberdef kind="function" id="_rcpp_exports_8cpp_1a77839489a7f32b7c01889aeedfaf179a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Eigen::VectorXd</type>
+        <definition>Eigen::VectorXd LogDensityWishart</definition>
+        <argsstring>(Eigen::MatrixXd X, Eigen::MatrixXd Psi, Eigen::VectorXd nu, bool inverse)</argsstring>
+        <name>LogDensityWishart</name>
+        <param>
+          <type>Eigen::MatrixXd</type>
+          <declname>X</declname>
+        </param>
+        <param>
+          <type>Eigen::MatrixXd</type>
+          <declname>Psi</declname>
+        </param>
+        <param>
+          <type>Eigen::VectorXd</type>
+          <declname>nu</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>inverse</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Log-density of the Wishart and Inverse-Wishart distributions.</para><para>Evaluate the log-density of <computeroutput>N</computeroutput> observations of a <computeroutput>q x q</computeroutput> Wishart or Inverse-Wishart distribution. Each argument except <computeroutput>inverse</computeroutput> can be vectorized, meaning that it can have length either <computeroutput>N</computeroutput> or <computeroutput>1</computeroutput>, denoted here as <computeroutput>n</computeroutput>.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">X</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Matrix of size <computeroutput>q x nq</computeroutput> of random variable observations. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">Psi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Matrix of size <computeroutput>q x nq</computeroutput> of scale matrices. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">nu</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Vector of <computeroutput>n</computeroutput> degrees-of-freedom parameters. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">inverse</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether to evaluate the log-density of the Wishart or Inverse-Wishart distribution.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A vector of <computeroutput>N</computeroutput> log-density evaluations. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/RcppExports.cpp" line="184" column="1" bodyfile="src/WishartExports.cpp" bodystart="26" bodyend="65"/>
+      </memberdef>
+      <memberdef kind="function" id="_rcpp_exports_8cpp_1a9d68a24c71c02c3339c9f929aa55f9f2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>RcppExport SEXP</type>
+        <definition>RcppExport SEXP _mniw_LogDensityWishart</definition>
+        <argsstring>(SEXP XSEXP, SEXP PsiSEXP, SEXP nuSEXP, SEXP inverseSEXP)</argsstring>
+        <name>_mniw_LogDensityWishart</name>
+        <param>
+          <type>SEXP</type>
+          <declname>XSEXP</declname>
+        </param>
+        <param>
+          <type>SEXP</type>
+          <declname>PsiSEXP</declname>
+        </param>
+        <param>
+          <type>SEXP</type>
+          <declname>nuSEXP</declname>
+        </param>
+        <param>
+          <type>SEXP</type>
+          <declname>inverseSEXP</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/RcppExports.cpp" line="185" column="1" bodyfile="src/RcppExports.cpp" bodystart="185" bodyend="196"/>
+      </memberdef>
+      <memberdef kind="function" id="_rcpp_exports_8cpp_1a8e8a90eee54fa902bfa0afb8a51d9bc2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Eigen::MatrixXd</type>
+        <definition>Eigen::MatrixXd GenerateWishart</definition>
+        <argsstring>(int N, Eigen::MatrixXd Psi, Eigen::VectorXd nu, bool inverse)</argsstring>
+        <name>GenerateWishart</name>
+        <param>
+          <type>int</type>
+          <declname>N</declname>
+        </param>
+        <param>
+          <type>Eigen::MatrixXd</type>
+          <declname>Psi</declname>
+        </param>
+        <param>
+          <type>Eigen::VectorXd</type>
+          <declname>nu</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>inverse</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Generate a random sample from the Wishart or Inverse-Wishart distribution.</para><para>Generate <computeroutput>N</computeroutput> independent draws from a <computeroutput>q x q</computeroutput> Wishart or Inverse-Wishart. Each argument except <computeroutput>inverse</computeroutput> can be vectorized, meaning that it can have length either <computeroutput>N</computeroutput> or <computeroutput>1</computeroutput>, denoted here as <computeroutput>n</computeroutput>.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">N</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Integer number of random draws to produce </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">Psi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Matrix of size <computeroutput>q x nq</computeroutput> of scale matrices. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">nu</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Vector of <computeroutput>n</computeroutput> degrees-of-freedom parameters. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">inverse</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether to evaluate the log-density of the Wishart or Inverse-Wishart distribution.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A <computeroutput>q x Nq</computeroutput> matrix of <computeroutput>N</computeroutput> random draws. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/RcppExports.cpp" line="198" column="1" bodyfile="src/WishartExports.cpp" bodystart="79" bodyend="136"/>
+      </memberdef>
+      <memberdef kind="function" id="_rcpp_exports_8cpp_1a3e0c4c27ae66bf4f0296e8286b67b65c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>RcppExport SEXP</type>
+        <definition>RcppExport SEXP _mniw_GenerateWishart</definition>
+        <argsstring>(SEXP NSEXP, SEXP PsiSEXP, SEXP nuSEXP, SEXP inverseSEXP)</argsstring>
+        <name>_mniw_GenerateWishart</name>
+        <param>
+          <type>SEXP</type>
+          <declname>NSEXP</declname>
+        </param>
+        <param>
+          <type>SEXP</type>
+          <declname>PsiSEXP</declname>
+        </param>
+        <param>
+          <type>SEXP</type>
+          <declname>nuSEXP</declname>
+        </param>
+        <param>
+          <type>SEXP</type>
+          <declname>inverseSEXP</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/RcppExports.cpp" line="199" column="1" bodyfile="src/RcppExports.cpp" bodystart="199" bodyend="210"/>
+      </memberdef>
+      <memberdef kind="function" id="_rcpp_exports_8cpp_1a45a77eae482c581bec2adef53281b8e5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>RcppExport void</type>
+        <definition>RcppExport void R_init_mniw</definition>
+        <argsstring>(DllInfo *dll)</argsstring>
+        <name>R_init_mniw</name>
+        <param>
+          <type>DllInfo *</type>
+          <declname>dll</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/RcppExports.cpp" line="229" column="1" bodyfile="src/RcppExports.cpp" bodystart="229" bodyend="232"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//<sp/>Generated<sp/>by<sp/>using<sp/>Rcpp::compileAttributes()<sp/>-&gt;<sp/>do<sp/>not<sp/>edit<sp/>by<sp/>hand</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Generator<sp/>token:<sp/>10BE3573-1514-4C36-9D1C-5A225CD40393</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;RcppEigen.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;Rcpp.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_rcpp" kindref="compound">Rcpp</ref>;</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">//<sp/>CrossProdVXX</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal">Eigen::MatrixXd<sp/><ref refid="_cross_product_exports_8cpp_1a82f820448cbf73429406f00b0c819549" kindref="member">CrossProdVXX</ref>(Eigen::MatrixXd<sp/>X,<sp/>Eigen::MatrixXd<sp/>V,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>p,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>q,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>inverse);</highlight></codeline>
+<codeline lineno="11"><highlight class="normal">RcppExport<sp/>SEXP<sp/>_mniw_CrossProdVXX(SEXP<sp/>XSEXP,<sp/>SEXP<sp/>VSEXP,<sp/>SEXP<sp/>pSEXP,<sp/>SEXP<sp/>qSEXP,<sp/>SEXP<sp/>inverseSEXP)<sp/>{</highlight></codeline>
+<codeline lineno="12"><highlight class="normal">BEGIN_RCPP</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/>Rcpp::RObject<sp/>rcpp_result_gen;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/>Rcpp::RNGScope<sp/>rcpp_rngScope_gen;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/>Rcpp::traits::input_parameter&lt;<sp/>Eigen::MatrixXd<sp/>&gt;::type<sp/>X(XSEXP);</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/>Rcpp::traits::input_parameter&lt;<sp/>Eigen::MatrixXd<sp/>&gt;::type<sp/>V(VSEXP);</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/>Rcpp::traits::input_parameter&lt;<sp/>int<sp/>&gt;::type<sp/>p(pSEXP);</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>Rcpp::traits::input_parameter&lt;<sp/>int<sp/>&gt;::type<sp/>q(qSEXP);</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>Rcpp::traits::input_parameter&lt;<sp/>bool<sp/>&gt;::type<sp/>inverse(inverseSEXP);</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>rcpp_result_gen<sp/>=<sp/>Rcpp::wrap(<ref refid="_cross_product_exports_8cpp_1a82f820448cbf73429406f00b0c819549" kindref="member">CrossProdVXX</ref>(X,<sp/>V,<sp/>p,<sp/>q,<sp/>inverse));</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>rcpp_result_gen;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal">END_RCPP</highlight></codeline>
+<codeline lineno="23"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="comment">//<sp/>CrossProdVXY</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal">Eigen::MatrixXd<sp/><ref refid="_cross_product_exports_8cpp_1ab3388823406e415dcfe6af54a915e7ed" kindref="member">CrossProdVXY</ref>(Eigen::MatrixXd<sp/>X,<sp/>Eigen::MatrixXd<sp/>Y,<sp/>Eigen::MatrixXd<sp/>V,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>p,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>q,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>r,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>inverse);</highlight></codeline>
+<codeline lineno="26"><highlight class="normal">RcppExport<sp/>SEXP<sp/>_mniw_CrossProdVXY(SEXP<sp/>XSEXP,<sp/>SEXP<sp/>YSEXP,<sp/>SEXP<sp/>VSEXP,<sp/>SEXP<sp/>pSEXP,<sp/>SEXP<sp/>qSEXP,<sp/>SEXP<sp/>rSEXP,<sp/>SEXP<sp/>inverseSEXP)<sp/>{</highlight></codeline>
+<codeline lineno="27"><highlight class="normal">BEGIN_RCPP</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>Rcpp::RObject<sp/>rcpp_result_gen;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>Rcpp::RNGScope<sp/>rcpp_rngScope_gen;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>Rcpp::traits::input_parameter&lt;<sp/>Eigen::MatrixXd<sp/>&gt;::type<sp/>X(XSEXP);</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>Rcpp::traits::input_parameter&lt;<sp/>Eigen::MatrixXd<sp/>&gt;::type<sp/>Y(YSEXP);</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>Rcpp::traits::input_parameter&lt;<sp/>Eigen::MatrixXd<sp/>&gt;::type<sp/>V(VSEXP);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>Rcpp::traits::input_parameter&lt;<sp/>int<sp/>&gt;::type<sp/>p(pSEXP);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>Rcpp::traits::input_parameter&lt;<sp/>int<sp/>&gt;::type<sp/>q(qSEXP);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>Rcpp::traits::input_parameter&lt;<sp/>int<sp/>&gt;::type<sp/>r(rSEXP);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>Rcpp::traits::input_parameter&lt;<sp/>bool<sp/>&gt;::type<sp/>inverse(inverseSEXP);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>rcpp_result_gen<sp/>=<sp/>Rcpp::wrap(<ref refid="_cross_product_exports_8cpp_1ab3388823406e415dcfe6af54a915e7ed" kindref="member">CrossProdVXY</ref>(X,<sp/>Y,<sp/>V,<sp/>p,<sp/>q,<sp/>r,<sp/>inverse));</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>rcpp_result_gen;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal">END_RCPP</highlight></codeline>
+<codeline lineno="40"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="comment">//<sp/>HierUneqVModelGibbs</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal">List<sp/><ref refid="_hierarchical_exports_8cpp_1ae439a9f482ad9a0902a4fe6c2a5001ae" kindref="member">HierUneqVModelGibbs</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nSamples,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nBurn,<sp/>Eigen::MatrixXd<sp/>Y,<sp/>Eigen::MatrixXd<sp/>X,<sp/>Eigen::MatrixXd<sp/>V,<sp/>Eigen::MatrixXd<sp/>Lambda,<sp/>Eigen::MatrixXd<sp/>Omega,<sp/>Eigen::MatrixXd<sp/>Psi,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>nu,<sp/>Eigen::MatrixXd<sp/>Beta0,<sp/>Eigen::MatrixXd<sp/>iSigma0,<sp/>Eigen::MatrixXd<sp/>Mu0,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>updateBetaSigma,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>updateMu,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>storeBetaSigma,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>storeMu);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal">RcppExport<sp/>SEXP<sp/>_mniw_HierUneqVModelGibbs(SEXP<sp/>nSamplesSEXP,<sp/>SEXP<sp/>nBurnSEXP,<sp/>SEXP<sp/>YSEXP,<sp/>SEXP<sp/>XSEXP,<sp/>SEXP<sp/>VSEXP,<sp/>SEXP<sp/>LambdaSEXP,<sp/>SEXP<sp/>OmegaSEXP,<sp/>SEXP<sp/>PsiSEXP,<sp/>SEXP<sp/>nuSEXP,<sp/>SEXP<sp/>Beta0SEXP,<sp/>SEXP<sp/>iSigma0SEXP,<sp/>SEXP<sp/>Mu0SEXP,<sp/>SEXP<sp/>updateBetaSigmaSEXP,<sp/>SEXP<sp/>updateMuSEXP,<sp/>SEXP<sp/>storeBetaSigmaSEXP,<sp/>SEXP<sp/>storeMuSEXP)<sp/>{</highlight></codeline>
+<codeline lineno="44"><highlight class="normal">BEGIN_RCPP</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>Rcpp::RObject<sp/>rcpp_result_gen;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>Rcpp::RNGScope<sp/>rcpp_rngScope_gen;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>Rcpp::traits::input_parameter&lt;<sp/>int<sp/>&gt;::type<sp/>nSamples(nSamplesSEXP);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/>Rcpp::traits::input_parameter&lt;<sp/>int<sp/>&gt;::type<sp/>nBurn(nBurnSEXP);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>Rcpp::traits::input_parameter&lt;<sp/>Eigen::MatrixXd<sp/>&gt;::type<sp/>Y(YSEXP);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>Rcpp::traits::input_parameter&lt;<sp/>Eigen::MatrixXd<sp/>&gt;::type<sp/>X(XSEXP);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>Rcpp::traits::input_parameter&lt;<sp/>Eigen::MatrixXd<sp/>&gt;::type<sp/>V(VSEXP);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>Rcpp::traits::input_parameter&lt;<sp/>Eigen::MatrixXd<sp/>&gt;::type<sp/>Lambda(LambdaSEXP);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>Rcpp::traits::input_parameter&lt;<sp/>Eigen::MatrixXd<sp/>&gt;::type<sp/>Omega(OmegaSEXP);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>Rcpp::traits::input_parameter&lt;<sp/>Eigen::MatrixXd<sp/>&gt;::type<sp/>Psi(PsiSEXP);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>Rcpp::traits::input_parameter&lt;<sp/>double<sp/>&gt;::type<sp/>nu(nuSEXP);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>Rcpp::traits::input_parameter&lt;<sp/>Eigen::MatrixXd<sp/>&gt;::type<sp/>Beta0(Beta0SEXP);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>Rcpp::traits::input_parameter&lt;<sp/>Eigen::MatrixXd<sp/>&gt;::type<sp/>iSigma0(iSigma0SEXP);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>Rcpp::traits::input_parameter&lt;<sp/>Eigen::MatrixXd<sp/>&gt;::type<sp/>Mu0(Mu0SEXP);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>Rcpp::traits::input_parameter&lt;<sp/>bool<sp/>&gt;::type<sp/>updateBetaSigma(updateBetaSigmaSEXP);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>Rcpp::traits::input_parameter&lt;<sp/>bool<sp/>&gt;::type<sp/>updateMu(updateMuSEXP);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>Rcpp::traits::input_parameter&lt;<sp/>bool<sp/>&gt;::type<sp/>storeBetaSigma(storeBetaSigmaSEXP);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>Rcpp::traits::input_parameter&lt;<sp/>bool<sp/>&gt;::type<sp/>storeMu(storeMuSEXP);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>rcpp_result_gen<sp/>=<sp/>Rcpp::wrap(<ref refid="_hierarchical_exports_8cpp_1ae439a9f482ad9a0902a4fe6c2a5001ae" kindref="member">HierUneqVModelGibbs</ref>(nSamples,<sp/>nBurn,<sp/>Y,<sp/>X,<sp/>V,<sp/>Lambda,<sp/>Omega,<sp/>Psi,<sp/>nu,<sp/>Beta0,<sp/>iSigma0,<sp/>Mu0,<sp/>updateBetaSigma,<sp/>updateMu,<sp/>storeBetaSigma,<sp/>storeMu));</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>rcpp_result_gen;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal">END_RCPP</highlight></codeline>
+<codeline lineno="66"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="comment">//<sp/>GenerateMatrixNIW</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal">List<sp/><ref refid="_matrix_n_i_w_exports_8cpp_1a01388b4aea4cd479ed6ec4fda4aa32d4" kindref="member">GenerateMatrixNIW</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>N,<sp/>Eigen::MatrixXd<sp/>Lambda,<sp/>Eigen::MatrixXd<sp/>Sigma,<sp/>Eigen::MatrixXd<sp/>Psi,<sp/>Eigen::VectorXd<sp/>nu,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>inverse);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal">RcppExport<sp/>SEXP<sp/>_mniw_GenerateMatrixNIW(SEXP<sp/>NSEXP,<sp/>SEXP<sp/>LambdaSEXP,<sp/>SEXP<sp/>SigmaSEXP,<sp/>SEXP<sp/>PsiSEXP,<sp/>SEXP<sp/>nuSEXP,<sp/>SEXP<sp/>inverseSEXP)<sp/>{</highlight></codeline>
+<codeline lineno="70"><highlight class="normal">BEGIN_RCPP</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>Rcpp::RObject<sp/>rcpp_result_gen;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>Rcpp::RNGScope<sp/>rcpp_rngScope_gen;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>Rcpp::traits::input_parameter&lt;<sp/>int<sp/>&gt;::type<sp/>N(NSEXP);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>Rcpp::traits::input_parameter&lt;<sp/>Eigen::MatrixXd<sp/>&gt;::type<sp/>Lambda(LambdaSEXP);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>Rcpp::traits::input_parameter&lt;<sp/>Eigen::MatrixXd<sp/>&gt;::type<sp/>Sigma(SigmaSEXP);</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>Rcpp::traits::input_parameter&lt;<sp/>Eigen::MatrixXd<sp/>&gt;::type<sp/>Psi(PsiSEXP);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>Rcpp::traits::input_parameter&lt;<sp/>Eigen::VectorXd<sp/>&gt;::type<sp/>nu(nuSEXP);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>Rcpp::traits::input_parameter&lt;<sp/>bool<sp/>&gt;::type<sp/>inverse(inverseSEXP);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>rcpp_result_gen<sp/>=<sp/>Rcpp::wrap(<ref refid="_matrix_n_i_w_exports_8cpp_1a01388b4aea4cd479ed6ec4fda4aa32d4" kindref="member">GenerateMatrixNIW</ref>(N,<sp/>Lambda,<sp/>Sigma,<sp/>Psi,<sp/>nu,<sp/>inverse));</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>rcpp_result_gen;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal">END_RCPP</highlight></codeline>
+<codeline lineno="82"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight><highlight class="comment">//<sp/>LogDensityMatrixNormal</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal">Eigen::VectorXd<sp/><ref refid="_matrix_normal_exports_8cpp_1a6eb5d3d7e02fb26f9e9483d7c83dc1e7" kindref="member">LogDensityMatrixNormal</ref>(Eigen::MatrixXd<sp/>X,<sp/>Eigen::MatrixXd<sp/>Lambda,<sp/>Eigen::MatrixXd<sp/>SigmaR,<sp/>Eigen::MatrixXd<sp/>SigmaC);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal">RcppExport<sp/>SEXP<sp/>_mniw_LogDensityMatrixNormal(SEXP<sp/>XSEXP,<sp/>SEXP<sp/>LambdaSEXP,<sp/>SEXP<sp/>SigmaRSEXP,<sp/>SEXP<sp/>SigmaCSEXP)<sp/>{</highlight></codeline>
+<codeline lineno="86"><highlight class="normal">BEGIN_RCPP</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>Rcpp::RObject<sp/>rcpp_result_gen;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>Rcpp::RNGScope<sp/>rcpp_rngScope_gen;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/>Rcpp::traits::input_parameter&lt;<sp/>Eigen::MatrixXd<sp/>&gt;::type<sp/>X(XSEXP);</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/>Rcpp::traits::input_parameter&lt;<sp/>Eigen::MatrixXd<sp/>&gt;::type<sp/>Lambda(LambdaSEXP);</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/>Rcpp::traits::input_parameter&lt;<sp/>Eigen::MatrixXd<sp/>&gt;::type<sp/>SigmaR(SigmaRSEXP);</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/>Rcpp::traits::input_parameter&lt;<sp/>Eigen::MatrixXd<sp/>&gt;::type<sp/>SigmaC(SigmaCSEXP);</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/>rcpp_result_gen<sp/>=<sp/>Rcpp::wrap(<ref refid="_matrix_normal_exports_8cpp_1a6eb5d3d7e02fb26f9e9483d7c83dc1e7" kindref="member">LogDensityMatrixNormal</ref>(X,<sp/>Lambda,<sp/>SigmaR,<sp/>SigmaC));</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>rcpp_result_gen;</highlight></codeline>
+<codeline lineno="95"><highlight class="normal">END_RCPP</highlight></codeline>
+<codeline lineno="96"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight><highlight class="comment">//<sp/>GenerateMatrixNormal</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal">Eigen::MatrixXd<sp/><ref refid="_matrix_normal_exports_8cpp_1a331c1e50142019aa6077d1bc266d21b2" kindref="member">GenerateMatrixNormal</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>N,<sp/>Eigen::MatrixXd<sp/>Lambda,<sp/>Eigen::MatrixXd<sp/>SigmaR,<sp/>Eigen::MatrixXd<sp/>SigmaC);</highlight></codeline>
+<codeline lineno="99"><highlight class="normal">RcppExport<sp/>SEXP<sp/>_mniw_GenerateMatrixNormal(SEXP<sp/>NSEXP,<sp/>SEXP<sp/>LambdaSEXP,<sp/>SEXP<sp/>SigmaRSEXP,<sp/>SEXP<sp/>SigmaCSEXP)<sp/>{</highlight></codeline>
+<codeline lineno="100"><highlight class="normal">BEGIN_RCPP</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>Rcpp::RObject<sp/>rcpp_result_gen;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>Rcpp::RNGScope<sp/>rcpp_rngScope_gen;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/>Rcpp::traits::input_parameter&lt;<sp/>int<sp/>&gt;::type<sp/>N(NSEXP);</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/>Rcpp::traits::input_parameter&lt;<sp/>Eigen::MatrixXd<sp/>&gt;::type<sp/>Lambda(LambdaSEXP);</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/>Rcpp::traits::input_parameter&lt;<sp/>Eigen::MatrixXd<sp/>&gt;::type<sp/>SigmaR(SigmaRSEXP);</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/>Rcpp::traits::input_parameter&lt;<sp/>Eigen::MatrixXd<sp/>&gt;::type<sp/>SigmaC(SigmaCSEXP);</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/>rcpp_result_gen<sp/>=<sp/>Rcpp::wrap(<ref refid="_matrix_normal_exports_8cpp_1a331c1e50142019aa6077d1bc266d21b2" kindref="member">GenerateMatrixNormal</ref>(N,<sp/>Lambda,<sp/>SigmaR,<sp/>SigmaC));</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>rcpp_result_gen;</highlight></codeline>
+<codeline lineno="109"><highlight class="normal">END_RCPP</highlight></codeline>
+<codeline lineno="110"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight><highlight class="comment">//<sp/>LogDensityMatrixT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal">Eigen::VectorXd<sp/><ref refid="_matrix_t_exports_8cpp_1a105f96f9f0516fe3e1a4164385aee76b" kindref="member">LogDensityMatrixT</ref>(Eigen::MatrixXd<sp/>X,<sp/>Eigen::MatrixXd<sp/>Lambda,<sp/>Eigen::MatrixXd<sp/>SigmaR,<sp/>Eigen::MatrixXd<sp/>SigmaC,<sp/>Eigen::VectorXd<sp/>nu);</highlight></codeline>
+<codeline lineno="113"><highlight class="normal">RcppExport<sp/>SEXP<sp/>_mniw_LogDensityMatrixT(SEXP<sp/>XSEXP,<sp/>SEXP<sp/>LambdaSEXP,<sp/>SEXP<sp/>SigmaRSEXP,<sp/>SEXP<sp/>SigmaCSEXP,<sp/>SEXP<sp/>nuSEXP)<sp/>{</highlight></codeline>
+<codeline lineno="114"><highlight class="normal">BEGIN_RCPP</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/>Rcpp::RObject<sp/>rcpp_result_gen;</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/>Rcpp::RNGScope<sp/>rcpp_rngScope_gen;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/>Rcpp::traits::input_parameter&lt;<sp/>Eigen::MatrixXd<sp/>&gt;::type<sp/>X(XSEXP);</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/>Rcpp::traits::input_parameter&lt;<sp/>Eigen::MatrixXd<sp/>&gt;::type<sp/>Lambda(LambdaSEXP);</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/>Rcpp::traits::input_parameter&lt;<sp/>Eigen::MatrixXd<sp/>&gt;::type<sp/>SigmaR(SigmaRSEXP);</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/>Rcpp::traits::input_parameter&lt;<sp/>Eigen::MatrixXd<sp/>&gt;::type<sp/>SigmaC(SigmaCSEXP);</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/>Rcpp::traits::input_parameter&lt;<sp/>Eigen::VectorXd<sp/>&gt;::type<sp/>nu(nuSEXP);</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/>rcpp_result_gen<sp/>=<sp/>Rcpp::wrap(<ref refid="_matrix_t_exports_8cpp_1a105f96f9f0516fe3e1a4164385aee76b" kindref="member">LogDensityMatrixT</ref>(X,<sp/>Lambda,<sp/>SigmaR,<sp/>SigmaC,<sp/>nu));</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>rcpp_result_gen;</highlight></codeline>
+<codeline lineno="124"><highlight class="normal">END_RCPP</highlight></codeline>
+<codeline lineno="125"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight><highlight class="comment">//<sp/>GenerateMatrixT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal">Eigen::MatrixXd<sp/><ref refid="_matrix_t_exports_8cpp_1a784b5e6cc83d3294b556d474a4f20461" kindref="member">GenerateMatrixT</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>N,<sp/>Eigen::MatrixXd<sp/>Lambda,<sp/>Eigen::MatrixXd<sp/>SigmaR,<sp/>Eigen::MatrixXd<sp/>SigmaC,<sp/>Eigen::VectorXd<sp/>nu,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>inverse);</highlight></codeline>
+<codeline lineno="128"><highlight class="normal">RcppExport<sp/>SEXP<sp/>_mniw_GenerateMatrixT(SEXP<sp/>NSEXP,<sp/>SEXP<sp/>LambdaSEXP,<sp/>SEXP<sp/>SigmaRSEXP,<sp/>SEXP<sp/>SigmaCSEXP,<sp/>SEXP<sp/>nuSEXP,<sp/>SEXP<sp/>inverseSEXP)<sp/>{</highlight></codeline>
+<codeline lineno="129"><highlight class="normal">BEGIN_RCPP</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/>Rcpp::RObject<sp/>rcpp_result_gen;</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/>Rcpp::RNGScope<sp/>rcpp_rngScope_gen;</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/>Rcpp::traits::input_parameter&lt;<sp/>int<sp/>&gt;::type<sp/>N(NSEXP);</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/>Rcpp::traits::input_parameter&lt;<sp/>Eigen::MatrixXd<sp/>&gt;::type<sp/>Lambda(LambdaSEXP);</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/>Rcpp::traits::input_parameter&lt;<sp/>Eigen::MatrixXd<sp/>&gt;::type<sp/>SigmaR(SigmaRSEXP);</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/>Rcpp::traits::input_parameter&lt;<sp/>Eigen::MatrixXd<sp/>&gt;::type<sp/>SigmaC(SigmaCSEXP);</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/>Rcpp::traits::input_parameter&lt;<sp/>Eigen::VectorXd<sp/>&gt;::type<sp/>nu(nuSEXP);</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/>Rcpp::traits::input_parameter&lt;<sp/>bool<sp/>&gt;::type<sp/>inverse(inverseSEXP);</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/>rcpp_result_gen<sp/>=<sp/>Rcpp::wrap(<ref refid="_matrix_t_exports_8cpp_1a784b5e6cc83d3294b556d474a4f20461" kindref="member">GenerateMatrixT</ref>(N,<sp/>Lambda,<sp/>SigmaR,<sp/>SigmaC,<sp/>nu,<sp/>inverse));</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>rcpp_result_gen;</highlight></codeline>
+<codeline lineno="140"><highlight class="normal">END_RCPP</highlight></codeline>
+<codeline lineno="141"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight><highlight class="comment">//<sp/>LogDensityMultivariateNormal</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal">Eigen::VectorXd<sp/><ref refid="_multi_normal_exports_8cpp_1a6b16b5e5b49de180b9d6ed0dcccc1d8b" kindref="member">LogDensityMultivariateNormal</ref>(Eigen::MatrixXd<sp/>X,<sp/>Eigen::MatrixXd<sp/>mu,<sp/>Eigen::MatrixXd<sp/>V);</highlight></codeline>
+<codeline lineno="144"><highlight class="normal">RcppExport<sp/>SEXP<sp/>_mniw_LogDensityMultivariateNormal(SEXP<sp/>XSEXP,<sp/>SEXP<sp/>muSEXP,<sp/>SEXP<sp/>VSEXP)<sp/>{</highlight></codeline>
+<codeline lineno="145"><highlight class="normal">BEGIN_RCPP</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/>Rcpp::RObject<sp/>rcpp_result_gen;</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/>Rcpp::RNGScope<sp/>rcpp_rngScope_gen;</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/>Rcpp::traits::input_parameter&lt;<sp/>Eigen::MatrixXd<sp/>&gt;::type<sp/>X(XSEXP);</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/>Rcpp::traits::input_parameter&lt;<sp/>Eigen::MatrixXd<sp/>&gt;::type<sp/>mu(muSEXP);</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/>Rcpp::traits::input_parameter&lt;<sp/>Eigen::MatrixXd<sp/>&gt;::type<sp/>V(VSEXP);</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/>rcpp_result_gen<sp/>=<sp/>Rcpp::wrap(<ref refid="_multi_normal_exports_8cpp_1a6b16b5e5b49de180b9d6ed0dcccc1d8b" kindref="member">LogDensityMultivariateNormal</ref>(X,<sp/>mu,<sp/>V));</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>rcpp_result_gen;</highlight></codeline>
+<codeline lineno="153"><highlight class="normal">END_RCPP</highlight></codeline>
+<codeline lineno="154"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight><highlight class="comment">//<sp/>GenerateMultivariateNormal</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal">Eigen::MatrixXd<sp/><ref refid="_multi_normal_exports_8cpp_1ace157a74f1802e86bd0ed888e7481f77" kindref="member">GenerateMultivariateNormal</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>N,<sp/>Eigen::MatrixXd<sp/>mu,<sp/>Eigen::MatrixXd<sp/>Sigma);</highlight></codeline>
+<codeline lineno="157"><highlight class="normal">RcppExport<sp/>SEXP<sp/>_mniw_GenerateMultivariateNormal(SEXP<sp/>NSEXP,<sp/>SEXP<sp/>muSEXP,<sp/>SEXP<sp/>SigmaSEXP)<sp/>{</highlight></codeline>
+<codeline lineno="158"><highlight class="normal">BEGIN_RCPP</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/>Rcpp::RObject<sp/>rcpp_result_gen;</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/>Rcpp::RNGScope<sp/>rcpp_rngScope_gen;</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/>Rcpp::traits::input_parameter&lt;<sp/>int<sp/>&gt;::type<sp/>N(NSEXP);</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/>Rcpp::traits::input_parameter&lt;<sp/>Eigen::MatrixXd<sp/>&gt;::type<sp/>mu(muSEXP);</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/>Rcpp::traits::input_parameter&lt;<sp/>Eigen::MatrixXd<sp/>&gt;::type<sp/>Sigma(SigmaSEXP);</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/>rcpp_result_gen<sp/>=<sp/>Rcpp::wrap(<ref refid="_multi_normal_exports_8cpp_1ace157a74f1802e86bd0ed888e7481f77" kindref="member">GenerateMultivariateNormal</ref>(N,<sp/>mu,<sp/>Sigma));</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>rcpp_result_gen;</highlight></codeline>
+<codeline lineno="166"><highlight class="normal">END_RCPP</highlight></codeline>
+<codeline lineno="167"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"></highlight><highlight class="comment">//<sp/>GenerateRandomEffectsNormal</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal">Eigen::MatrixXd<sp/><ref refid="_random_effects_exports_8cpp_1a252ad62145f8488524f7c5b4cc90679c" kindref="member">GenerateRandomEffectsNormal</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>N,<sp/>Eigen::MatrixXd<sp/>x,<sp/>Eigen::MatrixXd<sp/>V,<sp/>Eigen::MatrixXd<sp/>lambda,<sp/>Eigen::MatrixXd<sp/>Sigma);</highlight></codeline>
+<codeline lineno="170"><highlight class="normal">RcppExport<sp/>SEXP<sp/>_mniw_GenerateRandomEffectsNormal(SEXP<sp/>NSEXP,<sp/>SEXP<sp/>xSEXP,<sp/>SEXP<sp/>VSEXP,<sp/>SEXP<sp/>lambdaSEXP,<sp/>SEXP<sp/>SigmaSEXP)<sp/>{</highlight></codeline>
+<codeline lineno="171"><highlight class="normal">BEGIN_RCPP</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/>Rcpp::RObject<sp/>rcpp_result_gen;</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/>Rcpp::RNGScope<sp/>rcpp_rngScope_gen;</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/>Rcpp::traits::input_parameter&lt;<sp/>int<sp/>&gt;::type<sp/>N(NSEXP);</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/>Rcpp::traits::input_parameter&lt;<sp/>Eigen::MatrixXd<sp/>&gt;::type<sp/>x(xSEXP);</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/>Rcpp::traits::input_parameter&lt;<sp/>Eigen::MatrixXd<sp/>&gt;::type<sp/>V(VSEXP);</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/>Rcpp::traits::input_parameter&lt;<sp/>Eigen::MatrixXd<sp/>&gt;::type<sp/>lambda(lambdaSEXP);</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/>Rcpp::traits::input_parameter&lt;<sp/>Eigen::MatrixXd<sp/>&gt;::type<sp/>Sigma(SigmaSEXP);</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/>rcpp_result_gen<sp/>=<sp/>Rcpp::wrap(<ref refid="_random_effects_exports_8cpp_1a252ad62145f8488524f7c5b4cc90679c" kindref="member">GenerateRandomEffectsNormal</ref>(N,<sp/>x,<sp/>V,<sp/>lambda,<sp/>Sigma));</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>rcpp_result_gen;</highlight></codeline>
+<codeline lineno="181"><highlight class="normal">END_RCPP</highlight></codeline>
+<codeline lineno="182"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"></highlight><highlight class="comment">//<sp/>LogDensityWishart</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="184"><highlight class="normal">Eigen::VectorXd<sp/><ref refid="_wishart_exports_8cpp_1a9c2267bbbd6c7ebc26a863d2926c77e2" kindref="member">LogDensityWishart</ref>(Eigen::MatrixXd<sp/>X,<sp/>Eigen::MatrixXd<sp/>Psi,<sp/>Eigen::VectorXd<sp/>nu,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>inverse);</highlight></codeline>
+<codeline lineno="185"><highlight class="normal">RcppExport<sp/>SEXP<sp/>_mniw_LogDensityWishart(SEXP<sp/>XSEXP,<sp/>SEXP<sp/>PsiSEXP,<sp/>SEXP<sp/>nuSEXP,<sp/>SEXP<sp/>inverseSEXP)<sp/>{</highlight></codeline>
+<codeline lineno="186"><highlight class="normal">BEGIN_RCPP</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/>Rcpp::RObject<sp/>rcpp_result_gen;</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/>Rcpp::RNGScope<sp/>rcpp_rngScope_gen;</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/>Rcpp::traits::input_parameter&lt;<sp/>Eigen::MatrixXd<sp/>&gt;::type<sp/>X(XSEXP);</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/>Rcpp::traits::input_parameter&lt;<sp/>Eigen::MatrixXd<sp/>&gt;::type<sp/>Psi(PsiSEXP);</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/>Rcpp::traits::input_parameter&lt;<sp/>Eigen::VectorXd<sp/>&gt;::type<sp/>nu(nuSEXP);</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/>Rcpp::traits::input_parameter&lt;<sp/>bool<sp/>&gt;::type<sp/>inverse(inverseSEXP);</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/>rcpp_result_gen<sp/>=<sp/>Rcpp::wrap(<ref refid="_wishart_exports_8cpp_1a9c2267bbbd6c7ebc26a863d2926c77e2" kindref="member">LogDensityWishart</ref>(X,<sp/>Psi,<sp/>nu,<sp/>inverse));</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>rcpp_result_gen;</highlight></codeline>
+<codeline lineno="195"><highlight class="normal">END_RCPP</highlight></codeline>
+<codeline lineno="196"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"></highlight><highlight class="comment">//<sp/>GenerateWishart</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="198"><highlight class="normal">Eigen::MatrixXd<sp/><ref refid="_wishart_exports_8cpp_1af65402517e6470bac0e024b5af051343" kindref="member">GenerateWishart</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>N,<sp/>Eigen::MatrixXd<sp/>Psi,<sp/>Eigen::VectorXd<sp/>nu,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>inverse);</highlight></codeline>
+<codeline lineno="199"><highlight class="normal">RcppExport<sp/>SEXP<sp/>_mniw_GenerateWishart(SEXP<sp/>NSEXP,<sp/>SEXP<sp/>PsiSEXP,<sp/>SEXP<sp/>nuSEXP,<sp/>SEXP<sp/>inverseSEXP)<sp/>{</highlight></codeline>
+<codeline lineno="200"><highlight class="normal">BEGIN_RCPP</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/>Rcpp::RObject<sp/>rcpp_result_gen;</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/>Rcpp::RNGScope<sp/>rcpp_rngScope_gen;</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/>Rcpp::traits::input_parameter&lt;<sp/>int<sp/>&gt;::type<sp/>N(NSEXP);</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/>Rcpp::traits::input_parameter&lt;<sp/>Eigen::MatrixXd<sp/>&gt;::type<sp/>Psi(PsiSEXP);</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/>Rcpp::traits::input_parameter&lt;<sp/>Eigen::VectorXd<sp/>&gt;::type<sp/>nu(nuSEXP);</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/>Rcpp::traits::input_parameter&lt;<sp/>bool<sp/>&gt;::type<sp/>inverse(inverseSEXP);</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/>rcpp_result_gen<sp/>=<sp/>Rcpp::wrap(<ref refid="_wishart_exports_8cpp_1af65402517e6470bac0e024b5af051343" kindref="member">GenerateWishart</ref>(N,<sp/>Psi,<sp/>nu,<sp/>inverse));</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>rcpp_result_gen;</highlight></codeline>
+<codeline lineno="209"><highlight class="normal">END_RCPP</highlight></codeline>
+<codeline lineno="210"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"></highlight></codeline>
+<codeline lineno="212"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>R_CallMethodDef<sp/>CallEntries[]<sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;_mniw_CrossProdVXX&quot;</highlight><highlight class="normal">,<sp/>(DL_FUNC)<sp/>&amp;_mniw_CrossProdVXX,<sp/>5},</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;_mniw_CrossProdVXY&quot;</highlight><highlight class="normal">,<sp/>(DL_FUNC)<sp/>&amp;_mniw_CrossProdVXY,<sp/>7},</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;_mniw_HierUneqVModelGibbs&quot;</highlight><highlight class="normal">,<sp/>(DL_FUNC)<sp/>&amp;_mniw_HierUneqVModelGibbs,<sp/>16},</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;_mniw_GenerateMatrixNIW&quot;</highlight><highlight class="normal">,<sp/>(DL_FUNC)<sp/>&amp;_mniw_GenerateMatrixNIW,<sp/>6},</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;_mniw_LogDensityMatrixNormal&quot;</highlight><highlight class="normal">,<sp/>(DL_FUNC)<sp/>&amp;_mniw_LogDensityMatrixNormal,<sp/>4},</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;_mniw_GenerateMatrixNormal&quot;</highlight><highlight class="normal">,<sp/>(DL_FUNC)<sp/>&amp;_mniw_GenerateMatrixNormal,<sp/>4},</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;_mniw_LogDensityMatrixT&quot;</highlight><highlight class="normal">,<sp/>(DL_FUNC)<sp/>&amp;_mniw_LogDensityMatrixT,<sp/>5},</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;_mniw_GenerateMatrixT&quot;</highlight><highlight class="normal">,<sp/>(DL_FUNC)<sp/>&amp;_mniw_GenerateMatrixT,<sp/>6},</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;_mniw_LogDensityMultivariateNormal&quot;</highlight><highlight class="normal">,<sp/>(DL_FUNC)<sp/>&amp;_mniw_LogDensityMultivariateNormal,<sp/>3},</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;_mniw_GenerateMultivariateNormal&quot;</highlight><highlight class="normal">,<sp/>(DL_FUNC)<sp/>&amp;_mniw_GenerateMultivariateNormal,<sp/>3},</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;_mniw_GenerateRandomEffectsNormal&quot;</highlight><highlight class="normal">,<sp/>(DL_FUNC)<sp/>&amp;_mniw_GenerateRandomEffectsNormal,<sp/>5},</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;_mniw_LogDensityWishart&quot;</highlight><highlight class="normal">,<sp/>(DL_FUNC)<sp/>&amp;_mniw_LogDensityWishart,<sp/>4},</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;_mniw_GenerateWishart&quot;</highlight><highlight class="normal">,<sp/>(DL_FUNC)<sp/>&amp;_mniw_GenerateWishart,<sp/>4},</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/>{NULL,<sp/>NULL,<sp/>0}</highlight></codeline>
+<codeline lineno="227"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"></highlight></codeline>
+<codeline lineno="229"><highlight class="normal">RcppExport<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>R_init_mniw(DllInfo<sp/>*dll)<sp/>{</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/>R_registerRoutines(dll,<sp/>NULL,<sp/>CallEntries,<sp/>NULL,<sp/>NULL);</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/>R_useDynamicSymbols(dll,<sp/>FALSE);</highlight></codeline>
+<codeline lineno="232"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="src/RcppExports.cpp"/>
+  </compounddef>
+</doxygen>

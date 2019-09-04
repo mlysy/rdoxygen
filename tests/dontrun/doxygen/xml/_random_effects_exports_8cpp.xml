@@ -1,0 +1,187 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_random_effects_exports_8cpp" kind="file" language="C++">
+    <compoundname>RandomEffectsExports.cpp</compoundname>
+    <includes local="no">RcppEigen.h</includes>
+    <includes refid="_tri_utils_8h" local="yes">mniw/TriUtils.h</includes>
+    <includes refid="_random_effects_8h" local="yes">mniw/RandomEffects.h</includes>
+    <incdepgraph>
+      <node id="97">
+        <label>src/RandomEffectsExports.cpp</label>
+        <link refid="_random_effects_exports_8cpp"/>
+        <childnode refid="98" relation="include">
+        </childnode>
+        <childnode refid="99" relation="include">
+        </childnode>
+        <childnode refid="100" relation="include">
+        </childnode>
+      </node>
+      <node id="98">
+        <label>RcppEigen.h</label>
+      </node>
+      <node id="100">
+        <label>mniw/RandomEffects.h</label>
+        <link refid="_random_effects_8h"/>
+        <childnode refid="98" relation="include">
+        </childnode>
+        <childnode refid="99" relation="include">
+        </childnode>
+      </node>
+      <node id="99">
+        <label>mniw/TriUtils.h</label>
+        <link refid="_tri_utils_8h"/>
+        <childnode refid="98" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_random_effects_exports_8cpp_1a252ad62145f8488524f7c5b4cc90679c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Eigen::MatrixXd</type>
+        <definition>Eigen::MatrixXd GenerateRandomEffectsNormal</definition>
+        <argsstring>(int N, Eigen::MatrixXd x, Eigen::MatrixXd V, Eigen::MatrixXd lambda, Eigen::MatrixXd Sigma)</argsstring>
+        <name>GenerateRandomEffectsNormal</name>
+        <param>
+          <type>int</type>
+          <declname>N</declname>
+        </param>
+        <param>
+          <type>Eigen::MatrixXd</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>Eigen::MatrixXd</type>
+          <declname>V</declname>
+        </param>
+        <param>
+          <type>Eigen::MatrixXd</type>
+          <declname>lambda</declname>
+        </param>
+        <param>
+          <type>Eigen::MatrixXd</type>
+          <declname>Sigma</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Generate a random sample from the Random-Effects Normal distribution.</para><para>Generate <computeroutput>N</computeroutput> independent draws from <formula id="2">$p(\boldsymbol{\mu} \mid \boldsymbol{x})$</formula>, where <formula id="3">\[ \begin{aligned} \boldsymbol{\mu} &amp; \sim \mathcal N(\boldsymbol{\lambda}, \boldsymbol{\Sigma}) \\ \boldsymbol{x} \mid \boldsymbol{\mu} &amp; \sim \mathcal N(\boldsymbol{\mu}, \boldsymbol{V}). \end{aligned} \]</formula> Each argument can be vectorized, meaning that it can have length either <computeroutput>N</computeroutput> or <computeroutput>1</computeroutput>, denoted here as <computeroutput>n</computeroutput>.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">N</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Integer number of random draws. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Matrix of size <computeroutput>q x n</computeroutput> of observations. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">V</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Matrix of size <computeroutput>q x nq</computeroutput> of observation variances. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">lambda</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Matrix of size <computeroutput>q x n</computeroutput> of prior means. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">Sigma</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Matrix of size <computeroutput>q x nq</computeroutput> of prior variances.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Matrix of size <computeroutput>q x Nq</computeroutput> of random draws of observation means <computeroutput>mu</computeroutput>. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/RandomEffectsExports.cpp" line="33" column="1" bodyfile="src/RandomEffectsExports.cpp" bodystart="33" bodyend="90"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Exported Rcpp functions for the Multivariate Random-Effects Normal distribution. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">//<sp/>[[Rcpp::depends(RcppEigen)]]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;RcppEigen.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_eigen" kindref="compound">Eigen</ref>;</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_tri_utils_8h" kindref="compound">mniw/TriUtils.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_random_effects_8h" kindref="compound">mniw/RandomEffects.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="namespacemniw" kindref="compound">mniw</ref>;</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"></codeline>
+<codeline lineno="32"><highlight class="comment">//[[Rcpp::export]]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal">Eigen::MatrixXd<sp/><ref refid="_random_effects_exports_8cpp_1a252ad62145f8488524f7c5b4cc90679c" kindref="member">GenerateRandomEffectsNormal</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>N,</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Eigen::MatrixXd<sp/>x,</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Eigen::MatrixXd<sp/>V,</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Eigen::MatrixXd<sp/>lambda,</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Eigen::MatrixXd<sp/>Sigma)<sp/>{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>q<sp/>=<sp/>lambda.rows();</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>singleLambda<sp/>=<sp/>(lambda.cols()<sp/>==<sp/>1);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>singleX<sp/>=<sp/>(x.cols()<sp/>==<sp/>1);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>singleV<sp/>=<sp/>(V.cols()<sp/>==<sp/>q);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>singleSigma<sp/>=<sp/>(Sigma.cols()<sp/>==<sp/>q);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>output<sp/>variables</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/>MatrixXd<sp/>mu(q,N);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>internal<sp/>variables</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>TempPQ<sp/>*tmp<sp/>=<sp/>new<sp/>TempPQ(1,q);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/>LLT&lt;MatrixXd&gt;<sp/>lltq(q);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/>MatrixXd<sp/>Iq<sp/>=<sp/>MatrixXd::Identity(q,q);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/>MatrixXd<sp/>C<sp/>=<sp/>MatrixXd::Zero(q,q);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/>MatrixXd<sp/>Omega<sp/>=<sp/>MatrixXd::Zero(q,q);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/>VectorXd<sp/>z<sp/>=<sp/>VectorXd::Zero(q);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><ref refid="classmniw_1_1_ranfx_normal" kindref="compound">RanfxNormal</ref><sp/>renorm(q);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(singleV)<sp/>{</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>tmp-&gt;lltq.compute(V);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>C<sp/>=<sp/>tmp-&gt;lltq.solve(tmp-&gt;Iq);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>lltq.compute(V);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>C<sp/>=<sp/>lltq.solve(Iq);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(singleSigma)<sp/>{</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>tmp-&gt;lltq.compute(Sigma);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Omega<sp/>=<sp/>tmp-&gt;lltq.solve(tmp-&gt;Iq);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>lltq.compute(Sigma);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>Omega<sp/>=<sp/>lltq.solve(Iq);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(singleLambda<sp/>&amp;&amp;<sp/>singleX)<sp/>{</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>z<sp/>=<sp/>lambda<sp/>-<sp/>x;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ii=0;<sp/>ii&lt;N;<sp/>ii++)<sp/>{</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!singleV)<sp/>{</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>tmp-&gt;lltq.compute(V.block(0,ii*q,q,q));</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>C<sp/>=<sp/>tmp-&gt;lltq.solve(tmp-&gt;Iq);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>lltq.compute(V.block(0,ii*q,q,q));</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>C<sp/>=<sp/>lltq.solve(Iq);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!singleSigma)<sp/>{</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>tmp-&gt;lltq.compute(Sigma.block(0,ii*q,q,q));</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Omega<sp/>=<sp/>tmp-&gt;lltq.solve(tmp-&gt;Iq);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>lltq.compute(Sigma.block(0,ii*q,q,q));</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>Omega<sp/>=<sp/>lltq.solve(Iq);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!(singleLambda<sp/>&amp;&amp;<sp/>singleX))<sp/>{</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>z<sp/>=<sp/>lambda.col(ii*(!singleLambda))<sp/>-<sp/>x.col(ii*(!singleX));</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>GenerateRandomEffectsO(mu.col(ii),<sp/>z,<sp/>C,<sp/>Omega,<sp/>tmp);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>renorm.GenerateO(mu.col(ii),<sp/>z,<sp/>C,<sp/>Omega);</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>mu.col(ii)<sp/>+=<sp/>x.col(ii*(!singleX));</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>delete<sp/>tmp;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">(mu);</highlight></codeline>
+<codeline lineno="90"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="src/RandomEffectsExports.cpp"/>
+  </compounddef>
+</doxygen>

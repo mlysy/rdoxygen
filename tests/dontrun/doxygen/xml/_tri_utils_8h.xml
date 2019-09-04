@@ -1,0 +1,442 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_tri_utils_8h" kind="file" language="C++">
+    <compoundname>TriUtils.h</compoundname>
+    <includes local="no">RcppEigen.h</includes>
+    <includedby refid="_hierarchical_exports_8cpp" local="yes">src/HierarchicalExports.cpp</includedby>
+    <includedby refid="_matrix_n_i_w_exports_8cpp" local="yes">src/MatrixNIWExports.cpp</includedby>
+    <includedby refid="_random_effects_exports_8cpp" local="yes">src/RandomEffectsExports.cpp</includedby>
+    <includedby refid="_hierarchical_8h" local="yes">inst/include/mniw/Hierarchical.h</includedby>
+    <includedby refid="_matrix_normal_8h" local="yes">inst/include/mniw/MatrixNormal.h</includedby>
+    <includedby refid="_matrix_t_8h" local="yes">inst/include/mniw/MatrixT.h</includedby>
+    <includedby refid="_multi_normal_8h" local="yes">inst/include/mniw/MultiNormal.h</includedby>
+    <includedby refid="_random_effects_8h" local="yes">inst/include/mniw/RandomEffects.h</includedby>
+    <includedby refid="_wishart_8h" local="yes">inst/include/mniw/Wishart.h</includedby>
+    <incdepgraph>
+      <node id="38">
+        <label>RcppEigen.h</label>
+      </node>
+      <node id="37">
+        <label>inst/include/mniw/TriUtils.h</label>
+        <link refid="_tri_utils_8h"/>
+        <childnode refid="38" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="48">
+        <label>inst/include/mniw/MultiNormal.h</label>
+        <link refid="_multi_normal_8h"/>
+        <childnode refid="49" relation="include">
+        </childnode>
+      </node>
+      <node id="41">
+        <label>src/MatrixNIWExports.cpp</label>
+        <link refid="_matrix_n_i_w_exports_8cpp"/>
+      </node>
+      <node id="42">
+        <label>src/RandomEffectsExports.cpp</label>
+        <link refid="_random_effects_exports_8cpp"/>
+      </node>
+      <node id="52">
+        <label>src/WishartExports.cpp</label>
+        <link refid="_wishart_exports_8cpp"/>
+      </node>
+      <node id="40">
+        <label>src/HierarchicalExports.cpp</label>
+        <link refid="_hierarchical_exports_8cpp"/>
+      </node>
+      <node id="47">
+        <label>src/MatrixTExports.cpp</label>
+        <link refid="_matrix_t_exports_8cpp"/>
+      </node>
+      <node id="50">
+        <label>inst/include/mniw/RandomEffects.h</label>
+        <link refid="_random_effects_8h"/>
+        <childnode refid="42" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+      </node>
+      <node id="44">
+        <label>inst/include/mniw/MatrixNormal.h</label>
+        <link refid="_matrix_normal_8h"/>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="46" relation="include">
+        </childnode>
+      </node>
+      <node id="45">
+        <label>src/MatrixNormalExports.cpp</label>
+        <link refid="_matrix_normal_exports_8cpp"/>
+      </node>
+      <node id="46">
+        <label>inst/include/mniw/MatrixT.h</label>
+        <link refid="_matrix_t_8h"/>
+        <childnode refid="47" relation="include">
+        </childnode>
+      </node>
+      <node id="43">
+        <label>inst/include/mniw/Hierarchical.h</label>
+        <link refid="_hierarchical_8h"/>
+        <childnode refid="40" relation="include">
+        </childnode>
+      </node>
+      <node id="51">
+        <label>inst/include/mniw/Wishart.h</label>
+        <link refid="_wishart_8h"/>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="52" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="46" relation="include">
+        </childnode>
+      </node>
+      <node id="39">
+        <label>inst/include/mniw/TriUtils.h</label>
+        <link refid="_tri_utils_8h"/>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="46" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="50" relation="include">
+        </childnode>
+        <childnode refid="51" relation="include">
+        </childnode>
+      </node>
+      <node id="49">
+        <label>src/MultiNormalExports.cpp</label>
+        <link refid="_multi_normal_exports_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innernamespace refid="namespacemniw">mniw</innernamespace>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_tri_utils_8h_1af67558313268d122af24803971b081d0" prot="public" static="no">
+        <name>_X</name>
+        <initializer>const_cast&lt;Eigen::MatrixBase&lt;T1&gt;&amp; &gt;(X)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inst/include/mniw/TriUtils.h" line="38" column="9"/>
+      </memberdef>
+      <memberdef kind="define" id="_tri_utils_8h_1acecf9ec73aad1018d43b501925b9317a" prot="public" static="no">
+        <name>_L2</name>
+        <initializer>const_cast&lt;Eigen::MatrixBase&lt;T2&gt;&amp; &gt;(L2)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inst/include/mniw/TriUtils.h" line="39" column="9"/>
+      </memberdef>
+      <memberdef kind="define" id="_tri_utils_8h_1af67558313268d122af24803971b081d0" prot="public" static="no">
+        <name>_X</name>
+        <initializer>const_cast&lt;Eigen::MatrixBase&lt;T1&gt;&amp; &gt;(X)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inst/include/mniw/TriUtils.h" line="156" column="9"/>
+      </memberdef>
+      <memberdef kind="define" id="_tri_utils_8h_1a23b3808d12342e40e7459e77fccb85b6" prot="public" static="no">
+        <name>_L</name>
+        <initializer>const_cast&lt;Eigen::MatrixBase&lt;T2&gt;&amp; &gt;(L)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inst/include/mniw/TriUtils.h" line="157" column="9"/>
+      </memberdef>
+      <memberdef kind="define" id="_tri_utils_8h_1af67558313268d122af24803971b081d0" prot="public" static="no">
+        <name>_X</name>
+        <initializer>const_cast&lt;Eigen::MatrixBase&lt;T1&gt;&amp; &gt;(X)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inst/include/mniw/TriUtils.h" line="181" column="9"/>
+      </memberdef>
+      <memberdef kind="define" id="_tri_utils_8h_1a65426a49122b4ab491cf4df17cb2933e" prot="public" static="no">
+        <name>_U</name>
+        <initializer>const_cast&lt;Eigen::MatrixBase&lt;T2&gt;&amp; &gt;(U)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inst/include/mniw/TriUtils.h" line="182" column="9"/>
+      </memberdef>
+      <memberdef kind="define" id="_tri_utils_8h_1af67558313268d122af24803971b081d0" prot="public" static="no">
+        <name>_X</name>
+        <initializer>const_cast&lt;Eigen::MatrixBase&lt;T1&gt;&amp; &gt;(X)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inst/include/mniw/TriUtils.h" line="206" column="9"/>
+      </memberdef>
+      <memberdef kind="define" id="_tri_utils_8h_1a65426a49122b4ab491cf4df17cb2933e" prot="public" static="no">
+        <name>_U</name>
+        <initializer>const_cast&lt;Eigen::MatrixBase&lt;T2&gt;&amp; &gt;(U)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inst/include/mniw/TriUtils.h" line="207" column="9"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Utility functions for triangular matrices. </para>    </briefdescription>
+    <detaileddescription>
+<para>Various types of products, solvers, and decompositions involving lower and upper triangular matrices. Almost all arguments to these functions can be subsets of larger matrices; see &quot;Writing Functions Taking Eigen Types as Parameters&quot; in the Eigen documentation. </para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>TriUtils_h</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TriUtils_h<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">//<sp/>[[Rcpp::depends(RcppEigen)]]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;RcppEigen.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">//#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacemniw" kindref="compound">mniw</ref><sp/>{</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_eigen" kindref="compound">Eigen</ref>;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>---<sp/>matrix<sp/>multiplication<sp/>---------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T1,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T2&gt;</highlight></codeline>
+<codeline lineno="31" refid="_tri_utils_8h_1a5daadd239a4be77fe6470cfc9a560353" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_tri_utils_8h_1a5daadd239a4be77fe6470cfc9a560353" kindref="member">triMultLL</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Eigen::MatrixBase&lt;T1&gt;&amp;<sp/>X,</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Ref&lt;const<sp/>MatrixXd&gt;&amp;<sp/>L1,</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Eigen::MatrixBase&lt;T2&gt;&amp;<sp/>L2)<sp/>{</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>hack<sp/>to<sp/>use<sp/>triangularView:<sp/>see<sp/>Eigen<sp/>documentation</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//&quot;Writing<sp/>Functions<sp/>Taking<sp/>Eigen<sp/>Types<sp/>as<sp/>Parameters&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>#define<sp/>_VL<sp/>const_cast&lt;Eigen::MatrixBase&lt;T1&gt;&amp;<sp/>&gt;(VL)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>#define<sp/>_XL<sp/>const_cast&lt;Eigen::MatrixBase&lt;T2&gt;&amp;<sp/>&gt;(XL)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>_X<sp/>const_cast&lt;Eigen::MatrixBase&lt;T1&gt;&amp;<sp/>&gt;(X)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>_L2<sp/>const_cast&lt;Eigen::MatrixBase&lt;T2&gt;&amp;<sp/>&gt;(L2)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>_X.template<sp/>triangularView&lt;Eigen::Lower&gt;()<sp/>=<sp/>L1<sp/>*<sp/>_L2.template<sp/>triangularView&lt;Eigen::Lower&gt;();</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="preprocessor">#undef<sp/>_X</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor">#undef<sp/>_L2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T1&gt;</highlight></codeline>
+<codeline lineno="57" refid="_tri_utils_8h_1ad9c65f39981a3e4e609e16ac929bb496" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_tri_utils_8h_1ad9c65f39981a3e4e609e16ac929bb496" kindref="member">triMultXU</ref>(Ref&lt;MatrixXd&gt;<sp/>Y,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Ref&lt;const<sp/>MatrixXd&gt;&amp;<sp/>X,</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Eigen::MatrixBase&lt;T1&gt;&amp;<sp/>U)<sp/>{</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>Y.noalias()<sp/>=<sp/>X<sp/>*<sp/>U.template<sp/>triangularView&lt;Eigen::Upper&gt;();</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T1&gt;</highlight></codeline>
+<codeline lineno="74" refid="_tri_utils_8h_1abc315a2e184858938a30ea0b796a65ea" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_tri_utils_8h_1abc315a2e184858938a30ea0b796a65ea" kindref="member">triMultLX</ref>(Ref&lt;MatrixXd&gt;<sp/>Y,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Eigen::MatrixBase&lt;T1&gt;&amp;<sp/>L,</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Ref&lt;const<sp/>MatrixXd&gt;&amp;<sp/>X)<sp/>{</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>Y.noalias()<sp/>=<sp/>L.template<sp/>triangularView&lt;Eigen::Lower&gt;()<sp/>*<sp/>X;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>---<sp/>solution<sp/>of<sp/>linear<sp/>system<sp/>-----------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T1&gt;</highlight></codeline>
+<codeline lineno="91" refid="_tri_utils_8h_1a7f22604e6c692494f4772837f9b6e0c3" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_tri_utils_8h_1a7f22604e6c692494f4772837f9b6e0c3" kindref="member">triMultLiX</ref>(Ref&lt;MatrixXd&gt;<sp/>X,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Eigen::MatrixBase&lt;T1&gt;&amp;<sp/>L)<sp/>{</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>_MSC_VER</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/>L.template<sp/>triangularView&lt;Eigen::Lower&gt;().solveInPlace(X);</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/>L.template<sp/>triangularView&lt;Eigen::Lower&gt;().</highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>solveInPlace(X);</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T1&gt;</highlight></codeline>
+<codeline lineno="110" refid="_tri_utils_8h_1adfde552c3f71d142ee6ded89e49f9fb0" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_tri_utils_8h_1adfde552c3f71d142ee6ded89e49f9fb0" kindref="member">triMultXLi</ref>(Ref&lt;MatrixXd&gt;<sp/>X,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Eigen::MatrixBase&lt;T1&gt;&amp;<sp/>L)<sp/>{</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>_MSC_VER</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/>L.template<sp/>triangularView&lt;Eigen::Lower&gt;().solveInPlace&lt;OnTheRight&gt;(X);</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/>L.template<sp/>triangularView&lt;Eigen::Lower&gt;().</highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>solveInPlace&lt;OnTheRight&gt;(X);</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T1&gt;</highlight></codeline>
+<codeline lineno="129" refid="_tri_utils_8h_1aa62489bafdc65d2645b57e480ee2572e" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_tri_utils_8h_1aa62489bafdc65d2645b57e480ee2572e" kindref="member">triMultUiX</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Eigen::MatrixBase&lt;T1&gt;&amp;<sp/>U,<sp/>Ref&lt;MatrixXd&gt;<sp/>X)<sp/>{</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>_MSC_VER</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/>U.template<sp/>triangularView&lt;Eigen::Upper&gt;().solveInPlace(X);</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/>U.template<sp/>triangularView&lt;Eigen::Upper&gt;().</highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>solveInPlace(X);</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>---<sp/>transpose-products<sp/>------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T1,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T2&gt;</highlight></codeline>
+<codeline lineno="152" refid="_tri_utils_8h_1a79a58591ed0f4f3bd3c151d6d7f52266" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_tri_utils_8h_1a79a58591ed0f4f3bd3c151d6d7f52266" kindref="member">crossProdUtU</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Eigen::MatrixBase&lt;T1&gt;&amp;<sp/>X,</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Ref&lt;const<sp/>MatrixXd&gt;&amp;<sp/>U,</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Eigen::MatrixBase&lt;T2&gt;&amp;<sp/>L)<sp/>{</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>hack</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>_X<sp/>const_cast&lt;Eigen::MatrixBase&lt;T1&gt;&amp;<sp/>&gt;(X)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>_L<sp/>const_cast&lt;Eigen::MatrixBase&lt;T2&gt;&amp;<sp/>&gt;(L)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/>_L.template<sp/>triangularView&lt;Eigen::Lower&gt;()<sp/>=<sp/>U.adjoint();</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/>_X.template<sp/>triangularView&lt;Eigen::Upper&gt;()<sp/>=<sp/>L.template<sp/>triangularView&lt;Eigen::Lower&gt;()<sp/>*<sp/>U;</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/>_X.template<sp/>triangularView&lt;Eigen::Lower&gt;()<sp/>=<sp/>X.adjoint();</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"></highlight><highlight class="preprocessor">#undef<sp/>_X</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="162"><highlight class="normal"></highlight><highlight class="preprocessor">#undef<sp/>_L</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"></highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T1,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T2&gt;</highlight></codeline>
+<codeline lineno="177" refid="_tri_utils_8h_1a7ca9facdac5bff93d2db13420c3edf8e" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_tri_utils_8h_1a7ca9facdac5bff93d2db13420c3edf8e" kindref="member">CrossProdLLt</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Eigen::MatrixBase&lt;T1&gt;&amp;<sp/>X,</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Ref&lt;const<sp/>MatrixXd&gt;&amp;<sp/>L,</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Eigen::MatrixBase&lt;T2&gt;&amp;<sp/>U)<sp/>{</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>hack</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="181"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>_X<sp/>const_cast&lt;Eigen::MatrixBase&lt;T1&gt;&amp;<sp/>&gt;(X)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="182"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>_U<sp/>const_cast&lt;Eigen::MatrixBase&lt;T2&gt;&amp;<sp/>&gt;(U)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/>_U.template<sp/>triangularView&lt;Eigen::Upper&gt;()<sp/>=<sp/>L.adjoint();</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/>_X.template<sp/>triangularView&lt;Eigen::Upper&gt;()<sp/>=<sp/>L<sp/>*<sp/>U.template<sp/>triangularView&lt;Eigen::Upper&gt;();</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/>_X.template<sp/>triangularView&lt;Eigen::Lower&gt;()<sp/>=<sp/>X.adjoint();</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"></highlight><highlight class="preprocessor">#undef<sp/>_X</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="187"><highlight class="normal"></highlight><highlight class="preprocessor">#undef<sp/>_U</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"></highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T1,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T2&gt;</highlight></codeline>
+<codeline lineno="202" refid="_tri_utils_8h_1af6693aa50f28ec42c038f8f532741332" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_tri_utils_8h_1af6693aa50f28ec42c038f8f532741332" kindref="member">CrossProdLtL</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Eigen::MatrixBase&lt;T1&gt;&amp;<sp/>X,</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Ref&lt;const<sp/>MatrixXd&gt;&amp;<sp/>L,</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Eigen::MatrixBase&lt;T2&gt;&amp;<sp/>U)<sp/>{</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>hack</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="206"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>_X<sp/>const_cast&lt;Eigen::MatrixBase&lt;T1&gt;&amp;<sp/>&gt;(X)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="207"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>_U<sp/>const_cast&lt;Eigen::MatrixBase&lt;T2&gt;&amp;<sp/>&gt;(U)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/>_U.template<sp/>triangularView&lt;Eigen::Upper&gt;()<sp/>=<sp/>L.adjoint();</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/>_X.template<sp/>triangularView&lt;Eigen::Upper&gt;()<sp/>=<sp/>U.template<sp/>triangularView&lt;Eigen::Upper&gt;()<sp/>*<sp/>L;</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/>_X.template<sp/>triangularView&lt;Eigen::Lower&gt;()<sp/>=<sp/>X.adjoint();</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"></highlight><highlight class="preprocessor">#undef<sp/>_X</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="212"><highlight class="normal"></highlight><highlight class="preprocessor">#undef<sp/>_U</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"></highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T1&gt;</highlight></codeline>
+<codeline lineno="230" refid="_tri_utils_8h_1aee6a1777f73c71378680d77c59814479" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_tri_utils_8h_1aee6a1777f73c71378680d77c59814479" kindref="member">InverseLLt</ref>(Ref&lt;MatrixXd&gt;<sp/>X,</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Eigen::MatrixBase&lt;T1&gt;&amp;<sp/>L,</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Ref&lt;MatrixXd&gt;<sp/>L2,</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Ref&lt;MatrixXd&gt;<sp/>U,</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Ref&lt;const<sp/>MatrixXd&gt;&amp;<sp/>I)<sp/>{</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>L2<sp/>=<sp/>L^{-1}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/>L2<sp/>=<sp/>L.template<sp/>triangularView&lt;Eigen::Lower&gt;().solve(I);</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>X<sp/>=<sp/>L2&apos;<sp/>*<sp/>L2<sp/>=<sp/>L&apos;{-1}<sp/>*<sp/>L^{-1}<sp/>=<sp/>(L<sp/>*<sp/>L&apos;)^{-1}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_tri_utils_8h_1af6693aa50f28ec42c038f8f532741332" kindref="member">CrossProdLtL</ref>(X,<sp/>L2,<sp/>U);</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"></highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>---<sp/>reverse-cholesky<sp/>--------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="243"><highlight class="normal"></highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>///<sp/>Anti-transpose<sp/>of<sp/>a<sp/>matrix</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>///</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>///<sp/>Transpose<sp/>the<sp/>lower<sp/>triangular<sp/>elements<sp/>of<sp/>a<sp/>square<sp/>matrix<sp/>across<sp/>the<sp/>anti-diagonal<sp/>(the<sp/>remaining<sp/>elements<sp/>of<sp/>the<sp/>output<sp/>are<sp/>left<sp/>untouched).<sp/><sp/>So<sp/>for<sp/>example,<sp/>we<sp/>would<sp/>have</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>///</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>///<sp/>\f[</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>///<sp/>\begin{bmatrix}<sp/>1<sp/>&amp;<sp/>2<sp/>&amp;<sp/>3<sp/>\\<sp/>4<sp/>&amp;<sp/>5<sp/>&amp;<sp/>6<sp/>\\<sp/>7<sp/>&amp;<sp/>8<sp/>&amp;<sp/>9<sp/>\end{bmatrix}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>///<sp/>\qquad<sp/>\longrightarrow<sp/>\qquad</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>///<sp/>\begin{bmatrix}<sp/>9<sp/>&amp;<sp/>&amp;<sp/>\\<sp/>8<sp/>&amp;<sp/>5<sp/>&amp;<sp/>\\<sp/>7<sp/>&amp;<sp/>4<sp/>&amp;<sp/>1<sp/>\end{bmatrix}.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>///<sp/>\f]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>///</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>///<sp/>@param<sp/>[out]<sp/>Y<sp/>Matrix<sp/>of<sp/>size<sp/>`n<sp/>x<sp/>n`<sp/>to<sp/>which<sp/>anti-transpose<sp/>is<sp/>output.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>///<sp/>@param<sp/>[in]<sp/>X<sp/>Matrix<sp/>of<sp/>size<sp/>`n<sp/>x<sp/>n`<sp/>of<sp/>which<sp/>the<sp/>lower<sp/>triangular<sp/>elements<sp/>will<sp/>be<sp/>anti-transposed.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>///</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>///<sp/>@note<sp/>Does<sp/>not<sp/>work<sp/>properly<sp/>if<sp/>any<sp/>of<sp/>the<sp/>inputs<sp/>arguments<sp/>are<sp/>also<sp/>outputs.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>inline<sp/>void<sp/>AntiTransposeLowerTri(Ref&lt;MatrixXd&gt;<sp/>Y,<sp/>const<sp/>Ref&lt;const<sp/>MatrixXd&gt;&amp;<sp/>X)<sp/>{</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/>int<sp/>q<sp/>=<sp/>X.cols();</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/>int<sp/>ii,<sp/>jj;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/>//<sp/>anti-transpose<sp/>lower<sp/>part<sp/>of<sp/>X<sp/>into<sp/>Y</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/>for(ii=0;<sp/>ii&lt;q;<sp/>ii++)<sp/>{</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/>for(jj=0;<sp/>jj&lt;=ii;<sp/>jj++)<sp/>{</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Y(q-1-jj,q-1-ii)<sp/>=<sp/>X(ii,jj);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/>}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/>}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/>return;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="268"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="269"><highlight class="normal"></highlight></codeline>
+<codeline lineno="280" refid="_tri_utils_8h_1a18fc2d655dc265f4c1133403a61034fb" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_tri_utils_8h_1a18fc2d655dc265f4c1133403a61034fb" kindref="member">ReverseCholesky</ref>(Ref&lt;MatrixXd&gt;<sp/>L,</highlight></codeline>
+<codeline lineno="281"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Ref&lt;const<sp/>MatrixXd&gt;&amp;<sp/>V,</highlight></codeline>
+<codeline lineno="282"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>LLT&lt;MatrixXd&gt;&amp;<sp/>llt)<sp/>{</highlight></codeline>
+<codeline lineno="283"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>q<sp/>=<sp/>L.cols();</highlight></codeline>
+<codeline lineno="284"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ii,<sp/>jj;</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>L<sp/>=<sp/>anti_transpose(lower_tri(V))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(ii=0;<sp/>ii&lt;q;<sp/>ii++)<sp/>{</highlight></codeline>
+<codeline lineno="287"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(jj=0;<sp/>jj&lt;=ii;<sp/>jj++)<sp/>{</highlight></codeline>
+<codeline lineno="288"><highlight class="normal"><sp/><sp/><sp/><sp/>L(q-1-jj,q-1-ii)<sp/>=<sp/>V(ii,jj);</highlight></codeline>
+<codeline lineno="289"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="290"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="291"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>llt<sp/>&quot;=&quot;<sp/>chol(L)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="292"><highlight class="normal"><sp/><sp/><sp/><sp/>llt.compute(L.triangularView&lt;Eigen::Lower&gt;());</highlight></codeline>
+<codeline lineno="293"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>L<sp/>&quot;=&quot;<sp/>anti_transpose(llq)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="294"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(ii=0;<sp/>ii&lt;q;<sp/>ii++)<sp/>{</highlight></codeline>
+<codeline lineno="295"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(jj=0;<sp/>jj&lt;=ii;<sp/>jj++)<sp/>{</highlight></codeline>
+<codeline lineno="296"><highlight class="normal"><sp/><sp/><sp/><sp/>L(q-1-jj,q-1-ii)<sp/>=<sp/>llt.matrixL()(ii,jj);</highlight></codeline>
+<codeline lineno="297"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="298"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="299"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>//<sp/>upper_tri(L)<sp/>=<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="300"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>if(upperZero)<sp/>{</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="301"><highlight class="normal"><sp/><sp/><sp/><sp/>L<sp/>=<sp/>L.triangularView&lt;Eigen::Lower&gt;();</highlight></codeline>
+<codeline lineno="302"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="303"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="304"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="305"><highlight class="normal"></highlight></codeline>
+<codeline lineno="306"><highlight class="normal"></highlight></codeline>
+<codeline lineno="307"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>---<sp/>log-determinant<sp/>---------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="308"><highlight class="normal"></highlight></codeline>
+<codeline lineno="315" refid="_tri_utils_8h_1a3f6653dcf99e9386dde5bd02fbe099b9" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="_tri_utils_8h_1a3f6653dcf99e9386dde5bd02fbe099b9" kindref="member">logDetCholV</ref>(LLT&lt;MatrixXd&gt;&amp;<sp/>cholV)<sp/>{</highlight></codeline>
+<codeline lineno="316"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ldC<sp/>=<sp/>0.0;</highlight></codeline>
+<codeline lineno="317"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ii=0;<sp/>ii&lt;cholV.cols();<sp/>ii++)<sp/>{</highlight></codeline>
+<codeline lineno="318"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>ldC<sp/>+=<sp/>log(cholV.matrixL()(ii,ii));</highlight></codeline>
+<codeline lineno="319"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="320"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ldC;</highlight></codeline>
+<codeline lineno="321"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="322"><highlight class="normal"></highlight></codeline>
+<codeline lineno="330" refid="_tri_utils_8h_1ad13e348945b0a769632c1dd5c0c96ae2" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="_tri_utils_8h_1ad13e348945b0a769632c1dd5c0c96ae2" kindref="member">logDetV</ref>(MatrixXd<sp/>V,<sp/>LLT&lt;MatrixXd&gt;<sp/>cholV)<sp/>{</highlight></codeline>
+<codeline lineno="331"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ldV<sp/>=<sp/>0.0;</highlight></codeline>
+<codeline lineno="332"><highlight class="normal"><sp/><sp/><sp/><sp/>cholV.compute(V);</highlight></codeline>
+<codeline lineno="333"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>2.0<sp/>*<sp/><ref refid="_tri_utils_8h_1a3f6653dcf99e9386dde5bd02fbe099b9" kindref="member">logDetCholV</ref>(cholV);</highlight></codeline>
+<codeline lineno="334"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>for(int<sp/>ii=0;<sp/>ii&lt;V.cols();<sp/>ii++)<sp/>{</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="335"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/>ldV<sp/>+=<sp/>log(cholV.matrixL()(ii,ii));</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="336"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="337"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>return<sp/>2.0*ldV;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="338"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="339"><highlight class="normal"></highlight></codeline>
+<codeline lineno="340"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>mniw</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="341"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="342"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="inst/include/mniw/TriUtils.h"/>
+  </compounddef>
+</doxygen>

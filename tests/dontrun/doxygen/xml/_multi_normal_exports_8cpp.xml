@@ -1,0 +1,222 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_multi_normal_exports_8cpp" kind="file" language="C++">
+    <compoundname>MultiNormalExports.cpp</compoundname>
+    <includes local="no">RcppEigen.h</includes>
+    <includes refid="_multi_normal_8h" local="yes">mniw/MultiNormal.h</includes>
+    <incdepgraph>
+      <node id="94">
+        <label>mniw/MultiNormal.h</label>
+        <link refid="_multi_normal_8h"/>
+        <childnode refid="93" relation="include">
+        </childnode>
+        <childnode refid="95" relation="include">
+        </childnode>
+      </node>
+      <node id="93">
+        <label>RcppEigen.h</label>
+      </node>
+      <node id="95">
+        <label>mniw/TriUtils.h</label>
+        <link refid="_tri_utils_8h"/>
+        <childnode refid="93" relation="include">
+        </childnode>
+      </node>
+      <node id="92">
+        <label>src/MultiNormalExports.cpp</label>
+        <link refid="_multi_normal_exports_8cpp"/>
+        <childnode refid="93" relation="include">
+        </childnode>
+        <childnode refid="94" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_multi_normal_exports_8cpp_1a6b16b5e5b49de180b9d6ed0dcccc1d8b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Eigen::VectorXd</type>
+        <definition>Eigen::VectorXd LogDensityMultivariateNormal</definition>
+        <argsstring>(Eigen::MatrixXd X, Eigen::MatrixXd mu, Eigen::MatrixXd V)</argsstring>
+        <name>LogDensityMultivariateNormal</name>
+        <param>
+          <type>Eigen::MatrixXd</type>
+          <declname>X</declname>
+        </param>
+        <param>
+          <type>Eigen::MatrixXd</type>
+          <declname>mu</declname>
+        </param>
+        <param>
+          <type>Eigen::MatrixXd</type>
+          <declname>V</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Log-density of the Multivariate Normal distribution.</para><para>Evaluate the log-density of <computeroutput>N</computeroutput> observations of a <computeroutput>q</computeroutput> dimensional Multivariate Normal distribution. Each argument can be vectorized, meaning that it can have length either <computeroutput>N</computeroutput> or <computeroutput>1</computeroutput>, denoted here as <computeroutput>n</computeroutput>.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">X</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Matrix of <computeroutput>q x n</computeroutput> random variable observations. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">mu</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Matrix of <computeroutput>q x n</computeroutput> mean vectors. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">V</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Matrix of <computeroutput>q x nq</computeroutput> variance matrices.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Vector of <computeroutput>N</computeroutput> log-density evaluations. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/MultiNormalExports.cpp" line="25" column="1" bodyfile="src/MultiNormalExports.cpp" bodystart="25" bodyend="54"/>
+      </memberdef>
+      <memberdef kind="function" id="_multi_normal_exports_8cpp_1ace157a74f1802e86bd0ed888e7481f77" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Eigen::MatrixXd</type>
+        <definition>Eigen::MatrixXd GenerateMultivariateNormal</definition>
+        <argsstring>(int N, Eigen::MatrixXd mu, Eigen::MatrixXd Sigma)</argsstring>
+        <name>GenerateMultivariateNormal</name>
+        <param>
+          <type>int</type>
+          <declname>N</declname>
+        </param>
+        <param>
+          <type>Eigen::MatrixXd</type>
+          <declname>mu</declname>
+        </param>
+        <param>
+          <type>Eigen::MatrixXd</type>
+          <declname>Sigma</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Generate a random sample from the Multivariate Normal distribution.</para><para>Generate <computeroutput>N</computeroutput> independent draws from a <computeroutput>q</computeroutput> dimensional Multivariate Normal distribution. Each argument can be vectorized, meaning that it can have length either <computeroutput>N</computeroutput> or <computeroutput>1</computeroutput>, denoted here as <computeroutput>n</computeroutput>.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">N</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Integer number of random draws. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">mu</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Matrix of size <computeroutput>q x n</computeroutput> of mean vectors. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">Sigma</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Matrix of size <computeroutput>q x nq</computeroutput> of variance matrices.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Matrix of size <computeroutput>q x N</computeroutput> of random draws. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/MultiNormalExports.cpp" line="66" column="1" bodyfile="src/MultiNormalExports.cpp" bodystart="66" bodyend="104"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Exported Rcpp functions for the Multivariate Normal distribution. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">//<sp/>[[Rcpp::depends(RcppEigen)]]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;RcppEigen.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_eigen" kindref="compound">Eigen</ref>;</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">//#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_multi_normal_8h" kindref="compound">mniw/MultiNormal.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="namespacemniw" kindref="compound">mniw</ref>;</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"></codeline>
+<codeline lineno="24"><highlight class="comment">//[[Rcpp::export]]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal">Eigen::VectorXd<sp/><ref refid="_multi_normal_exports_8cpp_1a6b16b5e5b49de180b9d6ed0dcccc1d8b" kindref="member">LogDensityMultivariateNormal</ref>(Eigen::MatrixXd<sp/>X,</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Eigen::MatrixXd<sp/>mu,</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Eigen::MatrixXd<sp/>V)<sp/>{</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>q<sp/>=<sp/>X.rows();</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>N<sp/>=<sp/>X.cols();</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/>N<sp/>=<sp/>std::max&lt;int&gt;(N,<sp/>mu.cols());</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/>N<sp/>=<sp/>std::max&lt;int&gt;(N,<sp/>V.cols()/q);</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>output<sp/>variables</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/>VectorXd<sp/>logDens(N);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>internal<sp/>variables</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/>LLT&lt;MatrixXd&gt;<sp/>cholV(q);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ldV;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><ref refid="classmniw_1_1_multi_normal" kindref="compound">MultiNormal</ref><sp/>mnorm(q);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>singleX<sp/>=<sp/>X.cols()<sp/>==<sp/>1;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>singleV<sp/>=<sp/>V.cols()<sp/>==<sp/>q;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>singleMu<sp/>=<sp/>mu.cols()<sp/>==<sp/>1;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(singleV)<sp/>{</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>cholV.compute(V);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>ldV<sp/>=<sp/><ref refid="_tri_utils_8h_1a3f6653dcf99e9386dde5bd02fbe099b9" kindref="member">logDetCholV</ref>(cholV);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ii=0;<sp/>ii&lt;N;<sp/>ii++)<sp/>{</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!singleV)<sp/>{</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>cholV.compute(V.block(0,ii*q,q,q));</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>ldV<sp/>=<sp/><ref refid="_tri_utils_8h_1a3f6653dcf99e9386dde5bd02fbe099b9" kindref="member">logDetCholV</ref>(cholV);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>logDens(ii)<sp/>=<sp/>mnorm.LogDens(X.col(ii*(!singleX)),</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mu.col(ii*(!singleMu)),<sp/>cholV,<sp/>ldV);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>logDens;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="comment">//[[Rcpp::export]]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal">Eigen::MatrixXd<sp/><ref refid="_multi_normal_exports_8cpp_1ace157a74f1802e86bd0ed888e7481f77" kindref="member">GenerateMultivariateNormal</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>N,<sp/>Eigen::MatrixXd<sp/>mu,</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Eigen::MatrixXd<sp/>Sigma)<sp/>{</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>q<sp/>=<sp/>mu.rows();</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>singleMu<sp/>=<sp/>(mu.cols()<sp/>==<sp/>1);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>singleSigma<sp/>=<sp/>(Sigma.cols()<sp/>==<sp/>q);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ii,jj;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>output<sp/>variables</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/>MatrixXd<sp/>X(q,N);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>internal<sp/>variables</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/>LLT&lt;MatrixXd&gt;<sp/>lltq(q);</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/>MatrixXd<sp/>SigmaL(q,q);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/>VectorXd<sp/>lambda(q);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/>MatrixXd<sp/>Z(q,N);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>generate<sp/>iid<sp/>normals</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(ii=0;<sp/>ii&lt;N;<sp/>ii++)<sp/>{</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(jj=0;<sp/>jj&lt;q;<sp/>jj++)<sp/>{</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>Z(jj,ii)<sp/>=<sp/>norm_rand();</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>multiply<sp/>by<sp/>Sigma^{1/2}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(singleSigma)<sp/>{</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>lltq.compute(Sigma);</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>SigmaL<sp/>=<sp/>lltq.matrixL();</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_tri_utils_8h_1abc315a2e184858938a30ea0b796a65ea" kindref="member">triMultLX</ref>(X,<sp/>SigmaL,<sp/>Z);</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(ii=0;<sp/>ii&lt;N;<sp/>ii++)<sp/>{</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>lltq.compute(Sigma.block(0,ii*q,q,q));</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>SigmaL<sp/>=<sp/>lltq.matrixL();</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_tri_utils_8h_1abc315a2e184858938a30ea0b796a65ea" kindref="member">triMultLX</ref>(X.col(ii),<sp/>SigmaL,<sp/>Z.col(ii));</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>add<sp/>mu</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(singleMu)<sp/>{</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/>X.colwise()<sp/>+=<sp/>mu.col(0);</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>X<sp/>+=<sp/>mu;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>X;</highlight></codeline>
+<codeline lineno="104"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="src/MultiNormalExports.cpp"/>
+  </compounddef>
+</doxygen>

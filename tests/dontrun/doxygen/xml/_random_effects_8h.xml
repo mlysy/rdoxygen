@@ -1,0 +1,147 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_random_effects_8h" kind="file" language="C++">
+    <compoundname>RandomEffects.h</compoundname>
+    <includes local="no">RcppEigen.h</includes>
+    <includes refid="_tri_utils_8h" local="yes">mniw/TriUtils.h</includes>
+    <includedby refid="_random_effects_exports_8cpp" local="yes">src/RandomEffectsExports.cpp</includedby>
+    <includedby refid="_hierarchical_8h" local="yes">inst/include/mniw/Hierarchical.h</includedby>
+    <incdepgraph>
+      <node id="31">
+        <label>RcppEigen.h</label>
+      </node>
+      <node id="30">
+        <label>inst/include/mniw/RandomEffects.h</label>
+        <link refid="_random_effects_8h"/>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+      </node>
+      <node id="32">
+        <label>mniw/TriUtils.h</label>
+        <link refid="_tri_utils_8h"/>
+        <childnode refid="31" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="34">
+        <label>src/RandomEffectsExports.cpp</label>
+        <link refid="_random_effects_exports_8cpp"/>
+      </node>
+      <node id="36">
+        <label>src/HierarchicalExports.cpp</label>
+        <link refid="_hierarchical_exports_8cpp"/>
+      </node>
+      <node id="33">
+        <label>inst/include/mniw/RandomEffects.h</label>
+        <link refid="_random_effects_8h"/>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+      </node>
+      <node id="35">
+        <label>inst/include/mniw/Hierarchical.h</label>
+        <link refid="_hierarchical_8h"/>
+        <childnode refid="36" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classmniw_1_1_ranfx_normal" prot="public">mniw::RanfxNormal</innerclass>
+    <innernamespace refid="namespacemniw">mniw</innernamespace>
+    <briefdescription>
+<para>Multivariate Random-Effects Normal distribution. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>RandomEffects_h</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>RandomEffects_h<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">//<sp/>[[Rcpp::depends(RcppEigen)]]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;RcppEigen.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_tri_utils_8h" kindref="compound">mniw/TriUtils.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">//<sp/>#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacemniw" kindref="compound">mniw</ref><sp/>{</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_eigen" kindref="compound">Eigen</ref>;<sp/><sp/></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="18" refid="classmniw_1_1_ranfx_normal" refkind="compound"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classmniw_1_1_ranfx_normal" kindref="compound">RanfxNormal</ref><sp/>{</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:<sp/></highlight><highlight class="comment">//<sp/>storage</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>q_;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>MatrixXd<sp/>Mq_;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>MatrixXd<sp/>Uq_;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>LLT&lt;MatrixXd&gt;<sp/>lltq_;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmniw_1_1_ranfx_normal" kindref="compound">RanfxNormal</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>q);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>GenerateOL(Ref&lt;VectorXd&gt;<sp/>mu,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Ref&lt;const<sp/>VectorXd&gt;&amp;<sp/>x,</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Ref&lt;const<sp/>MatrixXd&gt;&amp;<sp/>C,</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Ref&lt;const<sp/>MatrixXd&gt;&amp;<sp/>OmegaL);</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>GenerateO(Ref&lt;VectorXd&gt;<sp/>mu,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Ref&lt;const<sp/>VectorXd&gt;&amp;<sp/>x,</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Ref&lt;const<sp/>MatrixXd&gt;&amp;<sp/>C,</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Ref&lt;const<sp/>MatrixXd&gt;&amp;<sp/>Omega);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/>};</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38" refid="classmniw_1_1_ranfx_normal_1ade1dc31fcdea4b65ff535dae696160ba" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/><ref refid="classmniw_1_1_ranfx_normal_1ade1dc31fcdea4b65ff535dae696160ba" kindref="member">RanfxNormal::RanfxNormal</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>q)<sp/>{</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>q_<sp/>=<sp/>q;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>Mq_<sp/>=<sp/>MatrixXd::Zero(q_,q_);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>Uq_<sp/>=<sp/>MatrixXd::Zero(q_,q_);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>lltq_.compute(MatrixXd::Identity(q_,q_));</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49" refid="classmniw_1_1_ranfx_normal_1a210fbf6ebb0352948ece63614a720dfe" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classmniw_1_1_ranfx_normal_1a210fbf6ebb0352948ece63614a720dfe" kindref="member">RanfxNormal::GenerateOL</ref>(Ref&lt;VectorXd&gt;<sp/>mu,</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Ref&lt;const<sp/>VectorXd&gt;&amp;<sp/>x,</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Ref&lt;const<sp/>MatrixXd&gt;&amp;<sp/>C,</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Ref&lt;const<sp/>MatrixXd&gt;&amp;<sp/>OmegaL)<sp/>{</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>std::cout<sp/>&lt;&lt;<sp/>&quot;mu<sp/>=<sp/>\n&quot;<sp/>&lt;&lt;<sp/>mu<sp/>&lt;&lt;<sp/>std::endl;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>std::cout<sp/>&lt;&lt;<sp/>&quot;x<sp/>=<sp/>\n&quot;<sp/>&lt;&lt;<sp/>x<sp/>&lt;&lt;<sp/>std::endl;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>std::cout<sp/>&lt;&lt;<sp/>&quot;C<sp/>=<sp/>\n&quot;<sp/>&lt;&lt;<sp/>C<sp/>&lt;&lt;<sp/>std::endl;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>std::cout<sp/>&lt;&lt;<sp/>&quot;OmegaL<sp/>=<sp/>\n&quot;<sp/>&lt;&lt;<sp/>OmegaL<sp/>&lt;&lt;<sp/>std::endl;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>int<sp/>q<sp/>=<sp/>mu.size();</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>mu<sp/>=<sp/>Q<sp/>*<sp/>x</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_tri_utils_8h_1a7ca9facdac5bff93d2db13420c3edf8e" kindref="member">CrossProdLLt</ref>(Mq_,<sp/>OmegaL,<sp/>Uq_);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>std::cout<sp/>&lt;&lt;<sp/>Mq_<sp/>&lt;&lt;<sp/>std::endl;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>mu.noalias()<sp/>=<sp/>Mq_<sp/>*<sp/>x;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>mu<sp/>=<sp/>G_L^{-1}<sp/>z</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>Mq_<sp/>+=<sp/>C;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>lltq_.compute(Mq_);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>lltq_.matrixL().solveInPlace(mu);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>mu<sp/>=<sp/>mu<sp/>+<sp/>N(0,I)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ii=0;<sp/>ii&lt;q_;<sp/>ii++)<sp/>{</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>mu[ii]<sp/>+=<sp/>norm_rand();</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>mu<sp/>=<sp/>G_U^{-1}<sp/>z<sp/>+<sp/>y</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>lltq_.matrixU().solveInPlace(mu);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79" refid="classmniw_1_1_ranfx_normal_1aa27b8e328fd4d30eed11bd9986c7afec" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classmniw_1_1_ranfx_normal_1aa27b8e328fd4d30eed11bd9986c7afec" kindref="member">RanfxNormal::GenerateO</ref>(Ref&lt;VectorXd&gt;<sp/>mu,</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Ref&lt;const<sp/>VectorXd&gt;&amp;<sp/>x,</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Ref&lt;const<sp/>MatrixXd&gt;&amp;<sp/>C,</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Ref&lt;const<sp/>MatrixXd&gt;&amp;<sp/>Omega)<sp/>{</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>int<sp/>q<sp/>=<sp/>mu.size();</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>mu<sp/>=<sp/>Q<sp/>*<sp/>x</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>mu.noalias()<sp/>=<sp/>Omega<sp/>*<sp/>x;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>mu<sp/>=<sp/>G_L^{-1}<sp/>z</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>Mq_<sp/>=<sp/>Omega<sp/>+<sp/>C;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>lltq_.compute(Mq_);</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/>lltq_.matrixL().solveInPlace(mu);</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>mu<sp/>=<sp/>mu<sp/>+<sp/>N(0,I)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ii=0;<sp/>ii&lt;q_;<sp/>ii++)<sp/>{</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>mu[ii]<sp/>+=<sp/>norm_rand();</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>mu<sp/>=<sp/>G_U^{-1}<sp/>z<sp/>+<sp/>y</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/>lltq_.matrixU().solveInPlace(mu);</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>mniw</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="inst/include/mniw/RandomEffects.h"/>
+  </compounddef>
+</doxygen>

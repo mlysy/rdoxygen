@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="dir_ca82a859ff559c30401386e7ae1e50e3" kind="dir">
+    <compoundname>inst/include/mniw</compoundname>
+    <innerfile refid="_hierarchical_8h">Hierarchical.h</innerfile>
+    <innerfile refid="_matrix_normal_8h">MatrixNormal.h</innerfile>
+    <innerfile refid="_matrix_t_8h">MatrixT.h</innerfile>
+    <innerfile refid="_multi_normal_8h">MultiNormal.h</innerfile>
+    <innerfile refid="_random_effects_8h">RandomEffects.h</innerfile>
+    <innerfile refid="_tri_utils_8h">TriUtils.h</innerfile>
+    <innerfile refid="_wishart_8h">Wishart.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="inst/include/mniw/"/>
+  </compounddef>
+</doxygen>

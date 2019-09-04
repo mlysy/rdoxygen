@@ -1,0 +1,444 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="classmniw_1_1_matrix_normal" kind="class" language="C++" prot="public">
+    <compoundname>mniw::MatrixNormal</compoundname>
+    <includes refid="_matrix_normal_8h" local="no">MatrixNormal.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classmniw_1_1_matrix_normal_1a8ab2fcceca1f9a284afa87d33d8c250f" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int mniw::MatrixNormal::p_</definition>
+        <argsstring></argsstring>
+        <name>p_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inst/include/mniw/MatrixNormal.h" line="20" column="1" bodyfile="inst/include/mniw/MatrixNormal.h" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmniw_1_1_matrix_normal_1a0e6f1c4c5628d25937e859f709bc9642" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int mniw::MatrixNormal::q_</definition>
+        <argsstring></argsstring>
+        <name>q_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inst/include/mniw/MatrixNormal.h" line="21" column="1" bodyfile="inst/include/mniw/MatrixNormal.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmniw_1_1_matrix_normal_1ac248654a10e3f9b47817856d809baa72" prot="private" static="no" mutable="no">
+        <type>MatrixXd</type>
+        <definition>MatrixXd mniw::MatrixNormal::Z_</definition>
+        <argsstring></argsstring>
+        <name>Z_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inst/include/mniw/MatrixNormal.h" line="22" column="1" bodyfile="inst/include/mniw/MatrixNormal.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmniw_1_1_matrix_normal_1ae97c9bf1d90a56596f99c946b072b87e" prot="private" static="no" mutable="no">
+        <type>LLT&lt; MatrixXd &gt;</type>
+        <definition>LLT&lt;MatrixXd&gt; mniw::MatrixNormal::cholSigmaR_</definition>
+        <argsstring></argsstring>
+        <name>cholSigmaR_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inst/include/mniw/MatrixNormal.h" line="23" column="1" bodyfile="inst/include/mniw/MatrixNormal.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmniw_1_1_matrix_normal_1ad7d1b256fd0756025684c955d1cf483b" prot="private" static="no" mutable="no">
+        <type>LLT&lt; MatrixXd &gt;</type>
+        <definition>LLT&lt;MatrixXd&gt; mniw::MatrixNormal::cholSigmaC_</definition>
+        <argsstring></argsstring>
+        <name>cholSigmaC_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inst/include/mniw/MatrixNormal.h" line="25" column="1" bodyfile="inst/include/mniw/MatrixNormal.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classmniw_1_1_matrix_normal_1a033d7bb7ce43323157697c42e59db975" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>mniw::MatrixNormal::MatrixNormal</definition>
+        <argsstring>(int p, int q)</argsstring>
+        <name>MatrixNormal</name>
+        <param>
+          <type>int</type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>q</declname>
+        </param>
+        <briefdescription>
+<para>Constructor. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of rows of Matrix Normal distribution. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">q</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of columns of Matrix Normal distribution. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inst/include/mniw/MatrixNormal.h" line="29" column="1" bodyfile="inst/include/mniw/MatrixNormal.h" bodystart="57" bodyend="63"/>
+      </memberdef>
+      <memberdef kind="function" id="classmniw_1_1_matrix_normal_1a6b5cd49b51f7ee90822bed404e3d630a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>double mniw::MatrixNormal::LogDens</definition>
+        <argsstring>(const Ref&lt; const MatrixXd &gt; &amp;X, const Ref&lt; const MatrixXd &gt; &amp;Lambda, const Ref&lt; const MatrixXd &gt; &amp;SigmaR, const Ref&lt; const MatrixXd &gt; &amp;SigmaC)</argsstring>
+        <name>LogDens</name>
+        <param>
+          <type>const Ref&lt; const MatrixXd &gt; &amp;</type>
+          <declname>X</declname>
+        </param>
+        <param>
+          <type>const Ref&lt; const MatrixXd &gt; &amp;</type>
+          <declname>Lambda</declname>
+        </param>
+        <param>
+          <type>const Ref&lt; const MatrixXd &gt; &amp;</type>
+          <declname>SigmaR</declname>
+        </param>
+        <param>
+          <type>const Ref&lt; const MatrixXd &gt; &amp;</type>
+          <declname>SigmaC</declname>
+        </param>
+        <briefdescription>
+<para>Log-density evaluation. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">X</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Observation matrix of size <computeroutput>p x q</computeroutput>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">Lambda</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Mean matrix of size <computeroutput>p x q</computeroutput>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">SigmaR</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Row-variance matrix of size <computeroutput>p x p</computeroutput>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">SigmaC</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Column-variance matrix of size <computeroutput>q x q</computeroutput>.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The log-density evaluated at <computeroutput>X</computeroutput>. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inst/include/mniw/MatrixNormal.h" line="31" column="1" bodyfile="inst/include/mniw/MatrixNormal.h" bodystart="73" bodyend="82"/>
+      </memberdef>
+      <memberdef kind="function" id="classmniw_1_1_matrix_normal_1ab38b401fdf3f08d7e60a22215c84b993" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>double mniw::MatrixNormal::LogDens</definition>
+        <argsstring>(const Ref&lt; const MatrixXd &gt; &amp;X, const Ref&lt; const MatrixXd &gt; &amp;Lambda, LLT&lt; MatrixXd &gt; &amp;cholSigmaR, double ldSigmaR, LLT&lt; MatrixXd &gt; &amp;cholSigmaC, double ldSigmaC)</argsstring>
+        <name>LogDens</name>
+        <param>
+          <type>const Ref&lt; const MatrixXd &gt; &amp;</type>
+          <declname>X</declname>
+        </param>
+        <param>
+          <type>const Ref&lt; const MatrixXd &gt; &amp;</type>
+          <declname>Lambda</declname>
+        </param>
+        <param>
+          <type>LLT&lt; MatrixXd &gt; &amp;</type>
+          <declname>cholSigmaR</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>ldSigmaR</declname>
+        </param>
+        <param>
+          <type>LLT&lt; MatrixXd &gt; &amp;</type>
+          <declname>cholSigmaC</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>ldSigmaC</declname>
+        </param>
+        <briefdescription>
+<para>Log-density evaluation with precomputations. </para>        </briefdescription>
+        <detaileddescription>
+<para>Identical to the shorter <computeroutput>LogDens</computeroutput>, except with pre-computed Cholesky factors and log-determinants for <computeroutput>SigmaR</computeroutput> and <computeroutput>SigmaC</computeroutput> (faster in a for-loop where one of these is held fixed).</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">X</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Observation matrix of size <computeroutput>p x q</computeroutput>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">Lambda</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Mean matrix of size <computeroutput>p x q</computeroutput>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">cholSigmaR</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Lower Cholesky factor of row-variance matrix, as an <computeroutput>Eigen::LLT</computeroutput> object. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">ldSigmaR</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Log-determinant of <computeroutput>cholSigmaR</computeroutput>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">cholSigmaC</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Lower Cholesky factor of column-variance matrix, as an <computeroutput>Eigen::LLT</computeroutput> object.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">ldSigmaC</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Log-determinant of <computeroutput>cholSigmaC</computeroutput>.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The log-density evaluated as <computeroutput>X</computeroutput>. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inst/include/mniw/MatrixNormal.h" line="34" column="1" bodyfile="inst/include/mniw/MatrixNormal.h" bodystart="95" bodyend="120"/>
+      </memberdef>
+      <memberdef kind="function" id="classmniw_1_1_matrix_normal_1a4eafd57c4a23562faca523fa1bceb6a2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void mniw::MatrixNormal::GenerateRowSColS</definition>
+        <argsstring>(Ref&lt; MatrixXd &gt; X, const Ref&lt; const MatrixXd &gt; &amp;Lambda, const Ref&lt; const MatrixXd &gt; &amp;SigmaRL, const Ref&lt; const MatrixXd &gt; &amp;SigmaCU)</argsstring>
+        <name>GenerateRowSColS</name>
+        <param>
+          <type>Ref&lt; MatrixXd &gt;</type>
+          <declname>X</declname>
+        </param>
+        <param>
+          <type>const Ref&lt; const MatrixXd &gt; &amp;</type>
+          <declname>Lambda</declname>
+        </param>
+        <param>
+          <type>const Ref&lt; const MatrixXd &gt; &amp;</type>
+          <declname>SigmaRL</declname>
+        </param>
+        <param>
+          <type>const Ref&lt; const MatrixXd &gt; &amp;</type>
+          <declname>SigmaCU</declname>
+        </param>
+        <briefdescription>
+<para>Random draw with RowV/ColV on the variance/variance scale. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">X</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Matrix of size <computeroutput>p x q</computeroutput> in which to store the random draw. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">Lambda</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Mean matrix of size <computeroutput>p x q</computeroutput>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">SigmaRL</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Lower Cholesky factor of the row-variance matrix <computeroutput>SigmaR</computeroutput> (a matrix of size <computeroutput>p x p</computeroutput>). </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">SigmaCU</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Upper Cholesky factor of the column-variance matrix <computeroutput>SigmaC</computeroutput> (a matrix of size <computeroutput>q x q</computeroutput>). </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inst/include/mniw/MatrixNormal.h" line="39" column="1" bodyfile="inst/include/mniw/MatrixNormal.h" bodystart="128" bodyend="146"/>
+      </memberdef>
+      <memberdef kind="function" id="classmniw_1_1_matrix_normal_1a1c76fef69a647250464e6a3fc0c2f4f3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void mniw::MatrixNormal::GenerateRowSColO</definition>
+        <argsstring>(Ref&lt; MatrixXd &gt; X, const Ref&lt; const MatrixXd &gt; &amp;Lambda, const Ref&lt; const MatrixXd &gt; &amp;SigmaRL, const Ref&lt; const MatrixXd &gt; &amp;OmegaCL)</argsstring>
+        <name>GenerateRowSColO</name>
+        <param>
+          <type>Ref&lt; MatrixXd &gt;</type>
+          <declname>X</declname>
+        </param>
+        <param>
+          <type>const Ref&lt; const MatrixXd &gt; &amp;</type>
+          <declname>Lambda</declname>
+        </param>
+        <param>
+          <type>const Ref&lt; const MatrixXd &gt; &amp;</type>
+          <declname>SigmaRL</declname>
+        </param>
+        <param>
+          <type>const Ref&lt; const MatrixXd &gt; &amp;</type>
+          <declname>OmegaCL</declname>
+        </param>
+        <briefdescription>
+<para>Random number generation with RowV/ColV on the variance/precision scale. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">X</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Matrix of size <computeroutput>p x q</computeroutput> in which to store the random draw. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">Lambda</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Mean matrix of size <computeroutput>p x q</computeroutput>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">SigmaRL</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Lower Cholesky factor of the row-variance matrix <computeroutput>SigmaR</computeroutput> (a matrix of size <computeroutput>p x p</computeroutput>). </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">OmegaCL</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Lower Cholesky factor of the column-precision matrix <computeroutput>SigmaC^{-1}</computeroutput> (a matrix of size <computeroutput>q x q</computeroutput>). </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inst/include/mniw/MatrixNormal.h" line="44" column="1" bodyfile="inst/include/mniw/MatrixNormal.h" bodystart="152" bodyend="170"/>
+      </memberdef>
+      <memberdef kind="function" id="classmniw_1_1_matrix_normal_1a447f4e7fe19375f691d96cbb809625bd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void mniw::MatrixNormal::GenerateRowOColO</definition>
+        <argsstring>(Ref&lt; MatrixXd &gt; X, const Ref&lt; const MatrixXd &gt; &amp;Lambda, const Ref&lt; const MatrixXd &gt; &amp;OmegaRU, const Ref&lt; const MatrixXd &gt; &amp;OmegaCL)</argsstring>
+        <name>GenerateRowOColO</name>
+        <param>
+          <type>Ref&lt; MatrixXd &gt;</type>
+          <declname>X</declname>
+        </param>
+        <param>
+          <type>const Ref&lt; const MatrixXd &gt; &amp;</type>
+          <declname>Lambda</declname>
+        </param>
+        <param>
+          <type>const Ref&lt; const MatrixXd &gt; &amp;</type>
+          <declname>OmegaRU</declname>
+        </param>
+        <param>
+          <type>const Ref&lt; const MatrixXd &gt; &amp;</type>
+          <declname>OmegaCL</declname>
+        </param>
+        <briefdescription>
+<para>Random number generation with RowV/ColV on the precision/precision scale. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">X</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Matrix of size <computeroutput>p x q</computeroutput> in which to store the random draw. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">Lambda</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Mean matrix of size <computeroutput>p x q</computeroutput>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">OmegaRU</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Upper Cholesky factor of the row-precision matrix <computeroutput>SigmaR^{-1}</computeroutput> (a matrix of size <computeroutput>p x p</computeroutput>). </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">OmegaCL</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Lower Cholesky factor of the column-precision matrix <computeroutput>SigmaC^{-1}</computeroutput> (a matrix of size <computeroutput>q x q</computeroutput>). </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inst/include/mniw/MatrixNormal.h" line="49" column="1" bodyfile="inst/include/mniw/MatrixNormal.h" bodystart="176" bodyend="194"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>The Matrix Normal distribution. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="inst/include/mniw/MatrixNormal.h" line="17" column="1" bodyfile="inst/include/mniw/MatrixNormal.h" bodystart="17" bodyend="53"/>
+    <listofallmembers>
+      <member refid="classmniw_1_1_matrix_normal_1ad7d1b256fd0756025684c955d1cf483b" prot="private" virt="non-virtual"><scope>mniw::MatrixNormal</scope><name>cholSigmaC_</name></member>
+      <member refid="classmniw_1_1_matrix_normal_1ae97c9bf1d90a56596f99c946b072b87e" prot="private" virt="non-virtual"><scope>mniw::MatrixNormal</scope><name>cholSigmaR_</name></member>
+      <member refid="classmniw_1_1_matrix_normal_1a447f4e7fe19375f691d96cbb809625bd" prot="public" virt="non-virtual"><scope>mniw::MatrixNormal</scope><name>GenerateRowOColO</name></member>
+      <member refid="classmniw_1_1_matrix_normal_1a1c76fef69a647250464e6a3fc0c2f4f3" prot="public" virt="non-virtual"><scope>mniw::MatrixNormal</scope><name>GenerateRowSColO</name></member>
+      <member refid="classmniw_1_1_matrix_normal_1a4eafd57c4a23562faca523fa1bceb6a2" prot="public" virt="non-virtual"><scope>mniw::MatrixNormal</scope><name>GenerateRowSColS</name></member>
+      <member refid="classmniw_1_1_matrix_normal_1a6b5cd49b51f7ee90822bed404e3d630a" prot="public" virt="non-virtual"><scope>mniw::MatrixNormal</scope><name>LogDens</name></member>
+      <member refid="classmniw_1_1_matrix_normal_1ab38b401fdf3f08d7e60a22215c84b993" prot="public" virt="non-virtual"><scope>mniw::MatrixNormal</scope><name>LogDens</name></member>
+      <member refid="classmniw_1_1_matrix_normal_1a033d7bb7ce43323157697c42e59db975" prot="public" virt="non-virtual"><scope>mniw::MatrixNormal</scope><name>MatrixNormal</name></member>
+      <member refid="classmniw_1_1_matrix_normal_1a8ab2fcceca1f9a284afa87d33d8c250f" prot="private" virt="non-virtual"><scope>mniw::MatrixNormal</scope><name>p_</name></member>
+      <member refid="classmniw_1_1_matrix_normal_1a0e6f1c4c5628d25937e859f709bc9642" prot="private" virt="non-virtual"><scope>mniw::MatrixNormal</scope><name>q_</name></member>
+      <member refid="classmniw_1_1_matrix_normal_1ac248654a10e3f9b47817856d809baa72" prot="private" virt="non-virtual"><scope>mniw::MatrixNormal</scope><name>Z_</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

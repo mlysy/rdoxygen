@@ -1,0 +1,333 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_hierarchical_exports_8cpp" kind="file" language="C++">
+    <compoundname>HierarchicalExports.cpp</compoundname>
+    <includes local="no">RcppEigen.h</includes>
+    <includes refid="_tri_utils_8h" local="yes">mniw/TriUtils.h</includes>
+    <includes refid="_hierarchical_8h" local="yes">mniw/Hierarchical.h</includes>
+    <incdepgraph>
+      <node id="67">
+        <label>RcppEigen.h</label>
+      </node>
+      <node id="66">
+        <label>src/HierarchicalExports.cpp</label>
+        <link refid="_hierarchical_exports_8cpp"/>
+        <childnode refid="67" relation="include">
+        </childnode>
+        <childnode refid="68" relation="include">
+        </childnode>
+        <childnode refid="69" relation="include">
+        </childnode>
+      </node>
+      <node id="72">
+        <label>mniw/RandomEffects.h</label>
+        <link refid="_random_effects_8h"/>
+        <childnode refid="67" relation="include">
+        </childnode>
+        <childnode refid="68" relation="include">
+        </childnode>
+      </node>
+      <node id="71">
+        <label>mniw/MatrixNormal.h</label>
+        <link refid="_matrix_normal_8h"/>
+        <childnode refid="67" relation="include">
+        </childnode>
+        <childnode refid="68" relation="include">
+        </childnode>
+      </node>
+      <node id="69">
+        <label>mniw/Hierarchical.h</label>
+        <link refid="_hierarchical_8h"/>
+        <childnode refid="67" relation="include">
+        </childnode>
+        <childnode refid="68" relation="include">
+        </childnode>
+        <childnode refid="70" relation="include">
+        </childnode>
+        <childnode refid="71" relation="include">
+        </childnode>
+        <childnode refid="72" relation="include">
+        </childnode>
+      </node>
+      <node id="70">
+        <label>mniw/Wishart.h</label>
+        <link refid="_wishart_8h"/>
+        <childnode refid="67" relation="include">
+        </childnode>
+        <childnode refid="68" relation="include">
+        </childnode>
+      </node>
+      <node id="68">
+        <label>mniw/TriUtils.h</label>
+        <link refid="_tri_utils_8h"/>
+        <childnode refid="67" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespace_rcpp">Rcpp</innernamespace>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_hierarchical_exports_8cpp_1ae439a9f482ad9a0902a4fe6c2a5001ae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>List</type>
+        <definition>List HierUneqVModelGibbs</definition>
+        <argsstring>(int nSamples, int nBurn, Eigen::MatrixXd Y, Eigen::MatrixXd X, Eigen::MatrixXd V, Eigen::MatrixXd Lambda, Eigen::MatrixXd Omega, Eigen::MatrixXd Psi, double nu, Eigen::MatrixXd Beta0, Eigen::MatrixXd iSigma0, Eigen::MatrixXd Mu0, bool updateBetaSigma, bool updateMu, bool storeBetaSigma, bool storeMu)</argsstring>
+        <name>HierUneqVModelGibbs</name>
+        <param>
+          <type>int</type>
+          <declname>nSamples</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>nBurn</declname>
+        </param>
+        <param>
+          <type>Eigen::MatrixXd</type>
+          <declname>Y</declname>
+        </param>
+        <param>
+          <type>Eigen::MatrixXd</type>
+          <declname>X</declname>
+        </param>
+        <param>
+          <type>Eigen::MatrixXd</type>
+          <declname>V</declname>
+        </param>
+        <param>
+          <type>Eigen::MatrixXd</type>
+          <declname>Lambda</declname>
+        </param>
+        <param>
+          <type>Eigen::MatrixXd</type>
+          <declname>Omega</declname>
+        </param>
+        <param>
+          <type>Eigen::MatrixXd</type>
+          <declname>Psi</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>nu</declname>
+        </param>
+        <param>
+          <type>Eigen::MatrixXd</type>
+          <declname>Beta0</declname>
+        </param>
+        <param>
+          <type>Eigen::MatrixXd</type>
+          <declname>iSigma0</declname>
+        </param>
+        <param>
+          <type>Eigen::MatrixXd</type>
+          <declname>Mu0</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>updateBetaSigma</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>updateMu</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>storeBetaSigma</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>storeMu</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Bayesian inference for the Hierarchical Normal Unequal-Variance model.</para><para>Generate <computeroutput>nSamples</computeroutput> draws from a Gibbs sampler on the posterior random-effect and hyperparameter distribution of the Hierarchical Normal Unequal-Variance model.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">nSamples</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Integer number of posterior draws to return. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">nBurn</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Integer number of samples to initially discard as burn-in. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">Y</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Response matrix of size <computeroutput>N x q</computeroutput>, each row is an observation. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">X</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Covariate matrix of size <computeroutput>N x q</computeroutput>, each row is an observation. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">V</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Matrix of size <computeroutput>q x (Nq)</computeroutput> containing the variance of each response about its mean. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">Lambda</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Prior mean matrix of size <computeroutput>p x q</computeroutput>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">Omega</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Prior row-wise precision matrix of size <computeroutput>p x p</computeroutput>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">Psi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Prior column-wise scale matrix of size <computeroutput>q x q</computeroutput>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">nu</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Prior shape parameter. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">Beta0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Initial random-effects coefficient matrix of size <computeroutput>p x q</computeroutput>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">iSigma0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Initial random-effects precision matrix of size <computeroutput>q x q</computeroutput>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">Mu0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Initial random-effects matrix of size <computeroutput>N x q</computeroutput>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">updateBetaSigma</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Boolean; whether or not to update the random-effects mean and variance matrices <computeroutput>Beta</computeroutput> and <computeroutput>Sigma</computeroutput>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">updateMu</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Boolean; whether or not to update the random-effects <computeroutput>Mu</computeroutput>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">storeBetaSigma</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Boolean; whether or not to return <computeroutput>Beta</computeroutput> and <computeroutput>Sigma</computeroutput>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">storeMu</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Boolean; whether or not to return <computeroutput>Mu</computeroutput>.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><computeroutput>Rcpp::List</computeroutput> with elements <computeroutput>Beta</computeroutput>, <computeroutput>Sigma</computeroutput>, and <computeroutput>Mu</computeroutput>, being matrices of size <computeroutput>p x (q*nSamples)</computeroutput>, <computeroutput>q x (q*nSamples)</computeroutput> and <computeroutput>q x (N*nSamples)</computeroutput>. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/HierarchicalExports.cpp" line="37" column="1" bodyfile="src/HierarchicalExports.cpp" bodystart="37" bodyend="89"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Exported Rcpp functions for Hierarchical Normal Unequal-Variance model. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">//<sp/>[[Rcpp::depends(RcppEigen)]]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;RcppEigen.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_eigen" kindref="compound">Eigen</ref>;</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_rcpp" kindref="compound">Rcpp</ref>;</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">//#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_tri_utils_8h" kindref="compound">mniw/TriUtils.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_hierarchical_8h" kindref="compound">mniw/Hierarchical.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="namespacemniw" kindref="compound">mniw</ref>;</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="comment">//<sp/>[[Rcpp::export]]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal">List<sp/><ref refid="_hierarchical_exports_8cpp_1ae439a9f482ad9a0902a4fe6c2a5001ae" kindref="member">HierUneqVModelGibbs</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nSamples,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nBurn,</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Eigen::MatrixXd<sp/>Y,<sp/>Eigen::MatrixXd<sp/>X,</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Eigen::MatrixXd<sp/>V,</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Eigen::MatrixXd<sp/>Lambda,<sp/>Eigen::MatrixXd<sp/>Omega,</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Eigen::MatrixXd<sp/>Psi,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>nu,</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Eigen::MatrixXd<sp/>Beta0,<sp/>Eigen::MatrixXd<sp/>iSigma0,</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Eigen::MatrixXd<sp/>Mu0,</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>updateBetaSigma,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>updateMu,</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>storeBetaSigma,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>storeMu)<sp/>{</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>dimensions<sp/>of<sp/>the<sp/>problem</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>N<sp/>=<sp/>Y.rows();</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>p<sp/>=<sp/>X.cols();</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>q<sp/>=<sp/>Y.cols();</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>output<sp/>variables</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/>MatrixXd<sp/>BetaOut(p,<sp/>(storeBetaSigma<sp/>?<sp/>nSamples*q<sp/>:<sp/>q));</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/>MatrixXd<sp/>SigmaOut(q,<sp/>(storeBetaSigma<sp/>?<sp/>nSamples*q:<sp/>q));</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/>MatrixXd<sp/>MuOut(q,<sp/>(storeMu<sp/>?<sp/>nSamples*N<sp/>:<sp/>N));</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!storeBetaSigma)<sp/>{</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>BetaOut.setZero();</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>SigmaOut.setZero();</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!storeMu)<sp/>{</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>MuOut.setZero();</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>internal<sp/>variables</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><ref refid="classmniw_1_1_hier_normal" kindref="compound">HierNormal</ref><sp/>hiernorm(Y,<sp/>X,<sp/>V,<sp/>Lambda,<sp/>Omega,<sp/>Psi,<sp/>nu);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/>hiernorm.setMu(Mu0);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/>hiernorm.setBeta(Beta0);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/>hiernorm.setISigma(iSigma0);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Gibbs<sp/>sampler</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ii=-nBurn;<sp/>ii&lt;nSamples;<sp/>ii++)<sp/>{</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Rprintf(&quot;iteration<sp/>%i\n&quot;,<sp/>ii);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(updateBetaSigma)<sp/>{</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>hiernorm.UpdateBetaSigma();</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(updateMu)<sp/>{</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>hiernorm.UpdateMu();</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>storage</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(ii<sp/>&gt;=<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(storeBetaSigma)<sp/>{</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>hiernorm.getBeta(BetaOut.block(0,ii*q,p,q));</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>hiernorm.getSigma(SigmaOut.block(0,ii*q,q,q));</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(storeMu)<sp/>{</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>hiernorm.getMut(MuOut.block(0,ii*N,q,N));</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>List::create(_[</highlight><highlight class="stringliteral">&quot;Beta&quot;</highlight><highlight class="normal">]<sp/>=<sp/>BetaOut,</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_[</highlight><highlight class="stringliteral">&quot;Sigma&quot;</highlight><highlight class="normal">]<sp/>=<sp/>SigmaOut,</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_[</highlight><highlight class="stringliteral">&quot;Mu&quot;</highlight><highlight class="normal">]<sp/>=<sp/>MuOut);</highlight></codeline>
+<codeline lineno="89"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="src/HierarchicalExports.cpp"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="dir_68267d1309a1af8e8297ef4c3efbcdba" kind="dir">
+    <compoundname>src</compoundname>
+    <innerfile refid="_cross_product_exports_8cpp">CrossProductExports.cpp</innerfile>
+    <innerfile refid="_hierarchical_exports_8cpp">HierarchicalExports.cpp</innerfile>
+    <innerfile refid="_matrix_n_i_w_exports_8cpp">MatrixNIWExports.cpp</innerfile>
+    <innerfile refid="_matrix_normal_exports_8cpp">MatrixNormalExports.cpp</innerfile>
+    <innerfile refid="_matrix_t_exports_8cpp">MatrixTExports.cpp</innerfile>
+    <innerfile refid="_multi_normal_exports_8cpp">MultiNormalExports.cpp</innerfile>
+    <innerfile refid="_random_effects_exports_8cpp">RandomEffectsExports.cpp</innerfile>
+    <innerfile refid="_rcpp_exports_8cpp">RcppExports.cpp</innerfile>
+    <innerfile refid="_wishart_exports_8cpp">WishartExports.cpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/"/>
+  </compounddef>
+</doxygen>

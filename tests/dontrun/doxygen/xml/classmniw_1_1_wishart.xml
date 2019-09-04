@@ -1,0 +1,376 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="classmniw_1_1_wishart" kind="class" language="C++" prot="public">
+    <compoundname>mniw::Wishart</compoundname>
+    <includes refid="_wishart_8h" local="no">Wishart.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classmniw_1_1_wishart_1a84107bffd4277ae52157a745aa49b2e2" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int mniw::Wishart::q_</definition>
+        <argsstring></argsstring>
+        <name>q_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inst/include/mniw/Wishart.h" line="72" column="1" bodyfile="inst/include/mniw/Wishart.h" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmniw_1_1_wishart_1ac914121641605272ae9ad05f3cf4690a" prot="private" static="no" mutable="no">
+        <type>LLT&lt; MatrixXd &gt;</type>
+        <definition>LLT&lt;MatrixXd&gt; mniw::Wishart::cholX_</definition>
+        <argsstring></argsstring>
+        <name>cholX_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inst/include/mniw/Wishart.h" line="73" column="1" bodyfile="inst/include/mniw/Wishart.h" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmniw_1_1_wishart_1a1efda21cdc68d4a2be8af9dbfd559aa4" prot="private" static="no" mutable="no">
+        <type>LLT&lt; MatrixXd &gt;</type>
+        <definition>LLT&lt;MatrixXd&gt; mniw::Wishart::cholPsi_</definition>
+        <argsstring></argsstring>
+        <name>cholPsi_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inst/include/mniw/Wishart.h" line="74" column="1" bodyfile="inst/include/mniw/Wishart.h" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmniw_1_1_wishart_1a033539e01dadc10dc6002166685bd21a" prot="private" static="no" mutable="no">
+        <type>MatrixXd</type>
+        <definition>MatrixXd mniw::Wishart::Z_</definition>
+        <argsstring></argsstring>
+        <name>Z_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inst/include/mniw/Wishart.h" line="75" column="1" bodyfile="inst/include/mniw/Wishart.h" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmniw_1_1_wishart_1a34b7504908cbad05a712329bd64434b0" prot="private" static="no" mutable="no">
+        <type>MatrixXd</type>
+        <definition>MatrixXd mniw::Wishart::XL_</definition>
+        <argsstring></argsstring>
+        <name>XL_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inst/include/mniw/Wishart.h" line="76" column="1" bodyfile="inst/include/mniw/Wishart.h" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classmniw_1_1_wishart_1a45f260ee7fc79c85497a7449a2220200" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>mniw::Wishart::Wishart</definition>
+        <argsstring>(int q)</argsstring>
+        <name>Wishart</name>
+        <param>
+          <type>int</type>
+          <declname>q</declname>
+        </param>
+        <briefdescription>
+<para>Constructor. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">q</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Size of the Wishart/Inverse-Wishart distribution. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inst/include/mniw/Wishart.h" line="79" column="1" bodyfile="inst/include/mniw/Wishart.h" bodystart="99" bodyend="105"/>
+      </memberdef>
+      <memberdef kind="function" id="classmniw_1_1_wishart_1ad0402256f527189c57765da8307dd413" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>double mniw::Wishart::LogDens</definition>
+        <argsstring>(const Ref&lt; const MatrixXd &gt; &amp;X, const Ref&lt; const MatrixXd &gt; &amp;Psi, double nu, bool inv)</argsstring>
+        <name>LogDens</name>
+        <param>
+          <type>const Ref&lt; const MatrixXd &gt; &amp;</type>
+          <declname>X</declname>
+        </param>
+        <param>
+          <type>const Ref&lt; const MatrixXd &gt; &amp;</type>
+          <declname>Psi</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>nu</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>inv</declname>
+        </param>
+        <briefdescription>
+<para>Log-density. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">X</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Observation matrix of size <computeroutput>q x q</computeroutput>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">Psi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Scale matrix parameter of size <computeroutput>q x q</computeroutput>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">nu</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Shape parameter. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">inv</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether or not the Inverse-Wishart distribution is desired.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The log-density of the distribution. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inst/include/mniw/Wishart.h" line="81" column="1" bodyfile="inst/include/mniw/Wishart.h" bodystart="113" bodyend="120"/>
+      </memberdef>
+      <memberdef kind="function" id="classmniw_1_1_wishart_1a5f9c66bba21d482bb20760809c531f90" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>double mniw::Wishart::LogDens</definition>
+        <argsstring>(const Ref&lt; const MatrixXd &gt; &amp;X, LLT&lt; MatrixXd &gt; &amp;cholX, double ldX, const Ref&lt; const MatrixXd &gt; &amp;Psi, LLT&lt; MatrixXd &gt; &amp;cholPsi, double ldPsi, double nu, bool inv)</argsstring>
+        <name>LogDens</name>
+        <param>
+          <type>const Ref&lt; const MatrixXd &gt; &amp;</type>
+          <declname>X</declname>
+        </param>
+        <param>
+          <type>LLT&lt; MatrixXd &gt; &amp;</type>
+          <declname>cholX</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>ldX</declname>
+        </param>
+        <param>
+          <type>const Ref&lt; const MatrixXd &gt; &amp;</type>
+          <declname>Psi</declname>
+        </param>
+        <param>
+          <type>LLT&lt; MatrixXd &gt; &amp;</type>
+          <declname>cholPsi</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>ldPsi</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>nu</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>inv</declname>
+        </param>
+        <briefdescription>
+<para>Log-density with pre-computations. </para>        </briefdescription>
+        <detaileddescription>
+<para>Identical to <ref refid="classmniw_1_1_wishart_1ad0402256f527189c57765da8307dd413" kindref="member">Wishart::LogDens(const Ref&lt;const MatrixXd&gt;&amp;,const Ref&lt;const MatrixXd&gt;&amp;,double,bool)</ref>, except with pre-computed Cholesky factors and log-determinants for <computeroutput>X</computeroutput> and <computeroutput>Psi</computeroutput> (faster in a for-loop where one of these is held fixed).</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">X</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Observation matrix of size <computeroutput>q x q</computeroutput>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">cholX</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Cholesky decomposition of a variance matrix <computeroutput>X</computeroutput>. This is represented by an <computeroutput>Eigen::LLT</computeroutput> object, for which <computeroutput>cholX.compute()</computeroutput> has already been applied. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">ldX</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Log-determinant of <computeroutput>cholX</computeroutput>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">Psi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Scale matrix parameter of size <computeroutput>q x q</computeroutput>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">cholPsi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Cholesky decomposition of the scale matrix parameter <computeroutput>Psi</computeroutput>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">ldPsi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Log-determinant of <computeroutput>cholPsi</computeroutput>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">nu</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Shape parameter. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">inv</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether or not the Inverse-Wishart distribution is desired.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The log-density of the distribution. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inst/include/mniw/Wishart.h" line="85" column="1" bodyfile="inst/include/mniw/Wishart.h" bodystart="134" bodyend="158"/>
+      </memberdef>
+      <memberdef kind="function" id="classmniw_1_1_wishart_1a091d1a4ae2eaf983bbce2ffdb205d5e3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void mniw::Wishart::GenerateLowerTri</definition>
+        <argsstring>(Ref&lt; MatrixXd &gt; XL, const Ref&lt; const MatrixXd &gt; &amp;PsiL, double nu)</argsstring>
+        <name>GenerateLowerTri</name>
+        <param>
+          <type>Ref&lt; MatrixXd &gt;</type>
+          <declname>XL</declname>
+        </param>
+        <param>
+          <type>const Ref&lt; const MatrixXd &gt; &amp;</type>
+          <declname>PsiL</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>nu</declname>
+        </param>
+        <briefdescription>
+<para>Random draw with scale matrix input. </para>        </briefdescription>
+        <detaileddescription>
+<para>Simulate a random draw from the lower Cholesky factor of a <ref refid="classmniw_1_1_wishart" kindref="compound">Wishart</ref> distribution with given scale matrix and shape parameters.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">XL</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Matrix of size <computeroutput>q x q</computeroutput> containing the random draw, which lives only on the lower triangular half of the matrix. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">PsiL</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Matrix of size <computeroutput>q x q</computeroutput> containing the lower Cholesky factor of the scale matrix parameter <computeroutput>Psi</computeroutput>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">nu</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Shape parameter. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inst/include/mniw/Wishart.h" line="91" column="1" bodyfile="inst/include/mniw/Wishart.h" bodystart="165" bodyend="180"/>
+      </memberdef>
+      <memberdef kind="function" id="classmniw_1_1_wishart_1aa0409c4d479a1228b591e6ab9351bb9b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void mniw::Wishart::GenerateLowerTriXi</definition>
+        <argsstring>(Ref&lt; MatrixXd &gt; XL, const Ref&lt; const MatrixXd &gt; &amp;XiL, double nu)</argsstring>
+        <name>GenerateLowerTriXi</name>
+        <param>
+          <type>Ref&lt; MatrixXd &gt;</type>
+          <declname>XL</declname>
+        </param>
+        <param>
+          <type>const Ref&lt; const MatrixXd &gt; &amp;</type>
+          <declname>XiL</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>nu</declname>
+        </param>
+        <briefdescription>
+<para>Random draw with precision matrix input. </para>        </briefdescription>
+        <detaileddescription>
+<para>Simulate a random draw from the lower Cholesky factor of a <ref refid="classmniw_1_1_wishart" kindref="compound">Wishart</ref> distribution with given precision matrix and shape parameters.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">XL</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Matrix of size <computeroutput>q x q</computeroutput> containing the random draw, which lives only on the lower triangular half of the matrix. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">XiL</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Matrix containing the inverse of the lower Cholesky factor of the scale matrix parameter <computeroutput>Psi</computeroutput>, namely <lsquo/>Psi^{-1} = XiL<rsquo/> * XiL`. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">nu</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Shape parameter. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inst/include/mniw/Wishart.h" line="94" column="1" bodyfile="inst/include/mniw/Wishart.h" bodystart="187" bodyend="202"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>The Wishart and Inverse Wishart distributions. </para>    </briefdescription>
+    <detaileddescription>
+<para>The Wishart distribution is on a random positive-definite matrix <formula id="10">$\bm{X}_{q\times q}$</formula> is is denoted <formula id="11">$X \sim \mathrm{Wish}(\Psi, \nu)$</formula>, and defined as <formula id="12">$X = (L Z)(L Z)&apos;$</formula>, where</para><para><itemizedlist>
+<listitem><para><formula id="13">$\Psi_{q\times q} = LL&apos;$</formula> is the positive-definite matrix scale parameter,</para></listitem><listitem><para><formula id="14">$\nu &gt; q$</formula> is the shape parameter,</para></listitem></itemizedlist>
+</para><para>and <formula id="15">$Z_{q\times q}$</formula> is a random lower-triangular matrix with elements <formula id="16">\[ Z_{ij} \begin{cases} \stackrel{\mathrm{iid}}{\sim} \mathcal N(0,1) &amp; i &lt; j \\ \stackrel{\mathrm{ind}}{\sim} \chi^2_{(\nu-i+1)} &amp; i = j \\ = 0 &amp; i &gt; j. \end{cases} \]</formula></para><para>The log-density of the Wishart distribution is <formula id="17">\[ \log p(X \mid \Psi, \nu) = -\tfrac{1}{2} \left[\mathrm{tr}(\Psi^{-1} X) + (q+1-\nu)\log |X| + \nu \log |\Psi| + \nu q \log(2) + 2 \log \Gamma_q(\tfrac \nu 2)\right], \]</formula> where <formula id="18">$\Gamma_n(x)$</formula> is the multivariate Gamma function defined as <formula id="19">\[ \Gamma_n(x) = \pi^{n(n-1)/4} \prod_{j=1}^n \Gamma\big(x + \tfrac 1 2 (1-j)\big). \]</formula></para><para>The Inverse-Wishart distribution <formula id="20">$X \sim \mathrm{InvWish}(\Psi, \nu)$</formula> is defined as <formula id="21">$X^{-1} \sim \mathrm{Wish}(\Psi^{-1}, \nu)$</formula>. Its log-density is given by <formula id="22">\[ \log p(X \mid \Psi, \nu) = -\tfrac 1 2 \left[\mathrm{tr}(\Psi X^{-1}) + (\nu+q+1) \log |X| - \nu \log |\Psi| + \nu q \log(2) + 2 \log \Gamma_q(\tfrac \nu 2)\right]. \]</formula> </para>    </detaileddescription>
+    <location file="inst/include/mniw/Wishart.h" line="69" column="1" bodyfile="inst/include/mniw/Wishart.h" bodystart="69" bodyend="96"/>
+    <listofallmembers>
+      <member refid="classmniw_1_1_wishart_1a1efda21cdc68d4a2be8af9dbfd559aa4" prot="private" virt="non-virtual"><scope>mniw::Wishart</scope><name>cholPsi_</name></member>
+      <member refid="classmniw_1_1_wishart_1ac914121641605272ae9ad05f3cf4690a" prot="private" virt="non-virtual"><scope>mniw::Wishart</scope><name>cholX_</name></member>
+      <member refid="classmniw_1_1_wishart_1a091d1a4ae2eaf983bbce2ffdb205d5e3" prot="public" virt="non-virtual"><scope>mniw::Wishart</scope><name>GenerateLowerTri</name></member>
+      <member refid="classmniw_1_1_wishart_1aa0409c4d479a1228b591e6ab9351bb9b" prot="public" virt="non-virtual"><scope>mniw::Wishart</scope><name>GenerateLowerTriXi</name></member>
+      <member refid="classmniw_1_1_wishart_1ad0402256f527189c57765da8307dd413" prot="public" virt="non-virtual"><scope>mniw::Wishart</scope><name>LogDens</name></member>
+      <member refid="classmniw_1_1_wishart_1a5f9c66bba21d482bb20760809c531f90" prot="public" virt="non-virtual"><scope>mniw::Wishart</scope><name>LogDens</name></member>
+      <member refid="classmniw_1_1_wishart_1a84107bffd4277ae52157a745aa49b2e2" prot="private" virt="non-virtual"><scope>mniw::Wishart</scope><name>q_</name></member>
+      <member refid="classmniw_1_1_wishart_1a45f260ee7fc79c85497a7449a2220200" prot="public" virt="non-virtual"><scope>mniw::Wishart</scope><name>Wishart</name></member>
+      <member refid="classmniw_1_1_wishart_1a34b7504908cbad05a712329bd64434b0" prot="private" virt="non-virtual"><scope>mniw::Wishart</scope><name>XL_</name></member>
+      <member refid="classmniw_1_1_wishart_1a033539e01dadc10dc6002166685bd21a" prot="private" virt="non-virtual"><scope>mniw::Wishart</scope><name>Z_</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

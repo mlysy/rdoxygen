@@ -1,0 +1,226 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.8.14">
+  <compound refid="classmniw_1_1_hier_normal" kind="class"><name>mniw::HierNormal</name>
+    <member refid="classmniw_1_1_hier_normal_1a4358689fbc82a2d7bc61c5d7366121ca" kind="variable"><name>N_</name></member>
+    <member refid="classmniw_1_1_hier_normal_1a66a5d2ccd0bdce65086b725f72e5b15a" kind="variable"><name>p_</name></member>
+    <member refid="classmniw_1_1_hier_normal_1ae3b5839889e794c0f3a868d0dbb752ec" kind="variable"><name>q_</name></member>
+    <member refid="classmniw_1_1_hier_normal_1a02683ba2304a3bd393e1a7c7c18ffc91" kind="variable"><name>X_</name></member>
+    <member refid="classmniw_1_1_hier_normal_1a1268b37f8e6577d28bcd8923b127ccbe" kind="variable"><name>Psi_</name></member>
+    <member refid="classmniw_1_1_hier_normal_1a06fd714c8074e20b3e9d57fdedd54dbd" kind="variable"><name>flatBeta_</name></member>
+    <member refid="classmniw_1_1_hier_normal_1af6b79148d4bed53f03041e7079822359" kind="variable"><name>Mut_</name></member>
+    <member refid="classmniw_1_1_hier_normal_1a15ab19485880f757468d8933d3474bb6" kind="variable"><name>Beta_</name></member>
+    <member refid="classmniw_1_1_hier_normal_1a9c6d2fa215c27c778d6f312c07d2b4a5" kind="variable"><name>iSigmaL_</name></member>
+    <member refid="classmniw_1_1_hier_normal_1a3758cabb939de0e7bc0fbe480dd21309" kind="variable"><name>nuHat_</name></member>
+    <member refid="classmniw_1_1_hier_normal_1a1e11b69bef59c198144ca443f6467254" kind="variable"><name>Yt_</name></member>
+    <member refid="classmniw_1_1_hier_normal_1abf8d55d66c63a07186f418dc673b9ed5" kind="variable"><name>iXtXO_</name></member>
+    <member refid="classmniw_1_1_hier_normal_1a610cb4f749d5d282c9d6d65e8a57089d" kind="variable"><name>iOmegaHatL_</name></member>
+    <member refid="classmniw_1_1_hier_normal_1a69473938bc504d2a136df2162534695b" kind="variable"><name>IH_</name></member>
+    <member refid="classmniw_1_1_hier_normal_1a164aef8ab09ed2bd13336727731e8c4a" kind="variable"><name>LtO_</name></member>
+    <member refid="classmniw_1_1_hier_normal_1a5de51268e44957c5050862c3675c5cb1" kind="variable"><name>LtOL_</name></member>
+    <member refid="classmniw_1_1_hier_normal_1ab425a1d94a28bfbe6cf9ba1afed94efe" kind="variable"><name>PsiHat_</name></member>
+    <member refid="classmniw_1_1_hier_normal_1ab225f679e14de044ceb83c151e4ba124" kind="variable"><name>XiHatL_</name></member>
+    <member refid="classmniw_1_1_hier_normal_1ad2fe90e863ed0205aa0a8932cef4ce50" kind="variable"><name>MutXLtO_</name></member>
+    <member refid="classmniw_1_1_hier_normal_1a86aa5fa420fc8d2765dfca756b529486" kind="variable"><name>IHMu_</name></member>
+    <member refid="classmniw_1_1_hier_normal_1af22d2285440381b29691bd52f7451ef3" kind="variable"><name>LambdaHat_</name></member>
+    <member refid="classmniw_1_1_hier_normal_1a8e074fceae421d1ddc43ebda04c8ee87" kind="variable"><name>x_</name></member>
+    <member refid="classmniw_1_1_hier_normal_1ad5a04e21f100f13f6ab3db7ad6da76a2" kind="variable"><name>iV_</name></member>
+    <member refid="classmniw_1_1_hier_normal_1a13e7bbf52907391044fbdf629e3ab0d0" kind="variable"><name>Lq_</name></member>
+    <member refid="classmniw_1_1_hier_normal_1a6441a2bbf196df846139ee79e693941e" kind="variable"><name>Uq_</name></member>
+    <member refid="classmniw_1_1_hier_normal_1aaee80d116a52468c7f3b4fa1f83c03f3" kind="variable"><name>Iq_</name></member>
+    <member refid="classmniw_1_1_hier_normal_1a023fb7cfd4727c43108b66da126e2d4d" kind="variable"><name>lltq_</name></member>
+    <member refid="classmniw_1_1_hier_normal_1a59ffd6e533cbea66179ca58a8a45b2bc" kind="variable"><name>wish_</name></member>
+    <member refid="classmniw_1_1_hier_normal_1a65354e4532de3747b94ddac914e42148" kind="variable"><name>matnorm_</name></member>
+    <member refid="classmniw_1_1_hier_normal_1a5ae78cf7245a87e7cf3e35dbe6e58a09" kind="variable"><name>renorm_</name></member>
+    <member refid="classmniw_1_1_hier_normal_1a4adbed64b1b474cbdcd869eda087d9f0" kind="function"><name>HierNormal</name></member>
+    <member refid="classmniw_1_1_hier_normal_1a7cdd4ca1137d61b7987da1bfde3417f7" kind="function"><name>~HierNormal</name></member>
+    <member refid="classmniw_1_1_hier_normal_1a0b982b25a9c108f589a66fae346099ef" kind="function"><name>setMu</name></member>
+    <member refid="classmniw_1_1_hier_normal_1a1191fec3e77190fbdc15bc440371a2b3" kind="function"><name>setISigmaL</name></member>
+    <member refid="classmniw_1_1_hier_normal_1aa9209e19f30a24a856ca5c05acf10bc4" kind="function"><name>setISigma</name></member>
+    <member refid="classmniw_1_1_hier_normal_1a683a17a5b1b34a44c563a656c7783d26" kind="function"><name>setBeta</name></member>
+    <member refid="classmniw_1_1_hier_normal_1ab3434867e28a9f411c5cd9242258ed94" kind="function"><name>getMu</name></member>
+    <member refid="classmniw_1_1_hier_normal_1aab4999c72fcaf724af0f258698994c3e" kind="function"><name>getMut</name></member>
+    <member refid="classmniw_1_1_hier_normal_1ade02a76b6f590cc568589ec6842424c1" kind="function"><name>getISigmaL</name></member>
+    <member refid="classmniw_1_1_hier_normal_1a9b3c2f1a3fc2aaf58698f49332a8f1ea" kind="function"><name>getSigma</name></member>
+    <member refid="classmniw_1_1_hier_normal_1a2e60f51963dcd0a7d7fa5d274d69d91b" kind="function"><name>getBeta</name></member>
+    <member refid="classmniw_1_1_hier_normal_1a349f4d3f8d9a1c2cdf85884a5e632fdc" kind="function"><name>UpdateBetaSigma</name></member>
+    <member refid="classmniw_1_1_hier_normal_1afa4af9e8e1d5a01c30d0345db6e1e5d2" kind="function"><name>UpdateMu</name></member>
+  </compound>
+  <compound refid="classmniw_1_1_matrix_normal" kind="class"><name>mniw::MatrixNormal</name>
+    <member refid="classmniw_1_1_matrix_normal_1a8ab2fcceca1f9a284afa87d33d8c250f" kind="variable"><name>p_</name></member>
+    <member refid="classmniw_1_1_matrix_normal_1a0e6f1c4c5628d25937e859f709bc9642" kind="variable"><name>q_</name></member>
+    <member refid="classmniw_1_1_matrix_normal_1ac248654a10e3f9b47817856d809baa72" kind="variable"><name>Z_</name></member>
+    <member refid="classmniw_1_1_matrix_normal_1ae97c9bf1d90a56596f99c946b072b87e" kind="variable"><name>cholSigmaR_</name></member>
+    <member refid="classmniw_1_1_matrix_normal_1ad7d1b256fd0756025684c955d1cf483b" kind="variable"><name>cholSigmaC_</name></member>
+    <member refid="classmniw_1_1_matrix_normal_1a033d7bb7ce43323157697c42e59db975" kind="function"><name>MatrixNormal</name></member>
+    <member refid="classmniw_1_1_matrix_normal_1a6b5cd49b51f7ee90822bed404e3d630a" kind="function"><name>LogDens</name></member>
+    <member refid="classmniw_1_1_matrix_normal_1ab38b401fdf3f08d7e60a22215c84b993" kind="function"><name>LogDens</name></member>
+    <member refid="classmniw_1_1_matrix_normal_1a4eafd57c4a23562faca523fa1bceb6a2" kind="function"><name>GenerateRowSColS</name></member>
+    <member refid="classmniw_1_1_matrix_normal_1a1c76fef69a647250464e6a3fc0c2f4f3" kind="function"><name>GenerateRowSColO</name></member>
+    <member refid="classmniw_1_1_matrix_normal_1a447f4e7fe19375f691d96cbb809625bd" kind="function"><name>GenerateRowOColO</name></member>
+  </compound>
+  <compound refid="classmniw_1_1_matrix_t" kind="class"><name>mniw::MatrixT</name>
+    <member refid="classmniw_1_1_matrix_t_1a4513408d7e1873d390efa674ba0c7b28" kind="variable"><name>p_</name></member>
+    <member refid="classmniw_1_1_matrix_t_1ad7f4da4b129fa3b2f0af0ae5a2b3d13d" kind="variable"><name>q_</name></member>
+    <member refid="classmniw_1_1_matrix_t_1a7a2cf57285318c7d16b33fd22aa30779" kind="variable"><name>pq_</name></member>
+    <member refid="classmniw_1_1_matrix_t_1a892964d9d6e565ebb83996bb1b220bbc" kind="variable"><name>pMin_</name></member>
+    <member refid="classmniw_1_1_matrix_t_1a583bce33d99ec3661412d47828ebc4ea" kind="variable"><name>Z_</name></member>
+    <member refid="classmniw_1_1_matrix_t_1a6d69a5fb6a20fc9e379ead8f3c70cad5" kind="variable"><name>cholSigmaR_</name></member>
+    <member refid="classmniw_1_1_matrix_t_1a3a1d26ab65a7b9f22dcb86604175a8d1" kind="variable"><name>cholSigmaC_</name></member>
+    <member refid="classmniw_1_1_matrix_t_1a99586406823010d0da9d3594256544dc" kind="variable"><name>lltd_</name></member>
+    <member refid="classmniw_1_1_matrix_t_1a6b0ae8b77f662194000f54a0899d89f2" kind="variable"><name>A_</name></member>
+    <member refid="classmniw_1_1_matrix_t_1ac988ff6b90ae54a35cf1659efe755c3f" kind="variable"><name>B_</name></member>
+    <member refid="classmniw_1_1_matrix_t_1a24f91db4d47bede40ef43c7f252da18b" kind="variable"><name>CL_</name></member>
+    <member refid="classmniw_1_1_matrix_t_1ac818da9ed22e9e33418aab73860f7bd2" kind="variable"><name>wish_</name></member>
+    <member refid="classmniw_1_1_matrix_t_1acbc0c9b9897a426bf97d359243f74732" kind="variable"><name>matnorm_</name></member>
+    <member refid="classmniw_1_1_matrix_t_1a329612cbfc19c924e38c4eea02c7e892" kind="function"><name>MatrixT</name></member>
+    <member refid="classmniw_1_1_matrix_t_1a73b4733f5320f96efbc05851a3ca9e97" kind="function"><name>~MatrixT</name></member>
+    <member refid="classmniw_1_1_matrix_t_1a9100e03eec1852d1b344c316e4715253" kind="function"><name>LogDens</name></member>
+    <member refid="classmniw_1_1_matrix_t_1a411e948daebd9167a8c8977fab16d710" kind="function"><name>LogDens</name></member>
+    <member refid="classmniw_1_1_matrix_t_1aeb87b7148aae159e618a72ecfa604dd2" kind="function"><name>GenerateRowSColO</name></member>
+    <member refid="classmniw_1_1_matrix_t_1a4aaaf2387d4a7fb8c1fe3ef420671f66" kind="function"><name>GenerateRowOColO</name></member>
+  </compound>
+  <compound refid="classmniw_1_1_multi_normal" kind="class"><name>mniw::MultiNormal</name>
+    <member refid="classmniw_1_1_multi_normal_1aadbf476b912737cdcc709e49cf2f49d8" kind="variable"><name>q_</name></member>
+    <member refid="classmniw_1_1_multi_normal_1a314562b0a25c17cd2c29db57ea5ada30" kind="variable"><name>cholSigma_</name></member>
+    <member refid="classmniw_1_1_multi_normal_1af442b843be03ae613eb75723b9f5003f" kind="variable"><name>SigmaL_</name></member>
+    <member refid="classmniw_1_1_multi_normal_1aac8353eb95a9b1460591dfd1556700ad" kind="variable"><name>z_</name></member>
+    <member refid="classmniw_1_1_multi_normal_1ae7a8839f2a023dec4cc677b4134e15f8" kind="variable"><name>Z_</name></member>
+    <member refid="classmniw_1_1_multi_normal_1a2ed4c6ad5819a215986173695a7c65bf" kind="function"><name>MultiNormal</name></member>
+    <member refid="classmniw_1_1_multi_normal_1a729cdde2d7a2b1f7fe01808aff857618" kind="function"><name>LogDens</name></member>
+    <member refid="classmniw_1_1_multi_normal_1a5855e0c97ab0ba0058a8655971a03f5c" kind="function"><name>LogDens</name></member>
+    <member refid="classmniw_1_1_multi_normal_1ad1f32eefd016026d35409d05027b7efd" kind="function"><name>Generate</name></member>
+    <member refid="classmniw_1_1_multi_normal_1a06b212c5fc2e3798732629c7a5d7c848" kind="function"><name>Generate</name></member>
+  </compound>
+  <compound refid="classmniw_1_1_ranfx_normal" kind="class"><name>mniw::RanfxNormal</name>
+    <member refid="classmniw_1_1_ranfx_normal_1a960649ac5d4c9e902f10afcf407c31a7" kind="variable"><name>q_</name></member>
+    <member refid="classmniw_1_1_ranfx_normal_1a401fc1130a7299df5f144a3c3ccfeb5d" kind="variable"><name>Mq_</name></member>
+    <member refid="classmniw_1_1_ranfx_normal_1a2bc9dec01c45d52f19973f101d4b3238" kind="variable"><name>Uq_</name></member>
+    <member refid="classmniw_1_1_ranfx_normal_1af249547c22ecfa0f2d19ea90682bfede" kind="variable"><name>lltq_</name></member>
+    <member refid="classmniw_1_1_ranfx_normal_1ade1dc31fcdea4b65ff535dae696160ba" kind="function"><name>RanfxNormal</name></member>
+    <member refid="classmniw_1_1_ranfx_normal_1a210fbf6ebb0352948ece63614a720dfe" kind="function"><name>GenerateOL</name></member>
+    <member refid="classmniw_1_1_ranfx_normal_1aa27b8e328fd4d30eed11bd9986c7afec" kind="function"><name>GenerateO</name></member>
+  </compound>
+  <compound refid="classmniw_1_1_wishart" kind="class"><name>mniw::Wishart</name>
+    <member refid="classmniw_1_1_wishart_1a84107bffd4277ae52157a745aa49b2e2" kind="variable"><name>q_</name></member>
+    <member refid="classmniw_1_1_wishart_1ac914121641605272ae9ad05f3cf4690a" kind="variable"><name>cholX_</name></member>
+    <member refid="classmniw_1_1_wishart_1a1efda21cdc68d4a2be8af9dbfd559aa4" kind="variable"><name>cholPsi_</name></member>
+    <member refid="classmniw_1_1_wishart_1a033539e01dadc10dc6002166685bd21a" kind="variable"><name>Z_</name></member>
+    <member refid="classmniw_1_1_wishart_1a34b7504908cbad05a712329bd64434b0" kind="variable"><name>XL_</name></member>
+    <member refid="classmniw_1_1_wishart_1a45f260ee7fc79c85497a7449a2220200" kind="function"><name>Wishart</name></member>
+    <member refid="classmniw_1_1_wishart_1ad0402256f527189c57765da8307dd413" kind="function"><name>LogDens</name></member>
+    <member refid="classmniw_1_1_wishart_1a5f9c66bba21d482bb20760809c531f90" kind="function"><name>LogDens</name></member>
+    <member refid="classmniw_1_1_wishart_1a091d1a4ae2eaf983bbce2ffdb205d5e3" kind="function"><name>GenerateLowerTri</name></member>
+    <member refid="classmniw_1_1_wishart_1aa0409c4d479a1228b591e6ab9351bb9b" kind="function"><name>GenerateLowerTriXi</name></member>
+  </compound>
+  <compound refid="namespace_eigen" kind="namespace"><name>Eigen</name>
+  </compound>
+  <compound refid="namespacemniw" kind="namespace"><name>mniw</name>
+    <member refid="_tri_utils_8h_1a5daadd239a4be77fe6470cfc9a560353" kind="function"><name>triMultLL</name></member>
+    <member refid="_tri_utils_8h_1ad9c65f39981a3e4e609e16ac929bb496" kind="function"><name>triMultXU</name></member>
+    <member refid="_tri_utils_8h_1abc315a2e184858938a30ea0b796a65ea" kind="function"><name>triMultLX</name></member>
+    <member refid="_tri_utils_8h_1a7f22604e6c692494f4772837f9b6e0c3" kind="function"><name>triMultLiX</name></member>
+    <member refid="_tri_utils_8h_1adfde552c3f71d142ee6ded89e49f9fb0" kind="function"><name>triMultXLi</name></member>
+    <member refid="_tri_utils_8h_1aa62489bafdc65d2645b57e480ee2572e" kind="function"><name>triMultUiX</name></member>
+    <member refid="_tri_utils_8h_1a79a58591ed0f4f3bd3c151d6d7f52266" kind="function"><name>crossProdUtU</name></member>
+    <member refid="_tri_utils_8h_1a7ca9facdac5bff93d2db13420c3edf8e" kind="function"><name>CrossProdLLt</name></member>
+    <member refid="_tri_utils_8h_1af6693aa50f28ec42c038f8f532741332" kind="function"><name>CrossProdLtL</name></member>
+    <member refid="_tri_utils_8h_1aee6a1777f73c71378680d77c59814479" kind="function"><name>InverseLLt</name></member>
+    <member refid="_tri_utils_8h_1a18fc2d655dc265f4c1133403a61034fb" kind="function"><name>ReverseCholesky</name></member>
+    <member refid="_tri_utils_8h_1a3f6653dcf99e9386dde5bd02fbe099b9" kind="function"><name>logDetCholV</name></member>
+    <member refid="_tri_utils_8h_1ad13e348945b0a769632c1dd5c0c96ae2" kind="function"><name>logDetV</name></member>
+    <member refid="_wishart_8h_1a53aee90f94b4d2aa862f49332ceb68d7" kind="function"><name>logMultiGamma</name></member>
+  </compound>
+  <compound refid="namespace_rcpp" kind="namespace"><name>Rcpp</name>
+  </compound>
+  <compound refid="_hierarchical_8h" kind="file"><name>Hierarchical.h</name>
+  </compound>
+  <compound refid="_matrix_normal_8h" kind="file"><name>MatrixNormal.h</name>
+  </compound>
+  <compound refid="_matrix_t_8h" kind="file"><name>MatrixT.h</name>
+  </compound>
+  <compound refid="_multi_normal_8h" kind="file"><name>MultiNormal.h</name>
+  </compound>
+  <compound refid="_random_effects_8h" kind="file"><name>RandomEffects.h</name>
+  </compound>
+  <compound refid="_tri_utils_8h" kind="file"><name>TriUtils.h</name>
+    <member refid="_tri_utils_8h_1af67558313268d122af24803971b081d0" kind="define"><name>_X</name></member>
+    <member refid="_tri_utils_8h_1acecf9ec73aad1018d43b501925b9317a" kind="define"><name>_L2</name></member>
+    <member refid="_tri_utils_8h_1af67558313268d122af24803971b081d0" kind="define"><name>_X</name></member>
+    <member refid="_tri_utils_8h_1a23b3808d12342e40e7459e77fccb85b6" kind="define"><name>_L</name></member>
+    <member refid="_tri_utils_8h_1af67558313268d122af24803971b081d0" kind="define"><name>_X</name></member>
+    <member refid="_tri_utils_8h_1a65426a49122b4ab491cf4df17cb2933e" kind="define"><name>_U</name></member>
+    <member refid="_tri_utils_8h_1af67558313268d122af24803971b081d0" kind="define"><name>_X</name></member>
+    <member refid="_tri_utils_8h_1a65426a49122b4ab491cf4df17cb2933e" kind="define"><name>_U</name></member>
+  </compound>
+  <compound refid="_wishart_8h" kind="file"><name>Wishart.h</name>
+    <member refid="_wishart_8h_1a519baeba9f0c44180f9043e012a24641" kind="define"><name>gammaln</name></member>
+    <member refid="_wishart_8h_1a113efe6903769f7c5a0e3d1e1b93a212" kind="define"><name>chisq_rand</name></member>
+  </compound>
+  <compound refid="_cross_product_exports_8cpp" kind="file"><name>CrossProductExports.cpp</name>
+    <member refid="_cross_product_exports_8cpp_1a82f820448cbf73429406f00b0c819549" kind="function"><name>CrossProdVXX</name></member>
+    <member refid="_cross_product_exports_8cpp_1ab3388823406e415dcfe6af54a915e7ed" kind="function"><name>CrossProdVXY</name></member>
+  </compound>
+  <compound refid="_hierarchical_exports_8cpp" kind="file"><name>HierarchicalExports.cpp</name>
+    <member refid="_hierarchical_exports_8cpp_1ae439a9f482ad9a0902a4fe6c2a5001ae" kind="function"><name>HierUneqVModelGibbs</name></member>
+  </compound>
+  <compound refid="_matrix_n_i_w_exports_8cpp" kind="file"><name>MatrixNIWExports.cpp</name>
+    <member refid="_matrix_n_i_w_exports_8cpp_1a01388b4aea4cd479ed6ec4fda4aa32d4" kind="function"><name>GenerateMatrixNIW</name></member>
+  </compound>
+  <compound refid="_matrix_normal_exports_8cpp" kind="file"><name>MatrixNormalExports.cpp</name>
+    <member refid="_matrix_normal_exports_8cpp_1a6eb5d3d7e02fb26f9e9483d7c83dc1e7" kind="function"><name>LogDensityMatrixNormal</name></member>
+    <member refid="_matrix_normal_exports_8cpp_1a331c1e50142019aa6077d1bc266d21b2" kind="function"><name>GenerateMatrixNormal</name></member>
+  </compound>
+  <compound refid="_matrix_t_exports_8cpp" kind="file"><name>MatrixTExports.cpp</name>
+    <member refid="_matrix_t_exports_8cpp_1a105f96f9f0516fe3e1a4164385aee76b" kind="function"><name>LogDensityMatrixT</name></member>
+    <member refid="_matrix_t_exports_8cpp_1a784b5e6cc83d3294b556d474a4f20461" kind="function"><name>GenerateMatrixT</name></member>
+  </compound>
+  <compound refid="_multi_normal_exports_8cpp" kind="file"><name>MultiNormalExports.cpp</name>
+    <member refid="_multi_normal_exports_8cpp_1a6b16b5e5b49de180b9d6ed0dcccc1d8b" kind="function"><name>LogDensityMultivariateNormal</name></member>
+    <member refid="_multi_normal_exports_8cpp_1ace157a74f1802e86bd0ed888e7481f77" kind="function"><name>GenerateMultivariateNormal</name></member>
+  </compound>
+  <compound refid="_random_effects_exports_8cpp" kind="file"><name>RandomEffectsExports.cpp</name>
+    <member refid="_random_effects_exports_8cpp_1a252ad62145f8488524f7c5b4cc90679c" kind="function"><name>GenerateRandomEffectsNormal</name></member>
+  </compound>
+  <compound refid="_rcpp_exports_8cpp" kind="file"><name>RcppExports.cpp</name>
+    <member refid="_rcpp_exports_8cpp_1acc66047eee9f1e8112081542de22411c" kind="variable"><name>CallEntries</name></member>
+    <member refid="_rcpp_exports_8cpp_1a4dd7126b08c2e89e73e8862a46b38761" kind="function"><name>CrossProdVXX</name></member>
+    <member refid="_rcpp_exports_8cpp_1a5fb25549300338ef8d88023c8f40f55e" kind="function"><name>_mniw_CrossProdVXX</name></member>
+    <member refid="_rcpp_exports_8cpp_1a454576ebfaf502f304de7e9dddc24a58" kind="function"><name>CrossProdVXY</name></member>
+    <member refid="_rcpp_exports_8cpp_1ae1e299f629d3ed9c096750758420e7da" kind="function"><name>_mniw_CrossProdVXY</name></member>
+    <member refid="_rcpp_exports_8cpp_1ae439a9f482ad9a0902a4fe6c2a5001ae" kind="function"><name>HierUneqVModelGibbs</name></member>
+    <member refid="_rcpp_exports_8cpp_1af831107a9e8b805f005a4ea21204f5af" kind="function"><name>_mniw_HierUneqVModelGibbs</name></member>
+    <member refid="_rcpp_exports_8cpp_1acddb177c0c325999d7c33464e0a97500" kind="function"><name>GenerateMatrixNIW</name></member>
+    <member refid="_rcpp_exports_8cpp_1a567d7e254ca695b6ad681a3d1f6b3f78" kind="function"><name>_mniw_GenerateMatrixNIW</name></member>
+    <member refid="_rcpp_exports_8cpp_1a6eb5d3d7e02fb26f9e9483d7c83dc1e7" kind="function"><name>LogDensityMatrixNormal</name></member>
+    <member refid="_rcpp_exports_8cpp_1a33d1cc615f93e79beffbbeee4e1a6f35" kind="function"><name>_mniw_LogDensityMatrixNormal</name></member>
+    <member refid="_rcpp_exports_8cpp_1a331c1e50142019aa6077d1bc266d21b2" kind="function"><name>GenerateMatrixNormal</name></member>
+    <member refid="_rcpp_exports_8cpp_1a61027523c727de03b114ec2ddb05c666" kind="function"><name>_mniw_GenerateMatrixNormal</name></member>
+    <member refid="_rcpp_exports_8cpp_1a105f96f9f0516fe3e1a4164385aee76b" kind="function"><name>LogDensityMatrixT</name></member>
+    <member refid="_rcpp_exports_8cpp_1ad765ef7bfec1e13b0ed2261dbd1f0f69" kind="function"><name>_mniw_LogDensityMatrixT</name></member>
+    <member refid="_rcpp_exports_8cpp_1a395c84ecb4d66665edc447e57a7524a7" kind="function"><name>GenerateMatrixT</name></member>
+    <member refid="_rcpp_exports_8cpp_1a79e99d36e3fd7aabc98d21d8a39544b9" kind="function"><name>_mniw_GenerateMatrixT</name></member>
+    <member refid="_rcpp_exports_8cpp_1a6b16b5e5b49de180b9d6ed0dcccc1d8b" kind="function"><name>LogDensityMultivariateNormal</name></member>
+    <member refid="_rcpp_exports_8cpp_1ab2bac95d412925bba1e1bf250c84559b" kind="function"><name>_mniw_LogDensityMultivariateNormal</name></member>
+    <member refid="_rcpp_exports_8cpp_1ace157a74f1802e86bd0ed888e7481f77" kind="function"><name>GenerateMultivariateNormal</name></member>
+    <member refid="_rcpp_exports_8cpp_1ab18f541ae6f48df13b1a932dd2379196" kind="function"><name>_mniw_GenerateMultivariateNormal</name></member>
+    <member refid="_rcpp_exports_8cpp_1a252ad62145f8488524f7c5b4cc90679c" kind="function"><name>GenerateRandomEffectsNormal</name></member>
+    <member refid="_rcpp_exports_8cpp_1a8c97a88581f24f0e27bf3cf90cfbd498" kind="function"><name>_mniw_GenerateRandomEffectsNormal</name></member>
+    <member refid="_rcpp_exports_8cpp_1a77839489a7f32b7c01889aeedfaf179a" kind="function"><name>LogDensityWishart</name></member>
+    <member refid="_rcpp_exports_8cpp_1a9d68a24c71c02c3339c9f929aa55f9f2" kind="function"><name>_mniw_LogDensityWishart</name></member>
+    <member refid="_rcpp_exports_8cpp_1a8e8a90eee54fa902bfa0afb8a51d9bc2" kind="function"><name>GenerateWishart</name></member>
+    <member refid="_rcpp_exports_8cpp_1a3e0c4c27ae66bf4f0296e8286b67b65c" kind="function"><name>_mniw_GenerateWishart</name></member>
+    <member refid="_rcpp_exports_8cpp_1a45a77eae482c581bec2adef53281b8e5" kind="function"><name>R_init_mniw</name></member>
+  </compound>
+  <compound refid="_wishart_exports_8cpp" kind="file"><name>WishartExports.cpp</name>
+    <member refid="_wishart_exports_8cpp_1a9c2267bbbd6c7ebc26a863d2926c77e2" kind="function"><name>LogDensityWishart</name></member>
+    <member refid="_wishart_exports_8cpp_1af65402517e6470bac0e024b5af051343" kind="function"><name>GenerateWishart</name></member>
+  </compound>
+  <compound refid="dir_2b5d1a398a9eec011391d543f21db223" kind="dir"><name>inst/include</name>
+  </compound>
+  <compound refid="dir_920884c6b3b2f0be94e27d51660adee5" kind="dir"><name>inst</name>
+  </compound>
+  <compound refid="dir_ca82a859ff559c30401386e7ae1e50e3" kind="dir"><name>inst/include/mniw</name>
+  </compound>
+  <compound refid="dir_68267d1309a1af8e8297ef4c3efbcdba" kind="dir"><name>src</name>
+  </compound>
+</doxygenindex>

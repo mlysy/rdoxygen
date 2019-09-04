@@ -1,0 +1,330 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="classmniw_1_1_multi_normal" kind="class" language="C++" prot="public">
+    <compoundname>mniw::MultiNormal</compoundname>
+    <includes refid="_multi_normal_8h" local="no">MultiNormal.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classmniw_1_1_multi_normal_1aadbf476b912737cdcc709e49cf2f49d8" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int mniw::MultiNormal::q_</definition>
+        <argsstring></argsstring>
+        <name>q_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inst/include/mniw/MultiNormal.h" line="19" column="1" bodyfile="inst/include/mniw/MultiNormal.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmniw_1_1_multi_normal_1a314562b0a25c17cd2c29db57ea5ada30" prot="private" static="no" mutable="no">
+        <type>LLT&lt; MatrixXd &gt;</type>
+        <definition>LLT&lt;MatrixXd&gt; mniw::MultiNormal::cholSigma_</definition>
+        <argsstring></argsstring>
+        <name>cholSigma_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inst/include/mniw/MultiNormal.h" line="20" column="1" bodyfile="inst/include/mniw/MultiNormal.h" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmniw_1_1_multi_normal_1af442b843be03ae613eb75723b9f5003f" prot="private" static="no" mutable="no">
+        <type>MatrixXd</type>
+        <definition>MatrixXd mniw::MultiNormal::SigmaL_</definition>
+        <argsstring></argsstring>
+        <name>SigmaL_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inst/include/mniw/MultiNormal.h" line="21" column="1" bodyfile="inst/include/mniw/MultiNormal.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmniw_1_1_multi_normal_1aac8353eb95a9b1460591dfd1556700ad" prot="private" static="no" mutable="no">
+        <type>VectorXd</type>
+        <definition>VectorXd mniw::MultiNormal::z_</definition>
+        <argsstring></argsstring>
+        <name>z_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inst/include/mniw/MultiNormal.h" line="22" column="1" bodyfile="inst/include/mniw/MultiNormal.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmniw_1_1_multi_normal_1ae7a8839f2a023dec4cc677b4134e15f8" prot="private" static="no" mutable="no">
+        <type>MatrixXd</type>
+        <definition>MatrixXd mniw::MultiNormal::Z_</definition>
+        <argsstring></argsstring>
+        <name>Z_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inst/include/mniw/MultiNormal.h" line="23" column="1" bodyfile="inst/include/mniw/MultiNormal.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classmniw_1_1_multi_normal_1a2ed4c6ad5819a215986173695a7c65bf" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>mniw::MultiNormal::MultiNormal</definition>
+        <argsstring>(int q)</argsstring>
+        <name>MultiNormal</name>
+        <param>
+          <type>int</type>
+          <declname>q</declname>
+        </param>
+        <briefdescription>
+<para>Constructor. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">q</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of dimensions of the Multivariate Normal. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inst/include/mniw/MultiNormal.h" line="26" column="1" bodyfile="inst/include/mniw/MultiNormal.h" bodystart="44" bodyend="49"/>
+      </memberdef>
+      <memberdef kind="function" id="classmniw_1_1_multi_normal_1a729cdde2d7a2b1f7fe01808aff857618" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>double mniw::MultiNormal::LogDens</definition>
+        <argsstring>(const Ref&lt; const VectorXd &gt; &amp;x, const Ref&lt; const VectorXd &gt; &amp;mu, LLT&lt; MatrixXd &gt; &amp;cholSigma, double ldSigma)</argsstring>
+        <name>LogDens</name>
+        <param>
+          <type>const Ref&lt; const VectorXd &gt; &amp;</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>const Ref&lt; const VectorXd &gt; &amp;</type>
+          <declname>mu</declname>
+        </param>
+        <param>
+          <type>LLT&lt; MatrixXd &gt; &amp;</type>
+          <declname>cholSigma</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>ldSigma</declname>
+        </param>
+        <briefdescription>
+<para>Log-density with precomputations. </para>        </briefdescription>
+        <detaileddescription>
+<para>Identical to the shorter version of <computeroutput>LogDens</computeroutput>, but with the Cholesky decomposition and its log-determinant pre-computed.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Vector of observations. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">mu</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Mean vector. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">cholSigma</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Cholesky decomposition of the variance matrix, supplied as an <computeroutput>Eigen::LLT</computeroutput> object. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">ldSigma</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Log-determinant of the Cholesky factor of the variance.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The log-density evaluated at <computeroutput>x</computeroutput>. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inst/include/mniw/MultiNormal.h" line="28" column="1" bodyfile="inst/include/mniw/MultiNormal.h" bodystart="59" bodyend="74"/>
+      </memberdef>
+      <memberdef kind="function" id="classmniw_1_1_multi_normal_1a5855e0c97ab0ba0058a8655971a03f5c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>double mniw::MultiNormal::LogDens</definition>
+        <argsstring>(const Ref&lt; const VectorXd &gt; &amp;x, const Ref&lt; const VectorXd &gt; &amp;mu, const Ref&lt; const MatrixXd &gt; &amp;Sigma)</argsstring>
+        <name>LogDens</name>
+        <param>
+          <type>const Ref&lt; const VectorXd &gt; &amp;</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>const Ref&lt; const VectorXd &gt; &amp;</type>
+          <declname>mu</declname>
+        </param>
+        <param>
+          <type>const Ref&lt; const MatrixXd &gt; &amp;</type>
+          <declname>Sigma</declname>
+        </param>
+        <briefdescription>
+<para>Log-density. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Vector of observations. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">mu</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Mean vector. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">Sigma</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variance matrix.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The log-density evaluated at <computeroutput>x</computeroutput>. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inst/include/mniw/MultiNormal.h" line="32" column="1" bodyfile="inst/include/mniw/MultiNormal.h" bodystart="81" bodyend="86"/>
+      </memberdef>
+      <memberdef kind="function" id="classmniw_1_1_multi_normal_1ad1f32eefd016026d35409d05027b7efd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void mniw::MultiNormal::Generate</definition>
+        <argsstring>(Ref&lt; VectorXd &gt; x, const Ref&lt; const VectorXd &gt; &amp;mu, LLT&lt; MatrixXd &gt; &amp;cholSigma, Ref&lt; MatrixXd &gt; SigmaL)</argsstring>
+        <name>Generate</name>
+        <param>
+          <type>Ref&lt; VectorXd &gt;</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>const Ref&lt; const VectorXd &gt; &amp;</type>
+          <declname>mu</declname>
+        </param>
+        <param>
+          <type>LLT&lt; MatrixXd &gt; &amp;</type>
+          <declname>cholSigma</declname>
+        </param>
+        <param>
+          <type>Ref&lt; MatrixXd &gt;</type>
+          <declname>SigmaL</declname>
+        </param>
+        <briefdescription>
+<para>Random number generation with pre-computations. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Vector to which random draw is assigned. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">mu</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Mean vector. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">cholSigma</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Cholesky decomposition of the variance, supplied as an <computeroutput>Eigen::LLT</computeroutput> object. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">SigmaL</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Dense representation of this object. This is because <computeroutput>TriMultLX</computeroutput> does not accept <computeroutput>Eigen::TriangularView</computeroutput> objects and hopefully can be removed in the future... </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inst/include/mniw/MultiNormal.h" line="36" column="1" bodyfile="inst/include/mniw/MultiNormal.h" bodystart="92" bodyend="102"/>
+      </memberdef>
+      <memberdef kind="function" id="classmniw_1_1_multi_normal_1a06b212c5fc2e3798732629c7a5d7c848" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void mniw::MultiNormal::Generate</definition>
+        <argsstring>(Ref&lt; VectorXd &gt; x, const Ref&lt; const VectorXd &gt; &amp;mu, const Ref&lt; const MatrixXd &gt; &amp;Sigma)</argsstring>
+        <name>Generate</name>
+        <param>
+          <type>Ref&lt; VectorXd &gt;</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>const Ref&lt; const VectorXd &gt; &amp;</type>
+          <declname>mu</declname>
+        </param>
+        <param>
+          <type>const Ref&lt; const MatrixXd &gt; &amp;</type>
+          <declname>Sigma</declname>
+        </param>
+        <briefdescription>
+<para>Random number generation. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Vector to which random draw is assigned. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">mu</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Mean vector. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">Sigma</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variance matrix. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inst/include/mniw/MultiNormal.h" line="39" column="1" bodyfile="inst/include/mniw/MultiNormal.h" bodystart="107" bodyend="113"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>The Multivariate Normal distribution. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="inst/include/mniw/MultiNormal.h" line="17" column="1" bodyfile="inst/include/mniw/MultiNormal.h" bodystart="17" bodyend="41"/>
+    <listofallmembers>
+      <member refid="classmniw_1_1_multi_normal_1a314562b0a25c17cd2c29db57ea5ada30" prot="private" virt="non-virtual"><scope>mniw::MultiNormal</scope><name>cholSigma_</name></member>
+      <member refid="classmniw_1_1_multi_normal_1ad1f32eefd016026d35409d05027b7efd" prot="public" virt="non-virtual"><scope>mniw::MultiNormal</scope><name>Generate</name></member>
+      <member refid="classmniw_1_1_multi_normal_1a06b212c5fc2e3798732629c7a5d7c848" prot="public" virt="non-virtual"><scope>mniw::MultiNormal</scope><name>Generate</name></member>
+      <member refid="classmniw_1_1_multi_normal_1a729cdde2d7a2b1f7fe01808aff857618" prot="public" virt="non-virtual"><scope>mniw::MultiNormal</scope><name>LogDens</name></member>
+      <member refid="classmniw_1_1_multi_normal_1a5855e0c97ab0ba0058a8655971a03f5c" prot="public" virt="non-virtual"><scope>mniw::MultiNormal</scope><name>LogDens</name></member>
+      <member refid="classmniw_1_1_multi_normal_1a2ed4c6ad5819a215986173695a7c65bf" prot="public" virt="non-virtual"><scope>mniw::MultiNormal</scope><name>MultiNormal</name></member>
+      <member refid="classmniw_1_1_multi_normal_1aadbf476b912737cdcc709e49cf2f49d8" prot="private" virt="non-virtual"><scope>mniw::MultiNormal</scope><name>q_</name></member>
+      <member refid="classmniw_1_1_multi_normal_1af442b843be03ae613eb75723b9f5003f" prot="private" virt="non-virtual"><scope>mniw::MultiNormal</scope><name>SigmaL_</name></member>
+      <member refid="classmniw_1_1_multi_normal_1aac8353eb95a9b1460591dfd1556700ad" prot="private" virt="non-virtual"><scope>mniw::MultiNormal</scope><name>z_</name></member>
+      <member refid="classmniw_1_1_multi_normal_1ae7a8839f2a023dec4cc677b4134e15f8" prot="private" virt="non-virtual"><scope>mniw::MultiNormal</scope><name>Z_</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

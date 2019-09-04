@@ -1,0 +1,218 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="classmniw_1_1_ranfx_normal" kind="class" language="C++" prot="public">
+    <compoundname>mniw::RanfxNormal</compoundname>
+    <includes refid="_random_effects_8h" local="no">RandomEffects.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classmniw_1_1_ranfx_normal_1a960649ac5d4c9e902f10afcf407c31a7" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int mniw::RanfxNormal::q_</definition>
+        <argsstring></argsstring>
+        <name>q_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inst/include/mniw/RandomEffects.h" line="20" column="1" bodyfile="inst/include/mniw/RandomEffects.h" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmniw_1_1_ranfx_normal_1a401fc1130a7299df5f144a3c3ccfeb5d" prot="private" static="no" mutable="no">
+        <type>MatrixXd</type>
+        <definition>MatrixXd mniw::RanfxNormal::Mq_</definition>
+        <argsstring></argsstring>
+        <name>Mq_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inst/include/mniw/RandomEffects.h" line="21" column="1" bodyfile="inst/include/mniw/RandomEffects.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmniw_1_1_ranfx_normal_1a2bc9dec01c45d52f19973f101d4b3238" prot="private" static="no" mutable="no">
+        <type>MatrixXd</type>
+        <definition>MatrixXd mniw::RanfxNormal::Uq_</definition>
+        <argsstring></argsstring>
+        <name>Uq_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inst/include/mniw/RandomEffects.h" line="22" column="1" bodyfile="inst/include/mniw/RandomEffects.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmniw_1_1_ranfx_normal_1af249547c22ecfa0f2d19ea90682bfede" prot="private" static="no" mutable="no">
+        <type>LLT&lt; MatrixXd &gt;</type>
+        <definition>LLT&lt;MatrixXd&gt; mniw::RanfxNormal::lltq_</definition>
+        <argsstring></argsstring>
+        <name>lltq_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inst/include/mniw/RandomEffects.h" line="23" column="1" bodyfile="inst/include/mniw/RandomEffects.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classmniw_1_1_ranfx_normal_1ade1dc31fcdea4b65ff535dae696160ba" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>mniw::RanfxNormal::RanfxNormal</definition>
+        <argsstring>(int q)</argsstring>
+        <name>RanfxNormal</name>
+        <param>
+          <type>int</type>
+          <declname>q</declname>
+        </param>
+        <briefdescription>
+<para>Constructor. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">q</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of dimensions of the Multivariate Normal. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inst/include/mniw/RandomEffects.h" line="26" column="1" bodyfile="inst/include/mniw/RandomEffects.h" bodystart="38" bodyend="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classmniw_1_1_ranfx_normal_1a210fbf6ebb0352948ece63614a720dfe" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void mniw::RanfxNormal::GenerateOL</definition>
+        <argsstring>(Ref&lt; VectorXd &gt; mu, const Ref&lt; const VectorXd &gt; &amp;x, const Ref&lt; const MatrixXd &gt; &amp;C, const Ref&lt; const MatrixXd &gt; &amp;OmegaL)</argsstring>
+        <name>GenerateOL</name>
+        <param>
+          <type>Ref&lt; VectorXd &gt;</type>
+          <declname>mu</declname>
+        </param>
+        <param>
+          <type>const Ref&lt; const VectorXd &gt; &amp;</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>const Ref&lt; const MatrixXd &gt; &amp;</type>
+          <declname>C</declname>
+        </param>
+        <param>
+          <type>const Ref&lt; const MatrixXd &gt; &amp;</type>
+          <declname>OmegaL</declname>
+        </param>
+        <briefdescription>
+<para>Random number generation with prior precision matrix on the Cholesky scale. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">mu</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Vector in which to assign the random draw. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Vector of observed data. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">C</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Precision matrix of the observed data, <computeroutput>C = V^{-1}</computeroutput>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">OmegaL</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Cholesky factor of the prior precision matrix, <computeroutput>Sigma^{-1} = OmegaL * t(OmegaL)</computeroutput>. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inst/include/mniw/RandomEffects.h" line="28" column="1" bodyfile="inst/include/mniw/RandomEffects.h" bodystart="49" bodyend="73"/>
+      </memberdef>
+      <memberdef kind="function" id="classmniw_1_1_ranfx_normal_1aa27b8e328fd4d30eed11bd9986c7afec" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void mniw::RanfxNormal::GenerateO</definition>
+        <argsstring>(Ref&lt; VectorXd &gt; mu, const Ref&lt; const VectorXd &gt; &amp;x, const Ref&lt; const MatrixXd &gt; &amp;C, const Ref&lt; const MatrixXd &gt; &amp;Omega)</argsstring>
+        <name>GenerateO</name>
+        <param>
+          <type>Ref&lt; VectorXd &gt;</type>
+          <declname>mu</declname>
+        </param>
+        <param>
+          <type>const Ref&lt; const VectorXd &gt; &amp;</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>const Ref&lt; const MatrixXd &gt; &amp;</type>
+          <declname>C</declname>
+        </param>
+        <param>
+          <type>const Ref&lt; const MatrixXd &gt; &amp;</type>
+          <declname>Omega</declname>
+        </param>
+        <briefdescription>
+<para>Random number generation with prior precision matrix on the regular scale. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">mu</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Vector in which to assign the random draw. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Vector of observed data. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">C</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Precision matrix of the observed data, <computeroutput>C = V^{-1}</computeroutput>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">Omega</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Prior precision matrix, <computeroutput>Omega = Sigma^{-1}</computeroutput>. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inst/include/mniw/RandomEffects.h" line="32" column="1" bodyfile="inst/include/mniw/RandomEffects.h" bodystart="79" bodyend="97"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>The Multivariate Random-Effects Normal distribution. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="inst/include/mniw/RandomEffects.h" line="18" column="1" bodyfile="inst/include/mniw/RandomEffects.h" bodystart="18" bodyend="35"/>
+    <listofallmembers>
+      <member refid="classmniw_1_1_ranfx_normal_1aa27b8e328fd4d30eed11bd9986c7afec" prot="public" virt="non-virtual"><scope>mniw::RanfxNormal</scope><name>GenerateO</name></member>
+      <member refid="classmniw_1_1_ranfx_normal_1a210fbf6ebb0352948ece63614a720dfe" prot="public" virt="non-virtual"><scope>mniw::RanfxNormal</scope><name>GenerateOL</name></member>
+      <member refid="classmniw_1_1_ranfx_normal_1af249547c22ecfa0f2d19ea90682bfede" prot="private" virt="non-virtual"><scope>mniw::RanfxNormal</scope><name>lltq_</name></member>
+      <member refid="classmniw_1_1_ranfx_normal_1a401fc1130a7299df5f144a3c3ccfeb5d" prot="private" virt="non-virtual"><scope>mniw::RanfxNormal</scope><name>Mq_</name></member>
+      <member refid="classmniw_1_1_ranfx_normal_1a960649ac5d4c9e902f10afcf407c31a7" prot="private" virt="non-virtual"><scope>mniw::RanfxNormal</scope><name>q_</name></member>
+      <member refid="classmniw_1_1_ranfx_normal_1ade1dc31fcdea4b65ff535dae696160ba" prot="public" virt="non-virtual"><scope>mniw::RanfxNormal</scope><name>RanfxNormal</name></member>
+      <member refid="classmniw_1_1_ranfx_normal_1a2bc9dec01c45d52f19973f101d4b3238" prot="private" virt="non-virtual"><scope>mniw::RanfxNormal</scope><name>Uq_</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

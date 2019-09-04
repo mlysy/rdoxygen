@@ -1,0 +1,41 @@
+MathJax.Hub.Config({
+    TeX: {
+	Macros: {
+	    bm: ["{\\boldsymbol{#1}}",1],
+	    tx: ["{\\textrm{#1}}",1],
+	    tfrac: ["{\\textstyle{\\frac{#1}{#2}}}",2],
+	    rv: ["{#2_{#1},\\ldots,#2_{#3}}",3,"1"],
+	    iid: ["{\\overset{\\;\\tx{iid}\\;}{\\sim}}"],
+	    ind: ["{\\overset{\\:\\tx{ind}\\:}{\\sim}}"],
+	    XX: ["{\\bm{X}}"],
+	    YY: ["{\\bm{Y}}"],
+	    LL: ["{\\bm{L}}"],
+	    PPs: ["{\\bm{\\Psi}}"],
+	    ZZ: ["{\\bm{Z}}"],
+	    N: ["{\\mathcal{N}}"],
+	    LLa: ["{\\bm{\\Lambda}}"],
+	    SSi: ["{\\bm{\\Sigma}}"],
+	    GGa: ["{\\bm{\\Gamma}}"],
+	    UU: ["{\\bm{U}}"],
+	    VV: ["{\\bm{V}}"],
+	    aa: ["{\\bm{a}}"],
+	    bb: ["{\\bm{b}}"],
+	    xx: ["{\\bm{x}}"],
+	    yy: ["{\\bm{y}}"],
+	    bbe: ["{\\bm{\\beta}}"],
+	    mmu: ["{\\bm{\\mu}}"],
+	    kka: ["{\\bm{\\kappa}}"],
+	    lla: ["{\\bm{\\lambda}}"],
+	    TTh: ["{\\bm{\\Theta}}"],
+	    GG: ["{\\bm{G}}"],
+	    OOm: ["{\\bm{\\Omega}}"],
+	    bz: ["{\\bm{0}}"],
+	    wish: ["{\\tx{Wish}}"],
+	    iwish: ["{\\tx{InvWish}}"],
+	    MN: ["{\\tx{MatNorm}}"],
+	    MT: ["{\\tx{MatT}}"],
+	    mniw: ["{\\tx{MNIW}}"],
+	    re: ["{\\tx{RxNorm}}"]
+	}
+    }
+});

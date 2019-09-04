@@ -1,0 +1,235 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_wishart_8h" kind="file" language="C++">
+    <compoundname>Wishart.h</compoundname>
+    <includes local="no">RcppEigen.h</includes>
+    <includes refid="_tri_utils_8h" local="yes">mniw/TriUtils.h</includes>
+    <includedby refid="_matrix_n_i_w_exports_8cpp" local="yes">src/MatrixNIWExports.cpp</includedby>
+    <includedby refid="_wishart_exports_8cpp" local="yes">src/WishartExports.cpp</includedby>
+    <includedby refid="_hierarchical_8h" local="yes">inst/include/mniw/Hierarchical.h</includedby>
+    <includedby refid="_matrix_t_8h" local="yes">inst/include/mniw/MatrixT.h</includedby>
+    <incdepgraph>
+      <node id="54">
+        <label>RcppEigen.h</label>
+      </node>
+      <node id="53">
+        <label>inst/include/mniw/Wishart.h</label>
+        <link refid="_wishart_8h"/>
+        <childnode refid="54" relation="include">
+        </childnode>
+        <childnode refid="55" relation="include">
+        </childnode>
+      </node>
+      <node id="55">
+        <label>mniw/TriUtils.h</label>
+        <link refid="_tri_utils_8h"/>
+        <childnode refid="54" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="57">
+        <label>src/MatrixNIWExports.cpp</label>
+        <link refid="_matrix_n_i_w_exports_8cpp"/>
+      </node>
+      <node id="58">
+        <label>src/WishartExports.cpp</label>
+        <link refid="_wishart_exports_8cpp"/>
+      </node>
+      <node id="60">
+        <label>src/HierarchicalExports.cpp</label>
+        <link refid="_hierarchical_exports_8cpp"/>
+      </node>
+      <node id="62">
+        <label>src/MatrixTExports.cpp</label>
+        <link refid="_matrix_t_exports_8cpp"/>
+      </node>
+      <node id="61">
+        <label>inst/include/mniw/MatrixT.h</label>
+        <link refid="_matrix_t_8h"/>
+        <childnode refid="62" relation="include">
+        </childnode>
+      </node>
+      <node id="59">
+        <label>inst/include/mniw/Hierarchical.h</label>
+        <link refid="_hierarchical_8h"/>
+        <childnode refid="60" relation="include">
+        </childnode>
+      </node>
+      <node id="56">
+        <label>inst/include/mniw/Wishart.h</label>
+        <link refid="_wishart_8h"/>
+        <childnode refid="57" relation="include">
+        </childnode>
+        <childnode refid="58" relation="include">
+        </childnode>
+        <childnode refid="59" relation="include">
+        </childnode>
+        <childnode refid="61" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classmniw_1_1_wishart" prot="public">mniw::Wishart</innerclass>
+    <innernamespace refid="namespacemniw">mniw</innernamespace>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_wishart_8h_1a519baeba9f0c44180f9043e012a24641" prot="public" static="no">
+        <name>gammaln</name>
+        <initializer>R::lgammafn</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inst/include/mniw/Wishart.h" line="14" column="9" bodyfile="inst/include/mniw/Wishart.h" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_wishart_8h_1a113efe6903769f7c5a0e3d1e1b93a212" prot="public" static="no">
+        <name>chisq_rand</name>
+        <initializer>Rf_rchisq</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inst/include/mniw/Wishart.h" line="15" column="9" bodyfile="inst/include/mniw/Wishart.h" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Density evaluation and random number generation for the (Inverse) Wishart distribution. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>Wishart_h</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>Wishart_h<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">//<sp/>[[Rcpp::depends(RcppEigen)]]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;RcppEigen.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_tri_utils_8h" kindref="compound">mniw/TriUtils.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacemniw" kindref="compound">mniw</ref><sp/>{</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>gammaln<sp/>R::lgammafn</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>chisq_rand<sp/>Rf_rchisq</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_eigen" kindref="compound">Eigen</ref>;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"></codeline>
+<codeline lineno="30" refid="_wishart_8h_1a53aee90f94b4d2aa862f49332ceb68d7" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="_wishart_8h_1a53aee90f94b4d2aa862f49332ceb68d7" kindref="member">logMultiGamma</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>alpha,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>q)<sp/>{</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>lmg<sp/>=<sp/>0.0;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ii=0;<sp/>ii&lt;q;<sp/>ii++)<sp/>{</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>lmg<sp/>+=<sp/>gammaln(alpha<sp/>-<sp/>.5*ii);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>lmg<sp/>+=<sp/>.5*q*(q-1)<sp/>*<sp/>M_LN_SQRT_PI;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>lmg;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"></codeline>
+<codeline lineno="69" refid="classmniw_1_1_wishart" refkind="compound"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classmniw_1_1_wishart" kindref="compound">Wishart</ref><sp/>{</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>storage</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>q_;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>LLT&lt;MatrixXd&gt;<sp/>cholX_;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>LLT&lt;MatrixXd&gt;<sp/>cholPsi_;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>MatrixXd<sp/>Z_;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>MatrixXd<sp/>XL_;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmniw_1_1_wishart" kindref="compound">Wishart</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>q);</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>LogDens(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Ref&lt;const<sp/>MatrixXd&gt;&amp;<sp/>X,</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Ref&lt;const<sp/>MatrixXd&gt;&amp;<sp/>Psi,</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>nu,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>inv);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>LogDens(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Ref&lt;const<sp/>MatrixXd&gt;&amp;<sp/>X,</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>LLT&lt;MatrixXd&gt;&amp;<sp/>cholX,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ldX,</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Ref&lt;const<sp/>MatrixXd&gt;&amp;<sp/>Psi,</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>LLT&lt;MatrixXd&gt;&amp;<sp/>cholPsi,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ldPsi,</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>nu,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>inv);</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>GenerateLowerTri(Ref&lt;MatrixXd&gt;<sp/>XL,</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Ref&lt;const<sp/>MatrixXd&gt;&amp;<sp/>PsiL,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>nu);</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>GenerateLowerTriXi(Ref&lt;MatrixXd&gt;<sp/>XL,</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Ref&lt;const<sp/>MatrixXd&gt;&amp;<sp/>XiL,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>nu);</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/>};</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99" refid="classmniw_1_1_wishart_1a45f260ee7fc79c85497a7449a2220200" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/><ref refid="classmniw_1_1_wishart_1a45f260ee7fc79c85497a7449a2220200" kindref="member">Wishart::Wishart</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>q)<sp/>{</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>q_<sp/>=<sp/>q;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>cholX_.compute(MatrixXd::Identity(q_,q_));</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>cholPsi_.compute(MatrixXd::Identity(q_,q_));</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/>Z_<sp/>=<sp/>MatrixXd::Zero(q_,q_);</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/>XL_<sp/>=<sp/>MatrixXd::Zero(q_,q_);</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113" refid="classmniw_1_1_wishart_1ad0402256f527189c57765da8307dd413" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classmniw_1_1_wishart_1ad0402256f527189c57765da8307dd413" kindref="member">Wishart::LogDens</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Ref&lt;const<sp/>MatrixXd&gt;&amp;<sp/>X,</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Ref&lt;const<sp/>MatrixXd&gt;&amp;<sp/>Psi,</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>nu,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>inv)<sp/>{</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/>cholX_.compute(X);</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/>cholPsi_.compute(Psi);</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>LogDens(X,<sp/>cholX_,<sp/><ref refid="_tri_utils_8h_1a3f6653dcf99e9386dde5bd02fbe099b9" kindref="member">logDetCholV</ref>(cholX_),</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Psi,<sp/>cholPsi_,<sp/><ref refid="_tri_utils_8h_1a3f6653dcf99e9386dde5bd02fbe099b9" kindref="member">logDetCholV</ref>(cholPsi_),<sp/>nu,<sp/>inv);</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight></codeline>
+<codeline lineno="134" refid="classmniw_1_1_wishart_1a5f9c66bba21d482bb20760809c531f90" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classmniw_1_1_wishart_1ad0402256f527189c57765da8307dd413" kindref="member">Wishart::LogDens</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Ref&lt;const<sp/>MatrixXd&gt;&amp;<sp/>X,</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>LLT&lt;MatrixXd&gt;&amp;<sp/>cholX,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ldX,</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Ref&lt;const<sp/>MatrixXd&gt;&amp;<sp/>Psi,</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>LLT&lt;MatrixXd&gt;&amp;<sp/>cholPsi,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ldPsi,</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>nu,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>inv)<sp/>{</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ldens;</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>trace</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!inv)<sp/>{</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>Z_.noalias()<sp/>=<sp/>cholPsi.solve(X);</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>Z_.noalias()<sp/>=<sp/>cholX.solve(Psi);</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>std::cout<sp/>&lt;&lt;<sp/>cholX.matrixLLT()<sp/>&lt;&lt;<sp/>std::endl;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>std::cout<sp/>&lt;&lt;<sp/>Z_<sp/>&lt;&lt;<sp/>std::endl;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>rest<sp/>of<sp/>calculation</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!inv)<sp/>{</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>ldens<sp/>=<sp/>(nu-q_-1)<sp/>*<sp/>ldX<sp/>-<sp/>nu<sp/>*<sp/>ldPsi;</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>ldens<sp/>=<sp/>-(nu+q_+1)<sp/>*<sp/>ldX<sp/>+<sp/>nu<sp/>*<sp/>ldPsi;</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/>ldens<sp/>-=<sp/>.5*(Z_.trace()<sp/>+<sp/>q_*nu<sp/>*<sp/>M_LN2)<sp/>+<sp/><ref refid="_wishart_8h_1a53aee90f94b4d2aa862f49332ceb68d7" kindref="member">logMultiGamma</ref>(.5*nu,<sp/>q_);</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ldens;</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight></codeline>
+<codeline lineno="165" refid="classmniw_1_1_wishart_1a091d1a4ae2eaf983bbce2ffdb205d5e3" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classmniw_1_1_wishart_1a091d1a4ae2eaf983bbce2ffdb205d5e3" kindref="member">Wishart::GenerateLowerTri</ref>(Ref&lt;MatrixXd&gt;<sp/>XL,</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Ref&lt;const<sp/>MatrixXd&gt;&amp;<sp/>PsiL,</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>nu)<sp/>{</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ii,<sp/>jj;</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(ii=0;<sp/>ii&lt;q_;<sp/>ii++)<sp/>{</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>diagonal</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>XL_(ii,ii)<sp/>=<sp/>sqrt(chisq_rand(nu-ii));</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>off-diagonals</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(jj=0;<sp/>jj&lt;ii;<sp/>jj++)<sp/>{</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/>XL_(ii,jj)<sp/>=<sp/>norm_rand();</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>multiply<sp/>by<sp/>precision<sp/>matrix<sp/>XL<sp/>=<sp/>PsiL<sp/>*<sp/>XL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_tri_utils_8h_1a5daadd239a4be77fe6470cfc9a560353" kindref="member">triMultLL</ref>(XL,<sp/>PsiL,<sp/>XL_);</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"></highlight></codeline>
+<codeline lineno="187" refid="classmniw_1_1_wishart_1aa0409c4d479a1228b591e6ab9351bb9b" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classmniw_1_1_wishart_1aa0409c4d479a1228b591e6ab9351bb9b" kindref="member">Wishart::GenerateLowerTriXi</ref>(Ref&lt;MatrixXd&gt;<sp/>XL,</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Ref&lt;const<sp/>MatrixXd&gt;&amp;<sp/>XiL,</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>nu)<sp/>{</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ii,<sp/>jj;</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(ii=0;<sp/>ii&lt;q_;<sp/>ii++)<sp/>{</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>diagonal</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>XL(ii,ii)<sp/>=<sp/>sqrt(chisq_rand(nu-ii));</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>off-diagonals</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(jj=0;<sp/>jj&lt;ii;<sp/>jj++)<sp/>{</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/>XL(ii,jj)<sp/>=<sp/>norm_rand();</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>multiply<sp/>by<sp/>precision<sp/>matrix</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_tri_utils_8h_1a7f22604e6c692494f4772837f9b6e0c3" kindref="member">triMultLiX</ref>(XL,<sp/>XiL);</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"></highlight></codeline>
+<codeline lineno="204"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>mniw</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="206"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="inst/include/mniw/Wishart.h"/>
+  </compounddef>
+</doxygen>

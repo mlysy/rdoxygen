@@ -1,0 +1,257 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_matrix_normal_exports_8cpp" kind="file" language="C++">
+    <compoundname>MatrixNormalExports.cpp</compoundname>
+    <includes local="no">RcppEigen.h</includes>
+    <includes refid="_matrix_normal_8h" local="yes">mniw/MatrixNormal.h</includes>
+    <incdepgraph>
+      <node id="81">
+        <label>RcppEigen.h</label>
+      </node>
+      <node id="82">
+        <label>mniw/MatrixNormal.h</label>
+        <link refid="_matrix_normal_8h"/>
+        <childnode refid="81" relation="include">
+        </childnode>
+        <childnode refid="83" relation="include">
+        </childnode>
+      </node>
+      <node id="80">
+        <label>src/MatrixNormalExports.cpp</label>
+        <link refid="_matrix_normal_exports_8cpp"/>
+        <childnode refid="81" relation="include">
+        </childnode>
+        <childnode refid="82" relation="include">
+        </childnode>
+      </node>
+      <node id="83">
+        <label>mniw/TriUtils.h</label>
+        <link refid="_tri_utils_8h"/>
+        <childnode refid="81" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_matrix_normal_exports_8cpp_1a6eb5d3d7e02fb26f9e9483d7c83dc1e7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Eigen::VectorXd</type>
+        <definition>Eigen::VectorXd LogDensityMatrixNormal</definition>
+        <argsstring>(Eigen::MatrixXd X, Eigen::MatrixXd Lambda, Eigen::MatrixXd SigmaR, Eigen::MatrixXd SigmaC)</argsstring>
+        <name>LogDensityMatrixNormal</name>
+        <param>
+          <type>Eigen::MatrixXd</type>
+          <declname>X</declname>
+        </param>
+        <param>
+          <type>Eigen::MatrixXd</type>
+          <declname>Lambda</declname>
+        </param>
+        <param>
+          <type>Eigen::MatrixXd</type>
+          <declname>SigmaR</declname>
+        </param>
+        <param>
+          <type>Eigen::MatrixXd</type>
+          <declname>SigmaC</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Log-density of the Matrix-Normal distribution.</para><para>Evaluate the log-density of <computeroutput>N</computeroutput> observations of a <computeroutput>p x q</computeroutput> dimensional Matrix-Normal distribution. Each argument can be vectorized, meaning that it can have length either <computeroutput>N</computeroutput> or <computeroutput>1</computeroutput>, denoted here as <computeroutput>n</computeroutput>.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">X</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Matrix of <computeroutput>p x nq</computeroutput> random matrix observations. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">Lambda</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Matrix of <computeroutput>p x nq</computeroutput> mean matrices. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">SigmaR</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Matrix of <computeroutput>p x np</computeroutput> row-wise variance matrices. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">SigmaC</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Matrix of <computeroutput>q x nq</computeroutput> column-wise variance matrices.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Vector of <computeroutput>N</computeroutput> log-density evaluations. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/MatrixNormalExports.cpp" line="23" column="1" bodyfile="src/MatrixNormalExports.cpp" bodystart="23" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="function" id="_matrix_normal_exports_8cpp_1a331c1e50142019aa6077d1bc266d21b2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Eigen::MatrixXd</type>
+        <definition>Eigen::MatrixXd GenerateMatrixNormal</definition>
+        <argsstring>(int N, Eigen::MatrixXd Lambda, Eigen::MatrixXd SigmaR, Eigen::MatrixXd SigmaC)</argsstring>
+        <name>GenerateMatrixNormal</name>
+        <param>
+          <type>int</type>
+          <declname>N</declname>
+        </param>
+        <param>
+          <type>Eigen::MatrixXd</type>
+          <declname>Lambda</declname>
+        </param>
+        <param>
+          <type>Eigen::MatrixXd</type>
+          <declname>SigmaR</declname>
+        </param>
+        <param>
+          <type>Eigen::MatrixXd</type>
+          <declname>SigmaC</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Generate a random sample from the Matrix-Normal distribution.</para><para>Generate <computeroutput>N</computeroutput> independent draws from a <computeroutput>p x q</computeroutput> dimensional Matrix-Normal distribution. Each argument can be vectorized, meaning that it can have length either <computeroutput>N</computeroutput> or <computeroutput>1</computeroutput>, denoted here as <computeroutput>n</computeroutput>.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">N</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Integer number of random draws </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">Lambda</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Matrix of <computeroutput>p x nq</computeroutput> mean matrices. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">SigmaR</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Matrix of <computeroutput>p x np</computeroutput> row-wise variance matrices. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">SigmaC</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Matrix of <computeroutput>q x nq</computeroutput> column-wise variance matrices. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Matrix of <computeroutput>p x Nq</computeroutput> random draws. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/MatrixNormalExports.cpp" line="78" column="1" bodyfile="src/MatrixNormalExports.cpp" bodystart="78" bodyend="117"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Exported Rcpp functions for the Matrix-Normal distribution. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">//<sp/>[[Rcpp::depends(RcppEigen)]]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;RcppEigen.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_eigen" kindref="compound">Eigen</ref>;</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">//#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_matrix_normal_8h" kindref="compound">mniw/MatrixNormal.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="namespacemniw" kindref="compound">mniw</ref>;</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="comment">//[[Rcpp::export]]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal">Eigen::VectorXd<sp/><ref refid="_matrix_normal_exports_8cpp_1a6eb5d3d7e02fb26f9e9483d7c83dc1e7" kindref="member">LogDensityMatrixNormal</ref>(Eigen::MatrixXd<sp/>X,<sp/>Eigen::MatrixXd<sp/>Lambda,</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Eigen::MatrixXd<sp/>SigmaR,</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Eigen::MatrixXd<sp/>SigmaC)<sp/>{</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>dimensions<sp/>of<sp/>the<sp/>problem</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>q<sp/>=<sp/>SigmaC.rows();</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>p<sp/>=<sp/>SigmaR.rows();</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>N<sp/>=<sp/>X.cols()/q;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/>N<sp/>=<sp/>std::max&lt;int&gt;(N,<sp/>Lambda.cols()/q);</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/>N<sp/>=<sp/>std::max&lt;int&gt;(N,<sp/>SigmaR.cols()/p);</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/>N<sp/>=<sp/>std::max&lt;int&gt;(N,<sp/>SigmaC.cols()/q);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>output<sp/>variables</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/>VectorXd<sp/>logDens(N);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>internal<sp/>variables</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/>LLT&lt;MatrixXd&gt;<sp/>cholSigmaR(p);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/>LLT&lt;MatrixXd&gt;<sp/>cholSigmaC(q);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ldSigmaR,<sp/>ldSigmaC;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>singleX<sp/>=<sp/>(X.cols()<sp/>==<sp/>q);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>singleLambda<sp/>=<sp/>(Lambda.cols()<sp/>==<sp/>q);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>singleSigmaR<sp/>=<sp/>(SigmaR.cols()<sp/>==<sp/>p);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>singleSigmaC<sp/>=<sp/>(SigmaC.cols()<sp/>==<sp/>q);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><ref refid="classmniw_1_1_matrix_normal" kindref="compound">MatrixNormal</ref><sp/>matnorm(p,q);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(singleSigmaR)<sp/>{</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>cholSigmaR.compute(SigmaR);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>ldSigmaR<sp/>=<sp/><ref refid="_tri_utils_8h_1a3f6653dcf99e9386dde5bd02fbe099b9" kindref="member">logDetCholV</ref>(cholSigmaR);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(singleSigmaC)<sp/>{</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>cholSigmaC.compute(SigmaC);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>ldSigmaC<sp/>=<sp/><ref refid="_tri_utils_8h_1a3f6653dcf99e9386dde5bd02fbe099b9" kindref="member">logDetCholV</ref>(cholSigmaC);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ii=0;<sp/>ii&lt;N;<sp/>ii++)<sp/>{</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!singleSigmaR)<sp/>{</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>cholSigmaR.compute(SigmaR.block(0,p*ii,p,p));</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>ldSigmaR<sp/>=<sp/><ref refid="_tri_utils_8h_1a3f6653dcf99e9386dde5bd02fbe099b9" kindref="member">logDetCholV</ref>(cholSigmaR);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!singleSigmaC)<sp/>{</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>cholSigmaC.compute(SigmaC.block(0,q*ii,q,q));</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>ldSigmaC<sp/>=<sp/><ref refid="_tri_utils_8h_1a3f6653dcf99e9386dde5bd02fbe099b9" kindref="member">logDetCholV</ref>(cholSigmaC);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>logDens(ii)<sp/>=<sp/>matnorm.LogDens(X.block(0,q*ii*(!singleX),p,q),</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Lambda.block(0,q*ii*(!singleLambda),p,q),</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cholSigmaR,<sp/>ldSigmaR,<sp/>cholSigmaC,<sp/>ldSigmaC);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>logDens;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="comment">//[[Rcpp::export]]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal">Eigen::MatrixXd<sp/><ref refid="_matrix_normal_exports_8cpp_1a331c1e50142019aa6077d1bc266d21b2" kindref="member">GenerateMatrixNormal</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>N,<sp/>Eigen::MatrixXd<sp/>Lambda,</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Eigen::MatrixXd<sp/>SigmaR,</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Eigen::MatrixXd<sp/>SigmaC)<sp/>{</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>p<sp/>=<sp/>SigmaR.rows();</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>q<sp/>=<sp/>SigmaC.rows();</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>singleLambda<sp/>=<sp/>(Lambda.cols()<sp/>==<sp/>q);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>singleSigmaR<sp/>=<sp/>(SigmaR.cols()<sp/>==<sp/>p);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>singleSigmaC<sp/>=<sp/>(SigmaC.cols()<sp/>==<sp/>q);</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ii;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>output<sp/>variables</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/>MatrixXd<sp/>X(p,N*q);</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>internal<sp/>variables</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/>MatrixXd<sp/>SigmaRL<sp/>=<sp/>MatrixXd::Zero(p,p);</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/>MatrixXd<sp/>SigmaCU<sp/>=<sp/>MatrixXd::Zero(q,q);</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/>LLT&lt;MatrixXd&gt;<sp/>lltq(q);</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/>LLT&lt;MatrixXd&gt;<sp/>lltp(p);</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><ref refid="classmniw_1_1_matrix_normal" kindref="compound">MatrixNormal</ref><sp/>matnorm(p,q);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(singleSigmaR)<sp/>{</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/>lltp.compute(SigmaR);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/>SigmaRL<sp/>=<sp/>lltp.matrixL();</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(singleSigmaC)<sp/>{</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>lltq.compute(SigmaC);</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>SigmaCU<sp/>=<sp/>lltq.matrixU();</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(ii=0;<sp/>ii&lt;N;<sp/>ii++)<sp/>{</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!singleSigmaR)<sp/>{</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>lltp.compute(SigmaR.block(0,ii*p,p,p));</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>SigmaRL<sp/>=<sp/>lltp.matrixL();</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!singleSigmaC)<sp/>{</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>lltq.compute(SigmaC.block(0,ii*q,q,q));</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>SigmaCU<sp/>=<sp/>lltq.matrixU();</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/>matnorm.GenerateRowSColS(X.block(0,ii*q,p,q),</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Lambda.block(0,ii*q*(!singleLambda),p,q),</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SigmaRL,<sp/>SigmaCU);</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>X;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="src/MatrixNormalExports.cpp"/>
+  </compounddef>
+</doxygen>

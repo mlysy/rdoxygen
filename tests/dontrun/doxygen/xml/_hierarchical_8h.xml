@@ -1,0 +1,288 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_hierarchical_8h" kind="file" language="C++">
+    <compoundname>Hierarchical.h</compoundname>
+    <includes local="no">RcppEigen.h</includes>
+    <includes refid="_tri_utils_8h" local="yes">mniw/TriUtils.h</includes>
+    <includes refid="_wishart_8h" local="yes">mniw/Wishart.h</includes>
+    <includes refid="_matrix_normal_8h" local="yes">mniw/MatrixNormal.h</includes>
+    <includes refid="_random_effects_8h" local="yes">mniw/RandomEffects.h</includes>
+    <includedby refid="_hierarchical_exports_8cpp" local="yes">src/HierarchicalExports.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>RcppEigen.h</label>
+      </node>
+      <node id="5">
+        <label>mniw/RandomEffects.h</label>
+        <link refid="_random_effects_8h"/>
+        <childnode refid="1" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>mniw/MatrixNormal.h</label>
+        <link refid="_matrix_normal_8h"/>
+        <childnode refid="1" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="0">
+        <label>inst/include/mniw/Hierarchical.h</label>
+        <link refid="_hierarchical_8h"/>
+        <childnode refid="1" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>mniw/Wishart.h</label>
+        <link refid="_wishart_8h"/>
+        <childnode refid="1" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>mniw/TriUtils.h</label>
+        <link refid="_tri_utils_8h"/>
+        <childnode refid="1" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="7">
+        <label>src/HierarchicalExports.cpp</label>
+        <link refid="_hierarchical_exports_8cpp"/>
+      </node>
+      <node id="6">
+        <label>inst/include/mniw/Hierarchical.h</label>
+        <link refid="_hierarchical_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classmniw_1_1_hier_normal" prot="public">mniw::HierNormal</innerclass>
+    <innernamespace refid="namespacemniw">mniw</innernamespace>
+    <briefdescription>
+<para>Gibbs sampler for posterior distribution of Hierarchical Normal model with unequal variances. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>Hierarchical_h</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>Hierarchical_h<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">//<sp/>[[Rcpp::depends(RcppEigen)]]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;RcppEigen.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_tri_utils_8h" kindref="compound">mniw/TriUtils.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_wishart_8h" kindref="compound">mniw/Wishart.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_matrix_normal_8h" kindref="compound">mniw/MatrixNormal.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_random_effects_8h" kindref="compound">mniw/RandomEffects.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacemniw" kindref="compound">mniw</ref><sp/>{</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_eigen" kindref="compound">Eigen</ref>;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20" refid="classmniw_1_1_hier_normal" refkind="compound"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classmniw_1_1_hier_normal" kindref="compound">HierNormal</ref><sp/>{</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>dimensions<sp/>of<sp/>problem</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>N_;<sp/></highlight><highlight class="comment">//<sp/>number<sp/>of<sp/>observations</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>p_;<sp/></highlight><highlight class="comment">//<sp/>number<sp/>of<sp/>row<sp/>dimensions</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>q_;<sp/></highlight><highlight class="comment">//<sp/>number<sp/>of<sp/>column<sp/>dimensions</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>data<sp/>needed<sp/>for<sp/>updates</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>MatrixXd<sp/>X_;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>MatrixXd<sp/>Psi_;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>random<sp/>variables<sp/>in<sp/>problem</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>flatBeta_;<sp/></highlight><highlight class="comment">//<sp/>whether<sp/>Beta<sp/>has<sp/>a<sp/>flat<sp/>prior</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>MatrixXd<sp/>Mut_;<sp/></highlight><highlight class="comment">//<sp/>transpose<sp/>of<sp/>random-effects<sp/>matrix</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>MatrixXd<sp/>Beta_;<sp/></highlight><highlight class="comment">//<sp/>random-effects<sp/>regression<sp/>coefficients</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>MatrixXd<sp/>iSigmaL_;<sp/></highlight><highlight class="comment">//<sp/>lower<sp/>cholesky<sp/>factor<sp/>of<sp/>randome-effect<sp/>precision<sp/>matrix</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>storage<sp/>variables</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>nuHat_;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>MatrixXd<sp/>Yt_;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>MatrixXd<sp/>iXtXO_;<sp/></highlight><highlight class="comment">//<sp/>(X&apos;X<sp/>+<sp/>O)^{-1}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>MatrixXd<sp/>iOmegaHatL_;<sp/></highlight><highlight class="comment">//<sp/>chol(above)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>MatrixXd<sp/>IH_;<sp/></highlight><highlight class="comment">//<sp/>I<sp/>-<sp/>X(X&apos;X)^{-1}X&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>MatrixXd<sp/>LtO_;<sp/></highlight><highlight class="comment">//<sp/>Lambda&apos;<sp/>O</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>MatrixXd<sp/>LtOL_;<sp/></highlight><highlight class="comment">//<sp/>Lambda&apos;<sp/>O<sp/>Lambda</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>MatrixXd<sp/>PsiHat_;<sp/></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>MatrixXd<sp/>XiHatL_;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>MatrixXd<sp/>MutXLtO_;<sp/></highlight><highlight class="comment">//<sp/>Mu&apos;<sp/>X<sp/>+<sp/>Lamdba&apos;<sp/>O</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>MatrixXd<sp/>IHMu_;<sp/></highlight><highlight class="comment">//<sp/>IH<sp/>*<sp/>Mu</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>MatrixXd<sp/>LambdaHat_;<sp/></highlight><highlight class="comment">//<sp/>iXtXO<sp/>*<sp/>MuXLtO</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>MatrixXd<sp/>x_;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/>MatrixXd<sp/>iV_;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>MatrixXd<sp/>Lq_;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>MatrixXd<sp/>Uq_;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>MatrixXd<sp/>Iq_;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>LLT&lt;MatrixXd&gt;<sp/>lltq_;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>distributions</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmniw_1_1_wishart" kindref="compound">Wishart</ref><sp/>*wish_;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmniw_1_1_matrix_normal" kindref="compound">MatrixNormal</ref><sp/>*matnorm_;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmniw_1_1_ranfx_normal" kindref="compound">RanfxNormal</ref><sp/>*renorm_;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmniw_1_1_hier_normal" kindref="compound">HierNormal</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Ref&lt;const<sp/>MatrixXd&gt;&amp;<sp/>Y,</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Ref&lt;const<sp/>MatrixXd&gt;&amp;<sp/>X,</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Ref&lt;const<sp/>MatrixXd&gt;&amp;<sp/>V,</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Ref&lt;const<sp/>MatrixXd&gt;&amp;<sp/>Lambda,</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Ref&lt;const<sp/>MatrixXd&gt;&amp;<sp/>Omega,</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Ref&lt;const<sp/>MatrixXd&gt;&amp;<sp/>Psi,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>nu);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>~<ref refid="classmniw_1_1_hier_normal" kindref="compound">HierNormal</ref>();</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>setMu(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Ref&lt;const<sp/>MatrixXd&gt;&amp;<sp/>Mu);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>setISigmaL(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Ref&lt;const<sp/>MatrixXd&gt;&amp;<sp/>iSigmaL);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>setISigma(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Ref&lt;const<sp/>MatrixXd&gt;&amp;<sp/>iSigma);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>setBeta(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Ref&lt;const<sp/>MatrixXd&gt;&amp;<sp/>Beta);</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>getMu(Ref&lt;MatrixXd&gt;<sp/>Mu);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>getMut(Ref&lt;MatrixXd&gt;<sp/>Mut);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>getISigmaL(Ref&lt;MatrixXd&gt;<sp/>iSigmaL);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>getSigma(Ref&lt;MatrixXd&gt;<sp/>Sigma);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>getBeta(Ref&lt;MatrixXd&gt;<sp/>Beta);</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>UpdateBetaSigma();</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>UpdateMu();</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/>};</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98" refid="classmniw_1_1_hier_normal_1a4adbed64b1b474cbdcd869eda087d9f0" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/><ref refid="classmniw_1_1_hier_normal_1a4adbed64b1b474cbdcd869eda087d9f0" kindref="member">HierNormal::HierNormal</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Ref&lt;const<sp/>MatrixXd&gt;&amp;<sp/>Y,</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Ref&lt;const<sp/>MatrixXd&gt;&amp;<sp/>X,</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Ref&lt;const<sp/>MatrixXd&gt;&amp;<sp/>V,</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Ref&lt;const<sp/>MatrixXd&gt;&amp;<sp/>Lambda,</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Ref&lt;const<sp/>MatrixXd&gt;&amp;<sp/>Omega,</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Ref&lt;const<sp/>MatrixXd&gt;&amp;<sp/>Psi,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>nu)<sp/>{</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>dimensions<sp/>of<sp/>the<sp/>problem</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/>N_<sp/>=<sp/>Y.rows();</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/>p_<sp/>=<sp/>X.cols();</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/>q_<sp/>=<sp/>Y.cols();</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/>flatBeta_<sp/>=<sp/>Omega.squaredNorm()<sp/>==<sp/>0.0;</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>data<sp/>needed<sp/>for<sp/>updates</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/>X_<sp/>=<sp/>X;</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/>Psi_<sp/>=<sp/>Psi;</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>precomputed<sp/>values</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/>nuHat_<sp/>=<sp/>nu<sp/>+<sp/>N_<sp/>-<sp/>(flatBeta_<sp/>?<sp/>p_<sp/>:<sp/>0);</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/>Yt_<sp/>=<sp/>Y.adjoint();</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>initialize<sp/>random<sp/>variables</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/>Mut_<sp/>=<sp/>MatrixXd::Zero(q_,<sp/>N_*q_);</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/>iSigmaL_<sp/>=<sp/>MatrixXd::Identity(q_,<sp/>q_);</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/>Beta_<sp/>=<sp/>MatrixXd::Zero(p_,<sp/>q_);</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>internal<sp/>values</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/>Lq_<sp/>=<sp/>MatrixXd::Zero(q_,q_);</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/>Uq_<sp/>=<sp/>MatrixXd::Zero(q_,q_);</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/>Iq_<sp/>=<sp/>MatrixXd::Identity(q_,q_);</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/>lltq_.compute(Iq_);</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/>iXtXO_<sp/>=<sp/>(X.adjoint()<sp/>*<sp/>X<sp/>+<sp/>Omega).eval().llt().solve(MatrixXd::Identity(p_,p_));</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/>iOmegaHatL_<sp/>=<sp/>iXtXO_.llt().matrixL();</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/>IH_<sp/>=<sp/>MatrixXd::Identity(N_,N_)<sp/>-<sp/>(X<sp/>*<sp/>(X.adjoint()<sp/>*<sp/>X).llt().solve(X.adjoint())).eval();</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/>LtO_<sp/>=<sp/>Lambda.adjoint()<sp/>*<sp/>Omega;</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/>LtOL_<sp/>=<sp/>LtO_<sp/>*<sp/>Lambda;</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/>PsiHat_<sp/>=<sp/>MatrixXd::Zero(q_,q_);</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/>XiHatL_<sp/>=<sp/>MatrixXd::Zero(q_,q_);</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/>MutXLtO_<sp/>=<sp/>MatrixXd::Zero(q_,p_);</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/>IHMu_<sp/>=<sp/>MatrixXd::Zero(N_,q_);</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/>LambdaHat_<sp/>=<sp/>MatrixXd::Zero(p_,q_);</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/>x_<sp/>=<sp/>MatrixXd::Zero(q_,N_);</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>inverses<sp/>of<sp/>the<sp/>variances</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/>iV_<sp/>=<sp/>MatrixXd::Zero(q_,N_*q_);</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>jj=0;<sp/>jj&lt;N_;<sp/>jj++)<sp/>{</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>iV_.block(0,jj*q_,q_,q_)<sp/>=<sp/>V.block(0,jj*q_,q_,q_).llt().solve(Iq_);</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>distributions</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/>wish_<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classmniw_1_1_wishart" kindref="compound">Wishart</ref>(q_);</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/>matnorm_<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classmniw_1_1_matrix_normal" kindref="compound">MatrixNormal</ref>(p_,<sp/>q_);</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/>renorm_<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classmniw_1_1_ranfx_normal" kindref="compound">RanfxNormal</ref>(q_);</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight></codeline>
+<codeline lineno="146" refid="classmniw_1_1_hier_normal_1a7cdd4ca1137d61b7987da1bfde3417f7" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/><ref refid="classmniw_1_1_hier_normal_1a7cdd4ca1137d61b7987da1bfde3417f7" kindref="member">HierNormal::~HierNormal</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/>wish_;</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/>matnorm_;</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/>renorm_;</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight></codeline>
+<codeline lineno="153" refid="classmniw_1_1_hier_normal_1a683a17a5b1b34a44c563a656c7783d26" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classmniw_1_1_hier_normal_1a683a17a5b1b34a44c563a656c7783d26" kindref="member">HierNormal::setBeta</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Ref&lt;const<sp/>MatrixXd&gt;&amp;<sp/>Beta)<sp/>{</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/>Beta_<sp/>=<sp/>Beta;</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"></highlight></codeline>
+<codeline lineno="159" refid="classmniw_1_1_hier_normal_1a1191fec3e77190fbdc15bc440371a2b3" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classmniw_1_1_hier_normal_1a1191fec3e77190fbdc15bc440371a2b3" kindref="member">HierNormal::setISigmaL</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Ref&lt;const<sp/>MatrixXd&gt;&amp;<sp/>iSigmaL)<sp/>{</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/>iSigmaL_<sp/>=<sp/>iSigmaL.triangularView&lt;Eigen::Lower&gt;();</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"></highlight></codeline>
+<codeline lineno="165" refid="classmniw_1_1_hier_normal_1aa9209e19f30a24a856ca5c05acf10bc4" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classmniw_1_1_hier_normal_1aa9209e19f30a24a856ca5c05acf10bc4" kindref="member">HierNormal::setISigma</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Ref&lt;const<sp/>MatrixXd&gt;&amp;<sp/>iSigma)<sp/>{</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/>iSigmaL_<sp/>=<sp/>iSigma.llt().matrixL();</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"></highlight></codeline>
+<codeline lineno="171" refid="classmniw_1_1_hier_normal_1a0b982b25a9c108f589a66fae346099ef" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classmniw_1_1_hier_normal_1a0b982b25a9c108f589a66fae346099ef" kindref="member">HierNormal::setMu</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Ref&lt;const<sp/>MatrixXd&gt;&amp;<sp/>Mu)<sp/>{</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/>Mut_<sp/>=<sp/>Mu.adjoint();</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"></highlight></codeline>
+<codeline lineno="177" refid="classmniw_1_1_hier_normal_1ab3434867e28a9f411c5cd9242258ed94" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classmniw_1_1_hier_normal_1ab3434867e28a9f411c5cd9242258ed94" kindref="member">HierNormal::getMu</ref>(Ref&lt;MatrixXd&gt;<sp/>Mu)<sp/>{</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/>Mu<sp/>=<sp/>Mut_.adjoint();</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"></highlight></codeline>
+<codeline lineno="183" refid="classmniw_1_1_hier_normal_1aab4999c72fcaf724af0f258698994c3e" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classmniw_1_1_hier_normal_1aab4999c72fcaf724af0f258698994c3e" kindref="member">HierNormal::getMut</ref>(Ref&lt;MatrixXd&gt;<sp/>Mut)<sp/>{</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/>Mut<sp/>=<sp/>Mut_;</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"></highlight></codeline>
+<codeline lineno="189" refid="classmniw_1_1_hier_normal_1ade02a76b6f590cc568589ec6842424c1" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classmniw_1_1_hier_normal_1ade02a76b6f590cc568589ec6842424c1" kindref="member">HierNormal::getISigmaL</ref>(Ref&lt;MatrixXd&gt;<sp/>iSigmaL)<sp/>{</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/>iSigmaL<sp/>=<sp/>iSigmaL_;</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"></highlight></codeline>
+<codeline lineno="195" refid="classmniw_1_1_hier_normal_1a9b3c2f1a3fc2aaf58698f49332a8f1ea" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classmniw_1_1_hier_normal_1a9b3c2f1a3fc2aaf58698f49332a8f1ea" kindref="member">HierNormal::getSigma</ref>(Ref&lt;MatrixXd&gt;<sp/>Sigma)<sp/>{</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_tri_utils_8h_1aee6a1777f73c71378680d77c59814479" kindref="member">InverseLLt</ref>(Sigma,<sp/>iSigmaL_,<sp/>Lq_,<sp/>Uq_,<sp/>Iq_);</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"></highlight></codeline>
+<codeline lineno="201" refid="classmniw_1_1_hier_normal_1a2e60f51963dcd0a7d7fa5d274d69d91b" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classmniw_1_1_hier_normal_1a2e60f51963dcd0a7d7fa5d274d69d91b" kindref="member">HierNormal::getBeta</ref>(Ref&lt;MatrixXd&gt;<sp/>Beta)<sp/>{</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/>Beta<sp/>=<sp/>Beta_;</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"></highlight></codeline>
+<codeline lineno="205"><highlight class="normal"></highlight></codeline>
+<codeline lineno="207" refid="classmniw_1_1_hier_normal_1a349f4d3f8d9a1c2cdf85884a5e632fdc" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classmniw_1_1_hier_normal_1a349f4d3f8d9a1c2cdf85884a5e632fdc" kindref="member">HierNormal::UpdateBetaSigma</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>new<sp/>MNIW<sp/>parameters</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/>MutXLtO_.noalias()<sp/>=<sp/>Mut_<sp/>*<sp/>X_<sp/>+<sp/>LtO_;</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/>LambdaHat_.noalias()<sp/>=<sp/>iXtXO_<sp/>*<sp/>MutXLtO_.adjoint();</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!flatBeta_)<sp/>{</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>PsiHat_.noalias()<sp/>=<sp/>Mut_<sp/>*<sp/>Mut_.adjoint();</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>PsiHat_.noalias()<sp/>-=<sp/>MutXLtO_<sp/>*<sp/>LambdaHat_;</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>PsiHat_<sp/>+=<sp/>LtOL_<sp/>+<sp/>Psi_;</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>IHMu_.noalias()<sp/>=<sp/>IH_<sp/>*<sp/>Mut_.adjoint();</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>PsiHat_.noalias()<sp/>=<sp/>Mut_<sp/>*<sp/>IHMu_;</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>PsiHat_<sp/>+=<sp/>Psi_;</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>reverse<sp/>cholesky<sp/>decomposition<sp/>PsiHat<sp/>=<sp/>XiHatU<sp/>*<sp/>XiHatL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_tri_utils_8h_1a18fc2d655dc265f4c1133403a61034fb" kindref="member">ReverseCholesky</ref>(XiHatL_,<sp/>PsiHat_,<sp/>lltq_);</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>generate<sp/>Beta<sp/>and<sp/>iSigmaL,<sp/>where<sp/>Sigma^{-1}<sp/>=<sp/>iSigmaL<sp/>*<sp/>iSigmaL&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/>wish_-&gt;GenerateLowerTriXi(iSigmaL_,<sp/>XiHatL_,<sp/>nuHat_);</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/>matnorm_-&gt;GenerateRowSColO(Beta_,<sp/>LambdaHat_,<sp/>iOmegaHatL_,<sp/>iSigmaL_);</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"></highlight></codeline>
+<codeline lineno="230" refid="classmniw_1_1_hier_normal_1afa4af9e8e1d5a01c30d0345db6e1e5d2" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classmniw_1_1_hier_normal_1afa4af9e8e1d5a01c30d0345db6e1e5d2" kindref="member">HierNormal::UpdateMu</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/>x_<sp/>=<sp/>(X_<sp/>*<sp/>Beta_).adjoint();</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/>x_<sp/>-=<sp/>Yt_;</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>jj=0;<sp/>jj&lt;N_;<sp/>jj++)<sp/>{</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>renorm_-&gt;GenerateOL(Mut_.col(jj),<sp/>x_.col(jj),<sp/>iV_.block(0,jj*q_,q_,q_),<sp/>iSigmaL_);</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/>Mut_<sp/>+=<sp/>Yt_;</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"></highlight></codeline>
+<codeline lineno="240"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>mniw</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="241"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="inst/include/mniw/Hierarchical.h"/>
+  </compounddef>
+</doxygen>

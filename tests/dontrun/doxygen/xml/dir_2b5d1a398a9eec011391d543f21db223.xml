@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="dir_2b5d1a398a9eec011391d543f21db223" kind="dir">
+    <compoundname>inst/include</compoundname>
+    <innerdir refid="dir_ca82a859ff559c30401386e7ae1e50e3">inst/include/mniw</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="inst/include/"/>
+  </compounddef>
+</doxygen>

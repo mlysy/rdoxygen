@@ -1,0 +1,307 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_cross_product_exports_8cpp" kind="file" language="C++">
+    <compoundname>CrossProductExports.cpp</compoundname>
+    <includes local="no">RcppEigen.h</includes>
+    <incdepgraph>
+      <node id="63">
+        <label>src/CrossProductExports.cpp</label>
+        <link refid="_cross_product_exports_8cpp"/>
+        <childnode refid="64" relation="include">
+        </childnode>
+      </node>
+      <node id="64">
+        <label>RcppEigen.h</label>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespace_eigen">Eigen</innernamespace>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_cross_product_exports_8cpp_1a82f820448cbf73429406f00b0c819549" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Eigen::MatrixXd</type>
+        <definition>Eigen::MatrixXd CrossProdVXX</definition>
+        <argsstring>(Eigen::MatrixXd X, Eigen::MatrixXd V, int p, int q, bool inverse=false)</argsstring>
+        <name>CrossProdVXX</name>
+        <param>
+          <type>Eigen::MatrixXd</type>
+          <declname>X</declname>
+        </param>
+        <param>
+          <type>Eigen::MatrixXd</type>
+          <declname>V</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>q</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>inverse</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Matrix-weighted self inner-product.</para><para>Calculate inner products of the form <computeroutput>t(X) V X</computeroutput> or <computeroutput>t(X) V^{-1} X</computeroutput>. Both <computeroutput>X</computeroutput> and <computeroutput>V</computeroutput> can be vectorized, i.e., of size <computeroutput>N</computeroutput> or <computeroutput>1</computeroutput>, referred to here as <computeroutput>n</computeroutput>.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">X</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Matrix of size <computeroutput>p x qn</computeroutput>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">V</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Matrix of size <computeroutput>p x pn</computeroutput>, where each <computeroutput>p x p</computeroutput> block is symmetric positive-definite. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Integer specifying the dimension of <computeroutput>V</computeroutput>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">q</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Integer specifying the column dimension of <computeroutput>X</computeroutput>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">inverse</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Boolean; whether to use <computeroutput>V</computeroutput> or <computeroutput>V^{-1}</computeroutput> for the matrix wweight.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Matrix of size <computeroutput>q x qn</computeroutput>, where each block of size <computeroutput>q x q</computeroutput> is an inner product. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/CrossProductExports.cpp" line="30" column="1" bodyfile="src/CrossProductExports.cpp" bodystart="30" bodyend="65"/>
+      </memberdef>
+      <memberdef kind="function" id="_cross_product_exports_8cpp_1ab3388823406e415dcfe6af54a915e7ed" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Eigen::MatrixXd</type>
+        <definition>Eigen::MatrixXd CrossProdVXY</definition>
+        <argsstring>(Eigen::MatrixXd X, Eigen::MatrixXd Y, Eigen::MatrixXd V, int p, int q, int r, bool inverse=false)</argsstring>
+        <name>CrossProdVXY</name>
+        <param>
+          <type>Eigen::MatrixXd</type>
+          <declname>X</declname>
+        </param>
+        <param>
+          <type>Eigen::MatrixXd</type>
+          <declname>Y</declname>
+        </param>
+        <param>
+          <type>Eigen::MatrixXd</type>
+          <declname>V</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>q</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>r</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>inverse</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Matrix-weighted inner-product.</para><para>Calculate inner products of the form <computeroutput>t(X) V Y</computeroutput> or <computeroutput>t(X) V^{-1} Y</computeroutput>. Each of <computeroutput>X</computeroutput>, <computeroutput>V</computeroutput>, and <computeroutput>Y</computeroutput> can be vectorized, i.e., of size <computeroutput>N</computeroutput> or <computeroutput>1</computeroutput>, referred to here as <computeroutput>n</computeroutput>.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">X</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Matrix of size <computeroutput>p x qn</computeroutput>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">Y</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Matrix of size <computeroutput>p x rn</computeroutput>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">V</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Matrix of size <computeroutput>p x pn</computeroutput>, where each <computeroutput>p x p</computeroutput> block is symmetric positive-definite. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Integer specifying the dimension of <computeroutput>V</computeroutput>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">q</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Integer specifying the column dimension of <computeroutput>X</computeroutput>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">r</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Integer specifying the column dimension of <computeroutput>Y</computeroutput>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">inverse</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Boolean; whether to use <computeroutput>V</computeroutput> or <computeroutput>V^{-1}</computeroutput> for the matrix wweight.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Matrix of size <computeroutput>q x rn</computeroutput>, where each block of size <computeroutput>q x r</computeroutput> is an inner product. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/CrossProductExports.cpp" line="81" column="1" bodyfile="src/CrossProductExports.cpp" bodystart="81" bodyend="149"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Exported Rcpp functions for matrix-weighted inner products. </para>    </briefdescription>
+    <detaileddescription>
+<para>A matrix-weighted inner product is of the form <formula id="0">\[ \boldsymbol{W}_{q \times r} = \boldsymbol{X}_{q \times p}&apos;\boldsymbol{V}_{p \times p} \boldsymbol{Y}_{p \times r}, \]</formula> where <formula id="1">$\boldsymbol{V}$</formula> is a symmetric positive-definite matrix. </para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">//<sp/>[[Rcpp::depends(RcppEigen)]]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;RcppEigen.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_eigen" kindref="compound">Eigen</ref>;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">//#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"></codeline>
+<codeline lineno="29"><highlight class="comment">//[[Rcpp::export]]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal">Eigen::MatrixXd<sp/><ref refid="_cross_product_exports_8cpp_1a82f820448cbf73429406f00b0c819549" kindref="member">CrossProdVXX</ref>(Eigen::MatrixXd<sp/>X,<sp/>Eigen::MatrixXd<sp/>V,</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>p,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>q,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>inverse<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>singleX<sp/>=<sp/>(X.cols()<sp/>==<sp/>q);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>singleV<sp/>=<sp/>(V.cols()<sp/>==<sp/>p);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>N<sp/>=<sp/>singleX<sp/>?<sp/>V.cols()/p<sp/>:<sp/>X.cols()/q;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>output<sp/>variables</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/>MatrixXd<sp/>Y(q,q*N);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>internal<sp/>variables</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/>LLT&lt;MatrixXd&gt;<sp/>lltp(p);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/>MatrixXd<sp/>VX(p,q);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/>MatrixXd<sp/>Xt(q,p);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(singleX)<sp/>{</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>Xt<sp/>=<sp/>X.adjoint();</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(inverse<sp/>&amp;<sp/>singleV)<sp/>{</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>lltp.compute(V);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ii=0;<sp/>ii&lt;N;<sp/>ii++)<sp/>{</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!inverse)<sp/>{</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>VX.noalias()<sp/>=<sp/>V.block(0,ii*p*(!singleV),p,p)<sp/>*<sp/>X.block(0,ii*q*(!singleX),p,q);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!singleV)<sp/>{</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>lltp.compute(V.block(0,ii*p,p,p));</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>VX<sp/>=<sp/>lltp.solve(X.block(0,ii*q*(!singleX),p,q));</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(singleX)<sp/>{</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>Y.block(0,ii*q,q,q).noalias()<sp/>=<sp/>Xt<sp/>*<sp/>VX;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>Y.block(0,ii*q,q,q).noalias()<sp/>=<sp/>X.block(0,ii*q,p,q).adjoint()<sp/>*<sp/>VX;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">(Y);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="comment">//[[Rcpp::export]]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal">Eigen::MatrixXd<sp/><ref refid="_cross_product_exports_8cpp_1ab3388823406e415dcfe6af54a915e7ed" kindref="member">CrossProdVXY</ref>(Eigen::MatrixXd<sp/>X,<sp/>Eigen::MatrixXd<sp/>Y,</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Eigen::MatrixXd<sp/>V,</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>p,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>q,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>r,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>inverse<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>singleX<sp/>=<sp/>(X.cols()<sp/>==<sp/>q);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>singleY<sp/>=<sp/>(Y.cols()<sp/>==<sp/>r);</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>singleV<sp/>=<sp/>(V.cols()<sp/>==<sp/>p);</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>N<sp/>=<sp/>singleX<sp/>?<sp/>V.cols()/p<sp/>:<sp/>X.cols()/q;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/>N<sp/>=<sp/>singleY<sp/>?<sp/>N<sp/>:<sp/>Y.cols()/r;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>output<sp/>variables</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/>MatrixXd<sp/>W(q,r*N);</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>internal<sp/>variables</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/>LLT&lt;MatrixXd&gt;<sp/>lltp(p);</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/>MatrixXd<sp/>VY(p,r);</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/>MatrixXd<sp/>Xt(q,p);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>if<sp/>both<sp/>X,V<sp/>or<sp/>both<sp/>Y,V<sp/>are<sp/>single,<sp/>compute<sp/>that<sp/>product<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(inverse<sp/>&amp;<sp/>singleV)<sp/>{</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/>lltp.compute(V);</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(singleX)<sp/>{</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(singleV)<sp/>{</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>X&apos;V<sp/>or<sp/>X&apos;V^{-1}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!inverse)<sp/>{</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/>Xt.noalias()<sp/>=<sp/>X.adjoint()<sp/>*<sp/>V;</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/>Xt<sp/>=<sp/>lltp.solve(X).adjoint();</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>just<sp/>transpose<sp/>X</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>Xt<sp/>=<sp/>X.adjoint();</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(singleY<sp/>&amp;<sp/>singleV)<sp/>{</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>VY<sp/>or<sp/>V^{-1}Y</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!inverse)<sp/>{</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>VY.noalias()<sp/>=<sp/>V<sp/>*<sp/>Y;</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>VY<sp/>=<sp/>lltp.solve(Y);</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//std::cout<sp/>&lt;&lt;<sp/>&quot;t(X)<sp/>=<sp/>&quot;<sp/>&lt;&lt;<sp/>Xt<sp/>&lt;&lt;<sp/>std::endl;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//std::cout<sp/>&lt;&lt;<sp/>&quot;V<sp/>=<sp/>&quot;<sp/>&lt;&lt;<sp/>V<sp/>&lt;&lt;<sp/>std::endl;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//std::cout<sp/>&lt;&lt;<sp/>&quot;Y<sp/>=<sp/>&quot;<sp/>&lt;&lt;<sp/>Y<sp/>&lt;&lt;<sp/>std::endl;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ii=0;<sp/>ii&lt;N;<sp/>ii++)<sp/>{</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(singleV<sp/>&amp;<sp/>singleX)<sp/>{</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>single<sp/>X&apos;V</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>W.block(0,ii*r,q,r).noalias()<sp/>=<sp/>Xt<sp/>*<sp/>Y.block(0,ii*r*(!singleY),p,r);</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(singleV<sp/>&amp;<sp/>singleY)<sp/>{</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>single<sp/>VY</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>W.block(0,ii*r,q,r).noalias()<sp/>=<sp/>X.block(0,ii*q*(!singleX),p,q).adjoint()<sp/>*<sp/>VY;</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>V<sp/>is<sp/>not<sp/>single,<sp/>or<sp/>neither<sp/>X<sp/>nor<sp/>Y<sp/>are<sp/>single</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!inverse)<sp/>{</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/>VY.noalias()<sp/>=<sp/>V.block(0,ii*p*(!singleV),p,p)<sp/>*<sp/>Y.block(0,ii*r*(!singleY),p,r);</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!singleV)<sp/>{</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>lltp.compute(V.block(0,ii*p,p,p));</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/>VY<sp/>=<sp/>lltp.solve(Y.block(0,ii*r*(!singleY),p,r));</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(singleX)<sp/>{</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/>W.block(0,ii*r,q,r).noalias()<sp/>=<sp/>Xt<sp/>*<sp/>VY;</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/>W.block(0,ii*r,q,r).noalias()<sp/>=<sp/>X.block(0,ii*q,p,q).adjoint()<sp/>*<sp/>VY;</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">(W);</highlight></codeline>
+<codeline lineno="149"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="src/CrossProductExports.cpp"/>
+  </compounddef>
+</doxygen>

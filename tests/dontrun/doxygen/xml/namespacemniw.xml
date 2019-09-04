@@ -1,0 +1,707 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="namespacemniw" kind="namespace" language="C++">
+    <compoundname>mniw</compoundname>
+    <innerclass refid="classmniw_1_1_hier_normal" prot="public">mniw::HierNormal</innerclass>
+    <innerclass refid="classmniw_1_1_matrix_normal" prot="public">mniw::MatrixNormal</innerclass>
+    <innerclass refid="classmniw_1_1_matrix_t" prot="public">mniw::MatrixT</innerclass>
+    <innerclass refid="classmniw_1_1_multi_normal" prot="public">mniw::MultiNormal</innerclass>
+    <innerclass refid="classmniw_1_1_ranfx_normal" prot="public">mniw::RanfxNormal</innerclass>
+    <innerclass refid="classmniw_1_1_wishart" prot="public">mniw::Wishart</innerclass>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_tri_utils_8h_1a5daadd239a4be77fe6470cfc9a560353" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T1</type>
+          </param>
+          <param>
+            <type>typename T2</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void mniw::triMultLL</definition>
+        <argsstring>(const Eigen::MatrixBase&lt; T1 &gt; &amp;X, const Ref&lt; const MatrixXd &gt; &amp;L1, const Eigen::MatrixBase&lt; T2 &gt; &amp;L2)</argsstring>
+        <name>triMultLL</name>
+        <param>
+          <type>const Eigen::MatrixBase&lt; T1 &gt; &amp;</type>
+          <declname>X</declname>
+        </param>
+        <param>
+          <type>const Ref&lt; const MatrixXd &gt; &amp;</type>
+          <declname>L1</declname>
+        </param>
+        <param>
+          <type>const Eigen::MatrixBase&lt; T2 &gt; &amp;</type>
+          <declname>L2</declname>
+        </param>
+        <briefdescription>
+<para>Multiplication of two lower triangular matrices. </para>        </briefdescription>
+        <detaileddescription>
+<para>Performs the matrix multiplication <computeroutput>X = L1 * L2</computeroutput>, where <computeroutput>L1</computeroutput> and <computeroutput>L2</computeroutput> are lower triangular matrices.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">L1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>First <computeroutput>n x n</computeroutput> lower triangular matrix. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">L2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Second <computeroutput>n x n</computeroutput> lower triangular matrix. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">X</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Matrix of size <computeroutput>n x n</computeroutput> containing the product of <computeroutput>L1</computeroutput> and <computeroutput>L2</computeroutput>.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>Does not work properly if any of the inputs arguments are also outputs. </para></simplesect>
+<simplesect kind="note"><para>For safest results, all &quot;off-triangular&quot; elements of triangular arguments should be set to zero. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inst/include/mniw/TriUtils.h" line="31" column="1" bodyfile="inst/include/mniw/TriUtils.h" bodystart="31" bodyend="44"/>
+      </memberdef>
+      <memberdef kind="function" id="_tri_utils_8h_1ad9c65f39981a3e4e609e16ac929bb496" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T1</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void mniw::triMultXU</definition>
+        <argsstring>(Ref&lt; MatrixXd &gt; Y, const Ref&lt; const MatrixXd &gt; &amp;X, const Eigen::MatrixBase&lt; T1 &gt; &amp;U)</argsstring>
+        <name>triMultXU</name>
+        <param>
+          <type>Ref&lt; MatrixXd &gt;</type>
+          <declname>Y</declname>
+        </param>
+        <param>
+          <type>const Ref&lt; const MatrixXd &gt; &amp;</type>
+          <declname>X</declname>
+        </param>
+        <param>
+          <type>const Eigen::MatrixBase&lt; T1 &gt; &amp;</type>
+          <declname>U</declname>
+        </param>
+        <briefdescription>
+<para>Right-multiplication by upper triangular matrix. </para>        </briefdescription>
+        <detaileddescription>
+<para>Performs the matrix multiplication <computeroutput>Y = X * U</computeroutput>, where <computeroutput>U</computeroutput> is an upper triangular matrix.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">X</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Matrix of size <computeroutput>n x p</computeroutput> to be multiplied. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">U</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Lower triangular matrix of size <computeroutput>n x n</computeroutput> right-multiplying <computeroutput>X</computeroutput>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">Y</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Matrix of size <computeroutput>n x p</computeroutput> containing the product of <computeroutput>X</computeroutput> and <computeroutput>U</computeroutput>.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>Does not work properly if any of the inputs arguments are also outputs. </para></simplesect>
+<simplesect kind="note"><para>For safest results, all &quot;off-triangular&quot; elements of triangular arguments should be set to zero. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inst/include/mniw/TriUtils.h" line="57" column="1" bodyfile="inst/include/mniw/TriUtils.h" bodystart="57" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="function" id="_tri_utils_8h_1abc315a2e184858938a30ea0b796a65ea" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T1</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void mniw::triMultLX</definition>
+        <argsstring>(Ref&lt; MatrixXd &gt; Y, const Eigen::MatrixBase&lt; T1 &gt; &amp;L, const Ref&lt; const MatrixXd &gt; &amp;X)</argsstring>
+        <name>triMultLX</name>
+        <param>
+          <type>Ref&lt; MatrixXd &gt;</type>
+          <declname>Y</declname>
+        </param>
+        <param>
+          <type>const Eigen::MatrixBase&lt; T1 &gt; &amp;</type>
+          <declname>L</declname>
+        </param>
+        <param>
+          <type>const Ref&lt; const MatrixXd &gt; &amp;</type>
+          <declname>X</declname>
+        </param>
+        <briefdescription>
+<para>Left-multiplication by a lower triangular matrix. </para>        </briefdescription>
+        <detaileddescription>
+<para>Performs the matrix multiplication <computeroutput>Y = L * X</computeroutput>, where <computeroutput>L</computeroutput> is a lower triangular matrix.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">X</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Matrix of size <computeroutput>n x p</computeroutput> to be multiplied. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">L</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Lower triangular matrix of size <computeroutput>n x n</computeroutput> left-multiplying <computeroutput>X</computeroutput>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">Y</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Matrix of size <computeroutput>n x p</computeroutput> containing the product of <computeroutput>L</computeroutput> and <computeroutput>X</computeroutput>.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>Does not work properly if any of the inputs arguments are also outputs. </para></simplesect>
+<simplesect kind="note"><para>For safest results, all &quot;off-triangular&quot; elements of triangular arguments should be set to zero. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inst/include/mniw/TriUtils.h" line="74" column="1" bodyfile="inst/include/mniw/TriUtils.h" bodystart="74" bodyend="78"/>
+      </memberdef>
+      <memberdef kind="function" id="_tri_utils_8h_1a7f22604e6c692494f4772837f9b6e0c3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T1</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void mniw::triMultLiX</definition>
+        <argsstring>(Ref&lt; MatrixXd &gt; X, const Eigen::MatrixBase&lt; T1 &gt; &amp;L)</argsstring>
+        <name>triMultLiX</name>
+        <param>
+          <type>Ref&lt; MatrixXd &gt;</type>
+          <declname>X</declname>
+        </param>
+        <param>
+          <type>const Eigen::MatrixBase&lt; T1 &gt; &amp;</type>
+          <declname>L</declname>
+        </param>
+        <briefdescription>
+<para>In-place solution of a lower triangular system. </para>        </briefdescription>
+        <detaileddescription>
+<para>Performs the matrix multiplication <computeroutput>X = L^{-1} * X</computeroutput>, where <computeroutput>L</computeroutput> is a lower triangular matrix.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">X</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Matrix of size <computeroutput>n x p</computeroutput> on RHS of linear system. This is also where solution will be returned, i.e., in-place. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">L</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Lower triangular matrix of size <computeroutput>n x n</computeroutput> on LHS of linear system.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>For safest results, all &quot;off-triangular&quot; elements of triangular arguments should be set to zero. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inst/include/mniw/TriUtils.h" line="91" column="1" bodyfile="inst/include/mniw/TriUtils.h" bodystart="91" bodyend="98"/>
+      </memberdef>
+      <memberdef kind="function" id="_tri_utils_8h_1adfde552c3f71d142ee6ded89e49f9fb0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T1</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void mniw::triMultXLi</definition>
+        <argsstring>(Ref&lt; MatrixXd &gt; X, const Eigen::MatrixBase&lt; T1 &gt; &amp;L)</argsstring>
+        <name>triMultXLi</name>
+        <param>
+          <type>Ref&lt; MatrixXd &gt;</type>
+          <declname>X</declname>
+        </param>
+        <param>
+          <type>const Eigen::MatrixBase&lt; T1 &gt; &amp;</type>
+          <declname>L</declname>
+        </param>
+        <briefdescription>
+<para>In-place solution of a reverse lower triangular system. </para>        </briefdescription>
+        <detaileddescription>
+<para>Performs the multiplication <computeroutput>X = X * L^{-1}</computeroutput>, where <computeroutput>L</computeroutput> is a lower triangular matrix.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">X</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Matrix of size <computeroutput>n x p</computeroutput> on RHS of linear system. This is also where solution will be returned, i.e., in-place. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">L</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Lower triangular matrix of size <computeroutput>n x n</computeroutput> on LHS of linear system.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>Does not work properly if any of the inputs arguments are also outputs. </para></simplesect>
+<simplesect kind="note"><para>For safest results, all &quot;off-triangular&quot; elements of triangular arguments should be set to zero. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inst/include/mniw/TriUtils.h" line="110" column="1" bodyfile="inst/include/mniw/TriUtils.h" bodystart="110" bodyend="117"/>
+      </memberdef>
+      <memberdef kind="function" id="_tri_utils_8h_1aa62489bafdc65d2645b57e480ee2572e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T1</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void mniw::triMultUiX</definition>
+        <argsstring>(const Eigen::MatrixBase&lt; T1 &gt; &amp;U, Ref&lt; MatrixXd &gt; X)</argsstring>
+        <name>triMultUiX</name>
+        <param>
+          <type>const Eigen::MatrixBase&lt; T1 &gt; &amp;</type>
+          <declname>U</declname>
+        </param>
+        <param>
+          <type>Ref&lt; MatrixXd &gt;</type>
+          <declname>X</declname>
+        </param>
+        <briefdescription>
+<para>In-place solution of an upper triangular system. </para>        </briefdescription>
+        <detaileddescription>
+<para>Performs the multiplication <computeroutput>X = U^{-1} * X</computeroutput>, where <computeroutput>U</computeroutput> is an upper triangular matrix.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">X</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Matrix of size <computeroutput>n x p</computeroutput> on RHS of linear system. This is also where solution will be returned, i.e., in-place. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">U</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Upper triangular matrix of size <computeroutput>n x n</computeroutput> on LHS of linear system.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>Does not work properly if any of the inputs arguments are also outputs. </para></simplesect>
+<simplesect kind="note"><para>For safest results, all &quot;off-triangular&quot; elements of triangular arguments should be set to zero. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inst/include/mniw/TriUtils.h" line="129" column="1" bodyfile="inst/include/mniw/TriUtils.h" bodystart="129" bodyend="136"/>
+      </memberdef>
+      <memberdef kind="function" id="_tri_utils_8h_1a79a58591ed0f4f3bd3c151d6d7f52266" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T1</type>
+          </param>
+          <param>
+            <type>typename T2</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void mniw::crossProdUtU</definition>
+        <argsstring>(const Eigen::MatrixBase&lt; T1 &gt; &amp;X, const Ref&lt; const MatrixXd &gt; &amp;U, const Eigen::MatrixBase&lt; T2 &gt; &amp;L)</argsstring>
+        <name>crossProdUtU</name>
+        <param>
+          <type>const Eigen::MatrixBase&lt; T1 &gt; &amp;</type>
+          <declname>X</declname>
+        </param>
+        <param>
+          <type>const Ref&lt; const MatrixXd &gt; &amp;</type>
+          <declname>U</declname>
+        </param>
+        <param>
+          <type>const Eigen::MatrixBase&lt; T2 &gt; &amp;</type>
+          <declname>L</declname>
+        </param>
+        <briefdescription>
+<para>Transpose-product of upper triangular matrices. </para>        </briefdescription>
+        <detaileddescription>
+<para>Performs the multiplication <computeroutput>X = U' * U</computeroutput>, where <computeroutput>U</computeroutput> is an upper triangular matrix.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">X</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Matrix of size <computeroutput>n x n</computeroutput> containing the transpose-product of <computeroutput>U</computeroutput>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">U</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Upper triangular matrix of size <computeroutput>n x n</computeroutput>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">L</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Lower triangular matrix of size <computeroutput>n x n</computeroutput> used for intermediate calculations.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>Does not work properly if any of the inputs arguments are also outputs. </para></simplesect>
+<simplesect kind="note"><para>For safest results, all &quot;off-triangular&quot; elements of triangular arguments should be set to zero. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inst/include/mniw/TriUtils.h" line="152" column="1" bodyfile="inst/include/mniw/TriUtils.h" bodystart="152" bodyend="164"/>
+      </memberdef>
+      <memberdef kind="function" id="_tri_utils_8h_1a7ca9facdac5bff93d2db13420c3edf8e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T1</type>
+          </param>
+          <param>
+            <type>typename T2</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void mniw::CrossProdLLt</definition>
+        <argsstring>(const Eigen::MatrixBase&lt; T1 &gt; &amp;X, const Ref&lt; const MatrixXd &gt; &amp;L, const Eigen::MatrixBase&lt; T2 &gt; &amp;U)</argsstring>
+        <name>CrossProdLLt</name>
+        <param>
+          <type>const Eigen::MatrixBase&lt; T1 &gt; &amp;</type>
+          <declname>X</declname>
+        </param>
+        <param>
+          <type>const Ref&lt; const MatrixXd &gt; &amp;</type>
+          <declname>L</declname>
+        </param>
+        <param>
+          <type>const Eigen::MatrixBase&lt; T2 &gt; &amp;</type>
+          <declname>U</declname>
+        </param>
+        <briefdescription>
+<para>Reverse transpose-product of lower triangular matrices. </para>        </briefdescription>
+        <detaileddescription>
+<para>Performs the multiplication <computeroutput>X = L * L'</computeroutput>, where <computeroutput>L</computeroutput> is a lower triangular matrix.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">X</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Matrix of size <computeroutput>n x n</computeroutput> containing the reverse transpose-product of <computeroutput>L</computeroutput>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">L</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Lower triangular matrix of size <computeroutput>n x n</computeroutput>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">U</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Upper triangular matrix of size <computeroutput>n x n</computeroutput> used for intermediate calculations.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>Does not work properly if any of the inputs arguments are also outputs. </para></simplesect>
+<simplesect kind="note"><para>For safest results, all &quot;off-triangular&quot; elements of triangular arguments should be set to zero. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inst/include/mniw/TriUtils.h" line="177" column="1" bodyfile="inst/include/mniw/TriUtils.h" bodystart="177" bodyend="189"/>
+      </memberdef>
+      <memberdef kind="function" id="_tri_utils_8h_1af6693aa50f28ec42c038f8f532741332" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T1</type>
+          </param>
+          <param>
+            <type>typename T2</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void mniw::CrossProdLtL</definition>
+        <argsstring>(const Eigen::MatrixBase&lt; T1 &gt; &amp;X, const Ref&lt; const MatrixXd &gt; &amp;L, const Eigen::MatrixBase&lt; T2 &gt; &amp;U)</argsstring>
+        <name>CrossProdLtL</name>
+        <param>
+          <type>const Eigen::MatrixBase&lt; T1 &gt; &amp;</type>
+          <declname>X</declname>
+        </param>
+        <param>
+          <type>const Ref&lt; const MatrixXd &gt; &amp;</type>
+          <declname>L</declname>
+        </param>
+        <param>
+          <type>const Eigen::MatrixBase&lt; T2 &gt; &amp;</type>
+          <declname>U</declname>
+        </param>
+        <briefdescription>
+<para>Transpose-product of lower triangular matrices. </para>        </briefdescription>
+        <detaileddescription>
+<para>Performs the multiplication <computeroutput>X = L' * L</computeroutput>, where <computeroutput>L</computeroutput> is a lower triangular matrix.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">X</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Matrix of size <computeroutput>n x n</computeroutput> containing the transpose-product of <computeroutput>L</computeroutput>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">L</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Lower triangular matrix of size <computeroutput>n x n</computeroutput>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">U</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Upper triangular matrix of size <computeroutput>n x n</computeroutput> used for intermediate calculations.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>Does not work properly if any of the inputs arguments are also outputs. </para></simplesect>
+<simplesect kind="note"><para>For safest results, all &quot;off-triangular&quot; elements of triangular arguments should be set to zero. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inst/include/mniw/TriUtils.h" line="202" column="1" bodyfile="inst/include/mniw/TriUtils.h" bodystart="202" bodyend="214"/>
+      </memberdef>
+      <memberdef kind="function" id="_tri_utils_8h_1aee6a1777f73c71378680d77c59814479" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T1</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void mniw::InverseLLt</definition>
+        <argsstring>(Ref&lt; MatrixXd &gt; X, const Eigen::MatrixBase&lt; T1 &gt; &amp;L, Ref&lt; MatrixXd &gt; L2, Ref&lt; MatrixXd &gt; U, const Ref&lt; const MatrixXd &gt; &amp;I)</argsstring>
+        <name>InverseLLt</name>
+        <param>
+          <type>Ref&lt; MatrixXd &gt;</type>
+          <declname>X</declname>
+        </param>
+        <param>
+          <type>const Eigen::MatrixBase&lt; T1 &gt; &amp;</type>
+          <declname>L</declname>
+        </param>
+        <param>
+          <type>Ref&lt; MatrixXd &gt;</type>
+          <declname>L2</declname>
+        </param>
+        <param>
+          <type>Ref&lt; MatrixXd &gt;</type>
+          <declname>U</declname>
+        </param>
+        <param>
+          <type>const Ref&lt; const MatrixXd &gt; &amp;</type>
+          <declname>I</declname>
+        </param>
+        <briefdescription>
+<para>Inverse of reverse transpose-product. </para>        </briefdescription>
+        <detaileddescription>
+<para>Performs the calculation <computeroutput>X = (L' * L)^{-1}</computeroutput>, where <computeroutput>L</computeroutput> is a lower triangular matrix.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">X</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Matrix of size <computeroutput>n x n</computeroutput> containing the inverse of the reverse transpose-product of <computeroutput>L</computeroutput>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">L</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Lower triangular matrix of size <computeroutput>n x n</computeroutput>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">U</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Upper triangular matrix of size <computeroutput>n x n</computeroutput> used for intermediate calculations.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">L2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Lower triangular matrix of size <computeroutput>n x n</computeroutput> used for intermediate calculations. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">I</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Identity matrix of size <computeroutput>n x n</computeroutput> used for intermediate calculations.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>Does not work properly if any of the inputs arguments are also outputs. </para></simplesect>
+<simplesect kind="note"><para>For safest results, all &quot;off-triangular&quot; elements of triangular arguments should be set to zero. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inst/include/mniw/TriUtils.h" line="230" column="1" bodyfile="inst/include/mniw/TriUtils.h" bodystart="230" bodyend="240"/>
+      </memberdef>
+      <memberdef kind="function" id="_tri_utils_8h_1a18fc2d655dc265f4c1133403a61034fb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void mniw::ReverseCholesky</definition>
+        <argsstring>(Ref&lt; MatrixXd &gt; L, const Ref&lt; const MatrixXd &gt; &amp;V, LLT&lt; MatrixXd &gt; &amp;llt)</argsstring>
+        <name>ReverseCholesky</name>
+        <param>
+          <type>Ref&lt; MatrixXd &gt;</type>
+          <declname>L</declname>
+        </param>
+        <param>
+          <type>const Ref&lt; const MatrixXd &gt; &amp;</type>
+          <declname>V</declname>
+        </param>
+        <param>
+          <type>LLT&lt; MatrixXd &gt; &amp;</type>
+          <declname>llt</declname>
+        </param>
+        <briefdescription>
+<para>Reverse-Cholesky decomposition of a positive-definite matrix. </para>        </briefdescription>
+        <detaileddescription>
+<para>Calculates the lower triangular matrix <computeroutput>L</computeroutput> satisfying <computeroutput>V = L'L</computeroutput>, where <computeroutput>V</computeroutput> is a positive-definite matrix.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">L</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Lower triangular matrix of size <computeroutput>n x n</computeroutput>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">V</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Positive-definite matrix of size <computeroutput>n x n</computeroutput>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">llt</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Cholesky solver via reference to <computeroutput>Eigen::LLT</computeroutput> object used for intermediate calculations.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>These calculations leave the upper triangular half of <computeroutput>L</computeroutput> unchanged, such that the output is truly triangular only if the upper triangular half of <computeroutput>L</computeroutput> was initialized to zero. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inst/include/mniw/TriUtils.h" line="280" column="1" bodyfile="inst/include/mniw/TriUtils.h" bodystart="280" bodyend="304"/>
+      </memberdef>
+      <memberdef kind="function" id="_tri_utils_8h_1a3f6653dcf99e9386dde5bd02fbe099b9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>double mniw::logDetCholV</definition>
+        <argsstring>(LLT&lt; MatrixXd &gt; &amp;cholV)</argsstring>
+        <name>logDetCholV</name>
+        <param>
+          <type>LLT&lt; MatrixXd &gt; &amp;</type>
+          <declname>cholV</declname>
+        </param>
+        <briefdescription>
+<para>Logarithm of the determinant of a Cholesky decomposition. </para>        </briefdescription>
+        <detaileddescription>
+<para>Calculates <computeroutput>log|L|</computeroutput>, where <computeroutput>L</computeroutput> is the lower triangular factor of a Cholesky decomposition.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">cholV</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Cholesky factor of size <computeroutput>n x n</computeroutput>. This is represented by an object of class <computeroutput>Eigen::LLT</computeroutput>, such that the triangular factor is given by <computeroutput>L = cholV.matrixL()</computeroutput>. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The logarithm of the determinant of <computeroutput>L</computeroutput>. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inst/include/mniw/TriUtils.h" line="315" column="1" bodyfile="inst/include/mniw/TriUtils.h" bodystart="315" bodyend="321"/>
+      </memberdef>
+      <memberdef kind="function" id="_tri_utils_8h_1ad13e348945b0a769632c1dd5c0c96ae2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>double mniw::logDetV</definition>
+        <argsstring>(MatrixXd V, LLT&lt; MatrixXd &gt; cholV)</argsstring>
+        <name>logDetV</name>
+        <param>
+          <type>MatrixXd</type>
+          <declname>V</declname>
+        </param>
+        <param>
+          <type>LLT&lt; MatrixXd &gt;</type>
+          <declname>cholV</declname>
+        </param>
+        <briefdescription>
+<para>Logarithm of the determinant of a positive-definite matrix. </para>        </briefdescription>
+        <detaileddescription>
+<para>Calculates <computeroutput>log|V|</computeroutput>, where <computeroutput>V</computeroutput> is a positive-definite matrix.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">V</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Positive-definite matrix of size <computeroutput>n x n</computeroutput>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">cholV</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Cholesky solver of size <computeroutput>n x n</computeroutput> required for intermediate calculations. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The logarithm of the determinant of <computeroutput>V</computeroutput>. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inst/include/mniw/TriUtils.h" line="330" column="1" bodyfile="inst/include/mniw/TriUtils.h" bodystart="330" bodyend="338"/>
+      </memberdef>
+      <memberdef kind="function" id="_wishart_8h_1a53aee90f94b4d2aa862f49332ceb68d7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>double mniw::logMultiGamma</definition>
+        <argsstring>(double alpha, int q)</argsstring>
+        <name>logMultiGamma</name>
+        <param>
+          <type>double</type>
+          <declname>alpha</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>q</declname>
+        </param>
+        <briefdescription>
+<para>Multivariate log-gamma function. </para>        </briefdescription>
+        <detaileddescription>
+<para>Computes the multivariate log-gamma function, which for real <formula id="6">$\alpha$</formula> and integer <formula id="7">$q$</formula> is defined as the logarithm of</para><para><formula id="8">\[ \Gamma_q(\alpha) = \pi^{q(q-1)/4} \prod_{j=1}^q \Gamma(\alpha + (1-j)/2). \]</formula></para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">alpha</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Real scalar. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">q</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Integer scalar. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The multivariate log-gamma function <formula id="9">$\log \Gamma_q(\alpha)$</formula>. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inst/include/mniw/Wishart.h" line="30" column="1" bodyfile="inst/include/mniw/Wishart.h" bodystart="30" bodyend="37"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="inst/include/mniw/Hierarchical.h" line="15" column="1"/>
+  </compounddef>
+</doxygen>

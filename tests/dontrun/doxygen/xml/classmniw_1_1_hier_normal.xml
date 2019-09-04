@@ -1,0 +1,806 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="classmniw_1_1_hier_normal" kind="class" language="C++" prot="public">
+    <compoundname>mniw::HierNormal</compoundname>
+    <includes refid="_hierarchical_8h" local="no">Hierarchical.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classmniw_1_1_hier_normal_1a4358689fbc82a2d7bc61c5d7366121ca" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int mniw::HierNormal::N_</definition>
+        <argsstring></argsstring>
+        <name>N_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inst/include/mniw/Hierarchical.h" line="23" column="1" bodyfile="inst/include/mniw/Hierarchical.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmniw_1_1_hier_normal_1a66a5d2ccd0bdce65086b725f72e5b15a" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int mniw::HierNormal::p_</definition>
+        <argsstring></argsstring>
+        <name>p_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inst/include/mniw/Hierarchical.h" line="24" column="1" bodyfile="inst/include/mniw/Hierarchical.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmniw_1_1_hier_normal_1ae3b5839889e794c0f3a868d0dbb752ec" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int mniw::HierNormal::q_</definition>
+        <argsstring></argsstring>
+        <name>q_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inst/include/mniw/Hierarchical.h" line="25" column="1" bodyfile="inst/include/mniw/Hierarchical.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmniw_1_1_hier_normal_1a02683ba2304a3bd393e1a7c7c18ffc91" prot="private" static="no" mutable="no">
+        <type>MatrixXd</type>
+        <definition>MatrixXd mniw::HierNormal::X_</definition>
+        <argsstring></argsstring>
+        <name>X_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inst/include/mniw/Hierarchical.h" line="27" column="1" bodyfile="inst/include/mniw/Hierarchical.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmniw_1_1_hier_normal_1a1268b37f8e6577d28bcd8923b127ccbe" prot="private" static="no" mutable="no">
+        <type>MatrixXd</type>
+        <definition>MatrixXd mniw::HierNormal::Psi_</definition>
+        <argsstring></argsstring>
+        <name>Psi_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inst/include/mniw/Hierarchical.h" line="28" column="1" bodyfile="inst/include/mniw/Hierarchical.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmniw_1_1_hier_normal_1a06fd714c8074e20b3e9d57fdedd54dbd" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool mniw::HierNormal::flatBeta_</definition>
+        <argsstring></argsstring>
+        <name>flatBeta_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inst/include/mniw/Hierarchical.h" line="30" column="1" bodyfile="inst/include/mniw/Hierarchical.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmniw_1_1_hier_normal_1af6b79148d4bed53f03041e7079822359" prot="private" static="no" mutable="no">
+        <type>MatrixXd</type>
+        <definition>MatrixXd mniw::HierNormal::Mut_</definition>
+        <argsstring></argsstring>
+        <name>Mut_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inst/include/mniw/Hierarchical.h" line="31" column="1" bodyfile="inst/include/mniw/Hierarchical.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmniw_1_1_hier_normal_1a15ab19485880f757468d8933d3474bb6" prot="private" static="no" mutable="no">
+        <type>MatrixXd</type>
+        <definition>MatrixXd mniw::HierNormal::Beta_</definition>
+        <argsstring></argsstring>
+        <name>Beta_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inst/include/mniw/Hierarchical.h" line="32" column="1" bodyfile="inst/include/mniw/Hierarchical.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmniw_1_1_hier_normal_1a9c6d2fa215c27c778d6f312c07d2b4a5" prot="private" static="no" mutable="no">
+        <type>MatrixXd</type>
+        <definition>MatrixXd mniw::HierNormal::iSigmaL_</definition>
+        <argsstring></argsstring>
+        <name>iSigmaL_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inst/include/mniw/Hierarchical.h" line="33" column="1" bodyfile="inst/include/mniw/Hierarchical.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmniw_1_1_hier_normal_1a3758cabb939de0e7bc0fbe480dd21309" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double mniw::HierNormal::nuHat_</definition>
+        <argsstring></argsstring>
+        <name>nuHat_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inst/include/mniw/Hierarchical.h" line="35" column="1" bodyfile="inst/include/mniw/Hierarchical.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmniw_1_1_hier_normal_1a1e11b69bef59c198144ca443f6467254" prot="private" static="no" mutable="no">
+        <type>MatrixXd</type>
+        <definition>MatrixXd mniw::HierNormal::Yt_</definition>
+        <argsstring></argsstring>
+        <name>Yt_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inst/include/mniw/Hierarchical.h" line="36" column="1" bodyfile="inst/include/mniw/Hierarchical.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmniw_1_1_hier_normal_1abf8d55d66c63a07186f418dc673b9ed5" prot="private" static="no" mutable="no">
+        <type>MatrixXd</type>
+        <definition>MatrixXd mniw::HierNormal::iXtXO_</definition>
+        <argsstring></argsstring>
+        <name>iXtXO_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inst/include/mniw/Hierarchical.h" line="37" column="1" bodyfile="inst/include/mniw/Hierarchical.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmniw_1_1_hier_normal_1a610cb4f749d5d282c9d6d65e8a57089d" prot="private" static="no" mutable="no">
+        <type>MatrixXd</type>
+        <definition>MatrixXd mniw::HierNormal::iOmegaHatL_</definition>
+        <argsstring></argsstring>
+        <name>iOmegaHatL_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inst/include/mniw/Hierarchical.h" line="38" column="1" bodyfile="inst/include/mniw/Hierarchical.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmniw_1_1_hier_normal_1a69473938bc504d2a136df2162534695b" prot="private" static="no" mutable="no">
+        <type>MatrixXd</type>
+        <definition>MatrixXd mniw::HierNormal::IH_</definition>
+        <argsstring></argsstring>
+        <name>IH_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inst/include/mniw/Hierarchical.h" line="39" column="1" bodyfile="inst/include/mniw/Hierarchical.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmniw_1_1_hier_normal_1a164aef8ab09ed2bd13336727731e8c4a" prot="private" static="no" mutable="no">
+        <type>MatrixXd</type>
+        <definition>MatrixXd mniw::HierNormal::LtO_</definition>
+        <argsstring></argsstring>
+        <name>LtO_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inst/include/mniw/Hierarchical.h" line="40" column="1" bodyfile="inst/include/mniw/Hierarchical.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmniw_1_1_hier_normal_1a5de51268e44957c5050862c3675c5cb1" prot="private" static="no" mutable="no">
+        <type>MatrixXd</type>
+        <definition>MatrixXd mniw::HierNormal::LtOL_</definition>
+        <argsstring></argsstring>
+        <name>LtOL_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inst/include/mniw/Hierarchical.h" line="41" column="1" bodyfile="inst/include/mniw/Hierarchical.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmniw_1_1_hier_normal_1ab425a1d94a28bfbe6cf9ba1afed94efe" prot="private" static="no" mutable="no">
+        <type>MatrixXd</type>
+        <definition>MatrixXd mniw::HierNormal::PsiHat_</definition>
+        <argsstring></argsstring>
+        <name>PsiHat_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inst/include/mniw/Hierarchical.h" line="42" column="1" bodyfile="inst/include/mniw/Hierarchical.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmniw_1_1_hier_normal_1ab225f679e14de044ceb83c151e4ba124" prot="private" static="no" mutable="no">
+        <type>MatrixXd</type>
+        <definition>MatrixXd mniw::HierNormal::XiHatL_</definition>
+        <argsstring></argsstring>
+        <name>XiHatL_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inst/include/mniw/Hierarchical.h" line="43" column="1" bodyfile="inst/include/mniw/Hierarchical.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmniw_1_1_hier_normal_1ad2fe90e863ed0205aa0a8932cef4ce50" prot="private" static="no" mutable="no">
+        <type>MatrixXd</type>
+        <definition>MatrixXd mniw::HierNormal::MutXLtO_</definition>
+        <argsstring></argsstring>
+        <name>MutXLtO_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inst/include/mniw/Hierarchical.h" line="44" column="1" bodyfile="inst/include/mniw/Hierarchical.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmniw_1_1_hier_normal_1a86aa5fa420fc8d2765dfca756b529486" prot="private" static="no" mutable="no">
+        <type>MatrixXd</type>
+        <definition>MatrixXd mniw::HierNormal::IHMu_</definition>
+        <argsstring></argsstring>
+        <name>IHMu_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inst/include/mniw/Hierarchical.h" line="45" column="1" bodyfile="inst/include/mniw/Hierarchical.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmniw_1_1_hier_normal_1af22d2285440381b29691bd52f7451ef3" prot="private" static="no" mutable="no">
+        <type>MatrixXd</type>
+        <definition>MatrixXd mniw::HierNormal::LambdaHat_</definition>
+        <argsstring></argsstring>
+        <name>LambdaHat_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inst/include/mniw/Hierarchical.h" line="46" column="1" bodyfile="inst/include/mniw/Hierarchical.h" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmniw_1_1_hier_normal_1a8e074fceae421d1ddc43ebda04c8ee87" prot="private" static="no" mutable="no">
+        <type>MatrixXd</type>
+        <definition>MatrixXd mniw::HierNormal::x_</definition>
+        <argsstring></argsstring>
+        <name>x_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inst/include/mniw/Hierarchical.h" line="47" column="1" bodyfile="inst/include/mniw/Hierarchical.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmniw_1_1_hier_normal_1ad5a04e21f100f13f6ab3db7ad6da76a2" prot="private" static="no" mutable="no">
+        <type>MatrixXd</type>
+        <definition>MatrixXd mniw::HierNormal::iV_</definition>
+        <argsstring></argsstring>
+        <name>iV_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inst/include/mniw/Hierarchical.h" line="48" column="1" bodyfile="inst/include/mniw/Hierarchical.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmniw_1_1_hier_normal_1a13e7bbf52907391044fbdf629e3ab0d0" prot="private" static="no" mutable="no">
+        <type>MatrixXd</type>
+        <definition>MatrixXd mniw::HierNormal::Lq_</definition>
+        <argsstring></argsstring>
+        <name>Lq_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inst/include/mniw/Hierarchical.h" line="49" column="1" bodyfile="inst/include/mniw/Hierarchical.h" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmniw_1_1_hier_normal_1a6441a2bbf196df846139ee79e693941e" prot="private" static="no" mutable="no">
+        <type>MatrixXd</type>
+        <definition>MatrixXd mniw::HierNormal::Uq_</definition>
+        <argsstring></argsstring>
+        <name>Uq_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inst/include/mniw/Hierarchical.h" line="50" column="1" bodyfile="inst/include/mniw/Hierarchical.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmniw_1_1_hier_normal_1aaee80d116a52468c7f3b4fa1f83c03f3" prot="private" static="no" mutable="no">
+        <type>MatrixXd</type>
+        <definition>MatrixXd mniw::HierNormal::Iq_</definition>
+        <argsstring></argsstring>
+        <name>Iq_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inst/include/mniw/Hierarchical.h" line="51" column="1" bodyfile="inst/include/mniw/Hierarchical.h" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmniw_1_1_hier_normal_1a023fb7cfd4727c43108b66da126e2d4d" prot="private" static="no" mutable="no">
+        <type>LLT&lt; MatrixXd &gt;</type>
+        <definition>LLT&lt;MatrixXd&gt; mniw::HierNormal::lltq_</definition>
+        <argsstring></argsstring>
+        <name>lltq_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inst/include/mniw/Hierarchical.h" line="52" column="1" bodyfile="inst/include/mniw/Hierarchical.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmniw_1_1_hier_normal_1a59ffd6e533cbea66179ca58a8a45b2bc" prot="private" static="no" mutable="no">
+        <type><ref refid="classmniw_1_1_wishart" kindref="compound">Wishart</ref> *</type>
+        <definition>Wishart* mniw::HierNormal::wish_</definition>
+        <argsstring></argsstring>
+        <name>wish_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inst/include/mniw/Hierarchical.h" line="54" column="1" bodyfile="inst/include/mniw/Hierarchical.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmniw_1_1_hier_normal_1a65354e4532de3747b94ddac914e42148" prot="private" static="no" mutable="no">
+        <type><ref refid="classmniw_1_1_matrix_normal" kindref="compound">MatrixNormal</ref> *</type>
+        <definition>MatrixNormal* mniw::HierNormal::matnorm_</definition>
+        <argsstring></argsstring>
+        <name>matnorm_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inst/include/mniw/Hierarchical.h" line="55" column="1" bodyfile="inst/include/mniw/Hierarchical.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmniw_1_1_hier_normal_1a5ae78cf7245a87e7cf3e35dbe6e58a09" prot="private" static="no" mutable="no">
+        <type><ref refid="classmniw_1_1_ranfx_normal" kindref="compound">RanfxNormal</ref> *</type>
+        <definition>RanfxNormal* mniw::HierNormal::renorm_</definition>
+        <argsstring></argsstring>
+        <name>renorm_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inst/include/mniw/Hierarchical.h" line="56" column="1" bodyfile="inst/include/mniw/Hierarchical.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classmniw_1_1_hier_normal_1a4adbed64b1b474cbdcd869eda087d9f0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>mniw::HierNormal::HierNormal</definition>
+        <argsstring>(const Ref&lt; const MatrixXd &gt; &amp;Y, const Ref&lt; const MatrixXd &gt; &amp;X, const Ref&lt; const MatrixXd &gt; &amp;V, const Ref&lt; const MatrixXd &gt; &amp;Lambda, const Ref&lt; const MatrixXd &gt; &amp;Omega, const Ref&lt; const MatrixXd &gt; &amp;Psi, double nu)</argsstring>
+        <name>HierNormal</name>
+        <param>
+          <type>const Ref&lt; const MatrixXd &gt; &amp;</type>
+          <declname>Y</declname>
+        </param>
+        <param>
+          <type>const Ref&lt; const MatrixXd &gt; &amp;</type>
+          <declname>X</declname>
+        </param>
+        <param>
+          <type>const Ref&lt; const MatrixXd &gt; &amp;</type>
+          <declname>V</declname>
+        </param>
+        <param>
+          <type>const Ref&lt; const MatrixXd &gt; &amp;</type>
+          <declname>Lambda</declname>
+        </param>
+        <param>
+          <type>const Ref&lt; const MatrixXd &gt; &amp;</type>
+          <declname>Omega</declname>
+        </param>
+        <param>
+          <type>const Ref&lt; const MatrixXd &gt; &amp;</type>
+          <declname>Psi</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>nu</declname>
+        </param>
+        <briefdescription>
+<para>Constructor. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">Y</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Response matrix of size <computeroutput>N x q</computeroutput>, each row is an observation. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">X</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Covariate matrix of size <computeroutput>N x q</computeroutput>, each row is an observation. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">V</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Matrix of size <computeroutput>q x (Nq)</computeroutput> containing the variance of each response about its mean. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">Lambda</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Prior mean matrix of size <computeroutput>p x q</computeroutput>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">Omega</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Prior between-row precision matrix of size <computeroutput>p x p</computeroutput>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">Psi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Prior between-column scale matrix of size <computeroutput>q x q</computeroutput>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">nu</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Shape parameter. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inst/include/mniw/Hierarchical.h" line="59" column="1" bodyfile="inst/include/mniw/Hierarchical.h" bodystart="98" bodyend="144"/>
+      </memberdef>
+      <memberdef kind="function" id="classmniw_1_1_hier_normal_1a7cdd4ca1137d61b7987da1bfde3417f7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>mniw::HierNormal::~HierNormal</definition>
+        <argsstring>()</argsstring>
+        <name>~HierNormal</name>
+        <briefdescription>
+<para>Destructor. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inst/include/mniw/Hierarchical.h" line="66" column="1" bodyfile="inst/include/mniw/Hierarchical.h" bodystart="146" bodyend="150"/>
+      </memberdef>
+      <memberdef kind="function" id="classmniw_1_1_hier_normal_1a0b982b25a9c108f589a66fae346099ef" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void mniw::HierNormal::setMu</definition>
+        <argsstring>(const Ref&lt; const MatrixXd &gt; &amp;Mu)</argsstring>
+        <name>setMu</name>
+        <param>
+          <type>const Ref&lt; const MatrixXd &gt; &amp;</type>
+          <declname>Mu</declname>
+        </param>
+        <briefdescription>
+<para>Set random effects. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">Mu</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Random-effects matrix of size <computeroutput>N x q</computeroutput>. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inst/include/mniw/Hierarchical.h" line="68" column="1" bodyfile="inst/include/mniw/Hierarchical.h" bodystart="171" bodyend="174"/>
+      </memberdef>
+      <memberdef kind="function" id="classmniw_1_1_hier_normal_1a1191fec3e77190fbdc15bc440371a2b3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void mniw::HierNormal::setISigmaL</definition>
+        <argsstring>(const Ref&lt; const MatrixXd &gt; &amp;iSigmaL)</argsstring>
+        <name>setISigmaL</name>
+        <param>
+          <type>const Ref&lt; const MatrixXd &gt; &amp;</type>
+          <declname>iSigmaL</declname>
+        </param>
+        <briefdescription>
+<para>Set lower Cholesky factor of random effects precision matrix. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">iSigmaL</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Lower Cholesky factor of the random-effects precision matrix of size <computeroutput>q x q</computeroutput>. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inst/include/mniw/Hierarchical.h" line="70" column="1" bodyfile="inst/include/mniw/Hierarchical.h" bodystart="159" bodyend="162"/>
+      </memberdef>
+      <memberdef kind="function" id="classmniw_1_1_hier_normal_1aa9209e19f30a24a856ca5c05acf10bc4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void mniw::HierNormal::setISigma</definition>
+        <argsstring>(const Ref&lt; const MatrixXd &gt; &amp;iSigma)</argsstring>
+        <name>setISigma</name>
+        <param>
+          <type>const Ref&lt; const MatrixXd &gt; &amp;</type>
+          <declname>iSigma</declname>
+        </param>
+        <briefdescription>
+<para>Set random effects precision matrix. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">iSigma</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Random-effects precision matrix of size <computeroutput>q x q</computeroutput>. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inst/include/mniw/Hierarchical.h" line="72" column="1" bodyfile="inst/include/mniw/Hierarchical.h" bodystart="165" bodyend="168"/>
+      </memberdef>
+      <memberdef kind="function" id="classmniw_1_1_hier_normal_1a683a17a5b1b34a44c563a656c7783d26" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void mniw::HierNormal::setBeta</definition>
+        <argsstring>(const Ref&lt; const MatrixXd &gt; &amp;Beta)</argsstring>
+        <name>setBeta</name>
+        <param>
+          <type>const Ref&lt; const MatrixXd &gt; &amp;</type>
+          <declname>Beta</declname>
+        </param>
+        <briefdescription>
+<para>Set random effects regression coefficients. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">Beta</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Random-effects coefficient matrix of size <computeroutput>p x q</computeroutput>. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inst/include/mniw/Hierarchical.h" line="74" column="1" bodyfile="inst/include/mniw/Hierarchical.h" bodystart="153" bodyend="156"/>
+      </memberdef>
+      <memberdef kind="function" id="classmniw_1_1_hier_normal_1ab3434867e28a9f411c5cd9242258ed94" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void mniw::HierNormal::getMu</definition>
+        <argsstring>(Ref&lt; MatrixXd &gt; Mu)</argsstring>
+        <name>getMu</name>
+        <param>
+          <type>Ref&lt; MatrixXd &gt;</type>
+          <declname>Mu</declname>
+        </param>
+        <briefdescription>
+<para>Get random-effects matrix. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Mu</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>[out] Matrix of size <computeroutput>N x q</computeroutput> in which to output current value of random effects. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inst/include/mniw/Hierarchical.h" line="76" column="1" bodyfile="inst/include/mniw/Hierarchical.h" bodystart="177" bodyend="180"/>
+      </memberdef>
+      <memberdef kind="function" id="classmniw_1_1_hier_normal_1aab4999c72fcaf724af0f258698994c3e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void mniw::HierNormal::getMut</definition>
+        <argsstring>(Ref&lt; MatrixXd &gt; Mut)</argsstring>
+        <name>getMut</name>
+        <param>
+          <type>Ref&lt; MatrixXd &gt;</type>
+          <declname>Mut</declname>
+        </param>
+        <briefdescription>
+<para>Get transpose of random-effects matrix. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Mut</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>[out] Matrix of size <computeroutput>q x N</computeroutput> in which to output the transpose of the current value of random effects. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inst/include/mniw/Hierarchical.h" line="78" column="1" bodyfile="inst/include/mniw/Hierarchical.h" bodystart="183" bodyend="186"/>
+      </memberdef>
+      <memberdef kind="function" id="classmniw_1_1_hier_normal_1ade02a76b6f590cc568589ec6842424c1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void mniw::HierNormal::getISigmaL</definition>
+        <argsstring>(Ref&lt; MatrixXd &gt; iSigmaL)</argsstring>
+        <name>getISigmaL</name>
+        <param>
+          <type>Ref&lt; MatrixXd &gt;</type>
+          <declname>iSigmaL</declname>
+        </param>
+        <briefdescription>
+<para>Get lower Cholesky factor of random effects precision matrix. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>iSigmaL</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>[out] Matrix of size <computeroutput>q x q</computeroutput> in which to output current value of the lower Cholesky factor of the random effects precision matrix. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inst/include/mniw/Hierarchical.h" line="80" column="1" bodyfile="inst/include/mniw/Hierarchical.h" bodystart="189" bodyend="192"/>
+      </memberdef>
+      <memberdef kind="function" id="classmniw_1_1_hier_normal_1a9b3c2f1a3fc2aaf58698f49332a8f1ea" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void mniw::HierNormal::getSigma</definition>
+        <argsstring>(Ref&lt; MatrixXd &gt; Sigma)</argsstring>
+        <name>getSigma</name>
+        <param>
+          <type>Ref&lt; MatrixXd &gt;</type>
+          <declname>Sigma</declname>
+        </param>
+        <briefdescription>
+<para>Get random effects variance matrix. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Sigma</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>[out] Matrix of size <computeroutput>q x q</computeroutput> in which to output current value of the random-effects variance matrix. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inst/include/mniw/Hierarchical.h" line="82" column="1" bodyfile="inst/include/mniw/Hierarchical.h" bodystart="195" bodyend="198"/>
+      </memberdef>
+      <memberdef kind="function" id="classmniw_1_1_hier_normal_1a2e60f51963dcd0a7d7fa5d274d69d91b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void mniw::HierNormal::getBeta</definition>
+        <argsstring>(Ref&lt; MatrixXd &gt; Beta)</argsstring>
+        <name>getBeta</name>
+        <param>
+          <type>Ref&lt; MatrixXd &gt;</type>
+          <declname>Beta</declname>
+        </param>
+        <briefdescription>
+<para>Get random effects regression coefficients. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Beta</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>[out] Matrix of size <computeroutput>p x q</computeroutput> in which to output current value of the random-effects regression coefficients. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inst/include/mniw/Hierarchical.h" line="84" column="1" bodyfile="inst/include/mniw/Hierarchical.h" bodystart="201" bodyend="203"/>
+      </memberdef>
+      <memberdef kind="function" id="classmniw_1_1_hier_normal_1a349f4d3f8d9a1c2cdf85884a5e632fdc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void mniw::HierNormal::UpdateBetaSigma</definition>
+        <argsstring>()</argsstring>
+        <name>UpdateBetaSigma</name>
+        <briefdescription>
+<para>Update <computeroutput>Beta</computeroutput> and <computeroutput>Sigma</computeroutput>. </para>        </briefdescription>
+        <detaileddescription>
+<para>Performs one draw of <formula id="4">$(\boldsymbol{\beta}, \boldsymbol{\Sigma}) \sim p(\boldsymbol{\beta}, \boldsymbol{\Sigma} \mid \boldsymbol{\mu}, \boldsymbol{Y}, \boldsymbol{X})$</formula> and assigns it to the internal values of <computeroutput>Beta</computeroutput> and <computeroutput>Sigma</computeroutput>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inst/include/mniw/Hierarchical.h" line="86" column="1" bodyfile="inst/include/mniw/Hierarchical.h" bodystart="207" bodyend="227"/>
+      </memberdef>
+      <memberdef kind="function" id="classmniw_1_1_hier_normal_1afa4af9e8e1d5a01c30d0345db6e1e5d2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void mniw::HierNormal::UpdateMu</definition>
+        <argsstring>()</argsstring>
+        <name>UpdateMu</name>
+        <briefdescription>
+<para>Update <computeroutput>Mu</computeroutput>. </para>        </briefdescription>
+        <detaileddescription>
+<para>Performs one draw of <formula id="5">$\boldsymbol{\mu} \sim p(\boldsymbol{\mu} \mid \boldsymbol{\beta}, \boldsymbol{\Sigma}, \boldsymbol{Y}, \boldsymbol{X})$</formula> and assigns it to the interval value of <computeroutput>Mu</computeroutput>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inst/include/mniw/Hierarchical.h" line="88" column="1" bodyfile="inst/include/mniw/Hierarchical.h" bodystart="230" bodyend="238"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Gibbs sampler for posterior distribution of Hierarchical Normal model with unequal variances. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="inst/include/mniw/Hierarchical.h" line="20" column="1" bodyfile="inst/include/mniw/Hierarchical.h" bodystart="20" bodyend="89"/>
+    <listofallmembers>
+      <member refid="classmniw_1_1_hier_normal_1a15ab19485880f757468d8933d3474bb6" prot="private" virt="non-virtual"><scope>mniw::HierNormal</scope><name>Beta_</name></member>
+      <member refid="classmniw_1_1_hier_normal_1a06fd714c8074e20b3e9d57fdedd54dbd" prot="private" virt="non-virtual"><scope>mniw::HierNormal</scope><name>flatBeta_</name></member>
+      <member refid="classmniw_1_1_hier_normal_1a2e60f51963dcd0a7d7fa5d274d69d91b" prot="public" virt="non-virtual"><scope>mniw::HierNormal</scope><name>getBeta</name></member>
+      <member refid="classmniw_1_1_hier_normal_1ade02a76b6f590cc568589ec6842424c1" prot="public" virt="non-virtual"><scope>mniw::HierNormal</scope><name>getISigmaL</name></member>
+      <member refid="classmniw_1_1_hier_normal_1ab3434867e28a9f411c5cd9242258ed94" prot="public" virt="non-virtual"><scope>mniw::HierNormal</scope><name>getMu</name></member>
+      <member refid="classmniw_1_1_hier_normal_1aab4999c72fcaf724af0f258698994c3e" prot="public" virt="non-virtual"><scope>mniw::HierNormal</scope><name>getMut</name></member>
+      <member refid="classmniw_1_1_hier_normal_1a9b3c2f1a3fc2aaf58698f49332a8f1ea" prot="public" virt="non-virtual"><scope>mniw::HierNormal</scope><name>getSigma</name></member>
+      <member refid="classmniw_1_1_hier_normal_1a4adbed64b1b474cbdcd869eda087d9f0" prot="public" virt="non-virtual"><scope>mniw::HierNormal</scope><name>HierNormal</name></member>
+      <member refid="classmniw_1_1_hier_normal_1a69473938bc504d2a136df2162534695b" prot="private" virt="non-virtual"><scope>mniw::HierNormal</scope><name>IH_</name></member>
+      <member refid="classmniw_1_1_hier_normal_1a86aa5fa420fc8d2765dfca756b529486" prot="private" virt="non-virtual"><scope>mniw::HierNormal</scope><name>IHMu_</name></member>
+      <member refid="classmniw_1_1_hier_normal_1a610cb4f749d5d282c9d6d65e8a57089d" prot="private" virt="non-virtual"><scope>mniw::HierNormal</scope><name>iOmegaHatL_</name></member>
+      <member refid="classmniw_1_1_hier_normal_1aaee80d116a52468c7f3b4fa1f83c03f3" prot="private" virt="non-virtual"><scope>mniw::HierNormal</scope><name>Iq_</name></member>
+      <member refid="classmniw_1_1_hier_normal_1a9c6d2fa215c27c778d6f312c07d2b4a5" prot="private" virt="non-virtual"><scope>mniw::HierNormal</scope><name>iSigmaL_</name></member>
+      <member refid="classmniw_1_1_hier_normal_1ad5a04e21f100f13f6ab3db7ad6da76a2" prot="private" virt="non-virtual"><scope>mniw::HierNormal</scope><name>iV_</name></member>
+      <member refid="classmniw_1_1_hier_normal_1abf8d55d66c63a07186f418dc673b9ed5" prot="private" virt="non-virtual"><scope>mniw::HierNormal</scope><name>iXtXO_</name></member>
+      <member refid="classmniw_1_1_hier_normal_1af22d2285440381b29691bd52f7451ef3" prot="private" virt="non-virtual"><scope>mniw::HierNormal</scope><name>LambdaHat_</name></member>
+      <member refid="classmniw_1_1_hier_normal_1a023fb7cfd4727c43108b66da126e2d4d" prot="private" virt="non-virtual"><scope>mniw::HierNormal</scope><name>lltq_</name></member>
+      <member refid="classmniw_1_1_hier_normal_1a13e7bbf52907391044fbdf629e3ab0d0" prot="private" virt="non-virtual"><scope>mniw::HierNormal</scope><name>Lq_</name></member>
+      <member refid="classmniw_1_1_hier_normal_1a164aef8ab09ed2bd13336727731e8c4a" prot="private" virt="non-virtual"><scope>mniw::HierNormal</scope><name>LtO_</name></member>
+      <member refid="classmniw_1_1_hier_normal_1a5de51268e44957c5050862c3675c5cb1" prot="private" virt="non-virtual"><scope>mniw::HierNormal</scope><name>LtOL_</name></member>
+      <member refid="classmniw_1_1_hier_normal_1a65354e4532de3747b94ddac914e42148" prot="private" virt="non-virtual"><scope>mniw::HierNormal</scope><name>matnorm_</name></member>
+      <member refid="classmniw_1_1_hier_normal_1af6b79148d4bed53f03041e7079822359" prot="private" virt="non-virtual"><scope>mniw::HierNormal</scope><name>Mut_</name></member>
+      <member refid="classmniw_1_1_hier_normal_1ad2fe90e863ed0205aa0a8932cef4ce50" prot="private" virt="non-virtual"><scope>mniw::HierNormal</scope><name>MutXLtO_</name></member>
+      <member refid="classmniw_1_1_hier_normal_1a4358689fbc82a2d7bc61c5d7366121ca" prot="private" virt="non-virtual"><scope>mniw::HierNormal</scope><name>N_</name></member>
+      <member refid="classmniw_1_1_hier_normal_1a3758cabb939de0e7bc0fbe480dd21309" prot="private" virt="non-virtual"><scope>mniw::HierNormal</scope><name>nuHat_</name></member>
+      <member refid="classmniw_1_1_hier_normal_1a66a5d2ccd0bdce65086b725f72e5b15a" prot="private" virt="non-virtual"><scope>mniw::HierNormal</scope><name>p_</name></member>
+      <member refid="classmniw_1_1_hier_normal_1a1268b37f8e6577d28bcd8923b127ccbe" prot="private" virt="non-virtual"><scope>mniw::HierNormal</scope><name>Psi_</name></member>
+      <member refid="classmniw_1_1_hier_normal_1ab425a1d94a28bfbe6cf9ba1afed94efe" prot="private" virt="non-virtual"><scope>mniw::HierNormal</scope><name>PsiHat_</name></member>
+      <member refid="classmniw_1_1_hier_normal_1ae3b5839889e794c0f3a868d0dbb752ec" prot="private" virt="non-virtual"><scope>mniw::HierNormal</scope><name>q_</name></member>
+      <member refid="classmniw_1_1_hier_normal_1a5ae78cf7245a87e7cf3e35dbe6e58a09" prot="private" virt="non-virtual"><scope>mniw::HierNormal</scope><name>renorm_</name></member>
+      <member refid="classmniw_1_1_hier_normal_1a683a17a5b1b34a44c563a656c7783d26" prot="public" virt="non-virtual"><scope>mniw::HierNormal</scope><name>setBeta</name></member>
+      <member refid="classmniw_1_1_hier_normal_1aa9209e19f30a24a856ca5c05acf10bc4" prot="public" virt="non-virtual"><scope>mniw::HierNormal</scope><name>setISigma</name></member>
+      <member refid="classmniw_1_1_hier_normal_1a1191fec3e77190fbdc15bc440371a2b3" prot="public" virt="non-virtual"><scope>mniw::HierNormal</scope><name>setISigmaL</name></member>
+      <member refid="classmniw_1_1_hier_normal_1a0b982b25a9c108f589a66fae346099ef" prot="public" virt="non-virtual"><scope>mniw::HierNormal</scope><name>setMu</name></member>
+      <member refid="classmniw_1_1_hier_normal_1a349f4d3f8d9a1c2cdf85884a5e632fdc" prot="public" virt="non-virtual"><scope>mniw::HierNormal</scope><name>UpdateBetaSigma</name></member>
+      <member refid="classmniw_1_1_hier_normal_1afa4af9e8e1d5a01c30d0345db6e1e5d2" prot="public" virt="non-virtual"><scope>mniw::HierNormal</scope><name>UpdateMu</name></member>
+      <member refid="classmniw_1_1_hier_normal_1a6441a2bbf196df846139ee79e693941e" prot="private" virt="non-virtual"><scope>mniw::HierNormal</scope><name>Uq_</name></member>
+      <member refid="classmniw_1_1_hier_normal_1a59ffd6e533cbea66179ca58a8a45b2bc" prot="private" virt="non-virtual"><scope>mniw::HierNormal</scope><name>wish_</name></member>
+      <member refid="classmniw_1_1_hier_normal_1a8e074fceae421d1ddc43ebda04c8ee87" prot="private" virt="non-virtual"><scope>mniw::HierNormal</scope><name>x_</name></member>
+      <member refid="classmniw_1_1_hier_normal_1a02683ba2304a3bd393e1a7c7c18ffc91" prot="private" virt="non-virtual"><scope>mniw::HierNormal</scope><name>X_</name></member>
+      <member refid="classmniw_1_1_hier_normal_1ab225f679e14de044ceb83c151e4ba124" prot="private" virt="non-virtual"><scope>mniw::HierNormal</scope><name>XiHatL_</name></member>
+      <member refid="classmniw_1_1_hier_normal_1a1e11b69bef59c198144ca443f6467254" prot="private" virt="non-virtual"><scope>mniw::HierNormal</scope><name>Yt_</name></member>
+      <member refid="classmniw_1_1_hier_normal_1a7cdd4ca1137d61b7987da1bfde3417f7" prot="public" virt="non-virtual"><scope>mniw::HierNormal</scope><name>~HierNormal</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
