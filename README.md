@@ -58,13 +58,13 @@ NumericVector Uniform::draw(int n) {
 
 #### Processing with **rdoxygen**
 
-Suppose that the [code snippet](#doxygen_example) above is in a file called `rdoxygenExample.cpp`.  Then a typically doxygen processing work flow is as follows:
+Suppose that the [code snippet](#doxygen_example) above is in a file called `rdoxygenExample.cpp`.  Then a typical doxygen documentation (doxydoc) processing workflow is as follows:
 
 1.  Create a default `Doxyfile` containing a list of options to render the documentation in `rdoxygenExample.cpp`.
 2.  Edit the `Doxyfile` to customize rendering options as desired.  The relevant settings are extensively documented on the [doxygen website](http://www.doxygen.nl/manual/config.html) and within the default `Doxyfile` itself.
-3.  Run doxygen on the `Doxyfile` to create the documentation HTML.
+3.  Run doxygen on the `Doxyfile` to create the doxydoc HTML.
 
-The rdoxygen package provides several convenience files to do all of this from within an R session during the package development process.  That is, suppose `rdoxygenExample.cpp` is located in the `src` folder of the R package DoxygenExample.  From an R session with working directory anywhere within the folder structure of DoxygenExample, the package developer can parse the doxygen documentation (doxydoc) with the following R code:
+The rdoxygen package provides several convenience files to do all of this from within an R session during the package development process.  That is, suppose `rdoxygenExample.cpp` is located in the `src` folder of the R package **DoxygenExample**.  From an R session with working directory anywhere within the folder structure of **DoxygenExample**, the package developer can parse the doxydoc with the following R code:
 ```r
 require(rdoxygen)
 
@@ -87,5 +87,5 @@ doxy(vignette = FALSE)
 # 4. Wrap the HTML documentation into an R vignette
 doxy_vignette()
 ```
-The HTML output of these calls can be viewed [here](./inst/doxygen/html/index.html).
+The HTML output of these calls can be viewed [here](http://htmlpreview.github.io/?https://github.com/mlysy/rdoxygen/blob/master/inst/doxygen/html/index.html).
 
