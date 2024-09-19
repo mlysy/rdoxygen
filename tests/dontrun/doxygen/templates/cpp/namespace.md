@@ -1,4 +1,4 @@
-# {{kind}} `{{name}}` {{anchor refid}}
+# {{kind}} `{{name}}` <a id="`r parse_refid('{{refid}}')`"></a>
 
 {{briefdescription}}
 
@@ -8,15 +8,15 @@
 
  Members                        | Descriptions                                
 --------------------------------|---------------------------------------------
-{{#each filtered.members}}[`{{cell name}}()`](#{{refid}})           | {{cell summary}}
-{{/each}}{{#each filtered.compounds}}[`{{cell name}}()`](#{{refid}})| {{cell summary}}
+{{#each filtered.members}}[`{{cell name}}()`](#`r parse_refid('{{refid}}')`)           | {{cell summary}}
+{{/each}}{{#each filtered.compounds}}[`{{cell name}}()`](#`r parse_refid('{{refid}}')`)| {{cell summary}}
 {{/each}}
 
 {{#if filtered.members}}
 ## Members
 
 {{#each filtered.members}}
-#### `{{title name}}()` {{anchor refid}}
+#### `{{title name}}()` <a id="`r parse_refid('{{refid}}')`"></a>
 
 ```{r, echo = FALSE, results = "asis"}
 parse_proto("{{title proto}}")

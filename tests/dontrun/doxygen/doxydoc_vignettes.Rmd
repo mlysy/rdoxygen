@@ -1,0 +1,78 @@
+---
+title: Doxygen Vignettes
+author: Martin Lysy
+date: "`r Sys.Date()`"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+    theme: readable
+---
+
+## Motivation
+
+R packages often interface with C++ source code for a massive boost in speed and performance.  While documenting R functions in packages is essentially mandatory for public release, this is not the case for package C++ code.  In my opinion, this is directly correlated with rather poor/inefficient C++ programming in R packages. 
+
+[Doxygen](http://www.doxygen.nl/) is a tool for generating documentation from annotated C++ source code.  Typically this documentation is output as a series of HTML files.  However, the default output is somewhat inconvenient to us and difficult to modify.  More importantly, the HTML files are relatively large compared to most R packages (at least 300Kb overhead for any doxygen HTML output after compression, whereas many R packages are a few Kb at most).  CRAN has strict policies on space, so including the HTML doxygen documentation (doxydoc) as-is would likely be discouraged.  Thus, the objective is to format the doxydoc as an R Markdown vignette.  Not only does this allow far more design flexibility for the final output, but R Markdown vignettes are typically a few Kb at most.
+
+## Current Project Status
+
+Doxygen has a few output formats, but sadly none of them are Markdown.  What I'm doing now is generating XML output, and parsing it with a JavaScript program called [moxygen](https://github.com/sourcey/moxygen).  Eventually the XML to Markdown conversion will be done in pure R using the package [xml2](https://xml2.r-lib.org/).  But for now, here's the sequence of commands used to generate an R Markdown (`Rmd`) doxydoc file from C++ source code.
+
+1.  Create a doxygen folder, and in it a configuration file called `Doxyfile`:
+
+    ```bash
+    mkdir doxydir
+    cd doxydir
+    doxygen -g 
+    ```
+
+2.  Edit the `Doxyfile` to tweak various output options (e.g., hyperlinks, math fonts, etc.), which are set using key/value pairs.  The most important ones are:
+
+	- `INPUT = abs/or/rel/path/to/cpp/source`: Where to look for C++ source code to parse.
+	- `GENERATE_XML = YES`: Generate XML output.
+	- `GENERATE_LATEX = GENERATE_HTML = NO`: Disable latex and HTML output, which are enabled by default.
+
+3.  Run Doxygen:
+
+    ```bash
+    doxygen
+    ```
+
+	This will generate a folder called `doxydir/xml` with a bunch of files.
+
+4.  Run moxygen on the output, with some extra options:
+
+    ```bash
+    moxygen --output doxyvignette.Rmd --templates ./templates/cpp ./xml
+    ```
+
+	- `./xml` is the location of the `xml` folder to be parsed by moxygen.
+	-  `--output` specifies the output file
+	-  `--templates` specifies a template folder that moxygen can use to format its output.  I wasted a ton of time hacking into this to make things look the way I wanted.  Ultimately it will all be useless once the XML to Markdown conversion is done with xml2.
+
+## TODO
+
+The output for this particular project looks like [this](./doxyvignette.html).  This would probably be OK, except the output format in the `Rmd` file is `html_document`, and not `html_vignette`.  The difference is that the former imports all of Bootstrap in order to get floating table of contents (I think pretty important here), whereas the latter doesn't have floating TOC at all (and thus the far smaller file size).
+
+So what I'd like to do is create a barebones HTML file which does have a floating TOC.  [Here](https://prettydoc.statr.me/leonids.html)'s an `html_vignette` format that gets pretty close.  Not a huge fan of the colors, but what I like is that the panel on the left is separate from the one on the right, so would be perfect to separate TOC from content.  Unfortunately, if you shrink the browser width, eventually the left side panel becomes a top panel which disappears off the top of the screen...
+
+Any design ideas to get around this would be greatly appreciated!
+
+## Custom Vignettes
+
+The files `custom_test.Rmd` and `custom.html` provide a quick hack for generating customized HTML from the `Rmd` format.  Basically you provide a template HTML file (`custom.html`) with [pandoc variables](https://pandoc.org/MANUAL.html#using-variables-in-templates) (like `$title$`, `$body$`, etc.) that get pulled out of the `Rmd` file (more info on this [here](https://bookdown.org/yihui/rmarkdown/template-pandoc.html).  CSS instructions are included via `custom.css` (though the input is really hacky right now, but good enough to get things off the ground).  Here are the instructions to convert the `Rmd` file to HTML output:
+
+- Download R/RStudio, and install R Markdown.  I usually do this from the R prompt with
+
+    ```{r, eval = FALSE}
+    install.packages("rmarkdown", dependencies = TRUE)
+    ```
+
+- Make sure `custom_test.Rmd` and `custom.html` are in the same directory.  Switch to that directory from within the R session (I do this from the command line with `setwd()`, but if you're using RStudio there are easier ways).
+
+- Create `custom_test.html` output with the following command:
+
+    ```{r, eval = FALSE}
+    rmarkdown::render("custom_test.Rmd")
+    ```

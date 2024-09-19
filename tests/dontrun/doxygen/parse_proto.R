@@ -1,5 +1,9 @@
 # total hack into moxygen processing :(
 
+parse_refid <- function(refid) {
+  gsub("^_+", "", refid)
+}
+
 indent_args <- function(name, args) {
   nargs <- length(args)
   if(nargs > 1) args[-nargs] <- paste0(args[-nargs], ",")

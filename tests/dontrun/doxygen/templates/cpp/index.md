@@ -2,7 +2,9 @@
 title: "Doxydoc"
 output:
   rmarkdown::html_document:
+    theme: readable
     toc: true
+    toc_float: true
 ---
 
 ```{r, include = FALSE}
@@ -22,7 +24,7 @@ source("parse_proto.R")
 ## Members
 
 {{#each filtered.members}}
-#### {{title proto}} {{anchor refid}}
+#### {{title proto}} <a id="`r parse_refid('{{refid}}')`"></a>
 
 {{briefdescription}}
 

@@ -1,0 +1,41 @@
+---
+title: "Full Customization of R Markdown documents"
+author: "Martin Lysy"
+date: "`r Sys.Date()`"
+output:
+  html_vignette:
+    toc: true
+    template: doxydoc_template.html
+    pandoc_args: [
+      "--mathjax", 
+      "--variable", 
+      "mathjax-url:https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+      ]
+---
+
+```{r, echo = FALSE, results = "asis"}
+cat('<style type="text/css">', readLines("doxydoc_template.css"), '</style>', sep = "\n")
+```
+
+# First Header
+
+Some code:
+
+```{r}
+hist(rnorm(1000))
+```
+
+## Second Header
+
+An equation:
+$$
+1 - e^{2\pi i} = 0.
+$$
+
+## Third Header
+
+Not much to say.
+
+# Exiting
+
+## Piecemeal

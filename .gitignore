@@ -34,3 +34,5 @@ src/*.dll
 # rendered doxygen documentation
 # inst/doxygen/html
 README_old.md
+# macos files
+.DS_Store
